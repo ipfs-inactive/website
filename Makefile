@@ -57,10 +57,10 @@ build/static/bundle.js: $(shell node_modules/.bin/browserify --list js/web.js)
 
 # pages
 PAGES = build/index.html \
-	build/about/index.html \
-	build/blog/index.html \
 	build/CNAME \
 	build/.nojekyll
+	# build/about/index.html \
+	# build/blog/index.html \
 
 pages: $(PAGES)
 
