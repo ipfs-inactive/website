@@ -7,7 +7,7 @@
     <meta name="description" content="">
 
     
-    <base href="./" />
+    <base href="../../" />
     
 
     <!-- <link rel="icon" href="favicon.ico"> -->
@@ -221,23 +221,15 @@
       <div class="row">
         <div class="col-xs-12 ipw-main-title">
           
-<div style="padding: 100px 0px; height: 600px;">
-<img src="./styles/img/ipfs-logo-white.png" />
-<br /><div class="ipw-tagline">
-  <br />IPFS is The Permanent Web
-  <br />A new peer-to-peer hypermedia protocol
-  </div>
-</div>
-
+            <div style="padding: 100px 0px; height: 200px;">
+              <div class="ipw-tagline">
+                
+              </div>
+            </div>
+          
         </div>
       </div>
       <!-- continue arrow -->
-      
-        <div class="row">
-          <div class="col-xs-12" style="text-align: center;">
-            <i class="fa fa-angle-down fa-5x ipw-header-continue-angle"></i>
-          </div>
-        </div>
       
     </div>
   </div> <!-- header -->
@@ -247,8 +239,7 @@
   <div class="row">
     <div class="col-xs-12">
     
-
-
+      
 
 
 <style type="text/css">
@@ -285,51 +276,51 @@
     <ul class="nav nav-justified">
       <li 
   role="presentation"
-  foo="about"
+  foo="examples"
   bar="about"
-  
-  class="active"
   
 ><a href="./">About</a></li>
       <li 
   role="presentation"
-  foo="about"
+  foo="examples"
   bar="install"
   
 ><a href="./docs/install">Install</a></li>
       <li 
   role="presentation"
-  foo="about"
+  foo="examples"
   bar="examples"
+  
+  class="active"
   
 ><a href="./docs/examples">Examples</a></li>
       <li 
   role="presentation"
-  foo="about"
+  foo="examples"
   bar="docs"
   
 ><a href="./docs">Docs</a></li>
       <li 
   role="presentation"
-  foo="about"
+  foo="examples"
   bar="code"
   
 ><a href="./docs#code">Code</a></li>
       <li 
   role="presentation"
-  foo="about"
+  foo="examples"
   bar="community"
   
 ><a href="./docs#community">Community</a></li>
       <!-- <li 
   role="presentation"
-  foo="about"
+  foo="examples"
   bar="ecosystem"
   
 ><a href="./docs/ecosystem">Ecosystem</a></li> -->
       <!-- <li 
   role="presentation"
-  foo="about"
+  foo="examples"
   bar="roadmap"
   
 ><a href="./docs/roadmap">Roadmap</a></li> -->
@@ -338,60 +329,32 @@
 </div>
 
 
-
-<div class="row">
 <div class="col-lg-6 col-lg-offset-3 col-sm-8 col-sm-offset-2" style="font-family: Oxygen;">
-<h1 id="the-ipfs-project">The IPFS Project</h1>
-<p>IPFS is a new hypermedia distribution protocol, addressed by content and
-identities. IPFS enables the creation of completely distributed applications.
-It aims to make the web faster, safer, and more open.</p>
-<p>IPFS is an open source project developed by the team at
-<a href="//ipn.io">Interplanetary Networks</a> and many contributors
-from the open source community.</p>
-<iframe id="stars" src="http://ghbtns.com/github-btn.html?user=jbenet&repo=ipfs&type=watch&count=true&size=large" allowtransparency="true" frameborder="0" scrolling="0" width="152px" height="30px"></iframe>
-
+<h2 id="examples">Examples</h2>
+<p>These are a few simple examples for the first steps exploring IPFS.
+This list will <a href="https://github.com/protocol/ipfs-examples">grow over time</a>.
+The examples are viewed through an ipfs-hosted renderer.</p>
+<ul>
+<li><a href="http://gateway.ipfs.io/ipfs/QmTkzDwWqPbnAh5YiV5VwcTLnGdwSNsNTn2aDxdXBFca7D/example#/ipfs/QmTitSFQFQeBMZRDsGEvzdNgPnwx7coBCQxEYvNzgWPkK8/readme.md">Dags and Objects and Blocks! (oh my)</a></li>
+<li><a href="http://gateway.ipfs.io/ipfs/QmTkzDwWqPbnAh5YiV5VwcTLnGdwSNsNTn2aDxdXBFca7D/example#/ipfs/QmSsNVuALPa1TW1GDahup8fFDqo95iFyPE7E6HpqDivw3p/readme.md">Be the swarm</a></li>
+<li><a href="http://gateway.ipfs.io/ipfs/QmTkzDwWqPbnAh5YiV5VwcTLnGdwSNsNTn2aDxdXBFca7D/example#/ipfs/Qma4WJEfopqa2ToR9qV9iCsFAWMfuR4hsjBr2zZkMkF6Cx/readme.md">Pinning</a></li>
+<li><a href="http://gateway.ipfs.io/ipfs/QmTkzDwWqPbnAh5YiV5VwcTLnGdwSNsNTn2aDxdXBFca7D/example#/ipfs/QmcGgxxoY53icGgxAkhHhdQPXFGq6ZjfvUESSvVg3C2CPT/readme.md">Roll your own ipfs!</a></li>
+<li><a href="http://gateway.ipfs.io/ipfs/QmTkzDwWqPbnAh5YiV5VwcTLnGdwSNsNTn2aDxdXBFca7D/example#/ipfs/QmYR2Ye69iGZGx5gE3vnTRoW3guokm34Lf2z7PyewoFMhq/readme.md">Trivial snapshots with ipfs</a></li>
+</ul>
+<h2 id="simple-js-apps">Simple JS Apps</h2>
+<p>These are trivial little JS &quot;apps&quot; deployed through IPFS.
+They are simple utilities that demonstrate how one might
+build js applications and deploy them through ipfs.</p>
+<ul>
+<li><a href="https://github.com/protocol/ipfs-examples/tree/master/webapps/example-viewer">the example viewer</a> - <a href="http://gateway.ipfs.io/ipfs/QmTkzDwWqPbnAh5YiV5VwcTLnGdwSNsNTn2aDxdXBFca7D/example#/ipfs/QmcGgxxoY53icGgxAkhHhdQPXFGq6ZjfvUESSvVg3C2CPT/readme.md">example</a></li>
+<li><a href="https://github.com/protocol/ipfs-examples/tree/master/webapps/markdown-viewer">a markdown renderer</a> - <a href="http://gateway.ipfs.io/ipfs/QmSrCRJmzE4zE1nAfWPbzVfanKQNBhp7ZWmMnEdbiLvYNh/mdown#/ipfs/QmfQ75DjAxYzxMP2hdm6o4wFwZS5t7uorEZ2pX9AKXEg2u">example</a></li>
+<li><a href="https://github.com/protocol/ipfs-examples/tree/master/webapps/play">a js video player</a> - <a href="http://gateway.ipfs.io/ipfs/QmVc6zuAneKJzicnJpfrqCH9gSy6bz54JhcypfJYhGUFQu/play#/ipfs/QmTKZgRNwDNZwHtJSjCp6r5FYefzpULfy37JvMt9DwvXse">example</a></li>
+<li><a href="https://github.com/protocol/ipfs-examples/tree/master/webapps/qr-render">a qr-code renderer</a> - <a href="http://gateway.ipfs.io/ipfs/QmccqhJg5wm5kNjAP4k4HrYxoqaXUGNuotDUqfvYBx8jrR/qr#enter%20text%20here">example</a></li>
+</ul>
 
 </div>
-</div>
 
-
-<div class="row">
-  <hr class="ipw-spacer" />
-  <div class="col-xs-12" style="text-align: center; font-family: Oxygen;">
-    <div style="font-size: 32px;">
-      Why We Must Distribute The Web
-    </div>
-
-    <br />
-    <iframe src="https://www.youtube.com/embed/skMTdSEaCtA" width="900" height="481" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-  </div>
-</div>
-
-<br />
-
-<div class="row">
-  <hr class="ipw-sectioner" />
-  <div class="col-xs-12" style="text-align: center; font-family: Oxygen;">
-    <div style="font-size: 32px;">
-      IPFS Alpha Demo
-    </div>
-
-    <br />
-    <iframe src="https://www.youtube.com/embed/8CMxDNuuAiQ" width="900" height="481" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-  </div>
-</div>
-
-<br />
-
-<div class="row">
-  <div class="col-xs-12" style="text-align: center; font-family: Oxygen;">
-    <a class="btn btn-success btn-lg" href="docs/install" role="button">
-      Install IPFS Alpha &nbsp;&nbsp;<i class="fa fa-arrow-right"></i>
-    </a>
-  </div>
-</div>
-
-
+    
     </div>
   </div>
 

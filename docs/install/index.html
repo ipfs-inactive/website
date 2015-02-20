@@ -7,7 +7,7 @@
     <meta name="description" content="">
 
     
-    <base href="./" />
+    <base href="../../" />
     
 
     <!-- <link rel="icon" href="favicon.ico"> -->
@@ -221,23 +221,15 @@
       <div class="row">
         <div class="col-xs-12 ipw-main-title">
           
-<div style="padding: 100px 0px; height: 600px;">
-<img src="./styles/img/ipfs-logo-white.png" />
-<br /><div class="ipw-tagline">
-  <br />IPFS is The Permanent Web
-  <br />A new peer-to-peer hypermedia protocol
-  </div>
-</div>
-
+            <div style="padding: 100px 0px; height: 200px;">
+              <div class="ipw-tagline">
+                
+              </div>
+            </div>
+          
         </div>
       </div>
       <!-- continue arrow -->
-      
-        <div class="row">
-          <div class="col-xs-12" style="text-align: center;">
-            <i class="fa fa-angle-down fa-5x ipw-header-continue-angle"></i>
-          </div>
-        </div>
       
     </div>
   </div> <!-- header -->
@@ -247,8 +239,7 @@
   <div class="row">
     <div class="col-xs-12">
     
-
-
+      
 
 
 <style type="text/css">
@@ -285,51 +276,51 @@
     <ul class="nav nav-justified">
       <li 
   role="presentation"
-  foo="about"
+  foo="install"
   bar="about"
-  
-  class="active"
   
 ><a href="./">About</a></li>
       <li 
   role="presentation"
-  foo="about"
+  foo="install"
   bar="install"
+  
+  class="active"
   
 ><a href="./docs/install">Install</a></li>
       <li 
   role="presentation"
-  foo="about"
+  foo="install"
   bar="examples"
   
 ><a href="./docs/examples">Examples</a></li>
       <li 
   role="presentation"
-  foo="about"
+  foo="install"
   bar="docs"
   
 ><a href="./docs">Docs</a></li>
       <li 
   role="presentation"
-  foo="about"
+  foo="install"
   bar="code"
   
 ><a href="./docs#code">Code</a></li>
       <li 
   role="presentation"
-  foo="about"
+  foo="install"
   bar="community"
   
 ><a href="./docs#community">Community</a></li>
       <!-- <li 
   role="presentation"
-  foo="about"
+  foo="install"
   bar="ecosystem"
   
 ><a href="./docs/ecosystem">Ecosystem</a></li> -->
       <!-- <li 
   role="presentation"
-  foo="about"
+  foo="install"
   bar="roadmap"
   
 ><a href="./docs/roadmap">Roadmap</a></li> -->
@@ -338,60 +329,47 @@
 </div>
 
 
-
-<div class="row">
-<div class="col-lg-6 col-lg-offset-3 col-sm-8 col-sm-offset-2" style="font-family: Oxygen;">
-<h1 id="the-ipfs-project">The IPFS Project</h1>
-<p>IPFS is a new hypermedia distribution protocol, addressed by content and
-identities. IPFS enables the creation of completely distributed applications.
-It aims to make the web faster, safer, and more open.</p>
-<p>IPFS is an open source project developed by the team at
-<a href="//ipn.io">Interplanetary Networks</a> and many contributors
-from the open source community.</p>
-<iframe id="stars" src="http://ghbtns.com/github-btn.html?user=jbenet&repo=ipfs&type=watch&count=true&size=large" allowtransparency="true" frameborder="0" scrolling="0" width="152px" height="30px"></iframe>
-
+<div class="col-lg-6 col-lg-offset-3 col-sm-8 col-sm-offset-2" style="font-family: Oxygen; line-height: 1.7">
+<h1 id="install-ipfs">Install IPFS</h1>
+<p>These are the install instructions for <a href="https://github.com/jbenet/go-ipfs">go-ipfs</a>. We will have install packages shortly, but for now, we must install from source.</p>
+<p>Dependencies:</p>
+<ul>
+<li><a href="https://golang.org/doc/install">Install Go 1.4</a> (to compile. <a href="docs/install#check-go-version">make sure it&#39;s 1.4</a>)</li>
+<li><a href="http://git-scm.com/">Install Git</a> (to download dependencies)</li>
+<li><em>Optionally</em>, install <a href="docs/install#install-fuse">FUSE</a> (for mounting / advanced use)</li>
+</ul>
+<p>Then run:</p>
+<pre><code class="lang-sh">go get -u github.com/jbenet/go-ipfs/cmd/ipfs
+</code></pre>
+<p>This will download ipfs and its dependencies, and compile <code>ipfs</code>. Test it out:</p>
+<pre><code>&gt; ipfs version
+ipfs version 0.2.0
+</code></pre><p>That&#39;s it!</p>
+<p><a class="btn btn-success btn-lg" href="docs/getting-started" role="button">
+  Getting Started with IPFS &nbsp;&nbsp;<i class="fa fa-arrow-right"></i>
+</a></p>
+<p><br /></p>
+<hr>
+<h3 id="troubleshooting">Troubleshooting</h3>
+<h4 id="help-">Help!</h4>
+<p>If you have any problems, come get live help at
+<a href="docs/#community">#ipfs</a> or via <a href="docs/#community">the mailing list</a>.</p>
+<h4 id="check-go-version">Check Go Version</h4>
+<p>IPFS works with Go 1.4+
+To check what go version you have installed, type <code>go version</code>.
+Here&#39;s what I get:</p>
+<pre><code class="lang-sh">&gt; go version
+go version go1.4.1 darwin/amd64
+</code></pre>
+<p>If you need to update, it is recommended to install from the
+<a href="https://golang.org/doc/install/">canonical Go packages</a>.
+Package managers often contain out-of-date Go packages.</p>
+<h4 id="install-fuse">Install FUSE</h4>
+<p>For more details on setting up FUSE (so that you can mount the filesystem), see <a href="https://github.com/jbenet/go-ipfs/blob/master/docs/fuse.md">github.com/jbenet/go-ipfs/blob/master/docs/fuse.md</a></p>
 
 </div>
-</div>
 
-
-<div class="row">
-  <hr class="ipw-spacer" />
-  <div class="col-xs-12" style="text-align: center; font-family: Oxygen;">
-    <div style="font-size: 32px;">
-      Why We Must Distribute The Web
-    </div>
-
-    <br />
-    <iframe src="https://www.youtube.com/embed/skMTdSEaCtA" width="900" height="481" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-  </div>
-</div>
-
-<br />
-
-<div class="row">
-  <hr class="ipw-sectioner" />
-  <div class="col-xs-12" style="text-align: center; font-family: Oxygen;">
-    <div style="font-size: 32px;">
-      IPFS Alpha Demo
-    </div>
-
-    <br />
-    <iframe src="https://www.youtube.com/embed/8CMxDNuuAiQ" width="900" height="481" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-  </div>
-</div>
-
-<br />
-
-<div class="row">
-  <div class="col-xs-12" style="text-align: center; font-family: Oxygen;">
-    <a class="btn btn-success btn-lg" href="docs/install" role="button">
-      Install IPFS Alpha &nbsp;&nbsp;<i class="fa fa-arrow-right"></i>
-    </a>
-  </div>
-</div>
-
-
+    
     </div>
   </div>
 

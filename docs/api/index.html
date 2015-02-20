@@ -7,7 +7,7 @@
     <meta name="description" content="">
 
     
-    <base href="./" />
+    <base href="../../" />
     
 
     <!-- <link rel="icon" href="favicon.ico"> -->
@@ -221,23 +221,15 @@
       <div class="row">
         <div class="col-xs-12 ipw-main-title">
           
-<div style="padding: 100px 0px; height: 600px;">
-<img src="./styles/img/ipfs-logo-white.png" />
-<br /><div class="ipw-tagline">
-  <br />IPFS is The Permanent Web
-  <br />A new peer-to-peer hypermedia protocol
-  </div>
-</div>
-
+            <div style="padding: 100px 0px; height: 200px;">
+              <div class="ipw-tagline">
+                API Reference
+              </div>
+            </div>
+          
         </div>
       </div>
       <!-- continue arrow -->
-      
-        <div class="row">
-          <div class="col-xs-12" style="text-align: center;">
-            <i class="fa fa-angle-down fa-5x ipw-header-continue-angle"></i>
-          </div>
-        </div>
       
     </div>
   </div> <!-- header -->
@@ -247,8 +239,7 @@
   <div class="row">
     <div class="col-xs-12">
     
-
-
+      
 
 
 <style type="text/css">
@@ -285,51 +276,51 @@
     <ul class="nav nav-justified">
       <li 
   role="presentation"
-  foo="about"
+  foo="install"
   bar="about"
-  
-  class="active"
   
 ><a href="./">About</a></li>
       <li 
   role="presentation"
-  foo="about"
+  foo="install"
   bar="install"
+  
+  class="active"
   
 ><a href="./docs/install">Install</a></li>
       <li 
   role="presentation"
-  foo="about"
+  foo="install"
   bar="examples"
   
 ><a href="./docs/examples">Examples</a></li>
       <li 
   role="presentation"
-  foo="about"
+  foo="install"
   bar="docs"
   
 ><a href="./docs">Docs</a></li>
       <li 
   role="presentation"
-  foo="about"
+  foo="install"
   bar="code"
   
 ><a href="./docs#code">Code</a></li>
       <li 
   role="presentation"
-  foo="about"
+  foo="install"
   bar="community"
   
 ><a href="./docs#community">Community</a></li>
       <!-- <li 
   role="presentation"
-  foo="about"
+  foo="install"
   bar="ecosystem"
   
 ><a href="./docs/ecosystem">Ecosystem</a></li> -->
       <!-- <li 
   role="presentation"
-  foo="about"
+  foo="install"
   bar="roadmap"
   
 ><a href="./docs/roadmap">Roadmap</a></li> -->
@@ -338,60 +329,75 @@
 </div>
 
 
+<style type="text/css">
+p {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+</style>
+<div class="col-lg-6 col-lg-offset-3 col-sm-8 col-sm-offset-2" style="font-family: Oxygen; line-height: 1.7">
+<h1 id="api-reference">API Reference</h1>
+<p><a href="docs/commands/">Every command</a> usable from the cli is also available through
+the HTTP API. For example:</p>
+<pre><code class="lang-sh">&gt; ipfs swarm peers
+/ip4/104.131.131.82/tcp/4001/ipfs/QmaCpDMGvV2BGHeYERUEnRQAwe3N8SzbUtfsmvsqQLuvuJ
+/ip4/104.236.151.122/tcp/4001/ipfs/QmSoLju6m7xTh3DuokvT3886QRYqxAzb1kShaanJgW36yx
+/ip4/104.236.176.52/tcp/4001/ipfs/QmSoLnSGccFuZQJzRadHn95W2CrSFmZuTdDWP8HXaHca9z
 
-<div class="row">
-<div class="col-lg-6 col-lg-offset-3 col-sm-8 col-sm-offset-2" style="font-family: Oxygen;">
-<h1 id="the-ipfs-project">The IPFS Project</h1>
-<p>IPFS is a new hypermedia distribution protocol, addressed by content and
-identities. IPFS enables the creation of completely distributed applications.
-It aims to make the web faster, safer, and more open.</p>
-<p>IPFS is an open source project developed by the team at
-<a href="//ipn.io">Interplanetary Networks</a> and many contributors
-from the open source community.</p>
-<iframe id="stars" src="http://ghbtns.com/github-btn.html?user=jbenet&repo=ipfs&type=watch&count=true&size=large" allowtransparency="true" frameborder="0" scrolling="0" width="152px" height="30px"></iframe>
-
+&gt; curl http://127.0.0.1:5001/api/v0/swarm/peers
+{
+  &quot;Strings&quot;: [
+    &quot;/ip4/104.131.131.82/tcp/4001/ipfs/QmaCpDMGvV2BGHeYERUEnRQAwe3N8SzbUtfsmvsqQLuvuJ&quot;,
+    &quot;/ip4/104.236.151.122/tcp/4001/ipfs/QmSoLju6m7xTh3DuokvT3886QRYqxAzb1kShaanJgW36yx&quot;,
+    &quot;/ip4/104.236.176.52/tcp/4001/ipfs/QmSoLnSGccFuZQJzRadHn95W2CrSFmZuTdDWP8HXaHca9z&quot;,
+  ]
+}
+</code></pre>
+<h2 id="flags">Flags</h2>
+<p>Flags are added through the query string. For example, the <code>--encoding=json</code>
+flag is the <code>&amp;encoding=json</code> query parameter below:</p>
+<pre><code>&gt; curl &quot;http://127.0.0.1:5001/api/v0/object/get?arg=QmaaqrHyAQm7gALkRW8DcfGX3u8q9rWKnxEMmf7m9z515w&amp;encoding=json&quot;
+{
+  &quot;Links&quot;: [
+    {
+      &quot;Name&quot;: &quot;index.html&quot;,
+      &quot;Hash&quot;: &quot;QmYftndCvcEiuSZRX7njywX2AGSeHY2ASa7VryCq1mKwEw&quot;,
+      &quot;Size&quot;: 1700
+    },
+    {
+      &quot;Name&quot;: &quot;static&quot;,
+      &quot;Hash&quot;: &quot;QmdtWFiasJeh2ymW3TD2cLHYxn1ryTuWoNpwieFyJriGTS&quot;,
+      &quot;Size&quot;: 2428803
+    }
+  ],
+  &quot;Data&quot;: &quot;CAE=&quot;
+}
+</code></pre><h2 id="arguments">Arguments</h2>
+<p>Arguments are added through the special query string key <code>arg</code>:</p>
+<pre><code>&gt; curl &quot;http://127.0.0.1:5001/api/v0/swarm/disconnect?arg=/ip4/54.93.113.247/tcp/48131/ipfs/QmUDS3nsBD1X4XK5Jo836fed7SErTyTuQzRqWaiQAyBYMP&quot;
+{
+  &quot;Strings&quot;: [
+    &quot;disconnect QmUDS3nsBD1X4XK5Jo836fed7SErTyTuQzRqWaiQAyBYMP success&quot;,
+  ]
+}
+</code></pre><p>Note that it can be used multiple times to signify multiple arguments:</p>
+<pre><code>&gt; curl &quot;http://127.0.0.1:5001/api/v0/swarm/disconnect?arg=/ip4/54.93.113.247/tcp/48131/ipfs/QmUDS3nsBD1X4XK5Jo836fed7SErTyTuQzRqWaiQAyBYMP&amp;arg=/ip4/188.166.8.195/tcp/4001/ipfs/QmNU1Vpryj5hfSmybSYHnS497ttgy9aNJ3T2B8wY2uMso4&quot;
+{
+  &quot;Strings&quot;: [
+    &quot;disconnect QmUDS3nsBD1X4XK5Jo836fed7SErTyTuQzRqWaiQAyBYMP success&quot;,
+    &quot;disconnect QmNU1Vpryj5hfSmybSYHnS497ttgy9aNJ3T2B8wY2uMso4 success&quot;
+  ]
+}
+</code></pre><h2 id="todo-i-class-fa-fa-warning-i-">TODO <i class="fa fa-warning"></i></h2>
+<p>This page will contain a listing of all commands and query examples.
+If you&#39;re seeing this and you want the api reference faster, let us know here:</p>
+<ul>
+<li><a href="https://github.com/jbenet/go-ipfs/issues/785">github.com/jbenet/go-ipfs/issues/785</a></li>
+</ul>
 
 </div>
-</div>
 
-
-<div class="row">
-  <hr class="ipw-spacer" />
-  <div class="col-xs-12" style="text-align: center; font-family: Oxygen;">
-    <div style="font-size: 32px;">
-      Why We Must Distribute The Web
-    </div>
-
-    <br />
-    <iframe src="https://www.youtube.com/embed/skMTdSEaCtA" width="900" height="481" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-  </div>
-</div>
-
-<br />
-
-<div class="row">
-  <hr class="ipw-sectioner" />
-  <div class="col-xs-12" style="text-align: center; font-family: Oxygen;">
-    <div style="font-size: 32px;">
-      IPFS Alpha Demo
-    </div>
-
-    <br />
-    <iframe src="https://www.youtube.com/embed/8CMxDNuuAiQ" width="900" height="481" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-  </div>
-</div>
-
-<br />
-
-<div class="row">
-  <div class="col-xs-12" style="text-align: center; font-family: Oxygen;">
-    <a class="btn btn-success btn-lg" href="docs/install" role="button">
-      Install IPFS Alpha &nbsp;&nbsp;<i class="fa fa-arrow-right"></i>
-    </a>
-  </div>
-</div>
-
-
+    
     </div>
   </div>
 
