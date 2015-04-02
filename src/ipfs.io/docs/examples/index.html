@@ -1,0 +1,54 @@
+---
+baseurl: ../../
+site: ipfs
+template: tmpl/layouts/ipfs.html
+---
+{% set pgns = 'examples' %}
+{% include "tmpl/partials/pagenav.html" %}
+
+<div class="col-lg-6 col-lg-offset-3 col-sm-8 col-sm-offset-2" style="font-family: Oxygen;">
+{% markdown %}
+
+## Examples
+
+These are a few simple examples for the first steps exploring IPFS.
+This list will [grow over time](https://github.com/protocol/ipfs-examples).
+The examples are viewed through an ipfs-hosted renderer.
+
+- [Dags and Objects and Blocks! (oh my)](
+  http://gateway.ipfs.io/ipfs/QmTkzDwWqPbnAh5YiV5VwcTLnGdwSNsNTn2aDxdXBFca7D/example#/ipfs/QmTitSFQFQeBMZRDsGEvzdNgPnwx7coBCQxEYvNzgWPkK8/readme.md
+)
+- [Be the swarm](
+  http://gateway.ipfs.io/ipfs/QmTkzDwWqPbnAh5YiV5VwcTLnGdwSNsNTn2aDxdXBFca7D/example#/ipfs/QmSsNVuALPa1TW1GDahup8fFDqo95iFyPE7E6HpqDivw3p/readme.md
+)
+- [Pinning](
+  http://gateway.ipfs.io/ipfs/QmTkzDwWqPbnAh5YiV5VwcTLnGdwSNsNTn2aDxdXBFca7D/example#/ipfs/Qma4WJEfopqa2ToR9qV9iCsFAWMfuR4hsjBr2zZkMkF6Cx/readme.md
+)
+- [Roll your own ipfs!](
+  http://gateway.ipfs.io/ipfs/QmTkzDwWqPbnAh5YiV5VwcTLnGdwSNsNTn2aDxdXBFca7D/example#/ipfs/QmX6gcmX2vy2gs5dWB45w8aUNynEiqGhLayXySGb7RF2TM/readme.md
+)
+- [Trivial snapshots with ipfs](
+  http://gateway.ipfs.io/ipfs/QmTkzDwWqPbnAh5YiV5VwcTLnGdwSNsNTn2aDxdXBFca7D/example#/ipfs/QmYR2Ye69iGZGx5gE3vnTRoW3guokm34Lf2z7PyewoFMhq/readme.md
+)
+
+## Simple JS Apps
+
+These are trivial little JS "apps" deployed through IPFS.
+They are simple utilities that demonstrate how one might
+build js applications and deploy them through ipfs.
+
+- [the example viewer](https://github.com/protocol/ipfs-examples/tree/master/webapps/example-viewer) - [example](
+  http://gateway.ipfs.io/ipfs/QmTkzDwWqPbnAh5YiV5VwcTLnGdwSNsNTn2aDxdXBFca7D/example#/ipfs/QmcGgxxoY53icGgxAkhHhdQPXFGq6ZjfvUESSvVg3C2CPT/readme.md
+)
+- [a markdown renderer](https://github.com/protocol/ipfs-examples/tree/master/webapps/markdown-viewer) - [example](
+  http://gateway.ipfs.io/ipfs/QmSrCRJmzE4zE1nAfWPbzVfanKQNBhp7ZWmMnEdbiLvYNh/mdown#/ipfs/QmfQ75DjAxYzxMP2hdm6o4wFwZS5t7uorEZ2pX9AKXEg2u
+)
+- [a js video player](https://github.com/protocol/ipfs-examples/tree/master/webapps/play) - [example](
+  http://gateway.ipfs.io/ipfs/QmVc6zuAneKJzicnJpfrqCH9gSy6bz54JhcypfJYhGUFQu/play#/ipfs/QmTKZgRNwDNZwHtJSjCp6r5FYefzpULfy37JvMt9DwvXse
+)
+- [a qr-code renderer](https://github.com/protocol/ipfs-examples/tree/master/webapps/qr-render) - [example](
+  http://gateway.ipfs.io/ipfs/QmccqhJg5wm5kNjAP4k4HrYxoqaXUGNuotDUqfvYBx8jrR/qr#enter%20text%20here
+)
+
+{% endmarkdown %}
+</div>

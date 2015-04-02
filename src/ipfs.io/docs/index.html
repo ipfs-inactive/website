@@ -1,0 +1,41 @@
+---
+baseurl: ../
+site: ipfs
+template: tmpl/layouts/ipfs.html
+tagline:
+---
+{% set pgns = 'docs' %}
+{% include "tmpl/partials/pagenav.html" %}
+
+<div class="col-lg-6 col-lg-offset-3 col-sm-8 col-sm-offset-2" style="font-family: Oxygen;">
+{% markdown %}
+
+## Documentation
+
+- [Install](docs/install)
+- [Getting Started](docs/getting-started)
+- [Command Reference](docs/commands)
+- [API Reference](docs/api)
+
+## Code
+
+These are links to some of the IPFS repositories.
+
+- [github.com/jbenet/ipfs](https://github.com/jbenet/ipfs) - original IPFS paper. Soon the spec too.
+- [github.com/jbenet/go-ipfs](https://github.com/jbenet/go-ipfs) - the main, reference implementation
+- [github.com/protocol/ipfs-webui](https://github.com/protocol/ipfs-webui) - our web console
+- [Search github for "ipfs"](https://github.com/search?p=4&q=%22ipfs%22&ref=searchresults&type=Repositories&utf8=%E2%9C%93)
+
+## Community
+
+The IPFS community maintains the following communication channels:
+
+- github: [github.com/jbenet/ipfs](https://github.com/jbenet/ipfs) for the IPFS spec
+- github: [github.com/jbenet/go-ipfs](https://github.com/jbenet/go-ipfs) for the go-ipfs implementation
+- IRC: `#ipfs` on irc.freenode.net for live help + some dev discussions ([Logs](https://botbot.me/freenode/ipfs/))
+- Google Group: [ipfs-users@groups.google.com](https://groups.google.com/forum/#!forum/ipfs-users)
+- Twitter: [@IPFSbot](https://twitter.com/ipfsbot) for some news
+
+
+{% endmarkdown %}
+</div>

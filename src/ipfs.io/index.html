@@ -1,0 +1,104 @@
+---
+baseurl: ./
+site: ipfs
+title: IPFS is a new peer-to-peer hypermedia protocol.
+---
+
+{% extends "tmpl/layouts/ipfs.html" %}
+
+
+{% set splashcaret = true %}
+{% block splash %}
+<div style="padding: 100px 0px;">
+<img src="./styles/img/ipfs-logo-white.png" style="max-width: 100%;" />
+<br /><div class="ipw-tagline">
+  <br />IPFS is The Permanent Web
+  <br />A new peer-to-peer hypermedia protocol
+  </div>
+</div>
+{% endblock %}
+
+{% block content %}
+
+{% set pgns = 'about' %}
+{% include "tmpl/partials/pagenav.html" %}
+
+
+<div class="row">
+<div class="col-sm-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2" style="font-family: Oxygen;">
+{% markdown %}
+
+# The IPFS Project
+
+IPFS is a new hypermedia distribution protocol, addressed by content and
+identities. IPFS enables the creation of completely distributed applications.
+It aims to make the web faster, safer, and more open.
+
+IPFS is an open source project developed by the team at
+[Interplanetary Networks](//ipn.io) and many contributors
+from the open source community.
+
+<iframe id="stars" src="http://ghbtns.com/github-btn.html?user=jbenet&repo=ipfs&type=watch&count=true&size=large" allowtransparency="true" frameborder="0" scrolling="0" width="152px" height="30px"></iframe>
+
+{% endmarkdown %}
+</div>
+</div>
+
+<hr class="ipw-spacer" />
+<div class="row" style="background-color: rgba(33, 52, 105, 0.04);">
+<hr class="ipw-spacer" />
+  <div class="col-sm-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2" style="text-align: center; font-family: Oxygen;">
+    <div style="font-size: 32px;">
+      IPFS Alpha Demo
+    </div>
+
+    <br />
+
+    <div class="embed-responsive embed-responsive-16by9">
+      <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/8CMxDNuuAiQ" width="900" height="481" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+    </div>
+
+    <br />
+    <br />
+    <br />
+    <a class="btn btn-success btn-lg" href="docs/install" role="button">
+      Install IPFS Alpha &nbsp;&nbsp;<i class="fa fa-arrow-right"></i>
+    </a>
+    <hr class="ipw-spacer" />
+    <br />
+  </div>
+</div>
+<hr class="ipw-spacer" />
+
+
+<div class="row">
+  <div class="col-sm-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2" style="text-align: center; font-family: Oxygen;">
+    <div style="font-size: 32px;">
+      Why We Must Distribute The Web
+    </div>
+
+    <br />
+    <div class="embed-responsive embed-responsive-16by9">
+      <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/skMTdSEaCtA" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
+
+<hr class="ipw-spacer" />
+<hr class="ipw-spacer" />
+
+<div class="row">
+  <div class="col-sm-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2" style="text-align: center; font-family: Oxygen;">
+    <div style="font-size: 32px;">IPFS Overview</div>
+    <p>This is the original IPFS overview.
+      An updated overview will be published soon.
+
+    <br />
+    <br />
+    <div class="embed-responsive embed-responsive-16by9">
+      <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Fa4pckodM9g" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
