@@ -11,7 +11,7 @@ template: tmpl/layouts/ipfs.html
 
 # Install IPFS
 
-You can install the [Go IPFS implementation](https://github.com/jbenet/go-ipfs)
+You can install the [Go IPFS implementation](https://github.com/ipfs/go-ipfs)
 from source or from prebuilt packages.
 
 
@@ -21,11 +21,11 @@ We use [gobuilder.me](https://gobuilder.me) to do automated builds.
 
 Download a binary for your platform (more coming):
 
-- <i class="fa fa-apple"></i> [Mac OS X](https://gobuilder.me/get/github.com/jbenet/go-ipfs/cmd/ipfs/ipfs_master_darwin-amd64.zip)
-- <i class="fa fa-linux"></i> [Linux x86](https://gobuilder.me/get/github.com/jbenet/go-ipfs/cmd/ipfs/ipfs_master_linux-386.zip)
-- <i class="fa fa-linux"></i> [Linux x86_64](https://gobuilder.me/get/github.com/jbenet/go-ipfs/cmd/ipfs/ipfs_master_linux-amd64.zip)
-- <i class="fa fa-linux"></i> [Linux ARM](https://gobuilder.me/get/github.com/jbenet/go-ipfs/cmd/ipfs/ipfs_master_linux-arm.zip)
-- [See all builds](http://gobuilder.me/github.com/jbenet/go-ipfs/cmd/ipfs)
+- <i class="fa fa-apple"></i> [Mac OS X](https://gobuilder.me/get/github.com/ipfs/go-ipfs/cmd/ipfs/ipfs_master_darwin-amd64.zip)
+- <i class="fa fa-linux"></i> [Linux x86](https://gobuilder.me/get/github.com/ipfs/go-ipfs/cmd/ipfs/ipfs_master_linux-386.zip)
+- <i class="fa fa-linux"></i> [Linux x86_64](https://gobuilder.me/get/github.com/ipfs/go-ipfs/cmd/ipfs/ipfs_master_linux-amd64.zip)
+- <i class="fa fa-linux"></i> [Linux ARM](https://gobuilder.me/get/github.com/ipfs/go-ipfs/cmd/ipfs/ipfs_master_linux-arm.zip)
+- [See all builds](http://gobuilder.me/github.com/ipfs/go-ipfs/cmd/ipfs)
 
 Then, unzip the archive, and move `ipfs` somewhere in your `$PATH`:
 
@@ -50,7 +50,7 @@ That's it!
 Note: if you're concerned about security, build from source, as either
 [gobuilder.me](https://gobuilder.me) or [github.com](https://github.com)
 could introduce vulnerabilites. We will be doing signed releases soon.
-[Post here](https://github.com/jbenet/go-ipfs/issues/957) if you'd like this
+[Post here](https://github.com/ipfs/go-ipfs/issues/957) if you'd like this
 sooner.
 
 <br />
@@ -66,7 +66,7 @@ Dependencies:
 Then run:
 
 ```sh
-go get -u github.com/jbenet/go-ipfs/cmd/ipfs
+go get -u github.com/ipfs/go-ipfs/cmd/ipfs
 ```
 
 This will download ipfs and its dependencies, and compile `ipfs`. Test it out:
@@ -110,7 +110,7 @@ Package managers often contain out-of-date Go packages.
 
 #### Install FUSE
 
-For more details on setting up FUSE (so that you can mount the filesystem), see [github.com/jbenet/go-ipfs/blob/master/docs/fuse.md](https://github.com/jbenet/go-ipfs/blob/master/docs/fuse.md)
+For more details on setting up FUSE (so that you can mount the filesystem), see [github.com/ipfs/go-ipfs/blob/master/docs/fuse.md](https://github.com/ipfs/go-ipfs/blob/master/docs/fuse.md)
 
 
 {% endmarkdown %}
