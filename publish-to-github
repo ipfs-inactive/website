@@ -1,17 +1,28 @@
 #!/bin/sh
-echo '==> deploying website to github pages'
-git checkout -b deploy
+
+site=build/ipfs.io
+
+# be careful
+set -e
+
+# check we have a build dir
+ls build >/dev/null || (echo "no build/ run make" && exit 1)
 
 # patch with mirror note
-cp build/ipfs.io/index.html build/ipfs.io/index2.html
+cp "$site/index.html" "$site/index2.html"
 sed -e '/<!-- ipfs-mirror-note -->/ {
   r mirror.html
   d
-}' < build/ipfs.io/index2.html >build/ipfs.io/index.html
+}' < "$site/index2.html" >"$site/index.html"
 
-git add -f build/
+# cname
+cp CNAME "$site/CNAME"
+
+echo '==> deploying website to github pages'
+git checkout -b deploy
+git add -f "$site"
 git commit -m "payload"
 git checkout master
-git filter-branch --subdirectory-filter build/ -f deploy
+git filter-branch --subdirectory-filter "$site" -f deploy
 git push -f origin deploy:gh-pages
 git branch -D deploy
