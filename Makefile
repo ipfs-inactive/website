@@ -25,4 +25,7 @@ publish:
 		echo "- seed websites: /ipfs/$$hash"; \
 		echo "- add to ipfs.io: $$ipfshash"; \
 
-.PHONY: build clean publish
+publish-to-github:
+	./publish-to-github
+
+.PHONY: build clean publish publish-to-github

@@ -1,0 +1,17 @@
+#!/bin/sh
+echo '==> deploying website to github pages'
+git checkout -b deploy
+
+# patch with mirror note
+cp build/ipfs.io/index.html build/ipfs.io/index2.html
+sed -e '/<!-- ipfs-mirror-note -->/ {
+  r mirror.html
+  d
+}' < build/ipfs.io/index2.html >build/ipfs.io/index.html
+
+git add -f build/
+git commit -m "payload"
+git checkout master
+git filter-branch --subdirectory-filter build/ -f deploy
+git push -f origin deploy:gh-pages
+git branch -D deploy
