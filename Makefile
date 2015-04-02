@@ -16,13 +16,13 @@ publish:
 	ipfs add -r -q build | tail -n1 >versions/current
 	cat versions/current >>versions/history
 	@export hash=`cat versions/current`; \
-		export ipfshash=`ipfs ls $(hash) | grep ipfs.io | cut -d ' ' -f 1`; \
+		export ipfshash=`ipfs ls $$hash | grep ipfs.io | cut -d ' ' -f 1`; \
 		echo "here are the links:"; \
 		echo $(local)$$hash; \
 		echo $(gway)$$hash; \
-		echo "" \
-		echo "now must:" \
-		echo "- seed websites: $$hash"
-		echo "- add to ipfs.io: $$ipfshash" \
+		echo ""; \
+		echo "now must:"; \
+		echo "- seed websites: /ipfs/$$hash"; \
+		echo "- add to ipfs.io: $$ipfshash"; \
 
 .PHONY: build clean publish
