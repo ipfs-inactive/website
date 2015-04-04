@@ -3,6 +3,7 @@
 This is a metalsmith template based website. generate it with:
 
 ```
+npm install
 make
 ```
 
