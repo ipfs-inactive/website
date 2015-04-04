@@ -7,7 +7,7 @@ build: deps
 deps: node_modules
 
 node_modules: package.json
-	# npm install
+	npm install
 
 clean:
 	rm -rf build
