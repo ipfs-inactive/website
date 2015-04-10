@@ -34,13 +34,13 @@
 
 @media (min-width: 600px) {
  .ipw-main-section .ipw-tagline {
-    font-size: 42px;
+    font-size: 36px;
   }
 }
 
 .ipw-header-continue-angle {
   font-stretch: expanded;
-  font-size: 82px;
+  font-size: 72px;
   font-weight: 100;
   -webkit-font-smoothing:antialiased;
   color: rgba(255, 255, 255, 0.3);

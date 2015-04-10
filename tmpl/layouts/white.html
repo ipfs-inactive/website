@@ -73,9 +73,11 @@
       </div>
       <!-- continue arrow -->
       {% if splashcaret %}
-        <div class="row">
+        <div class="row" id="page-content"> <!-- here so the anchor is friendlier -->
           <div class="col-xs-12" style="text-align: center;">
-            <i class="fa fa-angle-down fa-5x ipw-header-continue-angle"></i>
+            <a href="#page-content">
+              <i class="fa fa-angle-down fa-5x ipw-header-continue-angle"></i>
+            </a>
           </div>
         </div>
       {% endif %}

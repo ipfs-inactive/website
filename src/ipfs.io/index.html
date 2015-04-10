@@ -9,11 +9,15 @@ title: IPFS is a new peer-to-peer hypermedia protocol.
 
 {% set splashcaret = true %}
 {% block splash %}
-<div style="padding: 100px 0px;">
+<div style="padding: 100px 0px 30px;">
 <img src="./styles/img/ipfs-logo-white.png" style="max-width: 100%;" />
 <br /><div class="ipw-tagline">
   <br />IPFS is The Permanent Web
   <br />A new peer-to-peer hypermedia protocol
+  <br />
+  <br />
+    <a href="#alpha-demo" class="btn btn-default btn-outline"><i class="fa fa-play"></i> &nbsp; Watch Demo</a>
+    <a href="./docs/install" class="btn btn-default btn-outline"><i class="fa fa-download"></i> &nbsp; Install IPFS</a>
   </div>
 </div>
 {% endblock %}
@@ -40,7 +44,7 @@ from the open source community.
 
 <iframe id="stars" src="http://ghbtns.com/github-btn.html?user=ipfs&repo=ipfs&type=watch&count=true&size=large" allowtransparency="true" frameborder="0" scrolling="0" width="152px" height="30px"></iframe>
 
-# How it works
+## How it works
 
 The InterPlanetary File System (IPFS) is a peer-to-peer distributed
 file system that seeks to connect all computing devices
@@ -57,8 +61,14 @@ and a self-certifying namespace. IPFS has no single
 point of failure, and nodes do not need to trust each other.
 
 <div class="text-center" style="margin-top: 30px">
-<a class="btn btn-success btn-lg" href="https://github.com/ipfs/papers/raw/master/ipfs-cap2pfs/ipfs-p2p-file-system.pdf" role="button">
-  Read the IPFS Paper &nbsp;&nbsp;<i class="fa fa-arrow-right"></i>
+<a class="btn btn-default btn-lg" href="#alpha-demo" role="button">
+  <i class="fa fa-play"> &nbsp; Watch the Demo</i>
+</a> &nbsp;
+<a class="btn btn-default btn-lg" href="https://github.com/ipfs/papers/raw/master/ipfs-cap2pfs/ipfs-p2p-file-system.pdf" role="button">
+  <i class="fa fa-file-o"> &nbsp; Read the Paper</i>
+</a> &nbsp;
+<a class="btn btn-success btn-lg" href="./docs/install" role="button">
+  <i class="fa fa-download"> &nbsp; Install IPFS</i>
 </a>
 </div>
 
@@ -67,7 +77,7 @@ point of failure, and nodes do not need to trust each other.
 </div>
 
 <hr class="ipw-spacer" />
-<div class="row" style="background-color: rgba(33, 52, 105, 0.04);">
+<div class="row" style="background-color: rgba(33, 52, 105, 0.04);" id="alpha-demo">
 <hr class="ipw-spacer" />
   <div class="col-sm-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2" style="text-align: center; font-family: Oxygen;">
     <div style="font-size: 32px;">

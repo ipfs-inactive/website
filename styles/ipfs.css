@@ -19,3 +19,16 @@
 		background-image: url('./img/main/alpha-sunrise-2000x1682.png');
 	}
 }
+
+.ipw-main-section .btn.btn-outline {
+  background: none;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  padding: 10px 20px;
+  color: white;
+  font-family: Oxygen;
+  opacity: 0.7;
+}
+
+.ipw-main-section .btn.btn-outline:hover {
+  opacity: 1.0;
+}
