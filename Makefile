@@ -1,10 +1,8 @@
 local="http://localhost:8080/ipfs/"
 gway="http://gateway.ipfs.io/ipfs/"
 
-build: deps
+build: node_modules
 	./build.js
-
-deps: node_modules
 
 node_modules: package.json
 	npm install
