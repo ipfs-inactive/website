@@ -33,6 +33,7 @@ Metalsmith(__dirname)
   }))
   .use(msstatic({"src": "styles/", "dest": "ipfs.io/styles"}))
   .use(msstatic({"src": "media/", "dest": "ipfs.io/media"}))
+  .use(msstatic({"src": "blog/", "dest": "ipfs.io/blog"}))
   .use(serve({
     "port": 8081,
     "verbose": true
