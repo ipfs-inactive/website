@@ -32,6 +32,7 @@ Metalsmith(__dirname)
     "engine": "nunjucks",
   }))
   .use(msstatic({"src": "styles/", "dest": "ipfs.io/styles"}))
+  .use(msstatic({"src": "media/", "dest": "ipfs.io/media"}))
   .use(serve({
     "port": 8081,
     "verbose": true
