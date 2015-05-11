@@ -27,4 +27,9 @@ publish:
 publish-to-github:
 	./publish-to-github
 
+# this assumes blog is a sibling.
+update-blog:
+	@rm -rf blog
+	cp -r ../blog/build blog
+
 .PHONY: build clean publish publish-to-github
