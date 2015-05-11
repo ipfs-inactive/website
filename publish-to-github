@@ -13,6 +13,7 @@ then
 fi
 
 # patch with mirror note
+echo '==> patch with mirror note'
 cp "$site/index.html" "$site/index2.html"
 sed -e '/<!-- ipfs-mirror-note -->/ {
   r mirror.html
