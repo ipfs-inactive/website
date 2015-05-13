@@ -130,7 +130,7 @@ And, you should be able to give the network objects. Try adding one, and then
 viewing it in your favorite browser:
 
 ```
-> hash=`echo "I <3 IPFS -"\`whoami\` | ipfs add -q`
+> hash=`echo "I <3 IPFS -$(whoami)" | ipfs add -q`
 > curl "http://gateway.ipfs.io/ipfs/$hash"
 I <3 IPFS -<your username>
 ```
