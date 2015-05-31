@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+
+    
+    <base href="../../" />
+    
+
+    <link rel="icon" href="./styles/img/ipfs-logo-512-ice.png" type="image/png" />
+
+    <title></title>
+
+    
+<meta property="og:title" content="IPFS is a new peer-to-peer hypermedia protocol." />
+<meta property="og:name" content="IPFS" />
+<meta property="og:url" content="http://ipfs.io" />
+<meta property="og:image" content="./styles/img/ipfs-cover.png" />
+
+
+    <!-- Bootstrap core CSS -->
+    <link href="./styles/bootstrap/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- font-awesome -->
+    <link href="./styles/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+
+    <!-- Bootstrap core CSS -->
+    <link href="./styles/style.css" rel="stylesheet" />
+
+    <script type="text/javascript" src="./styles/jquery/jquery.min.js"></script>
+
+    <!-- site specific css -->
+    <!---->
+      <link href="./styles/ipfs.css" rel="stylesheet" />
+    <!---->
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+
+  <style type="text/css">
+  </style>
+
+  <body>
+  <meta name="description" content="">
+</head>
+<body>
+
+<div class="container-fluid ipw-container">
+  <div class="ipw-page">
+
+  <!-- header -->
+  <div class="row ipw-main-section">
+    <div class="col-md-12">
+      <!-- top links -->
+
+      <!-- headline -->
+      <div class="row">
+        <div class="col-xs-12 ipw-main-title">
+          
+            <div style="padding: 100px 0px; height: 200px;">
+              <div class="ipw-tagline">
+                Getting Started
+              </div>
+            </div>
+          
+        </div>
+      </div>
+      <!-- continue arrow -->
+      
+    </div>
+  </div> <!-- header -->
+
+
+  <!-- content -->
+  <div class="row">
+    <div class="col-xs-12">
+    
+      
+
+<style type="text/css">
+
+.ipw-page-nav {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #cccccc;
+}
+
+.ipw-page-nav .nav > li.active > a,
+.ipw-page-nav .nav > li.active > a:focus,
+.ipw-page-nav .nav > li.active > a:hover {
+  background-color: transparent;
+  border-bottom: #337ab7 2px solid;
+  margin-bottom: -1px;
+}
+
+.ipw-page-nav .nav > li > a:focus,
+.ipw-page-nav .nav > li > a:hover {
+  background-color: transparent;
+  border-bottom: #cccccc 2px solid;
+  margin-bottom: -1px;
+}
+
+</style>
+
+
+
+<!-- page nav -->
+<div class="row ipw-page-nav">
+  <div class="col-xs-12 col-md-8 col-md-offset-2" style="text-align: center;">
+    <ul class="nav nav-justified">
+      <li 
+  role="presentation"
+  foo="install"
+  bar="about"
+  
+><a href="./">About</a></li>
+      <li 
+  role="presentation"
+  foo="install"
+  bar="install"
+  
+  class="active"
+  
+><a href="./docs/install">Install</a></li>
+      <li 
+  role="presentation"
+  foo="install"
+  bar="examples"
+  
+><a href="./docs/examples">Examples</a></li>
+      <li 
+  role="presentation"
+  foo="install"
+  bar="docs"
+  
+><a href="./docs">Project</a></li>
+      <li 
+  role="presentation"
+  foo="install"
+  bar="blog"
+  
+><a href="./blog">Blog</a></li>
+      <!-- <li 
+  role="presentation"
+  foo="install"
+  bar="ecosystem"
+  
+><a href="./docs/ecosystem">Ecosystem</a></li> -->
+      <!-- <li 
+  role="presentation"
+  foo="install"
+  bar="roadmap"
+  
+><a href="./docs/roadmap">Roadmap</a></li> -->
+    </ul>
+  </div>
+</div>
+
+
+<style type="text/css">
+p {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+
+
+</style>
+<div class="col-lg-6 col-lg-offset-3 col-sm-8 col-sm-offset-2" style="font-family: Oxygen; line-height: 1.7">
+<h1 id="getting-started">Getting Started</h1>
+<p>If you haven&#39;t done so, <a href="docs/install">install ipfs</a>.</p>
+<h2 id="init-the-repo">init the repo</h2>
+<p><code>ipfs</code> uses a global local object repository, added to <code>~/.ipfs</code>:</p>
+<pre><code class="lang-sh">&gt; ipfs init
+initializing ipfs node at /Users/jbenet/.go-ipfs
+generating 4096-bit RSA keypair...done
+peer identity: Qmcpo2iLBikrdf1d6QU6vXuNb6P7hwrbNPW9kLAH8eG67z
+to get started, enter:
+
+  ipfs cat /ipfs/QmPXME1oRtoT627YKaDPDQ3PwA8tdP9rWuAAweLzqSwAWT/readme
+</code></pre>
+<div class="alert alert-info">
+Note the hash there may differ. If it does, use the one you got.
+</div>
+
+<p>Now, try running:</p>
+<pre><code class="lang-sh">ipfs cat /ipfs/QmPXME1oRtoT627YKaDPDQ3PwA8tdP9rWuAAweLzqSwAWT/readme
+</code></pre>
+<p>You should see something like this:</p>
+<pre><code class="lang-sh">Hello and Welcome to IPFS!
+
+██╗██████╗ ███████╗███████╗
+██║██╔══██╗██╔════╝██╔════╝
+██║██████╔╝█████╗  ███████╗
+██║██╔═══╝ ██╔══╝  ╚════██║
+██║██║     ██║     ███████║
+╚═╝╚═╝     ╚═╝     ╚══════╝
+
+If you&#39;re seeing this, you have successfully installed
+IPFS and are now interfacing with the ipfs merkledag!
+
+ -------------------------------------------------------
+| Warning:                                              |
+|   This is alpha software. use at your own discretion! |
+|   Much is missing or lacking polish. There are bugs.  |
+|   Not yet secure. Read the security notes for more.   |
+ -------------------------------------------------------
+
+Check out some of the other files in this directory:
+
+  ./about
+  ./help
+  ./quick-start     &lt;-- usage examples
+  ./readme          &lt;-- this file
+  ./security-notes
+</code></pre>
+<p>You can explore other objects in there. In particular, check out <code>quick-start</code>:</p>
+<pre><code class="lang-sh">ipfs cat /ipfs/QmPXME1oRtoT627YKaDPDQ3PwA8tdP9rWuAAweLzqSwAWT/quick-start
+</code></pre>
+<p>Which will walk you through several interesting examples.</p>
+<h2 id="going-online">Going Online</h2>
+<p>Once you&#39;re ready to take things online, run the daemon in another terminal:</p>
+<pre><code class="lang-sh">&gt; ipfs daemon
+Initializing daemon...
+API server listening on /ip4/127.0.0.1/tcp/5001
+Gateway server listening on /ip4/127.0.0.1/tcp/8080
+</code></pre>
+<p>Wait for all three lines to appear.</p>
+<div class="alert alert-info">
+Make note of the tcp ports you get. if they are different, use yours in the commands below.
+</div>
+
+<p>Now, if you&#39;re connected to the network,
+you should be able to see the ipfs addresses of your peers:</p>
+<pre><code class="lang-sh">&gt; ipfs swarm peers
+/ip4/104.131.131.82/tcp/4001/ipfs/QmaCpDMGvV2BGHeYERUEnRQAwe3N8SzbUtfsmvsqQLuvuJ
+/ip4/104.236.151.122/tcp/4001/ipfs/QmSoLju6m7xTh3DuokvT3886QRYqxAzb1kShaanJgW36yx
+/ip4/134.121.64.93/tcp/1035/ipfs/QmWHyrPWQnsz1wxHR219ooJDYTvxJPyZuDUPSDpdsAovN5
+/ip4/178.62.8.190/tcp/4002/ipfs/QmdXzZ25cyzSF99csCQmmPZ1NTbWTe8qtKFaZKpZQPdTFB
+</code></pre>
+<p>These are a combination of <code>&lt;transport address&gt;/ipfs/&lt;hash-of-public-key&gt;</code>.</p>
+<p>Now, you should be able to get objects from the network. Try:</p>
+<pre><code>ipfs cat /ipfs/QmW2WQi7j6c7UgJTarActp7tDNikE4B2qXtFCfLPdsgaTQ/cat.jpg &gt;cat.jpg
+open cat.jpg
+</code></pre><p>And, you should be able to give the network objects. Try adding one, and then
+viewing it in your favorite browser:</p>
+<pre><code>&gt; hash=`echo &quot;I &lt;3 IPFS -$(whoami)&quot; | ipfs add -q`
+&gt; curl &quot;http://gateway.ipfs.io/ipfs/$hash&quot;
+I &lt;3 IPFS -&lt;your username&gt;
+</code></pre><p>Cool, huh? The gateway served a file <em>from your computer</em>. The gateway queried
+the DHT, found your machine, requested the file, your machine sent it to the
+gateway, and the gateway sent it to your browser.</p>
+<div class="alert alert-warning">
+Note: depending on the state of the network, the <code>curl</code> may take a while. The public gateways may be overloaded or having a hard time reaching you.
+</div>
+
+<p>You can also check it out at your own local gateway:</p>
+<pre><code>&gt; curl &quot;http://127.0.0.1:8080/ipfs/$hash&quot;
+I &lt;3 IPFS -&lt;your username&gt;
+</code></pre><p>By default, your gateway is not exposed to the world, it only works locally.</p>
+<h2 id="fancy-web-console">Fancy Web Console</h2>
+<p>We also have a web console you can use to check the state of your node.
+On your favorite web browser, go to:</p>
+<blockquote>
+<p><a href="http://localhost:5001/webui">http://localhost:5001/webui</a></p>
+</blockquote>
+<p>This should bring up a console like this:</p>
+<p><img src="media/webui-connection.png" alt="Web console connection view"></p>
+<p>Now, you&#39;re ready:</p>
+<p><a class="btn btn-success btn-lg" href="docs/examples" role="button">
+  Onward to more Examples &nbsp;&nbsp;<i class="fa fa-arrow-right"></i>
+</a></p>
+
+</div>
+
+    
+    </div>
+  </div>
+
+  <!-- footer -->
+<div class="row">
+  <div class="ipw-footer col-xs-12">
+    <div class="row"> <!-- footer-nav -->
+      <hr class="ipw-sectioner" />
+      <div class="col-sm-3 ipw-logo">
+      </div>
+      <div class="col-sm-6 ipw-nav">
+        <div class="row">
+          <div class="col-xs-4">
+            <div class="ipw-nav-col ipw-centered-left">
+              <h5>IPN</h5>
+              <a href="//ipn.io">About</a><br />
+              <a href="//ipn.io/contact">Contact</a><br />
+              <a href="//ipn.io/join" style="font-weight: bold;">Join</a><br />
+              <!-- <a href="//ipn.io/legal">Legal</a><br /> -->
+            </div>
+          </div>
+          <div class="col-xs-4">
+            <div class="ipw-nav-col ipw-centered-left">
+              <h5>IPFS</h5>
+              <a href="//ipfs.io">About</a><br />
+              <a href="//ipfs.io/docs/install">Install</a><br />
+              <a href="//ipfs.io/docs">Docs</a><br />
+              <a href="//ipfs.io/docs/#code">Code</a><br />
+              <a href="//ipfs.io/docs/#community">Community</a><br />
+              <!-- <a href="//ipfs.io/ecosystem">Ecosystem</a><br /> -->
+              <!-- <a href="//ipfs.io/roadmap">Roadmap</a><br /> -->
+              <a href="//ipfs.io/blog">Blog</a><br />
+            </div>
+          </div>
+          <div class="col-xs-4">
+            <div class="ipw-nav-col ipw-centered-left">
+              <h5>Filecoin</h5>
+              <a href="//filecoin.io">About</a><br />
+              <a href="//filecoin.io/filecoin.pdf">Paper</a><br />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="center-col ipw-social-media">
+          <a href="https://www.facebook.com/sharer/sharer.php?u=http://ipfs.io" target="_blank"><i class="fa fa-facebook" tooltip="like us on facebook"></i></a>
+          <a href="http://twitter.com/share?text=IPFS, a new hypermedia distribution protocol&hashtags=ipfs&url=http://ipfs.io" target="_blank"><i class="fa fa-twitter" tooltip="tweet us on twitter"></i></a>
+          <a href="https://plus.google.com/share?url=http://ipfs.io" target="_blank"><i class="fa fa-google-plus" tooltip="post about us on g+" style="font-weight:bold;"></i></a>
+        </div>
+      </div>
+    </div> <!-- footer-nav -->
+
+    <!-- copyright -->
+    <div class="row">
+      <hr class="ipw-sectioner" style="margin-bottom: 15px;" />
+      <div class="col-xs-12">
+        <div class="ipw-copyright">
+          &copy; Interplanetary Networks, Inc. |
+
+<!--           <a href="//ipn.io/legal/privacy">Privacy</a> |
+          <a href="//ipn.io/legal/tos">Terms of Service</a> |
+ -->
+          Except as <a href="//ipn.io/legal/policies">noted</a>, content licensed <a href="http://creativecommons.org/licenses/by/3.0/">CC-BY 3.0</a>.
+        </div>
+      </div>
+    </div>
+
+  </div> <!-- footer -->
+</div> <!-- footer row -->
+
+
+  </div> <!-- ipw-page -->
+</div> <!-- container -->
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-52930282-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+</body>
+</html>
