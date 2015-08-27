@@ -69,7 +69,16 @@ Then run:
 go get -u github.com/ipfs/go-ipfs/cmd/ipfs
 ```
 
-This will download ipfs and its dependencies, and compile `ipfs`. Test it out:
+This will download ipfs and its dependencies, and compile `ipfs`.
+
+> Note: If you're new to Go, you'll need to do a few things to make sure you setup your `PATH` and your `GOPATH` (the location Go looks for libraries):
+> - Create a folder. e.g. `mkdir ~/go`
+> - Add the following to your shell config file (`.bashrc`, `.profile`, etc.)
+>   - `export GOPATH=$HOME/go;`
+>   - `export PATH="$GOPATH/bin:$PATH:";`
+>   - `export PATH="$PATH:/usr/local/opt/go/libexec/bin";`
+
+Test it out:
 
 ```
 > ipfs version
