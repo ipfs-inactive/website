@@ -6,11 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
 
-    {% if baseurl %}
-    <base href="{{ baseurl }}" />
-    {% endif %}
-
-    <link rel="icon" href="./styles/img/ipfs-logo-512-ice.png" type="image/png" />
+    <link rel="icon" href="{{ baseurl }}/styles/img/ipfs-logo-512-ice.png" type="image/png" />
 
     <title>{{ title }}</title>
 
@@ -18,19 +14,19 @@
     {% endblock %}
 
     <!-- Bootstrap core CSS -->
-    <link href="./styles/bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <link href="{{ baseurl }}/styles/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 
     <!-- font-awesome -->
-    <link href="./styles/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="{{ baseurl }}/styles/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
 
     <!-- Bootstrap core CSS -->
-    <link href="./styles/style.css" rel="stylesheet" />
+    <link href="{{ baseurl }}/styles/style.css" rel="stylesheet" />
 
-    <script type="text/javascript" src="./styles/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="{{ baseurl }}/styles/jquery/jquery.min.js"></script>
 
     <!-- site specific css -->
     <!--{% if site %}-->
-      <link href="./styles/{{site}}.css" rel="stylesheet" />
+      <link href="{{ baseurl }}/styles/{{site}}.css" rel="stylesheet" />
     <!--{% endif %}-->
 
 
