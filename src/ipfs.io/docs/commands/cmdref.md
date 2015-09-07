@@ -521,9 +521,9 @@ DESCRIPTION:
     
     To view your diag output, 'ipfs add' the d3 vis output, and
     open the following link:
-    
-    	http://gateway.ipfs.io/ipfs/QmbesKpGyQGd5jtJFUGEB1ByPjNFpukhnKZDnkfxUiKn38/chord#<your hash>
-    
+
+    	https//ipfs.io/ipfs/QmbesKpGyQGd5jtJFUGEB1ByPjNFpukhnKZDnkfxUiKn38/chord#<your hash>
+
     The dot format can be fed into graphviz and other programs
     that consume the dot format to generate graphs of the network.
 ```
