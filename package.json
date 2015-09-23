@@ -12,11 +12,12 @@
     "metalsmith-partial": "^0.1.0",
     "metalsmith-permalinks": "^0.4.0",
     "metalsmith-static": "0.0.5",
+    "metalsmith-templates": "~0.6.1",
     "nunjucks": "^1.3.4",
-    "nunjucks-markdown": "^1.0.0",
-    "metalsmith-templates": "~0.6.1"
+    "nunjucks-markdown": "^1.0.0"
   },
   "devDependencies": {
+    "dnslink-deploy": "^1.0.1",
     "metalsmith-serve": "0.0.3",
     "metalsmith-watch": "^0.2.0"
   }
