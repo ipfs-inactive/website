@@ -103,11 +103,13 @@ Once you're ready to take things online, run the daemon in another terminal:
 ```sh
 > ipfs daemon
 Initializing daemon...
+Swarm listening on /ip4/10.11.12.13/tcp/4001
+Swarm listening on /ip4/127.0.0.1/tcp/4001
+Swarm listening on /ip6/::1/tcp/4001
 API server listening on /ip4/127.0.0.1/tcp/5001
-Gateway server listening on /ip4/127.0.0.1/tcp/8080
+Gateway (readonly) server listening on /ip4/127.0.0.1/tcp/8080
+Daemon is ready
 ```
-
-Wait for all three lines to appear.
 
 <div class="alert alert-info">
 Make note of the tcp ports you get. if they are different, use yours in the commands below.
