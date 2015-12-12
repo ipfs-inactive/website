@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>ipfs blog</title>
+
+<link rel="stylesheet" href="../static/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="../static/blog-style.css">
+<link rel="stylesheet" href="../static/highlight/github-gist.css">
+<link rel="alternate" type="application/rss+xml" href="../rss.xml">
+
+<script src="../static/highlight/highlight.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+
+<div class="container" id="content">
+<div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+
+<nav class="navbar">
+  <div class="navbar-header">
+    <p class="navbar-text">
+    / <a href="http://ipfs.io">ipfs</a>
+    / <a href="..">blog</a>
+    
+     / <a href="./">1-run-ipfs-on-docker</a>
+    
+    </p>
+  </div>
+
+  <div class="nav navbar-nav navbar-right">
+    <p class="navbar-text">
+      <a href="https://github.com/ipfs/blog/">source</a>
+    </p>
+  </div>
+</nav>
+
+
+<div class="post">
+    <h1 id="run-ipfs-in-a-docker-container"><a class="heading-anchor" href="#run-ipfs-in-a-docker-container"><span></span></a>Run IPFS in a Docker container</h1>
+    <p>by Kyle Drake on 2015-07-10</p>
+
+    <p>In recent years, Docker and a few other projects have redefined how we run server applications. In the future, we might be running containerized apps in our personal devices. At its core, this fast-paced improvement is a combination of good interfaces to standardize how to do things, and great tooling to make using containers easy.</p>
+<p>The IPFS Project has many things planned for the world of containers. The most interesting is using IPFS to distribute containers hyper efficiently across data-centers and the internet. We will be discussing many of these things in upcoming posts, but first things first. This post is a quick guide for running an IPFS node directly within Docker.</p>
+<p>The IPFS team has provided an <a href="https://registry.hub.docker.com/u/jbenet/go-ipfs/">IPFS Docker image</a>, which is syncronized with the latest commits to <a href="https://github.com/ipfs/go-ipfs">go-ipfs</a>. It only takes a few commands to try it out!</p>
+<pre><code class="lang-sh">&gt; mkdir /tmp/ipfs-docker-staging
+&gt; mkdir /tmp/ipfs-docker-data
+&gt; docker run -d --name ipfs-node \
+  -v /tmp/ipfs-docker-staging:/export -v /tmp/ipfs-docker-data:/data/ipfs \
+  -p 8080:8080 -p 4001:4001 -p 127.0.0.1:5001:5001 \
+  jbenet/go-ipfs:latest
+faa8f714398c7a1a5a29adc2aed01857b41444ed53ec11863a3136ad37c8064c
+</code></pre>
+<p>Port <code>8080</code> is the HTTP Gateway, which allows you to query ipfs data with your browser (<a href="http://gateway.ipfs.io/ipfs/QmVyS3iAy7mvDA2HqQWm2aqZDcGDH3bCRLFkEutfBWNBqN/">see this example</a>), port <code>4001</code> is what swarm port IPFS uses to communicate with other nodes, and port <code>5001</code> is used for the local API. We bind <code>5001</code> only on <code>127.0.0.1</code> because it should not be exposed to the outside world. The <code>faa8f7143...</code> is the docker container id.</p>
+<p>We&apos;ve mounted a data and staging volume. The <code>data</code> volume is used to store the IPFS local repo (config and database), and <code>staging</code> is a directory you can use for staging files for command line usage (such as <code>ipfs add</code>). If you&apos;re only using the API, you can omit the staging directory volume. And of course, feel free to put those directories somewhere other than <code>/tmp</code>.</p>
+<p>Now what? Your node is running. You can issue commands directly to the containerized ipfs with <code>docker exec &lt;container-id&gt; &lt;ipfs-cmd&gt;</code>. For example, you can try <code>ipfs swarm peers</code> to see who you are connected to:</p>
+<pre><code class="lang-sh"># let&apos;s set $cid = &lt;container-id&gt; for easy access
+&gt; cid=faa8f714398c7a1a5a29adc2aed01857b41444ed53ec11863a3136ad37c8064c
+&gt; ipfs exec $cid ipfs swarm peers
+/ip4/104.236.179.241/tcp/4001/ipfs/QmSoLpPVmHKQ4XTPdz8tjDFgdeRFkpV8JgYq8JVJ69RrZm
+/ip4/128.199.219.111/tcp/4001/ipfs/QmSoLSafTMBsPKadTEgaXctDQVcqN88CNLHXMkTNwMKPnu
+/ip4/162.243.248.213/tcp/4001/ipfs/QmSoLueR4xBeUbY9WZ9xGUUxunbKWcrNFTDAadQJmocnWm
+/ip4/178.62.61.185/tcp/4001/ipfs/QmSoLMeWqB7YGVLJN3pNLQpmmEk35v6wYtsMGLzSr5QBU3
+</code></pre>
+<p>And of course, you can <code>add</code> or <code>cat</code> content as usual:</p>
+<pre><code class="lang-sh">&gt; echo &quot;hello from dockerized ipfs&quot; &gt;/tmp/ipfs-docker-staging/hello
+&gt; docker exec $cid ipfs add /export/hello
+added QmcDge1SrsTBU8b9PBGTGYguNRnm84Kvg8axfGURxqZpR1 /export/hello
+&gt; docker exec $cid ipfs cat /ipfs/QmSvCqazpuuib8qyRyddyFemLc2qmRukLLy8YfkdRPEXoQ
+hello there!
+</code></pre>
+<p>Your dockerized IPFS is now also running a Gateway at <code>http://&lt;ip-address-of-the-computer&gt;:8080</code>. You can try it out with <code>curl</code>, or with your browser:</p>
+<pre><code class="lang-sh">&gt; curl http://localhost:8080/ipfs/QmcDge1SrsTBU8b9PBGTGYguNRnm84Kvg8axfGURxqZpR1
+hello from dockerized ipfs
+</code></pre>
+<p><a href="http://kuberneteslaunch.com">Kubernetes 1.0</a> comes out next week, so after that, we&apos;ll try using it to build a cluster of IPFS nodes that can store any kind of data and be able to retreive it from any other IPFS node. Not just with IPFS nodes in your cluster, but with everyone!</p>
+<p><iframe src="./ascii" style="width: 737px; height: 509px; overflow: hidden;" scrolling="no"></iframe></p>
+<p class="powered">asciicast powered by <a href="https://asciinema.org/" target="_top">asciinema</a></p>
+
+</div>
+
+
+</div>
+</div> <!-- container / content -->
+</body>
+</html>

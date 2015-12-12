@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>ipfs blog</title>
+
+<link rel="stylesheet" href="../static/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="../static/blog-style.css">
+<link rel="stylesheet" href="../static/highlight/github-gist.css">
+<link rel="alternate" type="application/rss+xml" href="../rss.xml">
+
+<script src="../static/highlight/highlight.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+
+<div class="container" id="content">
+<div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+
+<nav class="navbar">
+  <div class="navbar-header">
+    <p class="navbar-text">
+    / <a href="http://ipfs.io">ipfs</a>
+    / <a href="..">blog</a>
+    
+     / <a href="./">4-registry-mirror</a>
+    
+    </p>
+  </div>
+
+  <div class="nav navbar-nav navbar-right">
+    <p class="navbar-text">
+      <a href="https://github.com/ipfs/blog/">source</a>
+    </p>
+  </div>
+</nav>
+
+
+<div class="post">
+    <h1 id="stellar-module-management---install-your-nodejs-modules-using-ipfs"><a class="heading-anchor" href="#stellar-module-management---install-your-nodejs-modules-using-ipfs"><span></span></a>Stellar Module Management - Install your Node.js modules using IPFS</h1>
+    <p>by David Dias on 2015-12-07</p>
+
+    <p><img src="img/node-interactive-logo.png" alt=""></p>
+<p>Node.js Interactive, the first Node.js conference organized by the Linux Foundation, happened on Dec 8-9 of 2015. There were hundreds of participants, and dozens of really amazing talks divided in 3 specific tracks: backend, frontend and IoT.</p>
+<p>I was fortunate to attend and present a project we&apos;ve been developing at <a href="https://ipn.io">Protocol Labs</a>, that builds on on top of <a href="https://ipfs.io">IPFS, the InterPlanetary FileSystem</a>.</p>
+<p>You can learn about that project in this blog post, check out the <a href="http://www.slideshare.net/DavidDias11/nodejs-interactive">talk slides</a> or wait for the video recording of the talk. I will update this blog post when that happens.</p>
+<h2 id="enter-registry-mirror"><a class="heading-anchor" href="#enter-registry-mirror"><span></span></a>Enter registry-mirror</h2>
+<p><img src="img/enter-registry-mirror.png" alt="">
+<a href="http://ipn.io"><img src="https://img.shields.io/badge/made%20by-Protocol%20Labs-blue.svg?style=flat-square" alt=""></a> <a href="http://ipfs.io/"><img src="https://img.shields.io/badge/project-IPFS-blue.svg?style=flat-square" alt=""></a> <a href="http://webchat.freenode.net/?channels=%23ipfs"><img src="https://img.shields.io/badge/freenode-%23ipfs-blue.svg?style=flat-square" alt=""></a></p>
+<p><code>registry-mirror</code> enables distributed discovery of npm modules by fetching and caching the latest state of npm through IPNS, the InterPlanetary Naming System. With this state, a node in the network is capable of querying IPFS network for an npm module&apos;s cryptographic hash, fetching it from any peer that has it available.</p>
+<p><code>registry-mirror</code> is open source, MIT licensed and available at <a href="https://github.com/diasdavid/registry-mirror">github.com/diasdavid/registry-mirror</a>.</p>
+<h2 id="getting-started"><a class="heading-anchor" href="#getting-started"><span></span></a>Getting started</h2>
+<p>In order to get started, you must first be sure that you are running IPFS 0.4.0. IPFS 0.4.0 is not yet released, but you can already use it by compiling from source or downloading the pre-built binary.</p>
+<h4 id="compiling-from-source"><a class="heading-anchor" href="#compiling-from-source"><span></span></a>Compiling from source</h4>
+<p>You can find a tutorial on how to compile and install IPFS from source at <a href="https://github.com/ipfs/go-ipfs#build-from-source">https://github.com/ipfs/go-ipfs#build-from-source</a>. Just make sure to change to the <code>dev0.4.0</code> branch, as 0.4.0 isn&apos;t released yet.</p>
+<p>Please make sure you have go 1.5.2 or above installed.</p>
+<h4 id="downloading-pre-built-binary"><a class="heading-anchor" href="#downloading-pre-built-binary"><span></span></a>Downloading pre-built Binary</h4>
+<p>Download the pre-built binary for your OS and Arch at <a href="https://gobuilder.me/github.com/ipfs/go-ipfs/cmd/ipfs?branch=v0.4.0-dev">gobuilder</a>.</p>
+<h4 id="installing-and-running-registry-mirror"><a class="heading-anchor" href="#installing-and-running-registry-mirror"><span></span></a>Installing and running registry-mirror</h4>
+<p>Once you have IPFS 0.4.0 available, install registry-mirror by running the following command (you should have Node.js 4 and npm 2 or above available):</p>
+<pre><code class="lang-bash">$ npm i registry-mirror -g
+# ...
+</code></pre>
+<p>Then start your IPFS daemon, run:</p>
+<pre><code class="lang-bash">$ ipfs daemon
+Initializing daemon...
+Swarm listening on /ip4/127.0.0.1/tcp/4001
+Swarm listening on /ip4/172.19.248.69/tcp/4001
+Swarm listening on /ip6/::1/tcp/4001
+API server listening on /ip4/127.0.0.1/tcp/5001
+Gateway (readonly) server listening on /ip4/127.0.0.1/tcp/8080
+Daemon is ready
+</code></pre>
+<p>After, run registry-mirror daemon with the <code>--ipfs</code> option:</p>
+<pre><code class="lang-bash">$ registry-mirror daemon --ipfs --port=9595
+IPFS mode ON
+registry-mirror [info] output dir: /npm-registry/
+registry-mirror [info] listening:127.0.0.1:9595
+registry-mirror [info] Updated /npm-registry to: /ipfs/QmSjG9fadu4mPdtRsQYtXhwwCBouFEPiYHtVf8f4iH6vwj
+</code></pre>
+<p>Now, to install a module using IPFS, you only need to set this local registry when running an <code>npm install</code>. This can be done through <a href="https://docs.npmjs.com/cli/config">config</a> or a command line argument:</p>
+<pre><code class="lang-bash">$ npm i bignumber --registry=http://localhost:9595
+npm http request GET http://localhost:9595/bignumber
+npm http 200 http://localhost:9595/bignumber
+npm http fetch GET http://localhost:9595/bignumber/-/bignumber-1.1.0.tgz
+npm http fetch 200 http://localhost:9595/bignumber/-/bignumber-1.1.0.tgz
+/Users/david/Documents/code/ipfs/ip-npm/node-interactive
+&#x2514;&#x2500;&#x2500; bignumber@1.1.0
+</code></pre>
+<h2 id="features"><a class="heading-anchor" href="#features"><span></span></a>Features</h2>
+<p><code>registry-mirror</code> itself is quite a simple application, as most of the heavy lifting is done by <a href="https://ipfs.io">IPFS</a>. IPFS&apos;s distributed nature affords a set of really nice features as a transport layer that <code>registry-mirror</code> leverages to create its service.</p>
+<h4 id="find-where-the-module-lives-without-having-to-hit-the-backbone"><a class="heading-anchor" href="#find-where-the-module-lives-without-having-to-hit-the-backbone"><span></span></a>Find where the module lives without having to hit the backbone</h4>
+<p>With <code>registry-mirror</code>, a registry becomes a curated list of hashes. While the modules live in the network, as soon as <code>registry-mirror</code> caches this list locally (which it gets from the IPFS network), it has a list of the hashes of the modules that a user might need in the future. With this list, a user doesn&apos;t have to know of the whereabouts of a module until it needs to request it from the network.</p>
+<p>This list is fetched and kept up to date through IPNS. This ensures secure distribution, as IPNS records and validated with the publisher&apos;s priate key.</p>
+<h4 id="work-offline-disconnected"><a class="heading-anchor" href="#work-offline-disconnected"><span></span></a>Work offline/disconnected</h4>
+<p>Just like git, <code>registry-mirror</code> is able to work offline and/or in a disconnected scenario. As long as the module you are looking for exists in the network you are currently in, IPFS would be able to find it through its Peer and Content Routing (e.g. with a DHT).</p>
+<h4 id="enable-several-registries-to-coexist"><a class="heading-anchor" href="#enable-several-registries-to-coexist"><span></span></a>Enable several registries to coexist</h4>
+<p>Once the notion of a registry becomes a curated list of modules available, enabling more than one registry to exist becomes simpler. This scenario can be especially interesting for private networks such as the ones within companies and organizations that don&apos;t want their modules to be publicly known and available.</p>
+<h4 id="run-only-what-you-were-looking-for"><a class="heading-anchor" href="#run-only-what-you-were-looking-for"><span></span></a>Run only what you were looking for</h4>
+<p>Just like git, IPFS verifies the content received using cryptographic hashing, making sure it is exactly what was requested -- you can always be sure that what you are running is what you asked for.</p>
+<h4 id="faster"><a class="heading-anchor" href="#faster"><span></span></a>Faster</h4>
+<p>By leveraging local and network caches efficiently, downloading your dependencies can be much faster as it avoids going to npm&apos;s servers or CDN all the time. This can be crucial in high latency networks or more remote areas.</p>
+<h2 id="demo-video"><a class="heading-anchor" href="#demo-video"><span></span></a>Demo Video</h2>
+<p><iframe src="https://player.vimeo.com/video/147968322" width="500" height="281" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen></iframe> </p><p><a href="https://vimeo.com/147968322">registry-mirror demo</a> from <a href="https://vimeo.com/daviddias">David Dias</a> on <a href="https://vimeo.com">Vimeo</a>.</p><p></p>
+<h2 id="a-special-thanks"><a class="heading-anchor" href="#a-special-thanks"><span></span></a>A special thanks</h2>
+<p>A very big thank you goes to <a href="https://github.com/bengl">Bryan English</a> and everyone that was involved in the <a href="https://github.com/ipfs/notes/issues/2">discussion</a> and contributed to make this possible.</p>
+
+</div>
+
+
+</div>
+</div> <!-- container / content -->
+</body>
+</html>
