@@ -36,4 +36,8 @@ update-blog:
 	@rm -rf blog
 	cp -r ../blog/build blog
 
+# this assumes awesome-ipfs is a sibling
+update-awesome:
+	curl -s https://raw.githubusercontent.com/ipfs/awesome-ipfs/master/README.md > src/ipfs.io/docs/awesome-ipfs/readme.md
+
 .PHONY: build clean publish publish-to-github

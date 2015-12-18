@@ -1,0 +1,16 @@
+---
+baseurl: ../..
+site: ipfs
+template: tmpl/layouts/ipfs.html
+title: Awesome-IPFS
+---
+{% set pgns = 'awesome' %}
+{% include "tmpl/partials/pagenav.html" %}
+
+<div class="col-lg-6 col-lg-offset-3 col-sm-8 col-sm-offset-2" style="font-family: Oxygen;">
+{% markdown %}
+
+{% include "src/ipfs.io/docs/awesome-ipfs/readme.md" %}
+
+{% endmarkdown %}
+</div>
