@@ -15,12 +15,12 @@ p {
 }
 </style>
 <div class="col-lg-6 col-lg-offset-3 col-sm-8 col-sm-offset-2" style="font-family: Oxygen; line-height: 1.7">
-{% markdown %}
+<div class="markdown">
 
-# API Reference
+# <span class="i18n">API Reference</span>
 
-[Every command](../commands/) usable from the cli is also available through
-the HTTP API. For example:
+<span class="i18n">[Every command](../commands/) usable from the cli is also available through
+the HTTP API. For example:</span>
 
 ```sh
 > ipfs swarm peers
@@ -38,10 +38,10 @@ the HTTP API. For example:
 }
 ```
 
-## Flags
+## <span class="i18n">Flags</span>
 
-Flags are added through the query string. For example, the `--encoding=json`
-flag is the `&encoding=json` query parameter below:
+<span class="i18n">Flags are added through the query string. For example, the `--encoding=json`
+flag is the `&encoding=json` query parameter below:</span>
 
 ```
 > curl "http://127.0.0.1:5001/api/v0/object/get?arg=QmaaqrHyAQm7gALkRW8DcfGX3u8q9rWKnxEMmf7m9z515w&encoding=json"
@@ -62,9 +62,9 @@ flag is the `&encoding=json` query parameter below:
 }
 ```
 
-## Arguments
+## <span class="i18n">Arguments</span>
 
-Arguments are added through the special query string key `arg`:
+<span class="i18n">Arguments are added through the special query string key `arg`:</span>
 
 ```
 > curl "http://127.0.0.1:5001/api/v0/swarm/disconnect?arg=/ip4/54.93.113.247/tcp/48131/ipfs/QmUDS3nsBD1X4XK5Jo836fed7SErTyTuQzRqWaiQAyBYMP"
@@ -75,7 +75,7 @@ Arguments are added through the special query string key `arg`:
 }
 ```
 
-Note that it can be used multiple times to signify multiple arguments:
+<span class="i18n">Note that it can be used multiple times to signify multiple arguments:</span>
 
 ```
 > curl "http://127.0.0.1:5001/api/v0/swarm/disconnect?arg=/ip4/54.93.113.247/tcp/48131/ipfs/QmUDS3nsBD1X4XK5Jo836fed7SErTyTuQzRqWaiQAyBYMP&arg=/ip4/188.166.8.195/tcp/4001/ipfs/QmNU1Vpryj5hfSmybSYHnS497ttgy9aNJ3T2B8wY2uMso4"
@@ -87,12 +87,12 @@ Note that it can be used multiple times to signify multiple arguments:
 }
 ```
 
-## TODO <i class="fa fa-warning"></i>
+## <span class="i18n">TODO</span> <i class="fa fa-warning"></i>
 
-This page will contain a listing of all commands and query examples.
-If you're seeing this and you want the api reference faster, let us know or help us out here:
+<span class="i18n">This page will contain a listing of all commands and query examples.
+If you're seeing this and you want the api reference faster, let us know or help us out here:</span>
 
 - [github.com/ipfs/api/issues](https://github.com/ipfs/api/issues)
 
-{% endmarkdown %}
+</div>
 </div>

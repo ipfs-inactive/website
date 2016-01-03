@@ -22,7 +22,14 @@
     <!-- Bootstrap core CSS -->
     <link href="{{ baseurl }}/styles/style.css" rel="stylesheet" />
 
+    <script type="text/javascript">
+      var BaseURL = "{{ baseurl }}";
+    </script>
+
     <script type="text/javascript" src="{{ baseurl }}/styles/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="{{ baseurl }}/styles/js/i18next.min.js"></script>
+    <script type="text/javascript" src="{{ baseurl }}/styles/js/marked.min.js"></script>
+    <script type="text/javascript" src="{{ baseurl }}/styles/js/translate.js"></script>
 
     <!-- site specific css -->
     <!--{% if site %}-->
@@ -65,7 +72,7 @@
           {% block splash %}
             <div style="padding: 100px 0px; height: 200px;">
               <div class="ipw-tagline">
-                {{ tagline }}
+                <span class="i18n">{{ tagline }}</span>
               </div>
             </div>
           {% endblock %}

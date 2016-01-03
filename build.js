@@ -9,16 +9,6 @@ var serve = require('metalsmith-serve')
 var watch = require('metalsmith-watch')
 
 var nunjucks = require('nunjucks')
-var njmd = require('nunjucks-markdown')
-var marked = require('marked')
-
-marked.setOptions({
-  gfm: true,
-  tables: true,
-  smartLists: true,
-})
-
-njmd.register(nunjucks.configure(), marked);
 
 Metalsmith(__dirname)
   .use(debug())
@@ -34,6 +24,7 @@ Metalsmith(__dirname)
   .use(msstatic({"src": "styles/", "dest": "ipfs.io/styles"}))
   .use(msstatic({"src": "media/", "dest": "ipfs.io/media"}))
   .use(msstatic({"src": "blog/", "dest": "ipfs.io/blog"}))
+  .use(msstatic({"src": "locale/", "dest": "ipfs.io/locale"}))
   .use(serve({
     "port": 8081,
     "verbose": true
