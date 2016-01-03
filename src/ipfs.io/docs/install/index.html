@@ -8,120 +8,127 @@ title: Install IPFS
 {% include "tmpl/partials/pagenav.html" %}
 
 <div class="col-lg-6 col-lg-offset-3 col-sm-8 col-sm-offset-2" style="font-family: Oxygen; line-height: 1.7">
-{% markdown %}
+<div class="markdown">
 
-# Install IPFS
+# <span class="i18n">Install IPFS</span>
 
-You can install the [Go IPFS implementation](https://github.com/ipfs/go-ipfs)
-from source or from prebuilt packages.
+<span class="i18n">You can install the [Go IPFS implementation](https://github.com/ipfs/go-ipfs)
+from source or from prebuilt packages.</span>
 
 
-## Prebuilt Packages
+## <span class="i18n">Prebuilt Packages</span>
 
-We use [gobuilder.me](https://gobuilder.me) to do automated builds.
+<span class="i18n">We use [gobuilder.me](https://gobuilder.me) to do automated builds.</span>
 
-Download a binary for your platform (more coming):
+<span class="i18n">Download a binary for your platform (more coming):</span>
 
 - <i class="fa fa-apple"></i> [Mac OS X](https://gobuilder.me/get/github.com/ipfs/go-ipfs/cmd/ipfs/ipfs_release_darwin-amd64.zip)
 - <i class="fa fa-linux"></i> [Linux x86](https://gobuilder.me/get/github.com/ipfs/go-ipfs/cmd/ipfs/ipfs_release_linux-386.zip)
 - <i class="fa fa-linux"></i> [Linux x86_64](https://gobuilder.me/get/github.com/ipfs/go-ipfs/cmd/ipfs/ipfs_release_linux-amd64.zip)
 - <i class="fa fa-linux"></i> [Linux ARM](https://gobuilder.me/get/github.com/ipfs/go-ipfs/cmd/ipfs/ipfs_release_linux-arm.zip)
-- [See all builds](https://gobuilder.me/github.com/ipfs/go-ipfs/cmd/ipfs?branch=release)
+- [<span class="i18n">See all builds</span>](https://gobuilder.me/github.com/ipfs/go-ipfs/cmd/ipfs?branch=release)
 
-Then, unzip the archive, and move `ipfs` somewhere in your `$PATH`:
+<span class="i18n">Then, unzip the archive, and move `ipfs` somewhere in your `$PATH`:</span>
 
 ```
 mv ipfs /usr/local/bin/ipfs
 ```
 
-Test it out:
+<span class="i18n">Test it out:</span>
 
 ```
 > ipfs version
 ipfs version 0.3.8
 ```
 
-That's it!
+<span class="i18n">That's it!</span>
 
 <a class="btn btn-success btn-lg" href="../getting-started" role="button">
-  Getting Started with IPFS &nbsp;&nbsp;<i class="fa fa-arrow-right"></i>
+  <span class="i18n">Getting Started with IPFS</span> &nbsp;&nbsp;<i class="fa fa-arrow-right"></i>
 </a>
 
 
-Note: if you're concerned about security, build from source, as either
+<span class="i18n">Note: if you're concerned about security, build from source, as either
 [gobuilder.me](https://gobuilder.me) or [github.com](https://github.com)
 could introduce vulnerabilites. We will be doing signed releases soon.
 [Post here](https://github.com/ipfs/go-ipfs/issues/957) if you'd like this
-sooner.
+sooner.</span>
 
 <br />
 
-## From Source
+## <span class="i18n">From Source</span>
 
-Dependencies:
+<span class="i18n">Dependencies:</span>
 
-- [Install Go 1.5](https://golang.org/doc/install) (to compile. [make sure it's 1.5](#check-go-version))
-- [Install Git](https://git-scm.com/) (to download dependencies)
-- *Optionally*, install [FUSE](#install-fuse) (for mounting / advanced use)
+- <span class="i18n">[Install Go 1.5](https://golang.org/doc/install) (to compile. [make sure it's 1.5](#check-go-version))</span>
+- <span class="i18n">[Install Git](https://git-scm.com/) (to download dependencies)</span>
+- <span class="i18n">*Optionally*, install [FUSE](#install-fuse) (for mounting / advanced use)</span>
 
-Then run:
+<span class="i18n">Then run:</span>
 
 ```sh
 go get -u github.com/ipfs/go-ipfs/cmd/ipfs
 ```
 
-This will download ipfs and its dependencies, and compile `ipfs`.
+<span class="i18n">This will download ipfs and its dependencies, and compile `ipfs`.</span>
 
-> Note: If you're new to Go, you'll need to do a few things to make sure you setup your `PATH` and your `GOPATH` (the location Go looks for libraries):
-> - Create a folder. e.g. `mkdir ~/go`
-> - Add the following to your shell config file (`.bashrc`, `.profile`, etc.)
->   - `export GOPATH=$HOME/go;`
->   - `export PATH="$GOPATH/bin:$PATH:";`
->   - `export PATH="$PATH:/usr/local/opt/go/libexec/bin";`
+<blockquote>
+  <span class="i18n">Note: If you're new to Go, you'll need to do a few things to make sure you setup your `PATH` and your `GOPATH` (the location Go looks for libraries):</span>
+  <ul>
+    <li><span class="i18n">Create a folder. e.g. `mkdir ~/go`</span></li>
+    <li>
+      <span class="i18n">Add the following to your shell config file</span> (`.bashrc`, `.profile`, <span class="i18n">etc.</span>)
+      <ul>
+        <li>`export GOPATH=$HOME/go;`</li>
+        <li>`export PATH="$GOPATH/bin:$PATH:";`</li>
+        <li>`export PATH="$PATH:/usr/local/opt/go/libexec/bin";`</li>
+      </ul>
+    </li>
+</blockquote>
 
-Test it out:
+<span class="i18n">Test it out:</span>
 
 ```
 > ipfs version
 ipfs version 0.3.8
 ```
 
-That's it!
+<span class="i18n">That's it!</span>
 
 <a class="btn btn-success btn-lg" href="../getting-started" role="button">
-  Getting Started with IPFS &nbsp;&nbsp;<i class="fa fa-arrow-right"></i>
+  <span class="i18n">Getting Started with IPFS</span> &nbsp;&nbsp;<i class="fa fa-arrow-right"></i>
 </a>
 
 <br />
 
 ---
 
-### Troubleshooting
+### <span class="i18n">Troubleshooting</span>
 
-#### Help!
+#### <span class="i18n">Help!</span>
 
-If you have any problems, come get live help at
-[#ipfs](../#community) or via [the mailing list](../#community).
+<span class="i18n">If you have any problems, come get live help at
+[#ipfs](../#community) or via [the mailing list](../#community).</span>
 
-#### Check Go Version
+#### <span class="i18n">Check Go Version</span>
 
-IPFS works with Go 1.5+.
+<span class="i18n">IPFS works with Go 1.5+.
 To check what go version you have installed, type `go version`.
-Here's what I get:
+Here's what I get:</span>
 
 ```sh
 > go version
 go version go1.5.1 darwin/amd64
 ```
 
-If you need to update, it is recommended to install from the
+<span class="i18n">If you need to update, it is recommended to install from the
 [canonical Go packages](https://golang.org/doc/install/).
-Package managers often contain out-of-date Go packages.
+Package managers often contain out-of-date Go packages.</span>
 
-#### Install FUSE
+#### <span class="i18n">Install FUSE</span>
 
-For more details on setting up FUSE (so that you can mount the filesystem), see [github.com/ipfs/go-ipfs/blob/master/docs/fuse.md](https://github.com/ipfs/go-ipfs/blob/master/docs/fuse.md)
+<span class="i18n">For more details on setting up FUSE (so that you can mount the filesystem), see [github.com/ipfs/go-ipfs/blob/master/docs/fuse.md](https://github.com/ipfs/go-ipfs/blob/master/docs/fuse.md)</span>
 
 
-{% endmarkdown %}
+</div>
 </div>
