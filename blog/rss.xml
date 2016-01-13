@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[IPFS Blog]]></title><description><![CDATA[IPFS Blog]]></description><link>http://ipfs.io/blog/</link><generator>metalsmith-feed</generator><lastBuildDate>Mon, 11 Jan 2016 19:55:52 GMT</lastBuildDate><atom:link href="http://ipfs.io/blog/rss.xml" rel="self" type="application/rss+xml"/><author><![CDATA[The IPFS Team]]></author><item><title><![CDATA[Hello Worlds]]></title><description><![CDATA[<!DOCTYPE html>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[IPFS Blog]]></title><description><![CDATA[IPFS Blog]]></description><link>http://ipfs.io/blog/</link><generator>metalsmith-feed</generator><lastBuildDate>Wed, 13 Jan 2016 21:50:35 GMT</lastBuildDate><atom:link href="http://ipfs.io/blog/rss.xml" rel="self" type="application/rss+xml"/><author><![CDATA[The IPFS Team]]></author><item><title><![CDATA[Hello Worlds]]></title><description><![CDATA[<!DOCTYPE html>
 <html>
 
 <head>
@@ -420,4 +420,96 @@ $ cat ipscend.json
 </div> <!-- container / content -->
 </body>
 </html>
-]]></description><link>http://ipfs.io/blog/4-ipfs-weekly-1</link><guid isPermaLink="true">http://ipfs.io/blog/4-ipfs-weekly-1</guid><dc:creator><![CDATA[Richard Littauer, Andrew Chin]]></dc:creator><pubDate>Mon, 11 Jan 2016 00:00:00 GMT</pubDate></item></channel></rss>
+]]></description><link>http://ipfs.io/blog/4-ipfs-weekly-1</link><guid isPermaLink="true">http://ipfs.io/blog/4-ipfs-weekly-1</guid><dc:creator><![CDATA[Richard Littauer, Andrew Chin]]></dc:creator><pubDate>Mon, 11 Jan 2016 00:00:00 GMT</pubDate></item><item><title><![CDATA[IPFS Weekly 2]]></title><description><![CDATA[<!DOCTYPE html>
+<html>
+
+<head>
+<title>ipfs blog</title>
+
+<link rel="stylesheet" href="../static/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="../static/blog-style.css">
+<link rel="stylesheet" href="../static/highlight/github-gist.css">
+<link rel="alternate" type="application/rss+xml" href="../rss.xml">
+
+<script src="../static/highlight/highlight.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+
+<div class="container" id="content">
+<div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+
+<nav class="navbar">
+  <div class="navbar-header">
+    <p class="navbar-text">
+    / <a href="http://ipfs.io">ipfs</a>
+    / <a href="..">blog</a>
+    
+     / <a href="./">5-ipfs-weekly-2</a>
+    
+    </p>
+  </div>
+
+  <div class="nav navbar-nav navbar-right">
+    <p class="navbar-text">
+      <a href="https://github.com/ipfs/blog/">source</a>
+    </p>
+  </div>
+</nav>
+
+
+<div class="post">
+    <h1 id="ipfs-weekly-2"><a class="heading-anchor" href="#ipfs-weekly-2"><span></span></a>IPFS Weekly 2</h1>
+    <p>by Richard Littauer, Andrew Chin on 2016-01-12</p>
+
+    <p><a href="//ipfs.io/">IPFS</a> is a new hypermedia distribution protocol, addressed by content and identities, aiming to make the web faster, safer, and more open. In these posts, we highlight some of the development that has happened in the past week. For anyone looking to get involved, follow the embedded hyperlinks, search the wealth of information on <a href="//github.com/ipfs">GitHub</a> or join us on <a href="//webchat.freenode.net/?channels=ipfs">IRC</a> (#ipfs on the Freenode network).</p>
+<p>Here are some of the highlights for the <a href="//github.com/ipfs/pm/issues/77">January 5th</a> Sprint:</p>
+<h2 id="updates"><a class="heading-anchor" href="#updates"><span></span></a>Updates</h2>
+<ul>
+<li><a href="//github.com/ipfs/specs"><strong>(specs)</strong></a> There was much debate in the <a href="https://github.com/ipfs/specs/pull/37">IPLD spec</a> about pathing notation. <a href="//github.com/mildred">@mildred</a> in particular did a lot of good work.</li>
+<li><a href="//github.com/ipfs/go-ipfs"><strong>(go-ipfs)</strong></a> The IPFS Docker image is now tested automatically on Travis, thanks to <a href="//github.com/ChristianKniep">@ChristianKniep</a>, <a href="//github.com/whyrusleeping">@whyrusleeping</a>, and <a href="//github.com/chriscool">@chriscool</a>. For more, see the <a href="//github.com/ipfs/go-ipfs/pull/2064">go-ipfs#2064</a> pull request.</li>
+<li><a href="//github.com/ipfs/js-ipfs"><strong>(js-ipfs)</strong></a> Now you can do <code>npm i -g js-ipfs</code> and use jsipfs (the javascript impl of IPFS) with bootstrap + id + version commands, fully compatible with the go-ipfs repo, thanks to <a href="//github.com/diasdavid">@diasdavid</a>!</li>
+<li><a href="//github.com/ipfs/project-repos"><strong>(project-repos)</strong></a> A very cool <a href="http://project-repos.ipfs.io/">organization-wide dashboard</a> that provides a status overview of all the IPFS repos was launched.  By <a href="//github.com/harlantwood">@harlantwood</a>.</li>
+<li><a href="//github.com/ipfs/community"><strong>(community)</strong></a> <a href="//github.com/RichardLitt">@RichardLitt</a> merged the pull request for <a href="//github.com/ipfs/community/blob/master/js-contribution-guidelines.md">JavaScript guidelines</a> for IPFS repos. This is a major step towards standard JavaScript repositories within IPFS.</li>
+<li><a href="//github.com/ipfs/community#meetups"><strong>(community)</strong></a> <a href="//github.com/NeoTeo">@NeoTeo</a>, <a href="//github.com/whyrusleeping">@whyrusleeping</a>, and <a href="//github.com/diasdavid">@diasdavid</a> hosted a small meetup in Copenhagen!  Eight people in total showed up for an intro to IPFS, a Q&amp;A session, and some good conversation!</li>
+</ul>
+<h2 id="work-in-progress"><a class="heading-anchor" href="#work-in-progress"><span></span></a>Work in Progress</h2>
+<ul>
+<li><a href="//github.com/distributions"><strong>(distributions)</strong></a> <a href="//github.com/Dignifiedquire">@Dignifiedquire</a> further developed the distributions page.  <a href="http://v04x.ipfs.io/ipfs/QmZyvWokPYGg6DrjE6o2V7qhThzZQZ8QCWqdd2U3S75HXC/index.html">Click here</a> for a preview!</li>
+<li><a href="//github.com/ipfs/go-ipfs"><strong>(go-ipfs)</strong></a> <a href="//github.com/lgierth">@lgierth</a> continued the work towards the dev040 migration.  Notably we have two new gateways to aid in the transition:   <a href="http://v04x.ipfs.io">http://v04x.ipfs.io</a> and <a href="http://v03x.ipfs.io">http://v03x.ipfs.io</a></li>
+<li><a href="//github.com/ipfs/archives/"><strong>(archives)</strong></a> <a href="//github.com/Dignifiedquire">@Dignifiedquire</a> has added to IPFS a dump of the Stackexchange archives!  Details are <a href="//github.com/ipfs/archives/issues/50">in the archives repo</a>. We are always looking for more help with archiving important datasets, so feel free to join us in the <a href="//github.com/ipfs/archives/">archives repo</a>!</li>
+</ul>
+<h2 id="contributors"><a class="heading-anchor" href="#contributors"><span></span></a>Contributors</h2>
+<p>Across the entire IPFS GitHub organization, the following people have committed code since January 4th. (We&apos;re autogenerating this list using <a href="//github.com/ipfs/weekly/blob/master/tools/get_commits.py">this tool</a>, so please let us know if your name isn&apos;t here.) In the future, we will also include people who comment, as they are also super important; bear with us while we develop that technology.</p>
+<ul>
+<li><a href="//github.com/chriscool">@chriscool</a> (Christian Couder)</li>
+<li><a href="//github.com/ChristianKniep">@ChristianKniep</a> (Christian Kniep)</li>
+<li><a href="//github.com/diasdavid">@diasdavid</a> (David Dias)</li>
+<li><a href="//github.com/Dignifiedquire">@Dignifiedquire</a> (Friedel Ziegelmayer)</li>
+<li><a href="//github.com/eminence">@eminence</a> (Andrew Chin)</li>
+<li><a href="//github.com/greenkeeperio-bot">@greenkeeperio-bot</a></li>
+<li><a href="//github.com/ianopolous">@ianopolous</a> (Ian Preston)</li>
+<li><a href="//github.com/jbenet">@jbenet</a> (Juan Benet)</li>
+<li><a href="//github.com/Kubuxu">@Kubuxu</a> (Jakub Sztandera)</li>
+<li><a href="//github.com/lgierth">@lgierth</a> (Lars Gierth)</li>
+<li><a href="//github.com/noffle">@noffle</a> (Stephen Whitmore)</li>
+<li><a href="//github.com/ralphtheninja">@ralphtheninja</a> (Lars-Magnus Skog)</li>
+<li><a href="//github.com/ReadmeCritic">@ReadmeCritic</a></li>
+<li><a href="//github.com/RichardLitt">@RichardLitt</a> (Richard Littauer)</li>
+<li><a href="//github.com/whyrusleeping">@whyrusleeping</a> (Jeromy Johnson)</li>
+<li><a href="//github.com/yuvallanger">@yuvallanger</a> (Yuval Langer)</li>
+</ul>
+<p>Thanks, and see you next week!  If you have cool things to share for the next weekly, drop us a line in the <a href="//github.com/ipfs/pm/issues/79">next weekly sprint issue</a>!</p>
+<ul>
+<li>Richard Littauer and Andrew Chin</li>
+</ul>
+<p><em>Submit feedback about this issue <a href="//github.com/ipfs/weekly/issues/10">here</a>, or send us <a href="//github.com/ipfs/weekly/issues/7">feedback about the IPFS Weekly in general</a>.</em></p>
+
+</div>
+
+
+</div>
+</div> <!-- container / content -->
+</body>
+</html>
+]]></description><link>http://ipfs.io/blog/5-ipfs-weekly-2</link><guid isPermaLink="true">http://ipfs.io/blog/5-ipfs-weekly-2</guid><dc:creator><![CDATA[Richard Littauer, Andrew Chin]]></dc:creator><pubDate>Wed, 13 Jan 2016 00:00:00 GMT</pubDate></item></channel></rss>
