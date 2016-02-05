@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>ipfs blog</title>
+
+<link rel="stylesheet" href="../static/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="../static/blog-style.css">
+<link rel="stylesheet" href="../static/highlight/github-gist.css">
+<link rel="alternate" type="application/rss+xml" href="../rss.xml">
+
+<script src="../static/highlight/highlight.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+
+<div class="container" id="content">
+<div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+
+<nav class="navbar">
+  <div class="navbar-header">
+    <p class="navbar-text">
+    / <a href="http://ipfs.io">ipfs</a>
+    / <a href="..">blog</a>
+    
+     / <a href="./">7-ipfs-weekly-4</a>
+    
+    </p>
+  </div>
+
+  <div class="nav navbar-nav navbar-right">
+    <p class="navbar-text">
+      <a href="https://github.com/ipfs/blog/">source</a>
+    </p>
+  </div>
+</nav>
+
+
+<div class="post">
+    <h1 id="ipfs-weekly-4"><a class="heading-anchor" href="#ipfs-weekly-4"><span></span></a>IPFS Weekly 4</h1>
+    <p>by Richard Littauer, Andrew Chin on 2016-02-05</p>
+
+    <p><a href="//ipfs.io/">IPFS</a> is a new hypermedia distribution protocol, addressed by content and identities, aiming to make the web faster, safer, and more open. In these posts, we highlight some of the development that has happened in the past week. For anyone looking to get involved, follow the embedded hyperlinks, search the wealth of information on <a href="//github.com/ipfs">GitHub</a> or join us on <a href="//webchat.freenode.net/?channels=ipfs">IRC</a> (#ipfs on the Freenode network).</p>
+<p>If you would like to get this update as an email, sign up for our <a href="//tinyletter.com/ipfsweekly">weekly newsletter</a>!</p>
+<p>Here are some of the highlights for the <a href="//github.com/ipfs/pm/issues/84">January 25th</a> sprint:</p>
+<h2 id="updates"><a class="heading-anchor" href="#updates"><span></span></a>Updates</h2>
+<ul>
+<li><a href="//github.com/ipfs/js-ipfs"><strong>js-ipfs</strong></a>: <a href="//github.com/diasdavid">@diasdavid</a> and <a href="//github.com/vijayee">@vijayee</a> created <a href="//github.com/vijayee/js-ipfs-merkle-dag">js-ipfs-merkle-dag</a> and <a href="//github.com/ipfs/js-ipfs-blocks">js-ipfs-blocks</a>, which will help IPFS deal with <a href="https://github.com/ipfs/specs">MerkleDAGs</a> and are extensible enough to allow others to build their own MerkleDAG structures. Also, js-ipfs is now able to import a file into the MerkleDAG, an important milestone. An architecture graph has been spec&apos;ed out <a href="https://github.com/ipfs/js-ipfs#ipfs-core-implementation-architecture">here</a> to help newcomers understand how js-ipfs works. Finally, lots of new issues and low-hanging fruit have been tagged for <a href="//github.com/ipfs/js-ipfs/issues">contributors to tackle</a>.
+<a href="https://github.com/dignifiedquire/idb-plus-blob-store"><strong>idb-plus-blob-store</strong></a>: The <a href="https://github.com/substack/idb-blob-store">substack/idb-blob-store</a> had issues regarding emitting the <code>finish</code> event on the <code>createWritableStream</code> result due to internal issues in streams and the way <code>.end</code> is handled. So <a href="//github.com/dignifiedquire">@dignifiedquire</a> wrote this module that fixes this and now allows us to test all parts of js-ipfs in the browser using IndexedDB as the storage.</li>
+<li><a href="//github.com/ipfs/go-ipfs"><strong>go-ipfs</strong></a>: Thanks to <a href="//github.com/Kubuxu">@Kubuxu</a>, dnslink was extended by dedicated subdomain (<code>_dnslink.</code>). This allows users to alias (using CNAME) their domain to gateway.ipfs.io while still being able to to set the dnslink to content they wish. Also, <a href="//github.com/whyrusleeping">@whyrusleeping</a> has <a href="https://github.com/ipfs/go-ipfs/pull/2256">an open PR</a> to pull libp2p out of go-ipfs and put it into a module on <a href="https://github.com/whyrusleeping/gx">gx</a>, the IPFS native package manager. This is part of a larger effort to whittle go-ipfs down into smaller, extensible modules. Finally, <a href="//github.com/whyrusleeping">@whyrusleeping</a> did a clean up of the go-ipfs pull requests, closing all pull requests or pinging their authors for updates as needed.</li>
+<li><a href="//github.com/ipfs/notes"><strong>notes</strong></a>: <a href="//github.com/noffle">@noffle</a> began a discussion about revamping the <code>ipfs mount</code> interface. Join in to voice your thoughts <a href="//github.com/ipfs/notes/issues/105">here</a>.</li>
+<li><a href="//github.com/ipfs/community"><strong>community</strong></a>: <a href="//github.com/diasdavid">@diasdavid</a> has written a <a href="https://github.com/ipfs/community/blob/master/captain.log.md">guide to writing captain.logs</a>, which are short gists written by maintainers about IPFS projects, their status, and how to help. We plan to have more of these in different projects.</li>
+</ul>
+<h2 id="community"><a class="heading-anchor" href="#community"><span></span></a>Community</h2>
+<ul>
+<li><a href="//github.com/ipfs/community/issues/103"><strong>Lisbon</strong></a>: <a href="//github.com/diasdavid">@diasdavid</a> hosted a Lisbon IPFS Sunday Hack Day this week. A few people came, and <a href="//github.com/xicombd">@xicombd</a> made <a href="https://chrome.google.com/webstore/detail/ipfs-station/kckhgoigikkadogfdiojcblegfhdnjei/related">this Chrome Extension</a>, which lets you access IPFS urls from your local IPFS daemon (<a href="https://github.com/xicombd/ipfs-chrome-station">source code</a>).</li>
+<li><a href="https://www.youtube.com/watch?v=dL9siwm03H4"><strong>Coffee Talks</strong></a>: <a href="//github.com/whyrusleeping">@whyrusleeping</a> has hosted another &quot;Coffee Talk&quot;, this time on <a href="https://github.com/whyrusleeping/gx">gx</a>, the IPFS package manager.</li>
+<li><a href="//github.com/ipfs/community/issues/102"><strong>NYC Meet-up</strong></a>: A NYC meet-up is planned for the end of February. Help us plan it and show your interest <a href="https://github.com/ipfs/community/issues/102">here</a>.</li>
+<li><a href="https://twitter.com/DesertBlockHack/status/693520940504784896"><strong>Desert Blockchain</strong></a>: IPFS was presented at the last <a href="https://twitter.com/DesertBlockHack">Desert Blockchain</a> miniconference.</li>
+</ul>
+<h2 id="tools"><a class="heading-anchor" href="#tools"><span></span></a>Tools</h2>
+<ul>
+<li>There was an unfortunate GitHub outage and many people started using IPFS to move around their repos, with <a href="//github.com/whyrusleeping">@whyrusleeping</a>&apos;s simple <a href="https://github.com/whyrusleeping/git-ipfs-rehost">git-ipfs-rehost</a> <a href="http://gateway.ipfs.io/ipfs/QmNxF69vkC53ZBgXKHXBRbDWk2ELJeP5ohbPXtdYRRUgmN/git-ipfs-rehost">(view on IPFS)</a> and <a href="//github.com/cryptix">@cryptix</a>&apos;s excellent <a href="https://github.com/cryptix/git-remote-ipfs">git-remote-ipfs</a> <a href="http://gateway.ipfs.io/ipfs/QmbUruSDckF2HqjEBhq3tbtmHjCRAseCFDSDqbWSWE7CoV/git-remote-ipfs">(view on IPFS)</a>.</li>
+<li><a href="//github.com/pipermerriam">@pipermerriam</a> created <a href="https://github.com/pipermerriam/ipfs-persistence-consortium">ipfs-persistence-consortium</a> to create networks of IPFS nodes which persist each other&apos;s content. This is similar to <a href="//github.com/victorbjelkholm">@victorbjelkholm</a>&apos;s <a href="https://github.com/victorbjelkholm/pincoop">pincoop</a>. Perhaps there can be some cooperation in these efforts? &#x1F60E;</li>
+<li>The <a href="https://github.com/MrChrisJ/fullnode">FullNode</a> Project -- which includes IPFS, Tor, Bitcoin, OpenVPN and more -- <a href="https://www.startjoin.com/protip2">is having a crowdfund</a> -- go get one! Thanks for making it <a href="//github.com/MrChrisJ">@MrChrisJ</a>!</li>
+</ul>
+<h2 id="other"><a class="heading-anchor" href="#other"><span></span></a>Other</h2>
+<ul>
+<li>It was <a href="https://en.wikipedia.org/wiki/Ralph_Merkle">Ralph Merkle&apos;s</a> birthday on February 2nd! He is the creator of the <a href="https://en.wikipedia.org/wiki/Merkle_tree">Merkle tree</a>, which are a crucial part of how IPFS works. Happy Birthday, Ralph! &#x1F382;</li>
+<li>Our friends at <a href="http://mine.nyc">Mine</a> are using IPFS for the excellent <a href="https://medium.com/mine-labs/introducing-mediachain-a696f8fd2035">Mediachain metadata protocol</a> (<a href="https://medium.com/mine-labs/mediachain-483f49cbe37a#.h6wrzm3ze">protocol proposal here</a>), a protocol to track media creation, attribution, and more. They have published <a href="https://medium.com/mine-labs?source=logo-lo_8f8cb62ab817-6838e0c89092">several great articles</a> about it. This week <a href="//github.com/denisnazarov">@denisnazarov</a> wrote about <a href="https://medium.com/mine-labs/the-gif-that-fell-to-earth-eae706c72f1f#.s0c7x59he">The GIF That Fell To Earth</a>, and <a href="//github.com/parkan">@parkan</a> gave a <a href="https://medium.com/mine-labs/mediachain-developer-update-i-911c9e7a4524#.zc984cqen">Developer Update</a> that discusses <a href="http://www.phash.org/">pHash</a>, <a href="https://github.com/ipfs/specs/blob/ipld-spec/merkledag/ipld.md">IPLD</a>, and more.</li>
+<li><a href="//github.com/lexansoft">@lexansoft</a> created a new Ethereum name registrar called <a href="http://etherid.org">EtherID</a> (<a href="https://github.com/lexansoft/etherid.org">repo here</a>), which uses IPFS for storing users&apos; content. Then <a href="https://twitter.com/btsfav">@btsfav</a> wrote an article about <a href="http://favs.pw/time-for-some-interplanetary-etheral-magic/">Personal Websites on EtherID with IPFS</a>.</li>
+</ul>
+<h2 id="contributors"><a class="heading-anchor" href="#contributors"><span></span></a>Contributors</h2>
+<p>Across the entire IPFS GitHub organization, the following people have committed code, created issues, or made a comment on GitHub between January 25th (noon, GMT) and February 1st. We&apos;re autogenerating this list using <a href="//github.com/ipfs/weekly/blob/master/tools/get_commits.py">this tool</a>, so please let us know if your name isn&apos;t here.</p>
+<ul>
+<li><a href="//github.com/alexAubin">@alexAubin</a> (Alexandre Aubin)</li>
+<li><a href="//github.com/andreiamatuni">@andreiamatuni</a> (Andrei Amatuni)</li>
+<li><a href="//github.com/area">@area</a></li>
+<li><a href="//github.com/AtnNn">@AtnNn</a> (Etienne Laurin)</li>
+<li><a href="//github.com/bdunlay">@bdunlay</a> (Brian Dunlay)</li>
+<li><a href="//github.com/BigBlueHat">@BigBlueHat</a> (BigBlueHat)</li>
+<li><a href="//github.com/chriscool">@chriscool</a> (Christian Couder)</li>
+<li><a href="//github.com/ConsciousCode">@ConsciousCode</a> (Conscious Code)</li>
+<li><a href="//github.com/cryptix">@cryptix</a> (Henry)</li>
+<li><a href="//github.com/davidar">@davidar</a> (David A Roberts)</li>
+<li><a href="//github.com/diasdavid">@diasdavid</a> (David Dias)</li>
+<li><a href="//github.com/dignifiedquire">@dignifiedquire</a> (Friedel Ziegelmayer)</li>
+<li><a href="//github.com/dysbulic">@dysbulic</a> (Will Holcomb)</li>
+<li><a href="//github.com/eminence">@eminence</a> (Andrew Chin)</li>
+<li><a href="//github.com/fazo96">@fazo96</a> (Enrico Fasoli)</li>
+<li><a href="//github.com/GitCop">@GitCop</a></li>
+<li><a href="//github.com/greenkeeperio-bot">@greenkeeperio-bot</a> (Greenkeeper)</li>
+<li><a href="//github.com/harlantwood">@harlantwood</a> (Harlan T Wood)</li>
+<li><a href="//github.com/Hexagon6">@Hexagon6</a></li>
+<li><a href="//github.com/IanCal">@IanCal</a> (Ian Calvert)</li>
+<li><a href="//github.com/ion1">@ion1</a> (Johan Kiviniemi)</li>
+<li><a href="//github.com/JAremko">@JAremko</a></li>
+<li><a href="//github.com/jbenet">@jbenet</a> (Juan Benet)</li>
+<li><a href="//github.com/jedahan">@jedahan</a> (Jonathan Dahan)</li>
+<li><a href="//github.com/kazarena">@kazarena</a></li>
+<li><a href="//github.com/kpcyrd">@kpcyrd</a></li>
+<li><a href="//github.com/Kubuxu">@Kubuxu</a> (Jakub Sztandera)</li>
+<li><a href="//github.com/lgierth">@lgierth</a> (Lars Gierth)</li>
+<li><a href="//github.com/lidel">@lidel</a> (Marcin Rataj)</li>
+<li><a href="//github.com/lockedshadow">@lockedshadow</a></li>
+<li><a href="//github.com/Luzifer">@Luzifer</a> (Knut Ahlers)</li>
+<li><a href="//github.com/MartinThoma">@MartinThoma</a> (Martin Thoma)</li>
+<li><a href="//github.com/MichaelMure">@MichaelMure</a> (Michael Mur&#xE9;)</li>
+<li><a href="//github.com/mildred">@mildred</a> (Mildred Ki&apos;Lya)</li>
+<li><a href="//github.com/mindhog">@mindhog</a></li>
+<li><a href="//github.com/Mithgol">@Mithgol</a></li>
+<li><a href="//github.com/mortonfox">@mortonfox</a> (Morton Fox)</li>
+<li><a href="//github.com/MrChrisJ">@MrChrisJ</a> (Chris Ellis)</li>
+<li><a href="//github.com/NDuma">@NDuma</a> (NDuma)</li>
+<li><a href="//github.com/NeoTeo">@NeoTeo</a> (Teo Sartori)</li>
+<li><a href="//github.com/nikhilshekhawat">@nikhilshekhawat</a></li>
+<li><a href="//github.com/noffle">@noffle</a> (Stephen Whitmore)</li>
+<li><a href="//github.com/palesz">@palesz</a> (Palesz)</li>
+<li><a href="//github.com/Patagonicus">@Patagonicus</a> (Philipp Adolf)</li>
+<li><a href="//github.com/ralphbean">@ralphbean</a> (Ralph Bean)</li>
+<li><a href="//github.com/randomshinichi">@randomshinichi</a></li>
+<li><a href="//github.com/rht">@rht</a></li>
+<li><a href="//github.com/RichardLitt">@RichardLitt</a> (Richard Littauer)</li>
+<li><a href="//github.com/Shaaah">@Shaaah</a> (Shaaah)</li>
+<li><a href="//github.com/sivachandran">@sivachandran</a> (Sivachandran)</li>
+<li><a href="//github.com/slothbag">@slothbag</a></li>
+<li><a href="//github.com/thelinuxkid">@thelinuxkid</a> (Andres Buritica)</li>
+<li><a href="//github.com/tilgovi">@tilgovi</a> (Randall Leeds)</li>
+<li><a href="//github.com/tomgg">@tommg</a> (Thomas Gardner)</li>
+<li><a href="//github.com/VertigoRay">@VertigoRay</a> (Raymond Piller)</li>
+<li><a href="//github.com/w33tmaricich">@w33tmaricich</a> (Alexander Maricich)</li>
+<li><a href="//github.com/whyrusleeping">@whyrusleeping</a> (Jeromy Johnson)</li>
+<li><a href="//github.com/whyun7892">@whyun7892</a></li>
+<li><a href="//github.com/willeponken">@willeponken</a> (William Wennerstr&#xF6;m)</li>
+<li><a href="//github.com/willglynn">@willglynn</a> (Will Glynn)</li>
+<li><a href="//github.com/xicombd">@xicombd</a> (Francisco Baio Dias)</li>
+</ul>
+<p>Thanks, and see you next week!  If you have cool things to share for the next weekly, drop us a line in the <a href="//github.com/ipfs/pm/issues/88">next weekly sprint issue</a>!</p>
+<ul>
+<li>Richard Littauer and Andrew Chin</li>
+</ul>
+<p><em>Submit feedback about this issue <a href="https://github.com/ipfs/weekly/pull/16">here</a>, or send us <a href="//github.com/ipfs/weekly/issues/7">feedback about the IPFS Weekly in general</a>.</em></p>
+
+</div>
+
+
+</div>
+</div> <!-- container / content -->
+</body>
+</html>
