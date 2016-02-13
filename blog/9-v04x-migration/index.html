@@ -40,8 +40,11 @@
     <h1 id="migrating-ipfsio-from-go-ipfs-03x-to-040"><a class="heading-anchor" href="#migrating-ipfsio-from-go-ipfs-03x-to-040"><span></span></a>Migrating ipfs.io from go-ipfs 0.3.x to 0.4.0</h1>
     <p>by Lars Gierth on 2016-02-12</p>
 
-    <p>Good news everyone! We are about to release go-ipfs 0.4.0,
-which contains lots of great changes and enhancements.</p>
+    <p>Good news everyone! We&apos;ll soon release go-ipfs 0.4.0,
+which contains lots of great changes and enhancements.
+An upcoming post will detail the improvements of 0.4.0.
+This post is about important things to be aware of when upgrading.
+Users who already rely on go-ipfs or the ipfs.io services should pay special attention.</p>
 <p>There are breaking changes
 which prevent 0.4.x nodes from communicating with 0.3.x nodes.
 We know breaking changes are painful. We avoid them.
@@ -70,11 +73,12 @@ All development effort is directed towards 0.4.0, and you should update as soon 
 <li><a href="#how-does-this-affect-me-">How does this affect me?</a></li>
 </ul>
 <h2 id="how-do-i-update-go-ipfs-to-0-4-0-"><a class="heading-anchor" href="#how-do-i-update-go-ipfs-to-0-4-0-"><span></span></a>How do I update go-ipfs to 0.4.0?</h2>
-<p>You can:</p>
+<p>Until we release 0.4.0, you can update by <a href="https://github.com/ipfs/go-ipfs#build-from-source">building from source</a>.</p>
+<p>After the release, you can:</p>
 <ul>
 <li>Use the brand new <a href="http://dist.ipfs.io/#ipfs-update">ipfs-update tool</a> to update go-ipfs <strong>(recommended)</strong></li>
-<li>download <a href="http://dist.ipfs.io/#go-ipfs">the new go-ipfs binaries</a> and install them.</li>
-<li>download <a href="https://github.com/ipfs/go-ipfs">the new source</a> and <a href="https://github.com/ipfs/go-ipfs#build-from-source">build it yourself</a>.</li>
+<li>Download <a href="http://dist.ipfs.io/#go-ipfs">the new go-ipfs binaries</a> and install them.</li>
+<li>Download <a href="https://github.com/ipfs/go-ipfs">the new source</a> and <a href="https://github.com/ipfs/go-ipfs#build-from-source">build it yourself</a>.</li>
 </ul>
 <p>Please note that installation with <code>go get</code> does not work at this time.
 We are experimenting with <a href="https://github.com/whyrusleeping/gx">gx, the new IPFS-based package manager</a>.</p>
