@@ -1,5 +1,8 @@
 local="http://localhost:8080/ipfs/"
-gway="http://gateway.ipfs.io/ipfs/"
+gway="https://ipfs.io/ipfs/"
+
+zone="ipfs.io"
+record="@"
 
 build: node_modules
 	./build.js
@@ -12,16 +15,18 @@ clean:
 	rm -rf build
 
 publish:
+	ipfs swarm peers >/dev/null || (echo "ipfs daemon must be online to publish" && exit 1)
 	ipfs add -r -q build/ipfs.io | tail -n1 >versions/current
 	cat versions/current >>versions/history
 	@export hash=`cat versions/current`; \
-		echo "here are the links:"; \
-		echo $(local)$$hash; \
-		echo $(gway)$$hash; \
 		echo ""; \
-		echo "now must:"; \
-		echo "- seed websites: /ipfs/$$hash"; \
-		echo "- add TXT to ipfs.io: dnslink=/ipfs/$$hash"; \
+		echo "published website:"; \
+		echo "- $(local)$$hash"; \
+		echo "- $(gway)$$hash"; \
+		echo ""; \
+		echo "next steps:"; \
+		echo "- ipfs pin add -r /ipfs/$$hash"; \
+		echo "- make publish-to-domain"; \
 
 publish-to-github:
 	./publish-to-github
@@ -29,7 +34,7 @@ publish-to-github:
 # Only run after publish, or there won't be a path to set.
 publish-to-domain: auth.token
 	DIGITAL_OCEAN=$(shell cat auth.token) node_modules/.bin/dnslink-deploy \
-		--domain=ipfs.io --record=@ --path=/ipfs/$(shell cat versions/current)
+		--domain=$(zone) --record=$(record) --path=/ipfs/$(shell cat versions/current)
 
 # this assumes blog is a sibling.
 update-blog:
