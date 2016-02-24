@@ -10,115 +10,95 @@ title: Install IPFS
 <div class="col-lg-6 col-lg-offset-3 col-sm-8 col-sm-offset-2" style="font-family: Oxygen; line-height: 1.7">
 {% markdown %}
 
-# Install IPFS
+# Install Go IPFS
 
-You can install the [Go IPFS implementation](https://github.com/ipfs/go-ipfs)
-from source or from prebuilt packages.
+We recommend installing IPFS from a prebuilt package. You can obtain those from [dist.ipfs.io](http://dist.ipfs.io/#go-ipfs).
 
+For convenience here are the latest versions linked directly
 
-## Prebuilt Packages
+- <i class="fa fa-apple"></i> [Mac OS X](http://dist.ipfs.io/go-ipfs/v0.3.11/go-ipfs_v0.3.11_darwin-amd64.tar.gz)
+- <i class="fa fa-linux"></i> [Linux 32bit](http://dist.ipfs.io/go-ipfs/v0.3.11/go-ipfs_v0.3.11_linux-386.tar.gz)
+- <i class="fa fa-linux"></i> [Linux 64bit](http://dist.ipfs.io/go-ipfs/v0.3.11/go-ipfs_v0.3.11_linux-amd64.tar.gz)
+- <i class="fa fa-windows"></i> [Windows 32bit](http://dist.ipfs.io/go-ipfs/v0.3.11/go-ipfs_v0.3.11_windows-386.zip)
+- <i class="fa fa-windows"></i> [Windows 64bit](http://dist.ipfs.io/go-ipfs/v0.3.11/go-ipfs_v0.3.11_windows-amd64.zip)
 
-We use [gobuilder.me](https://gobuilder.me) to do automated builds.
+## Installing from a Prebuilt Package
 
-Download a binary for your platform (more coming):
+### Mac OS X and Linux
 
-- <i class="fa fa-apple"></i> [Mac OS X](https://gobuilder.me/get/github.com/ipfs/go-ipfs/cmd/ipfs/ipfs_release_darwin-amd64.zip)
-- <i class="fa fa-linux"></i> [Linux x86](https://gobuilder.me/get/github.com/ipfs/go-ipfs/cmd/ipfs/ipfs_release_linux-386.zip)
-- <i class="fa fa-linux"></i> [Linux x86_64](https://gobuilder.me/get/github.com/ipfs/go-ipfs/cmd/ipfs/ipfs_release_linux-amd64.zip)
-- <i class="fa fa-linux"></i> [Linux ARM](https://gobuilder.me/get/github.com/ipfs/go-ipfs/cmd/ipfs/ipfs_release_linux-arm.zip)
-- [See all builds](https://gobuilder.me/github.com/ipfs/go-ipfs/cmd/ipfs?branch=release)
-
-Then, unzip the archive, and move `ipfs` somewhere in your `$PATH`:
-
-```
-mv ipfs /usr/local/bin/ipfs
-```
-
-Test it out:
-
-```
-> ipfs version
-ipfs version 0.3.8
-```
-
-That's it!
-
-<a class="btn btn-success btn-lg" href="../getting-started" role="button">
-  Getting Started with IPFS &nbsp;&nbsp;<i class="fa fa-arrow-right"></i>
-</a>
-
-
-Note: if you're concerned about security, build from source, as either
-[gobuilder.me](https://gobuilder.me) or [github.com](https://github.com)
-could introduce vulnerabilites. We will be doing signed releases soon.
-[Post here](https://github.com/ipfs/go-ipfs/issues/957) if you'd like this
-sooner.
-
-<br />
-
-## From Source
-
-Dependencies:
-
-- [Install Go 1.5](https://golang.org/doc/install) (to compile. [make sure it's 1.5](#check-go-version))
-- [Install Git](https://git-scm.com/) (to download dependencies)
-- *Optionally*, install [FUSE](#install-fuse) (for mounting / advanced use)
-
-Then run:
+After downloading, untar the archive, and move the `ipfs` binary somewhere in your executables `$PATH`:
 
 ```sh
-go get -u github.com/ipfs/go-ipfs/cmd/ipfs
+tar xvfz go-ipfs.tar.gz
+mv go-ipfs/ipfs /usr/local/bin/ipfs
 ```
-
-This will download ipfs and its dependencies, and compile `ipfs`.
-
-> Note: If you're new to Go, you'll need to do a few things to make sure you setup your `PATH` and your `GOPATH` (the location Go looks for libraries):
-> - Create a folder. e.g. `mkdir ~/go`
-> - Add the following to your shell config file (`.bashrc`, `.profile`, etc.)
->   - `export GOPATH=$HOME/go;`
->   - `export PATH="$GOPATH/bin:$PATH:";`
->   - `export PATH="$PATH:/usr/local/opt/go/libexec/bin";`
 
 Test it out:
 
+```sh
+> ipfs help
+USAGE:
+
+    ipfs - Global p2p merkle-dag filesystem.
+...
 ```
-> ipfs version
-ipfs version 0.3.8
+
+Congratulations! You now have a working IPFS installation on your computer.
+
+### Windows
+
+After downloading, unzip the archive, and move `ipfs.exe`  somewhere in your `%PATH`.
+
+Test it out:
+
+```sh
+> ipfs help
+USAGE:
+
+    ipfs - Global p2p merkle-dag filesystem.
+...
 ```
 
-That's it!
-
-<a class="btn btn-success btn-lg" href="../getting-started" role="button">
-  Getting Started with IPFS &nbsp;&nbsp;<i class="fa fa-arrow-right"></i>
-</a>
-
-<br />
+Congratulations! You now have a working IPFS installation on your computer.
 
 ---
 
-### Troubleshooting
+## Building from Source
 
-#### Help!
+<div class="alert alert-info">
+  **Warning:** In the past you could install ipfs using `go get` this
+  does not work anymore!
+</div>
+
+If you want, you can also build IPFS from source.
+If you are on Mac OS X or Linux take a look at [the readme](https://github.com/ipfs/go-ipfs#build-from-source) for install instructions.
+If you are on Windows take a look at [this document](https://github.com/ipfs/go-ipfs/blob/master/docs/windows.md) for instructions.
+
+---
+
+## Troubleshooting
+
+### Help!
 
 If you have any problems, come get live help at
 [#ipfs](../#community) or via [the mailing list](../#community).
 
-#### Check Go Version
+### Check Go Version
 
-IPFS works with Go 1.5+.
+IPFS works with Go 1.5.2+.
 To check what go version you have installed, type `go version`.
 Here's what I get:
 
 ```sh
 > go version
-go version go1.5.1 darwin/amd64
+go version go1.5.2 darwin/amd64
 ```
 
 If you need to update, it is recommended to install from the
 [canonical Go packages](https://golang.org/doc/install/).
 Package managers often contain out-of-date Go packages.
 
-#### Install FUSE
+### Install FUSE
 
 For more details on setting up FUSE (so that you can mount the filesystem), see [github.com/ipfs/go-ipfs/blob/master/docs/fuse.md](https://github.com/ipfs/go-ipfs/blob/master/docs/fuse.md)
 
