@@ -7,6 +7,9 @@ record="@"
 build: node_modules
 	./build.js
 
+serve: node_modules
+	./build.js --watch
+
 node_modules: package.json
 	npm install
 	touch node_modules
