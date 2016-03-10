@@ -17,7 +17,7 @@
     "nunjucks-markdown": "^1.0.0"
   },
   "devDependencies": {
-    "dnslink-deploy": "^1.0.1",
+    "dnslink-deploy": "^1.0.7",
     "metalsmith-serve": "0.0.3",
     "metalsmith-watch": "^0.2.0"
   }
