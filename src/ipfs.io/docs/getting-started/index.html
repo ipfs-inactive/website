@@ -43,6 +43,11 @@ to get started, enter:
 
 <div class="alert alert-info">
 Note the hash there may differ. If it does, use the one you got.
+
+Your `peer identity` is your unique identity on the `ipfs` network,
+so you may not want to publish it on the net together with your `real`
+identity, since then all files you publish can potentially be tracked
+back to you.
 </div>
 
 Now, try running:
@@ -99,11 +104,13 @@ Once you're ready to take things online, run the daemon in another terminal:
 ```sh
 > ipfs daemon
 Initializing daemon...
+Swarm listening on /ip4/10.11.12.13/tcp/4001
+Swarm listening on /ip4/127.0.0.1/tcp/4001
+Swarm listening on /ip6/::1/tcp/4001
 API server listening on /ip4/127.0.0.1/tcp/5001
-Gateway server listening on /ip4/127.0.0.1/tcp/8080
+Gateway (readonly) server listening on /ip4/127.0.0.1/tcp/8080
+Daemon is ready
 ```
-
-Wait for all three lines to appear.
 
 <div class="alert alert-info">
 Make note of the tcp ports you get. if they are different, use yours in the commands below.
@@ -122,6 +129,8 @@ you should be able to see the ipfs addresses of your peers:
 
 These are a combination of `<transport address>/ipfs/<hash-of-public-key>`.
 
+More peers will connect the longer your node stays online.
+
 Now, you should be able to get objects from the network. Try:
 
 ```
@@ -129,7 +138,7 @@ ipfs cat /ipfs/QmW2WQi7j6c7UgJTarActp7tDNikE4B2qXtFCfLPdsgaTQ/cat.jpg >cat.jpg
 open cat.jpg
 ```
 
-And, you should be able to give the network objects. Try adding one, and then
+And, you can add objects to the network. Try adding one, and then
 viewing it in your favorite browser:
 
 ```
@@ -143,7 +152,7 @@ the DHT, found your machine, requested the file, your machine sent it to the
 gateway, and the gateway sent it to your browser.
 
 <div class="alert alert-warning">
-Note: depending on the state of the network, the `curl` may take a while. The public gateways may be overloaded or having a hard time reaching you.
+Note: depending on the state of the network, the `curl` may take a while. The public gateways may be overloaded or having a hard time reaching you. If you use curl, then you get:<br/>curl: (7) couldn't connect to host</3>
 </div>
 
 You can also check it out at your own local gateway:
