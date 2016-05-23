@@ -11,8 +11,8 @@ PATH = 'content'
 TIMEZONE = "Europe/Paris"  #Unused (Pelican complains if you don't provide it)
 
 THEME = 'ipfs.io-theme'
-
-USE_FOLDER_AS_CATEGORY = False
+PAGE_URL = '{slug}/'
+PAGE_SAVE_AS = '{slug}/index.html'
 
 DEFAULT_PAGINATION = 10
 
