@@ -6,10 +6,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-connect');
 
-    var defaultConfigPath = './_js/config/development.json';
-    var envConfigPath = './_js/config/' + process.env.NODE_ENV + '.json';
-    var configPath = grunt.file.exists(envConfigPath) ? envConfigPath : defaultConfigPath;
-
     grunt.initConfig({
 
         stylus: {
