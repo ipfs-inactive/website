@@ -23,7 +23,8 @@ module.exports = function(grunt) {
                 },
 
                 files: {
-                    'css/main.css': ['_styl/main.styl']
+                    'css/main.css': ['_styl/main.styl'],
+                    'static/css/main.css': ['_styl/main.styl']
                 }
             }
         },
