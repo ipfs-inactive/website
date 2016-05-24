@@ -1,0 +1,93 @@
+/*--------------------------------------------------------------------
+*
+* $HEADER
+*
+--------------------------------------------------------------------*/
+
+header
+  background: $brand-blue
+  padding-top: 20px
+  min-height: 500px
+  position: relative
+  margin-bottom: 60px
+
+  h1
+    position: relative
+    z-index: 2
+
+.hero
+  position: absolute
+  top: 180px
+  text-align: center
+  padding: 0 25%
+  left: 0
+  color: white
+  width: 100%
+
+  h2
+    color: white
+    font-weight: 200
+    font-style: normal
+    margin-bottom: 20px
+    font-size: 40px
+
+  h3
+    color: white
+    font-weight: 200
+    font-style: normal
+    margin-top: 15px
+    font-size: 22px
+    line-height: 150%
+
+.divider
+  width: 50px
+  height: 3px
+  border-radius: 3px
+  background: $brand-teal
+  display: block
+  margin: 0 auto 0 auto
+
+.view-more
+
+  label
+    text-indent: 100%
+    white-space: nowrap
+    overflow: hidden
+
+  a
+    position: absolute
+    content: ''
+    bottom: 30px
+    left: 0
+
+    height: 23px
+    width: 100%
+
+    background: url("../../images/down-arrow-01.svg")
+    background-position: center
+    background-repeat: no-repeat
+
+    &:hover
+      opacity: .75
+
+    display: none
+
+@media screen and (max-width: $breakpoint-desktop)
+
+  .hero
+    padding: 0 15%
+
+@media screen and (max-width: 600px)
+
+  .view-more
+    a
+      display: block
+
+  .hero
+    padding: 20px
+
+    h2
+      font-size: 30px
+
+    h3
+      font-size: 18px
