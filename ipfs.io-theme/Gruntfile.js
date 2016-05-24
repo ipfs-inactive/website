@@ -5,14 +5,13 @@ module.exports = function(grunt) {
 
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-connect');
-    grunt.loadNpmTasks('grunt-contrib-copy');
 
     var defaultConfigPath = './_js/config/development.json';
     var envConfigPath = './_js/config/' + process.env.NODE_ENV + '.json';
     var configPath = grunt.file.exists(envConfigPath) ? envConfigPath : defaultConfigPath;
 
     grunt.initConfig({
-        //- compile main stylus file to output css file
+
         stylus: {
             compile: {
                 options: {
@@ -29,8 +28,6 @@ module.exports = function(grunt) {
             }
         },
 
-        //- minify everything in the css output folder
-        //- just add .min.css to the filename
         cssmin: {
             target: {
                 files: [{
@@ -43,12 +40,6 @@ module.exports = function(grunt) {
             }
         },
 
-        //- compile jade in the jade dir to matching paths in
-        //  the output dir
-        //- if you want pretty urls, make sure your jade files named index.jade, e.g:
-        //
-        //    about/index.jade   -> available at about/
-        //    contact/index.jade -> available at contact/
         jade: {
             target: {
               files: [{
@@ -61,24 +52,9 @@ module.exports = function(grunt) {
             }
         },
 
-        //- copy any files in assets to the same place in output dir
-        //- beware of clobbering other generated files
-        copy: {
-            static: {
-                files: [
-                    {
-                        cwd: '_assets',
-                        expand: true,
-                        src: ['**'],
-                        dest: 'static/'
-                    },
-                ]
-            }
-        },
-
         watch: {
             build: {
-                files: ['_styl/**', '_jade/**', 'assets/**'],
+                files: ['_styl/**', '_jade/**'],
                 tasks: ['build'],
                 options: {
                     livereload: true,
@@ -106,7 +82,7 @@ module.exports = function(grunt) {
 
     });
 
-    grunt.registerTask('build', ['copy', 'stylus', 'cssmin', 'jade'])
+    grunt.registerTask('build', ['stylus', 'cssmin', 'jade'])
     grunt.registerTask('serve', ['connect:server', 'watch'])
     grunt.registerTask('default', ['build'])
 };
