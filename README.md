@@ -23,3 +23,17 @@ Running `npm run build` in the theme directory will build the css from stylus fi
 *Previewing Design Iteration*
 
 For ongoing design iteration, run `npm run start` to preview what you've built from the `build` directory.
+
+## Pages
+
+Pages should set their title, headlineText, and subheadText
+at the top of each md file.
+Optionally they can also set headlineClass and subheadText
+
+
+```
+title: API
+headlineClass: 'docs'
+headlineText: This is a headline
+subheadText: This goes under the headline as a subheadline
+```

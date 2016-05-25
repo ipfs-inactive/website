@@ -27,6 +27,15 @@
     </nav>
     {% block hero %}{% endblock hero %}
   </div>
+  {% if page %}
+    <div class="hero">
+      <h2 class="headline-main {% if page.headlineclass %}{{ page.headlineclass }}{% else %}home{% endif %}">{{ page.headlinetext }}</h2>
+      {% if page.subheadtext %}
+        <span class="divider"></span>
+        <h3 class="subhead-main">{{ page.subheadtext }}</h3>
+      {% endif %}
+    </div>
+  {% endif %}
   <div class="view-more">
     <label>View more</label><a href="#"></a>
   </div>
