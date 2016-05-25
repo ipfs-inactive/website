@@ -1,2 +1,4 @@
 *.pyc
 output/
+node_modules
+static
