@@ -22,4 +22,4 @@ Running `npm run build` in the theme directory will build the css from stylus fi
 
 *Previewing Design Iteration*
 
-For ongoing design iteration, run `npm run serve` to preview what you've built from the `build` directory.
+For ongoing design iteration, run `npm run start` to preview what you've built from the `build` directory.
