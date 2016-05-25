@@ -37,3 +37,8 @@ headlineClass: 'docs'
 headlineText: This is a headline
 subheadText: This goes under the headline as a subheadline
 ```
+
+## Blog
+
+Blog articles go in `./content/articles` and should have a title, date,
+and author
