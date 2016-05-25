@@ -21,4 +21,5 @@ The theme utilizes files in the `templates` directory, so the assumed workflow i
 Running `grunt build` in the theme directory will build the css from stylus files and generate static html files from jade into the `static` directory.
 
 *Previewing Design Iteration*
+
 For ongoing design iteration, run `grunt serve` to preview what you've built from the `static` directory.
