@@ -5,6 +5,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-stylus');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-jade');
+  grunt.loadNpmTasks('grunt-contrib-copy');
 
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-connect');
@@ -60,6 +61,17 @@ module.exports = function (grunt) {
       }
     },
 
+    copy: {
+      main: {
+        files: [{
+          expand: true,
+          cwd: 'static/images',
+          src: ['**'],
+          dest: 'build/theme/images'
+        }]
+      }
+    },
+
     watch: {
       build: {
         files: ['_styl/**', '_jade/**'],
@@ -79,6 +91,7 @@ module.exports = function (grunt) {
           livereload: true,
           open: true,
           middleware: function (connect, options) {
+
             return [
               require('connect-livereload')(),
               connect.static(options.base[0])
@@ -90,7 +103,7 @@ module.exports = function (grunt) {
 
   });
 
-  grunt.registerTask('build', ['stylus', 'cssmin', 'jade']);
+  grunt.registerTask('build', ['stylus', 'cssmin', 'jade', 'copy']);
   grunt.registerTask('serve', ['connect:server', 'watch']);
   grunt.registerTask('default', ['build']);
 };

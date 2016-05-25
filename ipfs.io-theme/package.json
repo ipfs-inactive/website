@@ -19,5 +19,8 @@
     "build": "grunt build",
     "start": "grunt serve"
   },
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "grunt-contrib-copy": "^0.8.2"
+  }
 }
