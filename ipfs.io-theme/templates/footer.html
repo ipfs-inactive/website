@@ -33,9 +33,9 @@
     </div>
     <div class="share-links">
       <ul class="share unstyled">
-        <li><a>Twitter</a></li>
-        <li><a>Facebook</a></li>
-        <li><a>Google+</a></li>
+        {% for title, link in SOCIAL %}
+          <li><a href="{{ link }}">{{ title }}</a></li>
+        {% endfor %}
       </ul>
     </div>
   </div>

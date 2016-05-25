@@ -17,9 +17,15 @@ PAGE_SAVE_AS = '{slug}/index.html'
 # default metadata sort order
 
 # DIRECT_TEMPLATES = ['index', 'categories', 'authors', 'archives']
-DIRECT_TEMPLATES = ['index']
+DIRECT_TEMPLATES = ('index')
 
-DISPLAY_PAGES_ON_MENU = True
+SOCIAL = (
+        ('Twitter', 'http://twitter.com/'),
+        ('Facebook', 'http://facebook.com'),
+        ('Google+', 'http://plus.google.com')
+)
+
+DISPLAY_PAGES_ON_MENU = False
 DISPLAY_CATEGORIES_ON_MENU = False
 
 DEFAULT_PAGINATION = 10

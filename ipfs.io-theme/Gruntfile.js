@@ -21,7 +21,7 @@ module.exports = function (grunt) {
         },
 
         files: {
-          'build/css/main.css': ['_styl/main.styl'], //For built jade to use
+          'build/theme/css/main.css': ['_styl/main.styl'], //For built jade to use
           'static/css/main.css': ['_styl/main.styl'] //For actual template to use
         }
       }

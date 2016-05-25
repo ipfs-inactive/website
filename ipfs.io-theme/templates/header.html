@@ -5,6 +5,10 @@
       <input id="menu-toggle" type="checkbox" class="menu-toggle">
       <label for="menu-toggle">Menu</label>
       <ul class="list-unstyled list-inline cf">
+        <li><a href="/" {% if page_name == 'index' %}class="current-item"{% endif %}>Uses</a></li>
+        <li><a href="/docs" {% if page and page.category.name == 'docs' %}class="current-item"{% endif %}>Docs</a></li>
+        <li><a href="/how-it-works" {% if page and page.slug == 'how-it-works' %}class="current-item"{% endif %}>How It Works</a></li>
+        <li><a href="/blog" {% if article %}class="current-item"{% endif %}>Blog</a></li>
         {% for title, link in MENUITEMS %}
             <li><a href="{{ link }}">{{ title }}</a></li>
         {% endfor %}
@@ -27,3 +31,9 @@
     <label>View more</label><a href="#"></a>
   </div>
 </header>
+<p>Hi there {% if page %}<br />
+  slug: {{ page.slug.__repr__() }}<br />
+  category: {{ page.category.__str__() }}<br />
+  category == slug: {{ page.category == page.slug }}</br />
+  category == 'docs': {{  page.category.__str__() == 'docs' }}<br />
+{% endif %}</p>
