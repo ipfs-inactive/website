@@ -13,11 +13,12 @@ TIMEZONE = "Europe/Paris"  #Unused (Pelican complains if you don't provide it)
 THEME = 'ipfs.io-theme'
 PAGE_URL = '{slug}/'
 PAGE_SAVE_AS = '{slug}/index.html'
+INDEX_SAVE_AS = 'blog.html'
 # PAGE_ORDER_BY = 'sort_order'
 # default metadata sort order
 
 # DIRECT_TEMPLATES = ['index', 'categories', 'authors', 'archives']
-DIRECT_TEMPLATES = ('index')
+DIRECT_TEMPLATES = ['index']
 
 SOCIAL = (
         ('Twitter', 'http://twitter.com/'),
