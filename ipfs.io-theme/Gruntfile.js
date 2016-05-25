@@ -31,9 +31,15 @@ module.exports = function (grunt) {
       target: {
         files: [{
           expand: true,
-          cwd: 'css',
+          cwd: 'build/theme/css',
           src: ['*.css', '!*.min.css'],
-          dest: 'css',
+          dest: 'build/theme/css',
+          ext: '.min.css'
+        }, {
+          expand: true,
+          cwd: 'static/css',
+          src: ['*.css', '!*.min.css'],
+          dest: 'static/css',
           ext: '.min.css'
         }]
       }
