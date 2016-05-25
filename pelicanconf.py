@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 
-SITENAME = u'ipfs.io'
+SITENAME = u'IPFS'
 SITEURL = ''
 DEFAULT_LANG = u'en'
 
@@ -13,6 +13,14 @@ TIMEZONE = "Europe/Paris"  #Unused (Pelican complains if you don't provide it)
 THEME = 'ipfs.io-theme'
 PAGE_URL = '{slug}/'
 PAGE_SAVE_AS = '{slug}/index.html'
+# PAGE_ORDER_BY = 'sort_order'
+# default metadata sort order
+
+# DIRECT_TEMPLATES = ['index', 'categories', 'authors', 'archives']
+DIRECT_TEMPLATES = ['index']
+
+DISPLAY_PAGES_ON_MENU = True
+DISPLAY_CATEGORIES_ON_MENU = False
 
 DEFAULT_PAGINATION = 10
 

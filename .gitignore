@@ -1,4 +1,4 @@
 *.pyc
 output/
 node_modules
-static
+ipfs.io-theme/build

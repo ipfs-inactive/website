@@ -1,9 +1,19 @@
 {% extends "base.html" %}
 {% block title %}{{ page.title }}{%endblock%}
+{% block hero %}
+  <div class="hero">
+    <h2 class="headline-main {% if page.headlineClass %}page.headlineClass{% endif %}"></h2><span class="divider">{% if page.headlineText %}page.headlineText{% endif %}</span>
+    <h3 class="subhead-main">{% if page.subheadText %}page.subheadText{% endif %}</h3>
+  </div>
+{% endblock hero %}
 {% block content %}
     <h1>{{ page.title }}</h1>
-    {% import 'translations.html' as translations with context %}
-    {{ translations.translations_for(page) }}
+
+    <p>Page.category {{ page.category }}</p>
+
+    {% if page.category == 'docs' %}
+      <p> Do doc menu include here</p>
+    {% endif %}
 
     {{ page.content }}
 
@@ -12,4 +22,4 @@
 		Last updated: {{ page.locale_modified }}
 		</p>
 	{% endif %}
-{% endblock %}
+{% endblock content %}

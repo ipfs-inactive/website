@@ -1,4 +1,5 @@
-Title: docs
+title: docs
+headlineclass: docs
 
 # Genetrix annos retinacula exerces debueram fecit vertice
 
