@@ -31,9 +31,3 @@
     <label>View more</label><a href="#"></a>
   </div>
 </header>
-<p>Hi there {% if page %}<br />
-  slug: {{ page.slug.__repr__() }}<br />
-  category: {{ page.category.__str__() }}<br />
-  category == slug: {{ page.category == page.slug }}</br />
-  category == 'docs': {{  page.category.__str__() == 'docs' }}<br />
-{% endif %}</p>
