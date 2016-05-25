@@ -43,8 +43,12 @@
 
   <body>
     {% include 'header.html' %}
-    {% block content %}
-    {% endblock %}
+    <div class="container">
+      <div class="section">
+        {% block content %}
+        {% endblock %}
+      </div>
+    </div>
     {% include 'footer.html' %}
   </body>
 </html>
