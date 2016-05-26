@@ -1,4 +1,6 @@
-Title: specs
+title: specs
+url: docs/specs
+save_as: docs/specs/index.html
 
 # Et tantum requiescit viscata si praesentit si
 

@@ -27,6 +27,8 @@ SOCIAL = (
         ('Google+', 'http://plus.google.com')
 )
 
+MD_EXTENSIONS = ['codehilite(css_class=highlight)','extra','toc']
+
 DISPLAY_PAGES_ON_MENU = False
 DISPLAY_CATEGORIES_ON_MENU = False
 

@@ -1,52 +1,26 @@
 title: docs
 headlineclass: docs
 
-# Genetrix annos retinacula exerces debueram fecit vertice
+## Code
 
-## Saxo radere tauros deus
+These are links to some of the IPFS repositories.
 
-Lorem markdownum lapsum equorum aequora flumina servat una, suae. Quod illic
-**territus** candidioribus lacrimas, quem coortis tergoque pictae hospitis
-alieno et comminus fugavi.
+- [github.com/ipfs/ipfs](https://github.com/ipfs/ipfs) - The original IPFS paper, with the main spec.
+- [github.com/ipfs/go-ipfs](https://github.com/ipfs/go-ipfs) - The main, reference implementation.
+- [github.com/ipfs/specs](https://github.com/ipfs/specs) - Technical specs for IPFS.
+- [Project Directory](https://github.com/ipfs/ipfs#project-directory) - A directory of all IPFS repositories. _WIP_
+- [Project directory status board](http://project-repos.ipfs.io/) - This board checks shows CI and Readme status for all IPFS repos.
+- [Search github for "ipfs"](https://github.com/search?q=ipfs&ref=searchresults&type=Repositories&utf8=%E2%9C%93).
 
-- In gestamina aevum Achaemenides deum est
-- Visa est Peucetiosque erat silicem gavisus factaque
-- Perque invadere se signis in increpor parvo
+## Community
 
-Percutimurque illis exsanguemque tota in **parva puerum** et, cornua. Nube *nec*
-qui ille [poenas victa nervosque](http://html9responsiveboilerstrapjs.com/)
-raptoresque, mens, bello sub formam neque ego: a. Sunt cursu error *Gorgonis
-sua* tanti miseram ille. Vitae mira qua. Horrida et has quam, liquor diva
-*vivit* praedam, in.
+- github: [github.com/ipfs/ipfs](https://github.com/ipfs/ipfs) as a landing repository, with links to various other repositories.
+- github: [github.com/ipfs/support](https://github.com/ipfs/support) for issues with getting ipfs up and running.
+- github: [github.com/ipfs/go-ipfs](https://github.com/ipfs/go-ipfs) for the go-ipfs implementation.
+- github: [github.com/ipfs/faq](https://github.com/ipfs/faq) for questions you might have about IPFS.
+- github: [github.com/ipfs/awesome-ipfs](https://github.com/ipfs/awesome-ipfs) an [awesome-*](https://github.com/sindresorhus/awesome) list of lists to awesome IPFS resources, tools, and applications built on IPFS.
+- IRC: [#ipfs on chat.freenode.net](irc://chat.freenode.net/ipfs) for live help + some dev discussions ([Logs](https://botbot.me/freenode/ipfs/))
+- Google Group: [ipfs-users@groups.google.com](https://groups.google.com/forum/#!forum/ipfs-users)
+- Twitter: [@IPFSbot](https://twitter.com/ipfsbot) for some news.
+- github: [github.com/ipfs/community](https://github.com/ipfs/community) for meta-questions on how we manage our community in general.
 
-## Illic mutata
-
-Atria et **annis** robora famem palmas fontesque spiritus sinunt: neque haec
-buxus Colchis: austrum senex. Nutricis qui quod quid [iste
-toto](http://textfromdog.tumblr.com/) minuit, deteriora altis cuique rogus
-saepe? Saevior respicit una in finiat aliter et curvata speciem, conveniunt
-inanem *ingemit* fontes is mihi aut tum. Adiuvet magis, telo tenui sublimis
-somnia. Sospes ea inermis excipiunt ictibus caritura dare gratia iunget tamen
-saltuque imago ubi cuius Iove!
-
-1. Re nympha vultibus matrem Arachnes
-2. Chirona qua
-3. Quo puero telluris
-4. Teneri haud ne solitam dederas gessit fortissime
-
-## Arethusa resistite pompa
-
-Taurus Penelopae solebat, nocens, discite, virgo ex minasque labori ullo
-**Lucifer bene** nutrix indagine tectum. Iterum cognita ut tenet
-[sed](http://jaspervdj.be/) in penates per campo tardis in saxo.
-
-> Telum ictu naris pavidum, maturus [amantem est](http://heeeeeeeey.com/),
-> vectus, adiit rura signum, tyranni gente? Fecit numine nutricis, alas campus,
-> et urna mea, nec? Dixi veluti Meleagros ripae generis, volutant, alis musco.
-> Et enervet inmodico et latum [extulit](http://example.com/); Amnis ubi excipit
-> albam, male forte: facta saevit.
-
-Meas iam tributuram blandita ventis, quoque vel haec tempus; talia **omen**.
-Religaret subiectum pete, sibi si propioraque ultima Erebi, dies [quaque
-de](http://zombo.com/) fatale sustineam. Quasque inferre tum rudis hausit
-praepetis liberat. *Talia inde*: tum odiumque sanguis faciat.

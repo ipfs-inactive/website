@@ -11,8 +11,17 @@
 {% endblock hero %}
 {% block content %}
     {% if page.category.name == 'docs' %}
-      <p> Do doc menu include here</p>
+      <ul>
+        <li><a href="{{ SITEURL}}{{ SITEPATH }}/docs" {% if page.slug == 'docs' %}class="current-item"{% endif %}>Documentation</a></li>
+        <li><a href="{{ SITEURL}}{{ SITEPATH }}/docs/install" {% if page.slug == 'install' %}class="current-item"{% endif %}>Install</a></li>
+        <li><a href="{{ SITEURL}}{{ SITEPATH }}/docs/getting-started" {% if page.slug == 'getting-started' %}class="current-item"{% endif %}>Getting Started</a></li>
+        <li><a href="{{ SITEURL}}{{ SITEPATH }}/docs/api" {% if page.slug == 'api' %}class="current-item"{% endif %}>API</a></li>
+        <li><a href="{{ SITEURL}}{{ SITEPATH }}/docs/commands" {% if page.slug == 'commands' %}class="current-item"{% endif %}>Commands</a></li>
+        <li><a href="{{ SITEURL}}{{ SITEPATH }}/docs/examples" {% if page.slug == 'examples' %}class="current-item"{% endif %}>Examples</a></li>
+        <li><a href="{{ SITEURL}}{{ SITEPATH }}/docs/specs" {% if page.slug == 'specs' %}class="current-item"{% endif %}>Specs</a></li>
+      </ul>
     {% endif %}
 
     {{ page.content }}
+    {{ page.title }}
 {% endblock content %}

@@ -1,49 +1,108 @@
-Title: install
+title: install
+url: docs/install
+save_as: docs/install/index.html
 
-# Et retexit colat replet inpressa
+# Install Go IPFS
 
-## Sero hos
+We recommend installing IPFS from a prebuilt package. You can obtain those from [dist.ipfs.io](https://dist.ipfs.io/#go-ipfs).
 
-Lorem *markdownum ambarum* habeo quid cornum nomine omnes coniuge cyclopum *non
-indomitae* summis explet, et sua [erit](http://twitter.com/search?q=haskell)
-mihi leve. Est capitisque leges. Nervi in nautae frondes comitum cum adsiluit
-pelle racemiferis quae innumeris non circumfunditur nomen; cum?
+For convenience here are the latest versions linked directly
 
-Quo **lacrimarum freta** timidae faventibus atque dignissima populisque ad
-saltus [isto Styga turpi](http://heeeeeeeey.com/), ventris, more. Rupe pependit
-tarda. Lavini sua petit [neci at aquosis](http://seenly.com/), qui velat adpulit
-[oris](http://news.ycombinator.com/); me nostri amplexa! Seque agmen nomen,
-honore ilia iaculum sanae, certa quam Eumenidum Tyriam a medio fugitque! Deducit
-habet, ambo, genuit tecta mihi pars tibi obstantia vagos.
+- <i class="fa fa-apple"></i> [Mac OS X 32bit](https://dist.ipfs.io/go-ipfs/v0.4.2/go-ipfs_v0.4.2_darwin-386.tar.gz)
+- <i class="fa fa-apple"></i> [Mac OS X 64bit](https://dist.ipfs.io/go-ipfs/v0.4.2/go-ipfs_v0.4.2_darwin-amd64.tar.gz)
+- <i class="fa fa-linux"></i> [Linux 32bit](https://dist.ipfs.io/go-ipfs/v0.4.2/go-ipfs_v0.4.2_linux-386.tar.gz)
+- <i class="fa fa-linux"></i> [Linux 64bit](https://dist.ipfs.io/go-ipfs/v0.4.2/go-ipfs_v0.4.2_linux-amd64.tar.gz)
+- <i class="fa fa-windows"></i> [Windows 32bit](https://dist.ipfs.io/go-ipfs/v0.4.2/go-ipfs_v0.4.2_windows-386.zip)
+- <i class="fa fa-windows"></i> [Windows 64bit](https://dist.ipfs.io/go-ipfs/v0.4.2/go-ipfs_v0.4.2_windows-amd64.zip)
+- <i class="fa fa-freebsd"></i> [FreeBSD 64bit](https://dist.ipfs.io/go-ipfs/v0.4.2/go-ipfs_v0.4.2_freebsd-amd64.tar.gz)
 
-## Duobus hoc et suae unguibus
 
-Poma qua ictus manu se curia duobus residunt, ipsaque, meritum. Exempla pondere:
-terga et genu quae quoque superas fallere. Hac
-[ante](http://twitter.com/search?q=haskell), plebe haec variare gentibus
-caelicolae dabat cornua est.
 
-## Est utraque celare celebrant gravida et ait
+## Installing from a Prebuilt Package
 
-Annos licere leve, nate armorum tinxit poenaeque labor relevasse dederat, non.
-Vix aeno nec operum herbida et adhibendus [fiducia
-nurus](http://news.ycombinator.com/) montis manant; [gloria
-thalamoque](http://haskell.org/) solam; lues inornatos quoque. Lycaona olim
-iussit sorores erubuere circumdata conubia sed celare nomine exorata manibus et
-cum tantis coire me? Superi templo prius illa imum rapta; fere illa, ad flerunt!
+### Mac OS X and Linux
 
-- Consistuntque sit coegit perveniunt ignes sit certius
-- Amorem dexteriore deducit sustinet meruisse segetis setius
-- Mortale velat
-- Servas cepit inquit sororum armento
-- Vides ex natam Quirites temperat
-- Quid modo ergo postquam
+After downloading, untar the archive, and move the `ipfs` binary somewhere in your executables `$PATH`:
 
-## Sacras vides fluctus
+```sh
+tar xvfz go-ipfs.tar.gz
+mv go-ipfs/ipfs /usr/local/bin/ipfs
+```
 
-Phinea simili! Terras inmortalis sensit, est auro securosque, victor tecta.
+Test it out:
 
-Secutis salute, ite femina premis actusque. Quisque fuit, sol at cultis, hic
-illud factum. Tamen si, quae seris pennarum tonitrua habet orantemque interritus
-gratia minimamque medio metu altera cecidere. Rurisque cauda, aras quae restat
-cum unice tenditur pater exerces refert.
+```sh
+> ipfs help
+USAGE:
+
+    ipfs - Global p2p merkle-dag filesystem.
+...
+```
+
+Congratulations! You now have a working IPFS installation on your computer.
+
+<a class="btn btn-success btn-lg" href="../getting-started" role="button">
+  Getting Started with IPFS &nbsp;&nbsp;<i class="fa fa-arrow-right"></i>
+</a>
+
+### Windows
+
+After downloading, unzip the archive, and move `ipfs.exe`  somewhere in your `%PATH`.
+
+Test it out:
+
+```sh
+> ipfs help
+USAGE:
+
+    ipfs - Global p2p merkle-dag filesystem.
+...
+```
+
+Congratulations! You now have a working IPFS installation on your computer.
+
+<a class="btn btn-success btn-lg" href="../getting-started" role="button">
+  Getting Started with IPFS &nbsp;&nbsp;<i class="fa fa-arrow-right"></i>
+</a>
+
+---
+
+## Building from Source
+
+<div class="alert alert-info">
+  **Warning:** In the past you could install ipfs using `go get` this
+  does not work anymore!
+</div>
+
+If you want, you can also build IPFS from source.
+If you are on Mac OS X or Linux take a look at [the readme](https://github.com/ipfs/go-ipfs#build-from-source) for install instructions.
+If you are on Windows take a look at [this document](https://github.com/ipfs/go-ipfs/blob/master/docs/windows.md) for instructions.
+
+---
+
+## Troubleshooting
+
+### Help!
+
+If you have any problems, come get live help at
+[#ipfs](../#community) or via [the mailing list](../#community).
+
+### Check Go Version
+
+IPFS works with Go 1.5.2+.
+To check what go version you have installed, type `go version`.
+Here's what I get:
+
+```sh
+> go version
+go version go1.5.2 darwin/amd64
+```
+
+If you need to update, it is recommended to install from the
+[canonical Go packages](https://golang.org/doc/install/).
+Package managers often contain out-of-date Go packages.
+
+### Install FUSE
+
+For more details on setting up FUSE (so that you can mount the filesystem), see [github.com/ipfs/go-ipfs/blob/master/docs/fuse.md](https://github.com/ipfs/go-ipfs/blob/master/docs/fuse.md)
+

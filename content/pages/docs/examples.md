@@ -1,54 +1,62 @@
-Title: examples
+title: examples
+url: docs/examples
+save_as: docs/examples/index.html
 
-# Mea est cui spernimus ille ab fores
+## Examples
 
-## Adorant est laceras at pacali poenas fissa
+These are a few simple examples for the first steps exploring IPFS.
+This list will [grow over time](https://github.com/protocol/ipfs-examples).
+The examples are viewed through an ipfs-hosted renderer.
 
-Lorem markdownum modo; nec *nec tot humus* fronti: plura: telo cecidit membra
-minimae nondum Partheniumque malis super. Idem epotus caterva candida digitorum
-hactenus: bella nectareis aspera data Acrota magnum adeo quo ea hic.
+- [Dags and Objects and Blocks! (oh my)](
+  /ipfs/QmTkzDwWqPbnAh5YiV5VwcTLnGdwSNsNTn2aDxdXBFca7D/example#/ipfs/QmQwAP9vFjbCtKvD8RkJdCvPHqLQjZfW7Mqbbqx18zd8j7/data/readme.md
+)
+- [Be the swarm](
+  /ipfs/QmTkzDwWqPbnAh5YiV5VwcTLnGdwSNsNTn2aDxdXBFca7D/example#/ipfs/QmQwAP9vFjbCtKvD8RkJdCvPHqLQjZfW7Mqbbqx18zd8j7/network/readme.md
+)
+- [Pinning](
+  /ipfs/QmTkzDwWqPbnAh5YiV5VwcTLnGdwSNsNTn2aDxdXBFca7D/example#/ipfs/QmQwAP9vFjbCtKvD8RkJdCvPHqLQjZfW7Mqbbqx18zd8j7/pinning/readme.md
+)
+- [Roll your own ipfs!](
+  /ipfs/QmTkzDwWqPbnAh5YiV5VwcTLnGdwSNsNTn2aDxdXBFca7D/example#/ipfs/QmQwAP9vFjbCtKvD8RkJdCvPHqLQjZfW7Mqbbqx18zd8j7/api/service/readme.md
+)
+- [Trivial snapshots with ipfs](
+  /ipfs/QmTkzDwWqPbnAh5YiV5VwcTLnGdwSNsNTn2aDxdXBFca7D/example#/ipfs/QmQwAP9vFjbCtKvD8RkJdCvPHqLQjZfW7Mqbbqx18zd8j7/snapshots/readme.md
+)
+- [The Inter-Planetary Naming System](
+  /ipfs/QmTkzDwWqPbnAh5YiV5VwcTLnGdwSNsNTn2aDxdXBFca7D/example#/ipfs/QmQwAP9vFjbCtKvD8RkJdCvPHqLQjZfW7Mqbbqx18zd8j7/ipns/readme.md
+)
+- [Modifying the bootstrap peers list](
+  /ipfs/QmTkzDwWqPbnAh5YiV5VwcTLnGdwSNsNTn2aDxdXBFca7D/example#/ipfs/QmQwAP9vFjbCtKvD8RkJdCvPHqLQjZfW7Mqbbqx18zd8j7/bootstrap/readme.md
+)
+- [Configuring your node](
+  /ipfs/QmTkzDwWqPbnAh5YiV5VwcTLnGdwSNsNTn2aDxdXBFca7D/example#/ipfs/QmQwAP9vFjbCtKvD8RkJdCvPHqLQjZfW7Mqbbqx18zd8j7/config/readme.md
+)
+- [Adding and Playing Videos](
+  /ipfs/QmTkzDwWqPbnAh5YiV5VwcTLnGdwSNsNTn2aDxdXBFca7D/example#/ipfs/QmQwAP9vFjbCtKvD8RkJdCvPHqLQjZfW7Mqbbqx18zd8j7/videos/readme.md
+)
+- [Visualizing objects with graphmd](
+  /ipfs/QmTkzDwWqPbnAh5YiV5VwcTLnGdwSNsNTn2aDxdXBFca7D/example#/ipfs/QmQwAP9vFjbCtKvD8RkJdCvPHqLQjZfW7Mqbbqx18zd8j7/graphmd/README.md
+)
+- [Git, even more distributed](
+  /ipfs/QmTkzDwWqPbnAh5YiV5VwcTLnGdwSNsNTn2aDxdXBFca7D/example#/ipfs/QmQwAP9vFjbCtKvD8RkJdCvPHqLQjZfW7Mqbbqx18zd8j7/git/readme.md
+)
 
-1. Tellure curat
-2. Stygio etiam irascentemque facta
-3. Rebus opem paratas Rhesum penatis corpora cuspide
+## Simple JS Apps
 
-Sit hoc erit noctisque foramina **pro**; non belli. Pro hunc?
+These are trivial little JS "apps" deployed through IPFS.
+They are simple utilities that demonstrate how one might
+build js applications and deploy them through ipfs.
 
-## Per parilique humano
-
-Maiorque armis frondes Agyrtes: pectusque Somnus *ululatibus vocantem captus*
-adit. Iram alieni de turbinis lymphis nomine temptant in fuit.
-
-> Caelatus *corporis aurato* conscia, mihi remugis corpore hostem sternitur se
-> peremi capi mollescit fessa! Draconibus fronti non liceat *verbis tamen rus*
-> cervice caedis! Dederat deus erat sol fraudem, semianimesque illa laevum rata
-> unus metitur: tumulo clausit gratissima. Corpore fabula sed me et Delo gravem
-> movere. Me tamen Herculeae te tumidaeque et habet.
-
-Defenderet ut torum hastas liquores **quo**! Aula Bacchus, tum verbis tauri:
-iuppiter Diti. Et nasci clamant verba crinita committit, bacae, caelicolae.
-Vultus postquam procul sui perpetuo renovare ab inanis **fenestris** iterum,
-spatiantia calescit vota **corpus meae** adultera casus; secundi.
-
-## Ante arator cupies
-
-Delius si favore videns undis, uti esto ne umbras. Tum lanas annos et passa
-arva: quae, ora aut vidisse tempore verba. Rapinae hinc mulces et plebe ingens
-hunc cornua est expers. Sua quisque amantem canis, per dum huc addit inmemores
-et pulcherrima furit residens. In agat cum: nil iactatis subito duxere virginea
-[aethere](http://textfromdog.tumblr.com/) generoso, et, illa caput molles,
-liquidumque cumque.
-
-> Terra *mollia induxerat* utque, amor cognosse terribilesque candida sed
-> diversa lacus sola camini inque potuit pennis rogat imitataque. In vicinum
-> micat in lumina arbor ausim sumus fudi; in animus damnandus nive: esse? Sumo
-> dis si fert, opes anni qualis patet et pondere nymphae altis. Verbenis *ut
-> facit* Cythereius et suae [ante](http://reddit.com/r/thathappened) non manibus
-> iunxit, *silices* deieci quod ferrum, tremor. Consitaque libatos de animumque
-> patris.
-
-Debent omnibus: candidioribus deum vidit. In quam **repugnat** pacis: ab gemina
-et iuvenci Tyrium quamlibet, postquam exemplumque vertit edidit at. Iuvat et
-voce Aegyptia lentis pennae? Quae manum avenis, dea licet postquam **conatur
-herbis**. Dant filis receptis *heros* movebo virisque, invida **quem ille**
-simili natum mundi aut tum somnos haud.
+- [the example viewer](https://github.com/protocol/ipfs-examples/tree/master/webapps/example-viewer) - [example](
+  /ipfs/QmTkzDwWqPbnAh5YiV5VwcTLnGdwSNsNTn2aDxdXBFca7D/example#/ipfs/QmcGgxxoY53icGgxAkhHhdQPXFGq6ZjfvUESSvVg3C2CPT/readme.md
+)
+- [a markdown renderer](https://github.com/protocol/ipfs-examples/tree/master/webapps/markdown-viewer) - [example](
+  /ipfs/QmSrCRJmzE4zE1nAfWPbzVfanKQNBhp7ZWmMnEdbiLvYNh/mdown#/ipfs/QmfQ75DjAxYzxMP2hdm6o4wFwZS5t7uorEZ2pX9AKXEg2u
+)
+- [a js video player](https://github.com/protocol/ipfs-examples/tree/master/webapps/play) - [example](
+  /ipfs/QmVc6zuAneKJzicnJpfrqCH9gSy6bz54JhcypfJYhGUFQu/play#/ipfs/QmTKZgRNwDNZwHtJSjCp6r5FYefzpULfy37JvMt9DwvXse
+)
+- [a qr-code renderer](https://github.com/protocol/ipfs-examples/tree/master/webapps/qr-render) - [example](
+  /ipfs/QmccqhJg5wm5kNjAP4k4HrYxoqaXUGNuotDUqfvYBx8jrR/qr#enter%20text%20here
+)
