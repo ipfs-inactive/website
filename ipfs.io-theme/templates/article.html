@@ -19,7 +19,7 @@
 <section id="content" class="body">
   <header>
     <h2 class="entry-title">
-      <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark"
+      <a href="{{ SITEURL }}{{ SITEPATH }}/{{ article.url }}" rel="bookmark"
          title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a></h2>
   </header>
   <footer class="post-info">
@@ -34,7 +34,7 @@
     {% if article.authors %}
     <address class="vcard author">
       By {% for author in article.authors %}
-          <a class="url fn" href="{{ SITEURL }}/{{ author.url }}">{{ author }}</a>
+      <a class="url fn" href="{{ SITEURL }}{{ SITEPATH }}/{{ author.url }}">{{ author }}</a>
         {% endfor %}
     </address>
     {% endif %}
