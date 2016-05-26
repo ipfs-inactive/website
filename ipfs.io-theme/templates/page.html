@@ -2,24 +2,17 @@
 {% block title %}{{ page.title }}{%endblock%}
 {% block hero %}
   <div class="hero">
-    <h2 class="headline-main {% if page.headlineClass %}page.headlineClass{% endif %}"></h2><span class="divider">{% if page.headlineText %}page.headlineText{% endif %}</span>
-    <h3 class="subhead-main">{% if page.subheadText %}page.subheadText{% endif %}</h3>
+    <h2 class="headline-main {% if page.headlineclass %}{{ page.headlineclass }}{% else %}home{% endif %}">{{ page.headlinetext }}</h2>
+    {% if page.subheadtext %}
+      <span class="divider"></span>
+      <h3 class="subhead-main">{% if page.subheadtext %}{{ page.subheadtext }}{% endif %}</h3>
+    {% endif %}
   </div>
 {% endblock hero %}
 {% block content %}
-    <h1>{{ page.title }}</h1>
-
-    <p>Page.category {{ page.category }}</p>
-
-    {% if page.category == 'docs' %}
+    {% if page.category.name == 'docs' %}
       <p> Do doc menu include here</p>
     {% endif %}
 
     {{ page.content }}
-
-	{% if page.modified %}
-		<p>
-		Last updated: {{ page.locale_modified }}
-		</p>
-	{% endif %}
 {% endblock content %}

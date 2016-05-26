@@ -42,13 +42,74 @@
   </head>
 
   <body>
-    {% include 'header.html' %}
+    <header class="header-has-logo">
+      <div class="container cf">
+        <h1 class="pull-left">
+          <a href="{{ SITEURL }}{{ SITEPATH }}/" class="logo ipfs-logo transition transition-fadeout">IPFS</a>
+        </h1>
+        <nav role="navigation" class="pull-right top-nav top-nav-dark cf">
+          <input id="menu-toggle" type="checkbox" class="menu-toggle">
+          <label for="menu-toggle">Menu</label>
+          <ul class="list-unstyled list-inline cf">
+            <li><a href="{{ SITEURL }}{{ SITEPATH }}/docs" {% if page and page.category.name == 'docs' %}class="current-item"{% endif %}>Docs</a></li>
+            <li><a href="{{ SITEURL }}{{ SITEPATH }}/how-it-works" {% if page and page.slug == 'how-it-works' %}class="current-item"{% endif %}>How It Works</a></li>
+            <li><a href="{{ SITEURL }}{{ SITEPATH }}/blog" {% if article or (page_name == 'blog') %}class="current-item"{% endif %}>Blog</a></li>
+          </ul>
+        </nav>
+        {% block hero %}
+        {% endblock hero %}
+      </div>
+      <div class="view-more">
+        <label>View more</label><a href="#"></a>
+      </div>
+    </header>
     <div class="container">
       <div class="section">
         {% block content %}
-        {% endblock %}
+        {% endblock content %}
       </div>
     </div>
-    {% include 'footer.html' %}
+    <footer role="contentinfo" class="footer-primary">
+      <div class="container cf">
+        <div class="sitemap-menu cf">
+          <div class="grid-flex-container">
+            <div class="grid-flex-cell">
+              <ul class="sitemap unstyled">
+                <li class="sitemap-head">IPN</li>
+                <li><a>About</a></li>
+                <li><a>Contact</a></li>
+                <li><a>Join</a></li>
+              </ul>
+            </div>
+            <div class="grid-flex-cell">
+              <ul class="sitemap unstyled">
+                <li class="sitemap-head">IPFS</li>
+                <li><a>About</a></li>
+                <li><a>Install</a></li>
+                <li><a>Docs</a></li>
+                <li><a>Code</a></li>
+                <li><a>Community</a></li>
+                <li><a>Blog</a></li>
+                <li><a>Legal</a></li>
+              </ul>
+            </div>
+            <div class="grid-flex-cell">
+              <ul class="sitemap unstyled">
+                <li class="sitemap-head">Filecoin</li>
+                <li><a>About</a></li>
+                <li><a>Paper</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="share-links">
+          <ul class="share unstyled">
+            {% for title, link in SOCIAL %}
+              <li><a href="{{ link }}">{{ title }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
