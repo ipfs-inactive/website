@@ -1,4 +1,5 @@
 *.pyc
+*.pid
 output/
 node_modules
 ipfs.io-theme/build
