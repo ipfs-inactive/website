@@ -3,3 +3,4 @@
 output/
 node_modules
 ipfs.io-theme/build
+.DS_Store
