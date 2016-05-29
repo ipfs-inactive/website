@@ -1,6 +1,6 @@
 pagetype: major
-section: How it Works
-title: How it Works
+section: How IPFS Works
+title: How IPFS Works
 constellation: constellation-01.svg
 
 # Prior confinia
