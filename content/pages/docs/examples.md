@@ -1,3 +1,4 @@
+section: Docs
 title: examples
 url: docs/examples
 save_as: docs/examples/index.html

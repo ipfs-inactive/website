@@ -1,4 +1,5 @@
-title: specs
+section: Docs
+title: Specs
 url: docs/specs
 save_as: docs/specs/index.html
 

@@ -1,4 +1,5 @@
-title: install
+section: Docs
+title: Install
 url: docs/install
 save_as: docs/install/index.html
 
@@ -105,4 +106,3 @@ Package managers often contain out-of-date Go packages.
 ### Install FUSE
 
 For more details on setting up FUSE (so that you can mount the filesystem), see [github.com/ipfs/go-ipfs/blob/master/docs/fuse.md](https://github.com/ipfs/go-ipfs/blob/master/docs/fuse.md)
-

@@ -1,3 +1,4 @@
+section: Docs
 title: API
 url: docs/api
 save_as: docs/api/index.html

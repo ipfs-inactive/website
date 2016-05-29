@@ -1,5 +1,7 @@
-title: docs
-headlineclass: docs
+section: Docs
+pagetype: major
+title: Docs
+constellation: constellation-01.svg
 
 ## Code
 
@@ -23,4 +25,3 @@ These are links to some of the IPFS repositories.
 - Google Group: [ipfs-users@groups.google.com](https://groups.google.com/forum/#!forum/ipfs-users)
 - Twitter: [@IPFSbot](https://twitter.com/ipfsbot) for some news.
 - github: [github.com/ipfs/community](https://github.com/ipfs/community) for meta-questions on how we manage our community in general.
-
