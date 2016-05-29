@@ -1,14 +1,23 @@
 {% extends "base.html" %}
-{% block title %}{{ page.title }}{%endblock%}
+{% block title %}{{ page.title }}{% endblock %}
 {% block hero %}
-  <div class="hero">
-    <h2 class="headline-main {% if page.headlineclass %}{{ page.headlineclass }}{% else %}home{% endif %}">{{ page.headlinetext }}</h2>
-    {% if page.subheadtext %}
+  {% if page.pagetype == 'home' %}
+    <div class="hero hero-home">
+      <h2 class="headline-main">A peer-to-peer protocol<br/> for the permanent web</h2>
       <span class="divider"></span>
-      <h3 class="subhead-main">{% if page.subheadtext %}{{ page.subheadtext }}{% endif %}</h3>
-    {% endif %}
-  </div>
-{% endblock hero %}
+      <h3 class="subhead-main">IPFS powers distributed systems<br/> for the interstellar generation</h3>
+    </div>
+  {% else %}
+    <div class="hero {% if page.pagetype %}hero-{{ page.pagetype }}{% endif %}">
+      {% if page.title %}
+        <h2 class="headline-main {% if page.headlineclass %}{{ page.headlineclass }}{% endif %}">{{ page.title }}</h2>
+      {% endif %}
+      {% if page.constellation %}
+        <img src="{{ SITEURL}}/theme/images/{{ page.constellation }}" class="constellation"/>
+      {% endif %}
+    </div>
+  {% endif %}
+{% endblock %}
 {% block content %}
     {% if page.category.name == 'docs' %}
       <ul>
@@ -23,5 +32,4 @@
     {% endif %}
 
     {{ page.content }}
-    {{ page.title }}
-{% endblock content %}
+{% endblock %}
