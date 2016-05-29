@@ -1,4 +1,8 @@
-# ipfs.io
+# ipfs.pelican markdown`
+
+## Dependencies
+
+`pip install pelican markdown`
 
 ## Frontend Workflow
 
