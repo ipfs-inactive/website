@@ -1,4 +1,7 @@
-Title: legal
+section: Legal
+pagetype: major
+title: Legal
+constellation: constellation-01.svg
 
 # Redeunt turris intus
 

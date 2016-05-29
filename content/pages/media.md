@@ -1,4 +1,7 @@
-Title: media
+pagetype: major
+section: Media
+title: Media
+constellation: constellation-01.svg
 
 # Paelice sati
 

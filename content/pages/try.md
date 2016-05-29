@@ -1,4 +1,7 @@
-Title: try
+pagetype: major
+section: Try IPFS
+title: Try IPFS
+constellation: constellation-01.svg
 
 # Ante hoc in equum lateri solem luctu
 

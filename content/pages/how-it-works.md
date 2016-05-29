@@ -1,4 +1,7 @@
-Title: How it works
+pagetype: major
+section: How it Works
+title: How it Works
+constellation: constellation-01.svg
 
 # Prior confinia
 

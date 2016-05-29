@@ -1,4 +1,7 @@
-Title: press
+pagetype: major
+section: Press
+title: Press
+constellation: constellation-01.svg
 
 # Petit florentia et Iuno vox et ab
 

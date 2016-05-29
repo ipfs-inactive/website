@@ -1,4 +1,7 @@
-Title: faq
+pagetype: major
+section: FAQ
+title: FAQ
+constellation: constellation-01.svg
 
 # Tyranni neque ne per extendit
 
