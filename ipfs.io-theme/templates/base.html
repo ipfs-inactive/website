@@ -51,8 +51,10 @@
           <input id="menu-toggle" type="checkbox" class="menu-toggle">
           <label for="menu-toggle">Menu</label>
           <ul class="list-unstyled list-inline cf">
+            <li><a href="{{ SITEURL }}{{ SITEPATH }}/#why">Why</a></li>
+            <li><a href="{{ SITEURL }}{{ SITEPATH }}/#how">How</a></li>
+            <li><a href="{{ SITEURL }}{{ SITEPATH }}/#uses">Uses</a></li>
             <li><a href="{{ SITEURL }}{{ SITEPATH }}/docs" {% if page and page.category.name == 'docs' %}class="current-item"{% endif %}>Docs</a></li>
-            <li><a href="{{ SITEURL }}{{ SITEPATH }}/how-it-works" {% if page and page.slug == 'how-it-works' %}class="current-item"{% endif %}>How It Works</a></li>
             <li><a href="{{ SITEURL }}{{ SITEPATH }}/blog" {% if article or (page_name == 'blog') %}class="current-item"{% endif %}>Blog</a></li>
           </ul>
         </nav>
