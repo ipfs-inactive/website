@@ -6,7 +6,7 @@
 </head>
 <body>
   <section id="#why">
-    <h2 class="content-center">The web of tomorrow needs IPFS today</h2>
+    <h2 class="content-center">The web of tomorrow needs IPFS <strong>today</strong></h2>
     <div class="grid-flex-container">
       <div class="grid-flex-cell">
         <h5>HTTP is inefficient and expensive</h5>
@@ -23,7 +23,7 @@
         <p>It's too easy for powerful forces and reactive politics to undermine the web—against the common interests of humanity.</p>
       </div>
       <div class="grid-flex-cell">
-        <h5>Developing world needs reliable networks</h5>
+        <h5>The developing world needs reliable networks</h5>
         <p>The need for more local networks is real. Many regions don't have access to broadband, let alone reliable network infrastructure.</p>
       </div>
     </div>
@@ -31,16 +31,67 @@
       <h4>IPFS aims to replace HTTP and<br/>build a better web for all of humanity.</h4>
     </div>
   </section>
-  <div class="text-center" style="margin-top: 30px">
-    <a class="btn btn-default btn-lg" href="#alpha-demo" role="button">
-      <i class="fa fa-play"></i> &nbsp; Watch the Demo
-    </a> &nbsp;
-    <a class="btn btn-default btn-lg" href="https://github.com/ipfs/papers/raw/master/ipfs-cap2pfs/ipfs-p2p-file-system.pdf" role="button">
-      <i class="fa fa-file-o"></i> &nbsp; Read the Paper
-    </a> &nbsp;
-    <a class="btn btn-success btn-lg" href="./docs/install" role="button">
-      <i class="fa fa-download"></i> &nbsp; Install IPFS
-    </a>
-  </div>
+  <section>
+    <div class="content-center">
+      <h2>Think of IPFS as <strong>bittorrent + git</strong></h2>
+      <h5>Here's what happens when you add a folder of files to IPFS:</h5>
+    </div>
+    <div class="how-item grid-flex-container">
+      <div class="grid-flex-cell grid-flex-cell-1of3">
+        <img src=""/>
+      </div>
+      <div class="grid-flex-cell">
+        <h5>The folder, its files, and all of the blocks within each file are given a unique index called a hash.</h5>
+      </div>
+    </div>
+    <div class="how-item grid-flex-container">
+      <div class="grid-flex-cell grid-flex-cell-1of3">
+        <img src=""/>
+      </div>
+      <div class="grid-flex-cell">
+        <h5>Because every block and every file in IPFS has a unique hash, we're able to remove duplications across the network and track a version history for every file.</h5>
+      </div>
+    </div>
+    <div class="how-item grid-flex-container">
+      <div class="grid-flex-cell grid-flex-cell-1of3">
+        <img src=""/>
+      </div>
+      <div class="grid-flex-cell">
+        <h5>On the network, each node is aware of each of its neighbors, and has a list of the location of the hashes they know about.</h5>
+      </div>
+    </div>
+    <div class="how-item grid-flex-container">
+      <div class="grid-flex-cell grid-flex-cell-1of3">
+        <img src=""/>
+      </div>
+      <div class="grid-flex-cell">
+        <h5>When you're looking up a file or a folder, you look it up by its hash. If a node doesn't know about a hash, it asks the network to find nodes that contain the hash and returns it to you.</h5>
+      </div>
+    </div>
+    <div class="how-item grid-flex-container">
+      <div class="grid-flex-cell grid-flex-cell-1of3">
+        <img src=""/>
+      </div>
+      <div class="grid-flex-cell">
+        <h5>To make things easy for people, everything can be found by human-readable names, using a decentralized naming system called IPNS.</h5>
+      </div>
+    </div>
+  </section>
+  <section>
+    <h2 class="content-center">Some uses of IPFS</h2>
+    <nav role='navigation'>
+      <ul class='list-unstyled list-inline tabs'>
+        <li><a class='current-item'>Service providers</a></li>
+        <li><a>Content creators</a></li>
+        <li><a>Developing world</a></li>
+        <li><a>Researchers</a></li>
+        <li><a>Archivists</a></li>
+      </ul>
+    </nav>
+    <div>
+      <h3>IPFS for something something and a thing</h3>
+      <p>This is some content about IPFS for service providers and what you can do that's worthwhile with IPFS for this audience.</p>
+    </div>
+  </section>
 </body>
 </html>
