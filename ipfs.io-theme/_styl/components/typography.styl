@@ -13,10 +13,18 @@ h1, h2, h3, h4, h5, h6
   font-weight: 200
   font-style: normal
 
+  strong
+    font-weight: 400
+
 a
+  color: $brand-blue
+  &:hover
+    color: lighten($brand-blue, 35%)
+
+footer a, header a
   color: $brand-teal
   &:hover
-    color: darken($brand-teal, 35%)
+    color: lighten($brand-teal, 35%)
 
 p
   font-size: 14px
