@@ -6,22 +6,24 @@ window.StarChart = (function () {
   var LINE_FADE_IMMEDIATE = true;
   var LINE_OPACITY_MAX = .9;
   var LINE_OPACITY_MIN = .3;
-  var LINE_FORK_CHANCE = .3;
+  var LINE_FORK_CHANCE = .3; // .25 = 25% chance
+  var LINE_WIDTH = 2;
   var HOPS = 10;
-  var NEW_LINE_ON_HOP = 12;
+  var NEW_LINE_ON_HOP = 8; // if more than hops, start a new one at last hop
   var STAR_RADIUS_MAX = 4;
   var STAR_RADIUS_MIN = .5;
-  var STAR_RADIUS_LARGE_MIN = 2;
-  var STAR_RATIO_LARGE = .1;
-  var STAR_OPACITY_MAX = .7;
-  var STAR_OPACITY_MIN = .2;
-  var CELL_WIDTH_TARGET = 70;
-  var CELL_HEIGHT_TARGET = 70;
+  var STAR_RADIUS_LARGE_MIN = 2; // small stars are less than this, larger stars are larger than this
+  var STAR_LARGE_CHANCE = .1; // .1 = 10% chance
+  var STAR_OPACITY_MAX = .9;
+  var STAR_OPACITY_MIN = .4;
+  var CELL_WIDTH_TARGET = 70; // canvas is divided into cells, for STARS_PER_CELL to populate
+  var CELL_HEIGHT_TARGET = 70; // this ensures good paths to traverse
   var STARS_PER_CELL = 2;
-  var FARTHEST_NEIGHBOR = 140;
+  var FARTHEST_NEIGHBOR = 140; // if a star is within this range, it can connect
   var TWINKLE_SPEED = 6;
   var TWINKLES_PER_SECOND = 20;
 
+  // ------- edit above
   var _STAR_OPACITY_DIFF = STAR_OPACITY_MAX - STAR_OPACITY_MIN;
   var _TWINKLE_RATE = 1 / TWINKLES_PER_SECOND;
   var _LINE_FADE_SPEED = 1 / LINE_FADE_SECONDS;
@@ -192,7 +194,9 @@ window.StarChart = (function () {
   (function () {
 
     this.addComet = function (star, next, hops) {
-      this.children.push(new Comet(this.game, this, star, next, hops));
+      if (!this.fading) {
+        this.children.push(new Comet(this.game, this, star, next, hops));
+      }
     }
 
     this.animate = function (dt) {
@@ -236,6 +240,7 @@ window.StarChart = (function () {
     };
 
     this.fade = function () {
+      if (this.fading) return;
       var i, l;
       for (i = 0, l = this.children.length; i < l; i++) {
         this.children[i].fade();
@@ -309,7 +314,7 @@ window.StarChart = (function () {
 
       this.curline = new this.game.pixi.Graphics();
       this.curline.alpha = this.parent.lineAlpha;
-      this.curline.lineStyle(2, this.lineColor, 1);
+      this.curline.lineStyle(LINE_WIDTH, this.lineColor, 1);
       this.curline.moveTo(-2, -2);
       this.curline.lineTo(-1, -1);
       this.game.stage.addChild(this.curline);
@@ -365,7 +370,7 @@ window.StarChart = (function () {
         this.sprite.x = this.fromStar.x + Math.cos(this.angle) * this.trip;
         this.sprite.y = this.fromStar.y + Math.sin(this.angle) * this.trip;
         this.curline.clear();
-        this.curline.lineStyle(2, this.lineColor, 1);
+        this.curline.lineStyle(LINE_WIDTH, this.lineColor, 1);
         this.curline.moveTo(this.fromStar.x, this.fromStar.y);
         if (this.trip >= this.dist) {
           this.curline.lineTo(this.nextStar.x, this.nextStar.y);
@@ -398,7 +403,7 @@ window.StarChart = (function () {
     this.celly = celly;
     this.sprite = new this.game.pixi.Graphics();
     this.sprite.beginFill(0xFFFFFF, 1)
-    if (Math.random() < STAR_RATIO_LARGE) {
+    if (Math.random() < STAR_LARGE_CHANCE) {
       this.radius = STAR_RADIUS_LARGE_MIN + (Math.random() * (STAR_RADIUS_MAX - STAR_RADIUS_LARGE_MIN));
     } else {
       this.radius = STAR_RADIUS_MIN + (Math.random() * (STAR_RADIUS_LARGE_MIN - STAR_RADIUS_MIN));
