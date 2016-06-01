@@ -1,15 +1,18 @@
 window.StarChart = (function () {
   var STAR_COLORS = [0x6acad1, 0xffffff];
   var LINE_COLOR = 0x6acad1;
-  var COMET_SPEED = 40;
-  var LINE_FADE_SPEED = .75;
-  var LINE_OPACITY_MAX = .7;
-  var LINE_OPACITY_MIN = .2;
+  var LINE_SPEED = 40;
+  var LINE_FADE_SECONDS = 10;
+  var LINE_FADE_IMMEDIATE = true;
+  var LINE_OPACITY_MAX = .9;
+  var LINE_OPACITY_MIN = .3;
+  var LINE_FORK_CHANCE = .3;
   var HOPS = 10;
+  var NEW_LINE_ON_HOP = 12;
   var STAR_RADIUS_MAX = 4;
-  var STAR_RADIUS_MIN = 1;
-  var STAR_RADIUS_LARGE_MIN = 3;
-  var STAR_PERCENT_LARGE = .1;
+  var STAR_RADIUS_MIN = .5;
+  var STAR_RADIUS_LARGE_MIN = 2;
+  var STAR_RATIO_LARGE = .1;
   var STAR_OPACITY_MAX = .7;
   var STAR_OPACITY_MIN = .2;
   var CELL_WIDTH_TARGET = 70;
@@ -21,10 +24,12 @@ window.StarChart = (function () {
 
   var _STAR_OPACITY_DIFF = STAR_OPACITY_MAX - STAR_OPACITY_MIN;
   var _TWINKLE_RATE = 1 / TWINKLES_PER_SECOND;
+  var _LINE_FADE_SPEED = 1 / LINE_FADE_SECONDS;
 
   function StarChart(div, pixi) {
     this.div = div;
     this.pixi = pixi;
+    this.pixi.utils._saidHello = true;
     this.renderer = this.pixi.autoDetectRenderer(800, 600, {antialias: true, transparent: true});
     div.appendChild(this.renderer.view);
     this.stage = new this.pixi.Container();
@@ -170,28 +175,30 @@ window.StarChart = (function () {
 
   }).call(StarChart.prototype);
 
-  function CometGroup(game, star, next, hops, addAfter) {
+  function CometGroup(game, star, next, hops, addAnother) {
     this.children = [];
     this.game = game;
     this.hops = hops;
     this.visited = {};
     this.ended = 0;
-    this.addAfter = addAfter;
     this.alpha = 1;
     this.fading = false;
-    this.addComet(star, next, hops, addAfter);
+    this.added = addAnother ? false : true;
+    this.addAnother = addAnother;
+    this.lineAlpha = LINE_OPACITY_MIN + Math.random() * (LINE_OPACITY_MAX - LINE_OPACITY_MIN);
+    this.addComet(star, next, hops);
   }
 
   (function () {
 
-    this.addComet = function (star, next, hops, addAfter) {
-      this.children.push(new Comet(this.game, this, star, next, hops, addAfter));
+    this.addComet = function (star, next, hops) {
+      this.children.push(new Comet(this.game, this, star, next, hops));
     }
 
     this.animate = function (dt) {
       var i, l, v, vkeys, r, g, b, r2, g2, b2;
       if (this.fading) {
-        this.alpha -= dt * LINE_FADE_SPEED;
+        this.alpha -= dt * _LINE_FADE_SPEED;
         if (this.alpha < 0) {
           this.alpha = 0;
         }
@@ -213,7 +220,14 @@ window.StarChart = (function () {
         this.destroy();
       }
     };
-    
+
+    this.didHop = function (hop) {
+      if (!this.added && HOPS - hop === NEW_LINE_ON_HOP) {
+        this.added = true;
+        this.game.comets.push(new CometGroup(this.game, this.game.randomStar(), undefined, HOPS, this.addAnother));
+      }
+    };
+
     this.end = function () {
       this.ended++;
       if (this.ended === this.children.length) {
@@ -227,6 +241,10 @@ window.StarChart = (function () {
         this.children[i].fade();
       }
       this.fading = true;
+      if (!this.added) {
+        this.added = true;
+        this.game.comets.push(new CometGroup(this.game, this.game.randomStar(), undefined, HOPS, this.addAnother));
+      }
     }
 
     this.destroy = function () {
@@ -239,14 +257,11 @@ window.StarChart = (function () {
         this.game.stars[vkeys[i]].sprite.tint = STAR_COLORS[1];
       }
       this.game.removeComets.push(this);
-      if (this.addAfter) {
-        this.game.comets.push(new CometGroup(this.game, this.game.randomStar(), undefined, HOPS, true));
-      }
     };
 
   }.call(CometGroup.prototype));
 
-  function Comet(game, parent, star, next, hops, addAfter) {
+  function Comet(game, parent, star, next, hops) {
     this.game = game;
     this.parent = parent;
     this.fromStar = star;
@@ -257,9 +272,8 @@ window.StarChart = (function () {
     this.particles = [];
     this.aparticles = [];
     this.hops = hops;
-    this.addAfter = addAfter;
     var part;
-    this.speed = COMET_SPEED;
+    this.speed = LINE_SPEED;
     this.sprite = new this.game.pixi.Sprite();
     this.sprite.anchor = new this.game.pixi.Point(.5, .5);
     this.sprite.scale = new this.game.pixi.Point(.5, .5);
@@ -268,10 +282,7 @@ window.StarChart = (function () {
     this.dist = null;
     this.lineColor = LINE_COLOR;
     this.lines = [];
-      this.curline = new this.game.pixi.Graphics();
-    this.curline.lineStyle(2, this.lineColor, 1);
-      this.curline.moveTo(-2, -2);
-      this.curline.lineTo(-1, -1);
+    this.curline = new this.game.pixi.Graphics();
     this.ending = false;
     this.fading = false;
     if (typeof this.nextStar === 'undefined') {
@@ -288,15 +299,16 @@ window.StarChart = (function () {
       var i, l;
       this.parent.visited[this.fromStar.id] = true;
       this.parent.visited[this.nextStar.id] = true;
-      this.speed = COMET_SPEED * (1 - (Math.abs(this.fromStar.radias - this.nextStar.radias) / 3) * .7)
-      this.speed *= .5 + ((this.fromStar.radias + this.nextStar.radias - 2) / 6 * .5)
-      if (!first && this.hops > 0 && Math.floor(Math.random() * 3) == 1) {
+      this.speed = LINE_SPEED * (1 - (Math.abs(this.fromStar.radius - this.nextStar.radius) / 3) * .7)
+      this.speed *= .5 + ((this.fromStar.radius + this.nextStar.radius - 2) / 6 * .5)
+      if (!first && this.hops > 0 && Math.random() < LINE_FORK_CHANCE) {
         this.parent.addComet(this.fromStar, undefined, this.hops - 1, false);
       }
       this.angle = Math.atan2(this.fromStar.y - this.nextStar.y, this.fromStar.x - this.nextStar.x) + Math.PI;
       this.dist = Math.sqrt(Math.pow(this.fromStar.x - this.nextStar.x, 2) + Math.pow(this.fromStar.y - this.nextStar.y, 2));
 
       this.curline = new this.game.pixi.Graphics();
+      this.curline.alpha = this.parent.lineAlpha;
       this.curline.lineStyle(2, this.lineColor, 1);
       this.curline.moveTo(-2, -2);
       this.curline.lineTo(-1, -1);
@@ -323,11 +335,11 @@ window.StarChart = (function () {
       this.setNext();
       if (!first) {
         this.hops--;
+        this.parent.didHop(this.hops)
       }
     };
 
     this.end = function (fromParent) {
-      this.sprite.alpha = 0;
       this.ending = true;
       this.parent.end();
     }
@@ -345,9 +357,9 @@ window.StarChart = (function () {
 
       if (this.ending && alpha !== 1) {
         for (i = 0, l = this.lines.length; i < l; i++) {
-          this.lines[i].alpha = alpha;
+          this.lines[i].alpha = alpha * this.parent.lineAlpha;
         }
-        this.curline.alpha = alpha;
+        this.curline.alpha = alpha * this.parent.lineAlpha;
       }
       if (!this.ending) {
         this.sprite.x = this.fromStar.x + Math.cos(this.angle) * this.trip;
@@ -364,7 +376,7 @@ window.StarChart = (function () {
         } else {
           this.curline.lineTo(this.sprite.x, this.sprite.y);
         }
-      } 
+      }
     }
 
     this.destroy = function () {
@@ -386,8 +398,12 @@ window.StarChart = (function () {
     this.celly = celly;
     this.sprite = new this.game.pixi.Graphics();
     this.sprite.beginFill(0xFFFFFF, 1)
-    this.radias = 1 + Math.random() * 3;
-    this.sprite.drawCircle(0, 0, this.radias);
+    if (Math.random() < STAR_RATIO_LARGE) {
+      this.radius = STAR_RADIUS_LARGE_MIN + (Math.random() * (STAR_RADIUS_MAX - STAR_RADIUS_LARGE_MIN));
+    } else {
+      this.radius = STAR_RADIUS_MIN + (Math.random() * (STAR_RADIUS_LARGE_MIN - STAR_RADIUS_MIN));
+    }
+    this.sprite.drawCircle(0, 0, this.radius);
     this.sprite.endFill();
     this.target_alpha = this.sprite.alpha = STAR_OPACITY_MAX - Math.random() * _STAR_OPACITY_DIFF;
 
