@@ -17,7 +17,7 @@ node_modules: package.json
 clean:
 	rm -rf build
 
-publish:
+publish: build
 	ipfs swarm peers >/dev/null || (echo "ipfs daemon must be online to publish" && exit 1)
 	ipfs add -r -q build/ipfs.io | tail -n1 >versions/current
 	cat versions/current >>versions/history
