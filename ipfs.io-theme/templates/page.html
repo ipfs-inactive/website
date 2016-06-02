@@ -27,7 +27,7 @@
 {% endblock %}
 {% block content %}
     {% if page.category.name == 'docs' %}
-      <ul>
+      <ul class="docs-menu">
         <li><a href="{{ SITEURL}}{{ SITEPATH }}/docs" {% if page.slug == 'docs' %}class="current-item"{% endif %}>Documentation</a></li>
         <li><a href="{{ SITEURL}}{{ SITEPATH }}/docs/install" {% if page.slug == 'install' %}class="current-item"{% endif %}>Install</a></li>
         <li><a href="{{ SITEURL}}{{ SITEPATH }}/docs/getting-started" {% if page.slug == 'getting-started' %}class="current-item"{% endif %}>Getting Started</a></li>
@@ -38,5 +38,7 @@
       </ul>
     {% endif %}
 
-    {{ page.content }}
+    <div class="content-wrapper">
+      {{ page.content }}
+    </div>
 {% endblock %}
