@@ -5,7 +5,8 @@
 --------------------------------------------------------------------*/
 
 header
-  background: $brand-blue
+  // background: $brand-blue
+  background: rgba($blue-space,1)
   padding-top: 20px
   position: relative
   margin-bottom: 60px
@@ -33,7 +34,10 @@ header
     font-style: normal
     margin-bottom: 20px
     font-size: 40px
+    position: relative
     z-index: 2
+    // text-shadow: 0 0 10px rgba($blue-space,1), 0 0 25px rgba($blue-space,.5), 0 0 50px rgba($blue-space,.3), 0 0 80px rgba($blue-space,.1)
+    text-shadow: 0 0 50px rgba($blue-space,1)
 
   h3
     color: white
@@ -42,11 +46,21 @@ header
     margin-top: 15px
     font-size: 22px
     line-height: 150%
+    position: relative
     z-index: 2
+    // text-shadow: 0 0 10px rgba(8,59,84,1), 0 0 25px rgba(8,59,84,.5), 0 0 50px rgba(8,59,84,.3), 0 0 80px
+
+.hero-text
+  padding: 160px 0 80px 0
+  background-image: url(/theme/images/hero-text-bg.png)
+  background-position: center
+  background-repeat: no-repeat
+  background-size: 100%
+  position: relative
+  z-index: 2
 
 .hero-home
   min-height: 480px
-  padding-top: 160px
   z-index: 2
 
 .hero-major
@@ -63,7 +77,10 @@ header
   margin: 0 auto 0 auto
 
 .cta .button
+  position: relative
+  z-index: 2
   margin: 0 5px
+  background-color: rgba($blue-space,1)
 
 .constellation
   width: 120px

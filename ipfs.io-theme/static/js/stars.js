@@ -1,13 +1,13 @@
 window.StarChart = (function () {
-  var STAR_COLORS = [0x6acad1, 0xffffff];
+  var STAR_COLORS = [0xffffff, 0xffffff];
   var LINE_COLOR = 0x6acad1;
   var LINE_SPEED = 40;
-  var LINE_FADE_SECONDS = 10;
+  var LINE_FADE_SECONDS = 15;
   var LINE_FADE_IMMEDIATE = true;
-  var LINE_OPACITY_MAX = .9;
-  var LINE_OPACITY_MIN = .3;
-  var LINE_FORK_CHANCE = .3; // .25 = 25% chance
-  var LINE_WIDTH = 2;
+  var LINE_OPACITY_MAX = .8;
+  var LINE_OPACITY_MIN = .05;
+  var LINE_FORK_CHANCE = .35; // .25 = 25% chance
+  var LINE_WIDTH = 1;
   var HOPS = 10;
   var NEW_LINE_ON_HOP = 8; // if more than hops, start a new one at last hop
   var STAR_RADIUS_MAX = 4;
@@ -21,7 +21,7 @@ window.StarChart = (function () {
   var STARS_PER_CELL = 2;
   var FARTHEST_NEIGHBOR = 140; // if a star is within this range, it can connect
   var TWINKLE_SPEED = 6;
-  var TWINKLES_PER_SECOND = 20;
+  var TWINKLES_PER_SECOND = 100;
 
   // ------- edit above
   var _STAR_OPACITY_DIFF = STAR_OPACITY_MAX - STAR_OPACITY_MIN;

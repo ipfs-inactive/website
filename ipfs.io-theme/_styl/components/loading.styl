@@ -1,0 +1,32 @@
+.wf-inactive
+  h1, h2, h3, h4, h5, h6, p, li, a
+    opacity: 1
+
+.wf-loading
+  h1, h2, h3, h4, h5, h6, p, li, a, .divider
+    opacity: 0
+    transition: .1s opacity
+
+  #stars canvas, .hero-text
+    opacity: 0
+    transition: 2s opacity
+
+.wf-active
+  h1, h2, h3, h4, h5, h6, p, li, a
+    opacity: 1
+    transition: .1s opacity
+  #stars canvas, .hero-text
+    opacity: 1
+    transition: 2s opacity
+
+.wf-active
+  #stars canvas, .hero-text
+    transition: 2s opacity
+    transition-delay: 1s
+  .hero-home
+    h2, .divider, h3
+      transition: 3s opacity
+    .divider
+      transition-delay: .5s
+    h3
+      transition-delay: 1s
