@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 19.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="257.4px"
-	 height="168px" viewBox="0 0 257.4 168" style="enable-background:new 0 0 257.4 168;" xml:space="preserve">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="258px"
+	 height="168px" viewBox="0 0 258 168" style="enable-background:new 0 0 258 168;" xml:space="preserve">
 <style type="text/css">
 	.st0{display:none;}
 	.st1{display:inline;fill:#F05135;}
@@ -45,46 +45,45 @@
 	.st39{fill:#F05135;stroke:#F05235;stroke-linejoin:round;stroke-miterlimit:10;}
 	.st40{fill:#6ACAD1;}
 </style>
-<g id="Layer_1" class="st0">
+<g id="template" class="st0">
 	<g id="_x38_jq36L_1_" class="st17">
 		
-			<image style="overflow:visible;" width="1001" height="475" id="_x38_jq36L_2_" xlink:href="F4021172B6579C58.png"  transform="matrix(1 0 0 1 -112.4576 -469.1768)">
+			<image style="overflow:visible;" width="1001" height="475" id="_x38_jq36L_2_" xlink:href="F4021172B6579C58.png"  transform="matrix(1 0 0 1 -112.1503 -469.1623)">
 		</image>
 	</g>
 	<g id="SsozcT_1_" class="st17">
 		
-			<image style="overflow:visible;" width="922" height="544" id="SsozcT_2_" xlink:href="F4021172B6579C59.png"  transform="matrix(1 0 0 1 -73.4576 -194.1768)">
+			<image style="overflow:visible;" width="922" height="544" id="SsozcT_2_" xlink:href="F4021172B6579C59.png"  transform="matrix(1 0 0 1 -73.1503 -194.1623)">
 		</image>
 	</g>
 </g>
-<g id="Layer_2">
-	<ellipse class="st21" cx="132" cy="65.9" rx="63.3" ry="36.1"/>
-	<ellipse class="st21" cx="132" cy="74.5" rx="93.6" ry="53.4"/>
-	<ellipse class="st21" cx="132" cy="81.5" rx="119.3" ry="68.1"/>
-	<line class="st22" x1="88.1" y1="77.8" x2="114" y2="60.4"/>
-	<line class="st22" x1="62.5" y1="46.7" x2="110.6" y2="44.5"/>
-	<line class="st22" x1="29.1" y1="90.3" x2="110.6" y2="52.7"/>
-	<line class="st22" x1="233" y1="58.2" x2="154.2" y2="44.5"/>
-	<line class="st22" x1="193.6" y1="129.3" x2="137.9" y2="58.2"/>
-	<line class="st22" x1="132" y1="60.4" x2="127.2" y2="130.9"/>
-	<line class="st22" x1="144.3" y1="54" x2="178.6" y2="74.5"/>
-	<line class="st22" x1="168.7" y1="22.5" x2="146.2" y2="40.1"/>
-	<circle class="st28" cx="132" cy="44.5" r="26.4"/>
-	<circle class="st23" cx="187.2" cy="83.2" r="11.4"/>
-	<circle class="st19" cx="173.2" cy="18" r="9.2"/>
-	<circle class="st19" cx="80.1" cy="86" r="11.4"/>
-	<circle class="st19" cx="16.3" cy="94.6" r="14.3"/>
-	<circle class="st23" cx="52.8" cy="46.7" r="11.4"/>
-	<circle class="st19" cx="244.4" cy="58.2" r="11.4"/>
-	<circle class="st19" cx="198.7" cy="136.8" r="12.7"/>
-	<circle class="st19" cx="125.6" cy="148" r="18.7"/>
+<g id="stuffs">
+	<ellipse class="st21" cx="132.3" cy="65.9" rx="63.3" ry="36.1"/>
+	<ellipse class="st21" cx="132.3" cy="74.6" rx="93.6" ry="53.4"/>
+	<ellipse class="st21" cx="132.3" cy="81.5" rx="119.3" ry="68.1"/>
+	<line class="st22" x1="88.4" y1="77.8" x2="114.3" y2="60.4"/>
+	<line class="st22" x1="62.8" y1="46.7" x2="110.9" y2="44.5"/>
+	<line class="st22" x1="29.4" y1="90.3" x2="110.9" y2="52.7"/>
+	<line class="st22" x1="233.3" y1="58.2" x2="154.5" y2="44.5"/>
+	<line class="st22" x1="193.9" y1="129.3" x2="138.2" y2="58.2"/>
+	<line class="st22" x1="132.3" y1="60.4" x2="127.5" y2="130.9"/>
+	<line class="st22" x1="144.6" y1="54" x2="178.9" y2="74.6"/>
+	<line class="st22" x1="169" y1="22.5" x2="146.5" y2="40.1"/>
+	<circle class="st28" cx="132.3" cy="44.5" r="26.4"/>
+	<circle class="st23" cx="187.5" cy="83.2" r="11.4"/>
+	<circle class="st19" cx="173.5" cy="18" r="9.2"/>
+	<circle class="st19" cx="80.4" cy="86" r="11.4"/>
+	<circle class="st19" cx="16.6" cy="94.6" r="14.3"/>
+	<circle class="st23" cx="53.1" cy="46.7" r="11.4"/>
+	<circle class="st19" cx="244.8" cy="58.2" r="11.4"/>
+	<circle class="st19" cx="199" cy="136.8" r="12.7"/>
+	<circle class="st19" cx="125.9" cy="148" r="18.7"/>
 	<g>
-		<polygon class="st39" points="101.5,13.1 109.1,29.1 141.7,19.8 139.5,2.3 134.1,12.9 126.3,6.1 122.7,16.2 114.7,9.4 111.5,19.4 
-					"/>
-		<circle class="st37" cx="101.5" cy="13.1" r="2.3"/>
-		<circle class="st37" cx="114.4" cy="8.4" r="2.3"/>
-		<circle class="st37" cx="126" cy="5.1" r="2.3"/>
-		<circle class="st37" cx="139.5" cy="2.3" r="2.3"/>
+		<polygon class="st39" points="101.8,13.1 109.4,29.1 142,19.8 139.8,2.3 134.4,12.9 126.6,6.1 123,16.2 115,9.4 111.8,19.4 		"/>
+		<circle class="st37" cx="101.8" cy="13.1" r="2.3"/>
+		<circle class="st37" cx="114.8" cy="8.4" r="2.3"/>
+		<circle class="st37" cx="126.3" cy="5.1" r="2.3"/>
+		<circle class="st37" cx="139.8" cy="2.3" r="2.3"/>
 	</g>
 </g>
 </svg>
