@@ -43,6 +43,8 @@ window.StarChart = (function () {
     this.starList = [];
     this.cells = [];
     this.comets = [];
+    this.animatingStars = [];
+    this.removeAnimatingStars = [];
     this.removeComets = [];
     this.activeStar = null;
     this.setSize();
@@ -107,6 +109,8 @@ window.StarChart = (function () {
       this.comets = [];
       this.removeComets = [];
       this.activeStar = null;
+      this.animatingStars = [];
+      this.removeAnimatingStars = [];
       this.lastNow = window.performance.now();
       var gx, gy = 0;
       var x, y, n, row, col;
@@ -142,7 +146,9 @@ window.StarChart = (function () {
 
     this.twinkleStar = function () {
       var keys = Object.keys(this.stars);
-      this.stars[keys[Math.floor(Math.random() * keys.length)]].twinkling = true;
+      var star = this.stars[keys[Math.floor(Math.random() * keys.length)]];
+      star.twinkling = true;
+      this.animatingStars.push(star);
     };
 
     this.randomStar = function () {
@@ -154,25 +160,31 @@ window.StarChart = (function () {
     this.animate = function () {
       var now = window.performance.now();
       var dt = (now - this.lastNow) * .001;
-      this.lastNow = now;
       var r, c, s;
       lastTwinkle += dt;
       requestAnimationFrame(this.animate.bind(this));
-      if (lastTwinkle > _TWINKLE_RATE) {
-        lastTwinkle = 0;
-        this.twinkleStar();
+      if (dt > 0.041666666666666664) {
+        this.lastNow = now;
+        if (lastTwinkle > _TWINKLE_RATE) {
+          lastTwinkle = 0;
+          this.twinkleStar();
+        }
+        for (r = 0, l = this.animatingStars.length; r < l; r++) {
+            this.animatingStars[r].animate(dt);
+        }
+        for (r = 0, l = this.removeAnimatingStars.length; r < l; r++) {
+          this.animatingStars.splice(this.animatingStars.indexOf(this.removeAnimatingStars[r]), 1);
+        }
+        this.removeAnimatingStars = [];
+        for (r = 0, l = this.comets.length; r < l; r++) {
+            this.comets[r].animate(dt);
+        }
+        for (r = 0, l = this.removeComets.length; r < l; r++) {
+          this.comets.splice(this.comets.indexOf(this.removeComets[r]), 1);
+        }
+        this.removeComets = [];
+        this.renderer.render(this.stage);
       }
-      for (r = 0, l = this.starList.length; r < l; r++) {
-          this.starList[r].animate(dt);
-      }
-      for (r = 0, l = this.comets.length; r < l; r++) {
-          this.comets[r].animate(dt);
-      }
-      for (r = 0, l = this.removeComets.length; r < l; r++) {
-        this.comets.splice(this.comets.indexOf(this.removeComets[r]), 1);
-      }
-      this.removeComets = [];
-      this.renderer.render(this.stage);
     };
 
   }).call(StarChart.prototype);
@@ -434,6 +446,7 @@ window.StarChart = (function () {
           this.alpha = 0;
           this.sprite.alpha = this.target_alpha;
           this.twinkling = false;
+          this.game.removeAnimatingStars.push(this);
         }
       }
     }
