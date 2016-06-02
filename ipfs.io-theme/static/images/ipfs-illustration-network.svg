@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 19.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="224.1px"
-	 height="152.3px" viewBox="0 0 224.1 152.3" style="enable-background:new 0 0 224.1 152.3;" xml:space="preserve">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="226px"
+	 height="154px" viewBox="0 0 226 154" style="enable-background:new 0 0 226 154;" xml:space="preserve">
 <style type="text/css">
 	.st0{display:none;}
 	.st1{display:inline;fill:#F05135;}
@@ -45,72 +45,72 @@
 	.st39{fill:#F05135;stroke:#F05235;stroke-linejoin:round;stroke-miterlimit:10;}
 	.st40{fill:#6ACAD1;}
 </style>
-<g id="Layer_1" class="st0">
+<g id="template" class="st0">
 	<g id="_x38_jq36L_1_" class="st17">
 		
-			<image style="overflow:visible;" width="1001" height="475" id="_x38_jq36L_2_" xlink:href="F40A7C7F7065F0A3.png"  transform="matrix(1 0 0 1 -586.2453 -459.163)">
+			<image style="overflow:visible;" width="1001" height="475" id="_x38_jq36L_2_" xlink:href="F40A7C7F7065F0A3.png"  transform="matrix(1 0 0 1 -585.2849 -458.3315)">
 		</image>
 	</g>
 	<g id="SsozcT_1_" class="st17">
 		
-			<image style="overflow:visible;" width="922" height="544" id="SsozcT_2_" xlink:href="F40A7C7F7065F0A1.png"  transform="matrix(1 0 0 1 -547.2453 -184.163)">
+			<image style="overflow:visible;" width="922" height="544" id="SsozcT_2_" xlink:href="F40A7C7F7065F0A1.png"  transform="matrix(1 0 0 1 -546.2849 -183.3315)">
 		</image>
 	</g>
 </g>
-<g id="Layer_2">
-	<line class="st18" x1="156.7" y1="21.6" x2="178" y2="44.7"/>
-	<line class="st18" x1="106.6" y1="77.5" x2="103" y2="109.3"/>
-	<polyline class="st18" points="4.5,48.4 51.2,23.3 104.4,4.5 156.7,21.6 	"/>
-	<line class="st18" x1="200.2" y1="125.5" x2="219.6" y2="94.7"/>
-	<line class="st18" x1="143.2" y1="59" x2="178" y2="44.7"/>
-	<line class="st18" x1="156.7" y1="21.6" x2="207.9" y2="35.3"/>
-	<line class="st18" x1="207.9" y1="35.3" x2="187.5" y2="75.3"/>
-	<polyline class="st18" points="151.1,96.9 143.2,59 187.5,75.3 178,44.7 207.9,35.3 219.6,94.7 	"/>
-	<line class="st18" x1="21.1" y1="93.5" x2="20.5" y2="139.5"/>
-	<line class="st18" x1="21.1" y1="93.5" x2="58.5" y2="75.3"/>
-	<line class="st18" x1="21.1" y1="93.5" x2="43.9" y2="105.6"/>
-	<line class="st18" x1="58.5" y1="75.3" x2="78.8" y2="93.2"/>
-	<polygon class="st18" points="143.2,59 133.4,81.1 106.6,77.5 90.7,42.7 122.3,35.3 	"/>
-	<line class="st18" x1="58.5" y1="75.3" x2="106.6" y2="77.5"/>
-	<polyline class="st18" points="90.7,42.7 58.5,75.3 51.2,23.3 	"/>
-	<line class="st18" x1="90.7" y1="42.7" x2="142.2" y2="59"/>
-	<line class="st18" x1="151.1" y1="96.9" x2="129.8" y2="136.5"/>
-	<polyline class="st18" points="20.5,139.5 43.9,105.6 71.5,119.9 	"/>
-	<polyline class="st18" points="187.5,75.3 174.3,116.2 171.1,147.8 	"/>
-	<polygon class="st18" points="129.8,136.5 174.3,116.2 151.1,96.9 103,109.3 	"/>
-	<polyline class="st18" points="20.5,139.5 86.2,147.8 103,109.3 71.5,119.9 	"/>
-	<polyline class="st18" points="4.5,48.4 35.8,55.3 51.2,23.3 90.7,42.7 104.4,4.5 122.3,35.3 156.7,21.6 144.1,59 105.6,77.5 
-		78.8,93.2 103,109.3 133.4,81.1 151.1,96.9 187.5,75.3 219.6,94.7 174.3,116.2 200.2,125.5 171.1,147.8 129.8,136.5 86.2,147.8 
-		71.5,119.9 	"/>
-	<polyline class="st18" points="4.5,48.4 21.1,93.5 35.8,55.3 58.5,75.3 43.9,105.6 78.8,93.2 71.5,118.3 20.5,139.5 	"/>
+<g id="stuffs">
+	<line class="st18" x1="157.7" y1="22.4" x2="179" y2="45.6"/>
+	<line class="st18" x1="107.6" y1="78.3" x2="103.9" y2="110.1"/>
+	<polyline class="st18" points="5.5,49.2 52.1,24.1 105.3,5.3 157.7,22.4 	"/>
+	<line class="st18" x1="201.1" y1="126.3" x2="220.5" y2="95.6"/>
+	<line class="st18" x1="144.2" y1="59.8" x2="179" y2="45.6"/>
+	<line class="st18" x1="157.7" y1="22.4" x2="208.8" y2="36.1"/>
+	<line class="st18" x1="208.8" y1="36.1" x2="188.5" y2="76.2"/>
+	<polyline class="st18" points="152,97.7 144.2,59.8 188.5,76.2 179,45.6 208.8,36.1 220.5,95.6 	"/>
+	<line class="st18" x1="22.1" y1="94.3" x2="21.4" y2="140.3"/>
+	<line class="st18" x1="22.1" y1="94.3" x2="59.5" y2="76.2"/>
+	<line class="st18" x1="22.1" y1="94.3" x2="44.8" y2="106.4"/>
+	<line class="st18" x1="59.5" y1="76.2" x2="79.8" y2="94"/>
+	<polygon class="st18" points="144.2,59.8 134.4,82 107.6,78.3 91.7,43.6 123.3,36.1 	"/>
+	<line class="st18" x1="59.5" y1="76.2" x2="107.6" y2="78.3"/>
+	<polyline class="st18" points="91.7,43.6 59.5,76.2 52.1,24.1 	"/>
+	<line class="st18" x1="91.7" y1="43.6" x2="143.2" y2="59.8"/>
+	<line class="st18" x1="152" y1="97.7" x2="130.7" y2="137.3"/>
+	<polyline class="st18" points="21.4,140.3 44.8,106.4 72.5,120.7 	"/>
+	<polyline class="st18" points="188.5,76.2 175.3,117 172.1,148.7 	"/>
+	<polygon class="st18" points="130.7,137.3 175.3,117 152,97.7 103.9,110.1 	"/>
+	<polyline class="st18" points="21.4,140.3 87.1,148.7 103.9,110.1 72.5,120.7 	"/>
+	<polyline class="st18" points="5.5,49.2 36.7,56.2 52.1,24.1 91.7,43.6 105.3,5.3 123.3,36.1 157.7,22.4 145.1,59.8 106.6,78.3 
+		79.8,94 103.9,110.1 134.4,82 152,97.7 188.5,76.2 220.5,95.6 175.3,117 201.1,126.3 172.1,148.7 130.7,137.3 87.1,148.7 
+		72.5,120.7 	"/>
+	<polyline class="st18" points="5.5,49.2 22.1,94.3 36.7,56.2 59.5,76.2 44.8,106.4 79.8,94 72.5,119.2 21.4,140.3 	"/>
 	<g>
-		<circle class="st37" cx="86.2" cy="147.8" r="4.5"/>
-		<circle class="st37" cx="174.8" cy="116.7" r="4.5"/>
-		<circle class="st40" cx="51.2" cy="23.3" r="4.5"/>
-		<circle class="st40" cx="156.7" cy="21.6" r="4.5"/>
-		<circle class="st40" cx="207.9" cy="35.3" r="4.5"/>
-		<circle class="st29" cx="104.4" cy="4.5" r="4.5"/>
-		<circle class="st29" cx="219.6" cy="94.7" r="4.5"/>
-		<circle class="st37" cx="4.5" cy="48.4" r="4.5"/>
-		<circle class="st37" cx="121.5" cy="35.3" r="4.5"/>
-		<circle class="st37" cx="78.8" cy="93.2" r="4.5"/>
-		<circle class="st40" cx="90.7" cy="42.7" r="4.5"/>
-		<circle class="st40" cx="143.2" cy="59.8" r="4.5"/>
-		<circle class="st40" cx="187.5" cy="75.3" r="4.5"/>
-		<circle class="st40" cx="151.1" cy="96.7" r="4.5"/>
-		<circle class="st40" cx="200.2" cy="125.5" r="4.5"/>
-		<circle class="st40" cx="129.8" cy="136.5" r="4.5"/>
-		<circle class="st40" cx="58.5" cy="75.3" r="4.5"/>
-		<circle class="st40" cx="106.6" cy="77.5" r="4.5"/>
-		<circle class="st40" cx="71" cy="119" r="4.5"/>
-		<circle class="st40" cx="20.5" cy="139.2" r="4.5"/>
-		<circle class="st40" cx="21.1" cy="94" r="4.5"/>
-		<circle class="st29" cx="178" cy="44.7" r="4.5"/>
-		<circle class="st29" cx="133.3" cy="81.1" r="4.5"/>
-		<circle class="st29" cx="171.1" cy="147.8" r="4.5"/>
-		<circle class="st29" cx="103" cy="109.3" r="4.5"/>
-		<circle class="st29" cx="35.3" cy="55.3" r="4.5"/>
-		<circle class="st29" cx="43.9" cy="105.6" r="4.5"/>
+		<circle class="st37" cx="87.1" cy="148.7" r="4.5"/>
+		<circle class="st37" cx="175.7" cy="117.5" r="4.5"/>
+		<circle class="st40" cx="52.1" cy="24.1" r="4.5"/>
+		<circle class="st40" cx="157.7" cy="22.4" r="4.5"/>
+		<circle class="st40" cx="208.8" cy="36.1" r="4.5"/>
+		<circle class="st29" cx="105.3" cy="5.3" r="4.5"/>
+		<circle class="st29" cx="220.5" cy="95.6" r="4.5"/>
+		<circle class="st37" cx="5.5" cy="49.2" r="4.5"/>
+		<circle class="st37" cx="122.4" cy="36.1" r="4.5"/>
+		<circle class="st37" cx="79.8" cy="94" r="4.5"/>
+		<circle class="st40" cx="91.6" cy="43.6" r="4.5"/>
+		<circle class="st40" cx="144.2" cy="60.7" r="4.5"/>
+		<circle class="st40" cx="188.5" cy="76.2" r="4.5"/>
+		<circle class="st40" cx="152" cy="97.5" r="4.5"/>
+		<circle class="st40" cx="201.1" cy="126.3" r="4.5"/>
+		<circle class="st40" cx="130.7" cy="137.3" r="4.5"/>
+		<circle class="st40" cx="59.5" cy="76.2" r="4.5"/>
+		<circle class="st40" cx="107.6" cy="78.3" r="4.5"/>
+		<circle class="st40" cx="71.9" cy="119.8" r="4.5"/>
+		<circle class="st40" cx="21.4" cy="140.1" r="4.5"/>
+		<circle class="st40" cx="22.1" cy="94.8" r="4.5"/>
+		<circle class="st29" cx="179" cy="45.6" r="4.5"/>
+		<circle class="st29" cx="134.2" cy="82" r="4.5"/>
+		<circle class="st29" cx="172.1" cy="148.7" r="4.5"/>
+		<circle class="st29" cx="103.9" cy="110.1" r="4.5"/>
+		<circle class="st29" cx="36.3" cy="56.1" r="4.5"/>
+		<circle class="st29" cx="44.8" cy="106.4" r="4.5"/>
 	</g>
 </g>
 </svg>
