@@ -39,9 +39,4 @@ publish-to-domain: auth.token
 	DIGITAL_OCEAN=$(shell cat auth.token) node_modules/.bin/dnslink-deploy \
 		--domain=$(zone) --record=$(record) --path=/ipfs/$(shell cat versions/current)
 
-# this assumes blog is a sibling.
-update-blog:
-	@rm -rf blog
-	cp -r ../blog/build blog
-
 .PHONY: build clean publish publish-to-github
