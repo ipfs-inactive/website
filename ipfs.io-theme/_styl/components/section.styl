@@ -12,29 +12,28 @@ section
   &:last-child:after
     display: none
 
-.how-item
-  margin: 10px 0
-  padding: 10px 0
-
 .how-illo img
   width: 100%
   height: 300px
   background-color: #fafafa
   outline: 0
 
-.how-description
-  height: 300px
-  padding-top: 150px
+@media screen and (min-width: $breakpoint-mid-mobile + 1)
 
-.service-providers
-  position: relative
-  top: 100px
+  .how-item
+    padding: 20px 0
 
 @media screen and (max-width: $breakpoint-tablet)
 
+  section:first-of-type
+    padding-top: 20px
+
+@media screen and (min-width: $breakpoint-tablet + 1)
+
   .how-description
-    height: auto
-    padding-top: 10px
+    height: 300px
+    padding-top: 150px
 
   .service-providers
-    top: 0
+    position: relative
+    top: 100px

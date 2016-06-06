@@ -5,32 +5,79 @@
 --------------------------------------------------------------------*/
 
 .footer-primary
-  padding: 50px 0
-  background: $brand-blue
+  padding: 50px 0 20px
+  background: $brand-blue no-repeat center center
+  background-image: url(/theme/images/footer-stars.png),
+                    url(/theme/images/footer-bg.png)
+  background-size: 1700px 400px, cover
   color: white
   margin-top: 60px
-
-  .container > div
-    display: inline-block
-    vertical-align: top
-    box-sizing: border-box
 
   .grid-flex-container
     margin-bottom: 0
 
-.sitemap-menu
-  width: 60%
-
-.share-links
-  width: 40%
-  text-align: right
-
 ul.sitemap
+
   li
     font-weight: 200
     font-style: normal
+
   li.sitemap-head
     font-weight: 400
     font-style: normal
     text-transform: uppercase
     letter-spacing: 1px
+
+.share-links
+
+  li
+    display: inline-block
+
+  a
+    width: 30px
+    height: @width
+    display: inline-block
+    background: transparent no-repeat
+    background-size: contain
+    text-align: left
+    text-indent: -9999em
+
+    &.Twitter
+      background-image: url(/theme/images/icon-social-twitter.svg)
+    &.Facebook
+      background-image: url(/theme/images/icon-social-facebook.svg)
+    &.Google
+      background-image: url(/theme/images/icon-social-google.svg)
+
+@media screen and (max-width: $breakpoint-mid-mobile)
+
+  ul.sitemap
+    li:not(.sitemap-head)
+      margin: 5px 15px 0 0
+      display: inline-block
+
+  .share-links
+    margin: 50px 0 20px
+    text-align: center
+
+    a
+      margin: 0 10px
+
+@media screen and (min-width: $breakpoint-mid-mobile + 1)
+
+  .sitemap-menu
+    max-width: 430px
+    width: 60%
+    float: left
+
+  .share-links
+    width: 40%
+    float: right
+    text-align: right
+
+    a
+      margin-left: 20px
+
+  .footer-copyright
+    clear: both
+    margin: 85px 0 0

@@ -51,7 +51,7 @@ IGNORE_FILES = ['README.md']
 SOCIAL = (
         ('Twitter', 'http://twitter.com/'),
         ('Facebook', 'http://facebook.com'),
-        ('Google+', 'http://plus.google.com')
+        ('Google', 'http://plus.google.com')
 )
 
 MD_EXTENSIONS = ['codehilite(css_class=highlight)','extra','toc']
