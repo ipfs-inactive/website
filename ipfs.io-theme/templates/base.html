@@ -71,8 +71,8 @@
     </div>
     <footer role="contentinfo" class="footer-primary">
       <div class="container cf">
-        <div class="sitemap-menu cf">
-          <div class="grid-flex-container">
+        <div class="cf">
+          <div class="sitemap-menu grid-flex-container">
             <div class="grid-flex-cell">
               <ul class="sitemap unstyled">
                 <li class="sitemap-head">IPN</li>
@@ -101,16 +101,16 @@
               </ul>
             </div>
           </div>
+          <div class="share-links">
+            <ul class="share unstyled">
+              {% for title, link in SOCIAL %}
+                <li><a class="{{ title }}" href="{{ link }}">{{ title }}</a></li>
+              {% endfor %}
+            </ul>
+          </div>
         </div>
-        <div class="share-links">
-          <ul class="share unstyled">
-            {% for title, link in SOCIAL %}
-              <li><a class="{{ title }}" href="{{ link }}">{{ title }}</a></li>
-            {% endfor %}
-          </ul>
-        </div>
+        <p class="footer-copyright center">© Protocol Labs | Except as <a href="">noted</a>, content licensed <a href="">CC-BY 3.0.</a></p>
       </div>
-      <p class="copyright content-center">© Protocol Labs | Except as <a href="">noted</a>, content licensed <a href="">CC-BY 3.0.</a></p>
     </footer>
     <script src="/theme/js/pixi.min.js" type="text/javascript"></script>
     <script src="/theme/js/stars.js" type="text/javascript"></script>

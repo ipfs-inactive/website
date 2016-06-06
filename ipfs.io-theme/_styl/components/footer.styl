@@ -16,14 +16,6 @@
   .grid-flex-container
     margin-bottom: 0
 
-  .copyright
-    margin: 95px 0 0
-
-.sitemap-menu
-  max-width: 430px
-  width: 60%
-  float: left
-
 ul.sitemap
 
   li
@@ -37,9 +29,6 @@ ul.sitemap
     letter-spacing: 1px
 
 .share-links
-  width: 40%
-  float: right
-  text-align: right
 
   li
     display: inline-block
@@ -47,7 +36,6 @@ ul.sitemap
   a
     width: 30px
     height: @width
-    margin-left: 20px
     display: inline-block
     background: transparent no-repeat
     background-size: contain
@@ -59,3 +47,36 @@ ul.sitemap
       background-image: url(/theme/images/icon-social-facebook.svg)
     &.Google
       background-image: url(/theme/images/icon-social-google.svg)
+
+@media screen and (max-width: $breakpoint-mid-mobile)
+
+  ul.sitemap
+    li:not(.sitemap-head)
+      margin: 5px 15px 0 0
+      display: inline-block
+
+  .share-links
+    margin: 50px 0 20px
+    text-align: center
+
+    a
+      margin: 0 10px
+
+@media screen and (min-width: $breakpoint-mid-mobile + 1)
+
+  .sitemap-menu
+    max-width: 430px
+    width: 60%
+    float: left
+
+  .share-links
+    width: 40%
+    float: right
+    text-align: right
+
+    a
+      margin-left: 20px
+
+  .footer-copyright
+    clear: both
+    margin: 85px 0 0
