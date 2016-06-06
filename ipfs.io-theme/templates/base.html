@@ -70,7 +70,7 @@
       {% endblock content %}
     </div>
     <footer role="contentinfo" class="footer-primary">
-      <!-- <div class="container cf">
+      <div class="container cf">
         <div class="sitemap-menu cf">
           <div class="grid-flex-container">
             <div class="grid-flex-cell">
@@ -105,11 +105,12 @@
         <div class="share-links">
           <ul class="share unstyled">
             {% for title, link in SOCIAL %}
-              <li><a href="{{ link }}">{{ title }}</a></li>
+              <li><a class="{{ title }}" href="{{ link }}">{{ title }}</a></li>
             {% endfor %}
           </ul>
         </div>
-      </div> -->
+      </div>
+      <p class="copyright content-center">© Protocol Labs | Except as <a href="">noted</a>, content licensed <a href="">CC-BY 3.0.</a></p>
     </footer>
     <script src="/theme/js/pixi.min.js" type="text/javascript"></script>
     <script src="/theme/js/stars.js" type="text/javascript"></script>
