@@ -15,7 +15,7 @@ TIMEZONE = "Europe/Paris"  #Unused (Pelican complains if you don't provide it)
 THEME = 'ipfs.io-theme'
 PAGE_URL = '{slug}'
 PAGE_SAVE_AS = '{slug}/index.html'
-INDEX_SAVE_AS = 'blog.html'
+INDEX_SAVE_AS = 'blog/index.html'
 # PAGE_ORDER_BY = 'sort_order'
 # default metadata sort order
 
