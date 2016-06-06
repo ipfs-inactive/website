@@ -1,5 +1,6 @@
 date: 2016-04-07
 title: go-ipfs 0.4.0 has been released
+slug: 14-ipfs-0-4-0-released
 author: Kyle Drake and @whyrusleeping
 
 [go-ipfs 0.4.0](http://dist.ipfs.io/#go-ipfs) has been

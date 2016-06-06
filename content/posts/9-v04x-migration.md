@@ -1,5 +1,6 @@
 date: 2016-02-12
 title: Migrating ipfs.io from go-ipfs 0.3.x to 0.4.0
+slug: 9-ipfs-weekly-v04x-migration
 author: Lars Gierth
 
 Good news everyone! We'll soon release go-ipfs 0.4.0,

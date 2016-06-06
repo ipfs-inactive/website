@@ -1,5 +1,6 @@
 date: 2016-01-11
 title: IPFS Weekly 1
+slug: 4-ipfs-weekly-1
 author: Richard Littauer, Andrew Chin
 
 Welcome to the first edition of IPFS Weekly!

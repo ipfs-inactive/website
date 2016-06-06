@@ -1,5 +1,6 @@
 date: 2015-07-11
 title: Run IPFS in a Docker container
+slug: 1-run-ipfs-on-docker
 author: Kyle Drake
 
 In recent years, Docker and a few other projects have redefined how we run server applications. In the future, we might be running containerized apps in our personal devices. At its core, this fast-paced improvement is a combination of good interfaces to standardize how to do things, and great tooling to make using containers easy.
@@ -53,5 +54,5 @@ hello from dockerized ipfs
 
 [Kubernetes 1.0](http://kuberneteslaunch.com) comes out next week, so after that, we'll try using it to build a cluster of IPFS nodes that can store any kind of data and be able to retreive it from any other IPFS node. Not just with IPFS nodes in your cluster, but with everyone!
 
-<iframe src="./ascii" style="width: 737px; height: 509px; overflow: hidden;" scrolling="no"></iframe>
+<iframe src="/uploads/ascii" style="width: 737px; height: 509px; overflow: hidden;" scrolling="no"></iframe>
 <p class="powered">asciicast powered by <a href="https://asciinema.org/" target="_top">asciinema</a></p>
