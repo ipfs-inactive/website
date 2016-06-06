@@ -6,6 +6,7 @@ SITENAME = u'IPFS'
 SITEURL = ''
 SITEPATH = ''
 DEFAULT_LANG = u'en'
+DEFAULT_PAGINATION = 10
 
 PATH = 'content'
 
@@ -18,8 +19,34 @@ INDEX_SAVE_AS = 'blog.html'
 # PAGE_ORDER_BY = 'sort_order'
 # default metadata sort order
 
+SUMMARY_MAX_LENGTH = 100
+
+YEAR_ARCHIVE_SAVE_AS = '{date:%Y}/index.html'
+MONTH_ARCHIVE_SAVE_AS = '{date:%Y}/{date:%m}/index.html'
+
+TAG_SAVE_AS = 'tag/{slug}/index.html'
+TAG_URL = 'tag/{slug}'
+
+PLUGIN_PATHS = ['pelican-plugins']
+PLUGINS = ['custom_article_urls']
+CUSTOM_ARTICLE_URLS = {
+    'posts': {
+        'URL': 'blog/{slug}',
+        'SAVE_AS': 'blog/{slug}/index.html'
+    }
+}
+
 # DIRECT_TEMPLATES = ['index', 'categories', 'authors', 'archives']
 DIRECT_TEMPLATES = ['index']
+
+IMAGE_PATH = 'uploads'
+
+STATIC_PATHS = ['uploads']
+EXTRA_PATH_METADATA = {
+    'uploads': {'path': 'uploads'}
+}
+
+IGNORE_FILES = ['README.md']
 
 SOCIAL = (
         ('Twitter', 'http://twitter.com/'),
