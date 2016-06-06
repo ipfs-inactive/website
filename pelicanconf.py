@@ -39,9 +39,9 @@ CUSTOM_ARTICLE_URLS = {
 # DIRECT_TEMPLATES = ['index', 'categories', 'authors', 'archives']
 DIRECT_TEMPLATES = ['index']
 
-IMAGE_PATH = 'uploads'
+IMAGE_PATH = 'posts/uploads'
 
-STATIC_PATHS = ['uploads']
+STATIC_PATHS = ['posts/uploads']
 EXTRA_PATH_METADATA = {
     'uploads': {'path': 'uploads'}
 }

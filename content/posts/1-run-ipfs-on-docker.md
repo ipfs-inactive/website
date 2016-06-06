@@ -54,5 +54,5 @@ hello from dockerized ipfs
 
 [Kubernetes 1.0](http://kuberneteslaunch.com) comes out next week, so after that, we'll try using it to build a cluster of IPFS nodes that can store any kind of data and be able to retreive it from any other IPFS node. Not just with IPFS nodes in your cluster, but with everyone!
 
-<iframe src="/uploads/ascii" style="width: 737px; height: 509px; overflow: hidden;" scrolling="no"></iframe>
+<iframe src="/asciinema-run-ipfs-on-docker" style="width: 737px; height: 509px; overflow: hidden;" scrolling="no"></iframe>
 <p class="powered">asciicast powered by <a href="https://asciinema.org/" target="_top">asciinema</a></p>
