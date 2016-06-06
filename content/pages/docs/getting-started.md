@@ -1,5 +1,5 @@
 section: Docs
-title: getting started
+title: Getting Started
 url: docs/getting-started
 save_as: docs/getting-started/index.html
 
