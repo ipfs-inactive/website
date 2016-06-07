@@ -42,7 +42,6 @@ CUSTOM_ARTICLE_URLS = {
 # DIRECT_TEMPLATES = ['index', 'categories', 'authors', 'archives']
 DIRECT_TEMPLATES = ['index']
 
-PAGE_PATHS = 'pages'
 IMAGE_PATH = 'images'
 
 STATIC_PATHS = ['images', 'static']
