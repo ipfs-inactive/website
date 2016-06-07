@@ -1,44 +1,55 @@
 pagetype: major
 section: Media
 title: Media
-constellation: constellation-01.svg
+url: media
+save_as: media/index.html
+constellation: constellation-02.svg
 
-# Paelice sati
+Here are some presentations which provide a good introduction to IPFS.
 
-## Non dum vixisse iuvencae sacrorum
+##### IPFS Alpha Demo
 
-Lorem markdownum pluvialis generumque nec audiri. Fleturi concipit olivi **seu
-conchas saxo** novis Hecabe nomen lapsu? Tibi Parosque illa. Equi sacros furit;
-Troiam pedibus cretus quotiens, mavult gravis serta turpique patriaeque ad deum
-munus. Utque sacros dari dicta dicere ferrum Aeacideia **ostendit victoris** nec
-fiducia atque et nubila limbus!
+<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/8CMxDNuuAiQ" width="900" height="481" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
-> Bello quo lanigerosque vidisse intus magnum; rapit erat: precor oris et
-> multoque Melampus ni penna inducto! Filis relatu, ne eripiunt vertere
-> Telamoniades vultu **quis corpora**, rettulit tecta.
+##### The Distributed, Permanent Web (Stanford Seminar)
 
-## Lacrimas erit
+<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/HUVmypx9HGI"  width="900" height="481" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
-Sed potentia auras, est dat fuerat corpore. Parvoque nocebant. Denique in ferrea
-Iapeto, funera, ille saepe rapta montana?
+---
 
-## Vulnere mali rumorum
+## Other media
 
-Ipsam innectens pavens tamen, ab illa, feretrumque socios cum avibus pectine,
-sumere? Fateri tenetur postquam, [atque nisi hanc](http://www.mozilla.org/)
-Mercurium miratur semina furibunda per ducem sedes Aetna.
+IPFS news, articles, references on the media, presence in conferences and talks, organized by chronological order.
 
-## Cultor agitabilis indignis arces
+### 2015
+- [Oct 21 - Stanford EE380 - Computer Systems Colloquium](http://www-cs.stanford.edu/events/computer-systems-colloquium-ipfs-and-permanent-web-juan-benet-protocol-labs)
+- [Oct 20 - IPFS Meetup hosted by Sourcegraph, San Francisco CA](http://attending.io/events/ipfs-san-francisco-october-2015)
+- [Oct 19 - Introduction to IPFS (InterPlanetary File System); A Brief Post About a Protocol That Changes Everything](https://www.linkedin.com/pulse/introduction-ipfs-interplanetary-file-system-brief-post-john-lilic?trk=hp-feed-article-title-like)
+- [Oct 18 - Ian Preston - IPFS at Redecentralize Conf, London, UK](https://www.youtube.com/watch?v=TiCUIh7tNtU)
+- [Oct 12 - Epicenter Bitcoin Interviews Juan Benet - Decentralizing The Web With The Inter-Planetary File System (IPFS)](https://epicenterbitcoin.com/podcast/100/)
+- [Oct 12 - Decentralizing the Web with IPFS](http://blog.resellerclub.com/decentralizing-the-web-with-ipfs/)
+- [Oct 9 - FreeNAS Alpha Ships with IPFS as a Transport](http://www.freenas.org/whats-new/2015/10/announcing-freenas-10-alpha.html)
+- [Oct 6-8 - AndyetConf - Richland, WA](http://andyetconf.com) [(Video forthcoming)]()
+- [Oct 4 - TechCruch - Why The Internet Needs IPFS Before It’s Too Late](http://techcrunch.com/2015/10/04/why-the-internet-needs-ipfs-before-its-too-late)
+- [Sep 23 - IPFS — Inter-Planetary File System. A For-Life, Decentralised, Privacy Respecting Web](https://medium.com/@mvxlr/ipfs-inter-planetary-file-system-65466e4129c6)
+- [Sep 18 - Motherboard, The InterPlanetary File System Wants to Create a Permanent Web](http://motherboard.vice.com/read/the-interplanetary-file-system-wants-to-create-a-permanent-web)
+- [Sep 11 - Container Camp - Containers at Hyperspeed](https://container.camp) [(Video)](https://www.youtube.com/watch?v=vaIWRyotz4g) [(Slides)](https://speakerdeck.com/jbenet/containers-at-hyperspeed)
+- [Sep 10 - First Steps Toward Implementing Distributed Permanent Web - IPFS - Hacked.com](https://hacked.com/first-steps-toward-implementing-distributed-permanent-web-ipfs/)
+- [Sep 8 - HTTP is Obsolete. It's Time for the Distributed, Permanent Web](https://blog.neocities.org/its-time-for-the-permanent-web.html) [(HackerNews)](https://news.ycombinator.com/item?id=10187555)
+- [Aug 27 - c-base IPFS Meetup, Berlin, Germany](https://github.com/ipfs/community/issues/41)
+- [Aug 25 - Software Engineering Daily Interviews Juan Benet](http://softwareengineeringdaily.com/2015/08/25/interplanetary-file-system-ipfs-with-juan-benet/)
+- [Aug 13-17 - Towards Universal Access to All Knowledge: Internet Archive - Chaos Communication Camp, Zehdenick, Germany](https://www.youtube.com/watch?v=lKvoVxUQKD0)
+- [Aug 3-9 - Battlemesh, Maribor, Slovenia](http://battlemesh.org/) [(Video)](https://www.youtube.com/watch?v=OAkJAPS5yoQ)
+- [Jul 23 - Surf Incubator IPFS Meetup, Seattle, WA](http://www.meetup.com/Seattle-IPFS-Meetup/events/224077819/) [(Video - Kyle Drake Talk)](https://vimeo.com/137657331)
+- [Jul 22 - Ctrl IPFS Meetup, Portland, OR](http://attending.io/events/ipfs-portland-meetup-the-permanent-distributed-web)
+- [Jul 22 - Holger Krekels Keynote - EuroPython 2015, Bilbao, Spain](http://dietzel.me/2015/08/02/EuroPython-2015-Holger-Krekels-Keynote-about-the-interplanetary-filesystem-Wed-22nd-July-2015/)
+- [May 23-24 - Data Terra Nemo - Berlin, Germany](http://dtn.is) [(Video forthcoming)]()
+- [May 22 - Ethereum IPFS Meetup, Berlin, Germany](https://www.youtube.com/watch?v=QlsBU2moRK4)
+- [May 5 - BlockChain University Part 1](https://www.youtube.com/watch?v=JhE_J1-BKJE), [Part 2](https://www.youtube.com/watch?v=999q3_htKPU)
+- [May 2 - Install IPFS on a Raspberry PI 2](http://www.siliconian.com/blog/16-bitcoin-blockchain/23-beginner-s-guide-to-installing-ipfs-on-a-raspberry-pi-2)
+- [Apr 23 - Ethereum Meetup, San Francisco, CA](https://www.youtube.com/watch?v=h73bd9b5pPA)
+- [Apr 22 - O'Reilly Fluent Conf](http://fluentconf.com/javascript-html-2015/public/schedule/speaker/204938)
+- [Feb 20 - IPFS Alpha Release](https://www.youtube.com/watch?v=8CMxDNuuAiQ)
 
-Decebat ecce [ante tuarum](http://zeus.ugent.be/) vesci Thestias reverentia non,
-ubi artus, ait vates omen: sic curvae. Dux adsis. Usu nuper caeruleus suis
-ignesque amans.
-
-> Illa caelo Iove pater adspicit Aeacus matres constitit Haemoniis Erycina.
-> Crimina divellite concipit arboribus pascat comes, ferebam dictos creatus, ora
-> et aegro.
-
-Perque illius dolenti et dolore propinquas properas, non habet et vero nec
-fortibus **manet** laborant requievit inde invadunt. Vitibus tenent, ei non
-nudare quoque caelaverat Rhodopeius nunc. Accensis movet, eat constitit; aut
-virga tritis candidus; remittit **in** fecerat!
+### 2014
+  - [Jul 22 - Talk at Sourcegraph, IPFS Meetup](https://sourcegraph.com/blog/117138056989/ipfs-the-permanent-web-by-juan-benet-talks-at) [(Video)](https://www.youtube.com/watch?v=Fa4pckodM9g) [(Slides)](https://speakerdeck.com/jbenet/ipfs-the-permanent-web-at-sourcegraph)

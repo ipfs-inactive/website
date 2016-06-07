@@ -11,7 +11,7 @@
 {% endblock %}
 
 {% for article in articles_page.object_list %}
-  <article class="hentry">
+  <article class="entry">
     <h2 class="entry-title"><a href="{{ SITEURL }}{{ SITEPATH }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a></h2>
     <footer class="post-info">
         <abbr class="published" title="{{ article.date.isoformat() }}"> {{ article.locale_date }} </abbr>
