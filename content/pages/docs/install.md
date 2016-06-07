@@ -42,7 +42,7 @@ USAGE:
 
 Congratulations! You now have a working IPFS installation on your computer.
 
-<a class="btn btn-success btn-lg" href="../getting-started" role="button">
+<a class="button button-primary" href="../getting-started" role="button">
   Getting Started with IPFS &nbsp;&nbsp;<i class="fa fa-arrow-right"></i>
 </a>
 
@@ -62,7 +62,7 @@ USAGE:
 
 Congratulations! You now have a working IPFS installation on your computer.
 
-<a class="btn btn-success btn-lg" href="../getting-started" role="button">
+<a class="button button-primary" href="../getting-started" role="button">
   Getting Started with IPFS &nbsp;&nbsp;<i class="fa fa-arrow-right"></i>
 </a>
 
