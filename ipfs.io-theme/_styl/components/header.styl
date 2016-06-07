@@ -146,19 +146,23 @@ a.ipfs-logo
 
     display: none
 
+@media screen and (max-width: $breakpoint-desktop)
+
+  .hero:not(.hero-major)
+    padding: 0 15%
+    z-index: 2
+
 @media screen and (max-width: $breakpoint-tablet)
 
   .hero-text
     margin-top: 0
     padding-top: 80px
 
-@media screen and (max-width: $breakpoint-desktop)
+  .hero-major
+    min-height: 200px
+    padding-top: 20px
 
-  .hero
-    padding: 0 15%
-    z-index: 2
-
-@media screen and (max-width: 600px)
+@media screen and (max-width: $breakpoint-mid-mobile)
 
   .hero-text
     padding-top: 80px
@@ -179,3 +183,7 @@ a.ipfs-logo
     h3
       font-size: 17px
       z-index: 2
+
+  .hero-major
+    min-height: 170px
+    padding-top: 15px
