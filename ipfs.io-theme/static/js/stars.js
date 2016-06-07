@@ -44,6 +44,8 @@ window.StarChart = (function () {
     } else {
       this.renderer = new this.pixi.CanvasRenderer(800, 600, {antialias: true, transparent: true, resolution: _PIXEL_RATIO});
     }
+    // don't disable scrolling interactions
+    this.renderer.plugins.interaction.autoPreventDefault = false;
     div.appendChild(this.renderer.view);
     this.stage = new this.pixi.Container();
     this.cellWidth = this.goalWidth = CELL_WIDTH_TARGET;
@@ -97,6 +99,13 @@ window.StarChart = (function () {
     this.setSize = function () {
       var width = this.div.clientWidth;
       var height = this.div.clientHeight;
+
+      // window may resize without the div itself changing size, so don't reset
+      // if div has not resized
+      if (width === this.renderer.width && height === this.renderer.height) {
+        return;
+      }
+
       this.renderer.view.style.width = width + 'px';
       this.renderer.view.style.height = height + 'px';
       this.renderer.resize(width, height);
