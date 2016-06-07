@@ -32,7 +32,11 @@ window.StarChart = (function () {
     this.div = div;
     this.pixi = pixi;
     this.pixi.utils._saidHello = true;
-    this.renderer = this.pixi.autoDetectRenderer(800, 600, {antialias: true, transparent: true});
+    if (window.navigator.userAgent.indexOf('Macintosh') !== -1 || window.navigator.userAgent.indexOf('Windows') !== -1) {
+      this.renderer = this.pixi.autoDetectRenderer(800, 600, {antialias: true, transparent: true});
+    } else {
+      this.renderer = new this.pixi.CanvasRenderer(800, 600, {antialias: true, transparent: true});
+    }
     div.appendChild(this.renderer.view);
     this.stage = new this.pixi.Container();
     this.cellWidth = this.goalWidth = CELL_WIDTH_TARGET;
