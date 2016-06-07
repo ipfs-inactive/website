@@ -57,9 +57,10 @@ EXTRA_PATH_METADATA = {
 IGNORE_FILES = ['README.md']
 
 SOCIAL = (
-        ('Twitter', 'http://twitter.com/'),
-        ('Facebook', 'http://facebook.com'),
-        ('Google', 'http://plus.google.com')
+        ('Twitter', 'http://twitter.com/ipfsbot'),
+        ('Facebook', 'https://www.facebook.com/sharer/sharer.php?u=https://ipfs.io'),
+        ('Google', 'https://plus.google.com/108638684245894749879'),
+        ('YouTube', 'https://www.youtube.com/channel/UCdjsUXJ3QawK4O5L1kqqsew')
 )
 
 MD_EXTENSIONS = ['codehilite(css_class=highlight)','extra','toc']

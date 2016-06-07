@@ -29,6 +29,16 @@ body.home
   bottom: 0
   z-index: 1
 
+canvas
+  image-rendering: optimizeSpeed
+  image-rendering: -moz-crisp-edges
+  image-rendering: -o-crisp-edges
+  image-rendering: -webkit-optimize-contrast
+  image-rendering: optimize-contrast
+  image-rendering: crisp-edges
+  image-rendering: pixelated
+  -ms-interpolation-mode: nearest-neighbor
+
 a.ipfs-logo
   width: 132px
   height: 50px
@@ -150,6 +160,9 @@ a.ipfs-logo
 
 @media screen and (max-width: 600px)
 
+  .hero-text
+    padding-top: 80px
+
   .view-more
     a
       display: block
@@ -160,9 +173,9 @@ a.ipfs-logo
     z-index: 2
 
     h2
-      font-size: 30px
+      font-size: 22px
       z-index: 2
 
     h3
-      font-size: 18px
+      font-size: 17px
       z-index: 2
