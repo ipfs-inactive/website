@@ -41,7 +41,7 @@ Following [js-ipfs roadmap](https://github.com/ipfs/js-ipfs/blob/master/ROADMAP.
 
 ### [Orbit](//github.com/haadcode/orbit)
 
-![Orbit](/images/009_orbit.png)
+![Orbit]({attach}/images/009_orbit.png)
 
 [@haadcode](//github.com/haadcode) has been working on improvements to [orbit-db](https://github.com/haadcode/orbit-db), [ipfs-log](https://github.com/haadcode/ipfs-log/) and [Orbit](https://github.com/haadcode/orbit). The message history fetching is now more stable and the UI feedback for loading messages is fixed. All this work will improve the user experience of Orbit.
 
@@ -89,7 +89,7 @@ Last Monday members of the IPFS comminuty attended a [blockchain workshop](http:
 
 ### Lisbon Research and Development Meetup
 
-![Lisbon](/images/009_lisbon.png)
+![Lisbon]({attach}/images/009_lisbon.png)
 
 [The IPFS Lisbon community had their second "Research & Development Meetup"](http://www.meetup.com/ipfs-lisbon-meetup/events/229807984/), hosted by Uniplaces (https://www.uniplaces.com). The focus was "The Distributed Web" ([Slides](http://www.slideshare.net/DavidDias11/rdm2-the-distributed-web)) and "Machine Learning + Artificial Intelligence for Recommender Algorithms", with talks by [David Dias](https://github.com/diasdavid) and [João Ascensão](https://github.com/jtascensao), respectively. If you are around Lisbon, make sure to join http://www.meetup.com/ipfs-lisbon-meetup to get notified about the next one. Resources for this talk can be found [here](https://github.com/research-development-meetup/discussion/tree/master/rdm-2).
 
@@ -107,7 +107,7 @@ BitCoin news had a discussion on using IPFS and Bitcoin for Decentralised Citize
 
 ## IPFS Meme of the Week
 
-![Hee hee](/images/009_neo.jpg)
+![Hee hee]({attach}/images/009_neo.jpg)
 
 From https://twitter.com/jplur_/status/712670265919086594. Thanks, jplur_!
 
