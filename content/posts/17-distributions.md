@@ -3,7 +3,7 @@ title: IPFS distributions
 slug: 17-distributions
 author: Richard Littauer
 
-[![](/uploads/17-screenshot.png)](https://dist.ipfs.io/)
+[![](/images/17-screenshot.png)](https://dist.ipfs.io/)
 
 [dist.ipfs.io](https://dist.ipfs.io/) is the new distributions page for IPFS. This is the new one-stop-shop for finding and downloading all official binaries that the IPFS Team produces.
 

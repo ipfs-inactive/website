@@ -66,8 +66,18 @@
       </div>
     </header>
     <div class="container">
-      {% block content %}
-      {% endblock content %}
+      {% if active_page_is_blog|default("false") == "true" %}
+        <div class="page-content row">
+          <div class="large-8 medium-8 columns">
+            {% block blog_entries %}
+            {% endblock %}
+          </div>
+        </div>
+      {% else %}
+
+        {% block content %}
+        {% endblock content %}
+      {% endif %}
     </div>
     <footer role="contentinfo" class="footer-primary">
       <div class="container cf">

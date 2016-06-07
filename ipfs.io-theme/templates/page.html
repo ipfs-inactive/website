@@ -44,7 +44,7 @@
           {% set recent = articles if not all_articles else all_articles %}
           <ul id="recent-posts">
           {% for a in recent %}
-            {% if loop.index <= 6 %}
+            {% if loop.index <= 3 %}
               <li>
                 <a href="{{SITEURL}}{{ SITEPATH }}/{{ a.url }}">{{ a.title }}</a>
               </li>
@@ -53,6 +53,6 @@
           </ul>
         </section>
       {% endif %}
-      
+
     </div>
 {% endblock %}
