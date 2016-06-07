@@ -1,5 +1,6 @@
 section: Docs
 pagename: install
+pagetype: subdoc
 title: Install
 url: docs/install
 save_as: docs/install/index.html

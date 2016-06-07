@@ -1,5 +1,6 @@
 section: Docs
 title: examples
+pagetype: subdoc
 url: docs/examples
 save_as: docs/examples/index.html
 

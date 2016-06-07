@@ -1,5 +1,6 @@
 section: Docs
 title: Getting Started
+pagetype: subdoc
 url: docs/getting-started
 save_as: docs/getting-started/index.html
 

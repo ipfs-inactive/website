@@ -1,5 +1,6 @@
 section: Docs
 title: commands
+pagetype: subdoc
 url: docs/commands
 save_as: docs/commands/index.html
 

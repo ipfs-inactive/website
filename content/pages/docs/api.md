@@ -1,5 +1,6 @@
 section: Docs
 title: API
+pagetype: subdoc
 url: docs/api
 save_as: docs/api/index.html
 
