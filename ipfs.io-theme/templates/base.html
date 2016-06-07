@@ -41,7 +41,13 @@
     {% endblock head %}
   </head>
 
-  <body {% if page %}{% if page.pagetype %}class="{{ page.pagetype }}"{% endif %}{% endif %}>
+  <body {% if page %}
+          {% if page.pagetype %}class="{{ page.pagetype }}"{% endif %}
+        {% endif %}
+        {% if article %}
+          class="article"
+        {% endif %}
+        >
     <header class="header-has-logo" id="stars">
       <div class="container cf">
         <h1 class="pull-left">
