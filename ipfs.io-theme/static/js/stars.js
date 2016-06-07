@@ -27,6 +27,7 @@ window.StarChart = (function () {
   var _STAR_OPACITY_DIFF = STAR_OPACITY_MAX - STAR_OPACITY_MIN;
   var _TWINKLE_RATE = 1 / TWINKLES_PER_SECOND;
   var _LINE_FADE_SPEED = 1 / LINE_FADE_SECONDS;
+  var _PIXEL_RATIO = window.devicePixelRatio || 1;
 
   function isVisible(elm) {
     var rect = elm.getBoundingClientRect();
@@ -39,9 +40,9 @@ window.StarChart = (function () {
     this.pixi = pixi;
     this.pixi.utils._saidHello = true;
     if (window.navigator.userAgent.indexOf('Macintosh') !== -1 || window.navigator.userAgent.indexOf('Windows') !== -1) {
-      this.renderer = this.pixi.autoDetectRenderer(800, 600, {antialias: true, transparent: true});
+      this.renderer = this.pixi.autoDetectRenderer(800, 600, {antialias: true, transparent: true, resolution: _PIXEL_RATIO});
     } else {
-      this.renderer = new this.pixi.CanvasRenderer(800, 600, {antialias: true, transparent: true});
+      this.renderer = new this.pixi.CanvasRenderer(800, 600, {antialias: true, transparent: true, resolution: _PIXEL_RATIO});
     }
     div.appendChild(this.renderer.view);
     this.stage = new this.pixi.Container();
@@ -251,9 +252,9 @@ window.StarChart = (function () {
           this.alpha = 0;
         }
         vkeys = Object.keys(this.visited);
-        r = (LINE_COLOR >> 16) & 0xff;
-        g = (LINE_COLOR >> 8) & 0xff;
-        b = LINE_COLOR & 0xff;
+        r = (STAR_COLORS[1] >> 16) & 0xff;
+        g = (STAR_COLORS[1] >> 8) & 0xff;
+        b = STAR_COLORS[1] & 0xff;
         r2 = r + ((0xff - r) * (1 - this.alpha));
         g2 = g + ((0xff - g) * (1 - this.alpha));
         b2 = b + ((0xff - b) * (1 - this.alpha));
