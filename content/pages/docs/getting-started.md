@@ -5,9 +5,9 @@ save_as: docs/getting-started/index.html
 
 # Getting Started
 
-If you haven't done so, [install ipfs](../install).
+If you haven't done so, [install IPFS](../install).
 
-<a class="button button-primary">Install ipfs now</a>
+<a class="button button-primary">Install IPFS now</a>
 
 During this tutorial, if you have any questions, feel free to ask them in [ipfs/support](https://github.com/ipfs/support) or in [#ipfs on chat.freenode.net](irc://chat.freenode.net/%23ipfs).
 
