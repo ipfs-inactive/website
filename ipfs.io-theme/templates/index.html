@@ -1,31 +1,34 @@
 {% extends "base.html" %}
+{% block hero %}
+<div class="hero hero-major }}">
+    <h2 class="headline-main">IPFS Starlog</h2>
+    <img src="{{ SITEURL}}/theme/images/constellation-01.svg" class="constellation"/>
+</div>
+{% endblock hero %}
 {% block content %}
 <section id="content" class="blog">
 {% block content_title %}
-<h2>All articles</h2>
 {% endblock %}
 
-<ol id="post-list">
 {% for article in articles_page.object_list %}
-        <li><article class="hentry">
-            <header> <h2 class="entry-title"><a href="{{ SITEURL }}{{ SITEPATH }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a></h2> </header>
-                <footer class="post-info">
-                    <abbr class="published" title="{{ article.date.isoformat() }}"> {{ article.locale_date }} </abbr>
-                    <address class="vcard author">By
-                    {% for author in article.authors %}
-                      <a class="url fn" href="{{ SITEURL }}{{ SITEPATH }}/{{ author.url }}">{{ author }}</a>
-                    {% endfor %}
-                    </address>
-                </footer><!-- /.post-info -->
-                <div class="entry-content"> {{ article.summary }} </div><!-- /.entry-content -->
-                <div class="entry-content">
-                    <p><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">Continue reading »</a></p>
-                </div>
-        </article></li>
+  <article class="hentry">
+    <h2 class="entry-title"><a href="{{ SITEURL }}{{ SITEPATH }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a></h2>
+    <footer class="post-info">
+        <abbr class="published" title="{{ article.date.isoformat() }}"> {{ article.locale_date }} </abbr>
+        <address class="vcard author">By
+        {% for author in article.authors %}
+          <a class="url fn" href="{{ SITEURL }}{{ SITEPATH }}/{{ author.url }}">{{ author }}</a>
+        {% endfor %}
+        </address>
+    </footer>
+    <div class="entry-content"> {{ article.summary }} </div>
+    <div class="entry-content">
+        <p><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">Continue reading »</a></p>
+    </div>
+  </article>
 {% endfor %}
-</ol><!-- /#posts-list -->
 {% if articles_page.has_other_pages() %}
     {% include 'pagination.html' %}
 {% endif %}
-</section><!-- /#content -->
+</section>
 {% endblock content %}
