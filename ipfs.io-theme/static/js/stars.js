@@ -28,6 +28,12 @@ window.StarChart = (function () {
   var _TWINKLE_RATE = 1 / TWINKLES_PER_SECOND;
   var _LINE_FADE_SPEED = 1 / LINE_FADE_SECONDS;
 
+  function isVisible(elm) {
+    var rect = elm.getBoundingClientRect();
+    var viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
+    return !(rect.bottom < 0 || rect.top - viewHeight >= 0);
+  }
+
   function StarChart(div, pixi) {
     this.div = div;
     this.pixi = pixi;
@@ -58,9 +64,34 @@ window.StarChart = (function () {
     this.renderer.view.addEventListener('click', function (e) {
       this.comets.push(new CometGroup(this, this.findNearestStar(e.clientX, e.clientY), undefined, HOPS, false));
     }.bind(this));
+
+    this.checkVisible();
   }
 
   (function () {
+
+    this.checkVisible = function () {
+      if (isVisible(this.renderer.view)) {
+        this.run();
+      } else {
+        this.pause();
+      }
+      setTimeout(this.checkVisible.bind(this), 3000);
+    }
+
+    this.run = function () {
+      if (!this.running) {
+        this.running = true;
+        this.lastNow = window.performance.now();
+        this.animate();
+      }
+    };
+
+    this.pause = function () {
+      if (this.running) {
+        this.running = false;
+      }
+    };
 
     this.setSize = function () {
       var width = this.div.clientWidth;
@@ -143,11 +174,6 @@ window.StarChart = (function () {
       this.twinkleStar();
     }
 
-    this.run = function () {
-      this.running = true;
-      this.animate();
-    };
-
     this.twinkleStar = function () {
       var keys = Object.keys(this.stars);
       var star = this.stars[keys[Math.floor(Math.random() * keys.length)]];
@@ -166,7 +192,9 @@ window.StarChart = (function () {
       var dt = (now - this.lastNow) * .001;
       var r, c, s;
       lastTwinkle += dt;
-      requestAnimationFrame(this.animate.bind(this));
+      if (this.running) {
+        requestAnimationFrame(this.animate.bind(this));
+      }
       if (dt > 0.041666666666666664) {
         this.lastNow = now;
         if (lastTwinkle > _TWINKLE_RATE) {
