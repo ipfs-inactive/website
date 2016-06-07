@@ -55,7 +55,13 @@
           <input id="menu-toggle" type="checkbox" class="menu-toggle">
           <label for="menu-toggle">Menu</label>
           <ul class="list-unstyled list-inline cf">
-            <li><a href="{{ SITEURL }}{{ SITEPATH }}/">About</a></li>
+            {% if page and page.pagetype == 'home' %}
+              <li><a href="{{ SITEURL }}{{ SITEPATH }}/#why">Why</a></li>
+              <li><a href="{{ SITEURL }}{{ SITEPATH }}/#how">How</a></li>
+              <li><a href="{{ SITEURL }}{{ SITEPATH }}/#uses">Uses</a></li>
+            {% else %}
+              <li><a href="{{ SITEURL }}{{ SITEPATH }}/">About</a></li>
+            {% endif %}
             <li><a href="{{ SITEURL }}{{ SITEPATH }}/docs/install" {% if page and page.pagename == 'install' %}class="current-item"{% endif %}>Install</a></li>
             <li><a href="{{ SITEURL }}{{ SITEPATH }}/media" {% if page and page.pagename == 'media' %}class="current-item"{% endif %}>Media</a></li>
             <li><a href="{{ SITEURL }}{{ SITEPATH }}/docs" {% if page and page.pagename != 'install' and page.category.name == 'docs' %}class="current-item"{% endif %}>Docs</a></li>
