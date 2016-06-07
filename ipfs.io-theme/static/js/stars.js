@@ -19,9 +19,9 @@ window.StarChart = (function () {
   var CELL_WIDTH_TARGET = 70; // canvas is divided into cells, for STARS_PER_CELL to populate
   var CELL_HEIGHT_TARGET = 70; // this ensures good paths to traverse
   var STARS_PER_CELL = 2;
-  var FARTHEST_NEIGHBOR = 140; // if a star is within this range, it can connect
+  var FARTHEST_NEIGHBOR = 300; // if a star is within this range, it can connect
   var TWINKLE_SPEED = 6;
-  var TWINKLES_PER_SECOND = 100;
+  var TWINKLES_PER_SECOND = 500;
 
   // ------- edit above
   var _STAR_OPACITY_DIFF = STAR_OPACITY_MAX - STAR_OPACITY_MIN;
