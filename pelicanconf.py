@@ -8,6 +8,8 @@ SITEPATH = ''
 DEFAULT_LANG = u'en'
 DEFAULT_PAGINATION = 10
 
+RELATIVE_URLS=True
+
 PATH = 'content'
 
 TIMEZONE = "Europe/Paris"  #Unused (Pelican complains if you don't provide it)
@@ -44,7 +46,7 @@ DIRECT_TEMPLATES = ['index']
 
 IMAGE_PATH = 'images'
 
-STATIC_PATHS = ['images', 'static']
+STATIC_PATHS = ['images', 'static', 'posts']
 
 # PAGE_EXCLUDES = 'static'
 # ARTICLE_EXCLUDES = 'static'

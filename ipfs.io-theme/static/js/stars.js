@@ -19,24 +19,33 @@ window.StarChart = (function () {
   var CELL_WIDTH_TARGET = 70; // canvas is divided into cells, for STARS_PER_CELL to populate
   var CELL_HEIGHT_TARGET = 70; // this ensures good paths to traverse
   var STARS_PER_CELL = 2;
-  var FARTHEST_NEIGHBOR = 140; // if a star is within this range, it can connect
+  var FARTHEST_NEIGHBOR = 300; // if a star is within this range, it can connect
   var TWINKLE_SPEED = 6;
-  var TWINKLES_PER_SECOND = 100;
+  var TWINKLES_PER_SECOND = 500;
 
   // ------- edit above
   var _STAR_OPACITY_DIFF = STAR_OPACITY_MAX - STAR_OPACITY_MIN;
   var _TWINKLE_RATE = 1 / TWINKLES_PER_SECOND;
   var _LINE_FADE_SPEED = 1 / LINE_FADE_SECONDS;
+  var _PIXEL_RATIO = window.devicePixelRatio || 1;
+
+  function isVisible(elm) {
+    var rect = elm.getBoundingClientRect();
+    var viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
+    return !(rect.bottom < 0 || rect.top - viewHeight >= 0);
+  }
 
   function StarChart(div, pixi) {
     this.div = div;
     this.pixi = pixi;
     this.pixi.utils._saidHello = true;
     if (window.navigator.userAgent.indexOf('Macintosh') !== -1 || window.navigator.userAgent.indexOf('Windows') !== -1) {
-      this.renderer = this.pixi.autoDetectRenderer(800, 600, {antialias: true, transparent: true});
+      this.renderer = this.pixi.autoDetectRenderer(800, 600, {antialias: true, transparent: true, resolution: _PIXEL_RATIO});
     } else {
-      this.renderer = new this.pixi.CanvasRenderer(800, 600, {antialias: true, transparent: true});
+      this.renderer = new this.pixi.CanvasRenderer(800, 600, {antialias: true, transparent: true, resolution: _PIXEL_RATIO});
     }
+    // don't disable scrolling interactions
+    this.renderer.plugins.interaction.autoPreventDefault = false;
     div.appendChild(this.renderer.view);
     this.stage = new this.pixi.Container();
     this.cellWidth = this.goalWidth = CELL_WIDTH_TARGET;
@@ -58,13 +67,45 @@ window.StarChart = (function () {
     this.renderer.view.addEventListener('click', function (e) {
       this.comets.push(new CometGroup(this, this.findNearestStar(e.clientX, e.clientY), undefined, HOPS, false));
     }.bind(this));
+
+    this.checkVisible();
   }
 
   (function () {
 
+    this.checkVisible = function () {
+      if (isVisible(this.renderer.view)) {
+        this.run();
+      } else {
+        this.pause();
+      }
+      setTimeout(this.checkVisible.bind(this), 3000);
+    }
+
+    this.run = function () {
+      if (!this.running) {
+        this.running = true;
+        this.lastNow = window.performance.now();
+        this.animate();
+      }
+    };
+
+    this.pause = function () {
+      if (this.running) {
+        this.running = false;
+      }
+    };
+
     this.setSize = function () {
       var width = this.div.clientWidth;
       var height = this.div.clientHeight;
+
+      // window may resize without the div itself changing size, so don't reset
+      // if div has not resized
+      if (width === this.renderer.width && height === this.renderer.height) {
+        return;
+      }
+
       this.renderer.view.style.width = width + 'px';
       this.renderer.view.style.height = height + 'px';
       this.renderer.resize(width, height);
@@ -139,14 +180,11 @@ window.StarChart = (function () {
         this.stars[skey].setLinks();
       }.bind(this));
 
+      this.comets.push(new CometGroup(this, this.randomStar(), undefined, HOPS, true, 1));
+      this.comets.push(new CometGroup(this, this.randomStar(), undefined, HOPS, true));
       this.comets.push(new CometGroup(this, this.randomStar(), undefined, HOPS, true));
       this.twinkleStar();
     }
-
-    this.run = function () {
-      this.running = true;
-      this.animate();
-    };
 
     this.twinkleStar = function () {
       var keys = Object.keys(this.stars);
@@ -166,7 +204,9 @@ window.StarChart = (function () {
       var dt = (now - this.lastNow) * .001;
       var r, c, s;
       lastTwinkle += dt;
-      requestAnimationFrame(this.animate.bind(this));
+      if (this.running) {
+        requestAnimationFrame(this.animate.bind(this));
+      }
       if (dt > 0.041666666666666664) {
         this.lastNow = now;
         if (lastTwinkle > _TWINKLE_RATE) {
@@ -193,7 +233,7 @@ window.StarChart = (function () {
 
   }).call(StarChart.prototype);
 
-  function CometGroup(game, star, next, hops, addAnother) {
+  function CometGroup(game, star, next, hops, addAnother, alpha) {
     this.children = [];
     this.game = game;
     this.hops = hops;
@@ -203,7 +243,7 @@ window.StarChart = (function () {
     this.fading = false;
     this.added = addAnother ? false : true;
     this.addAnother = addAnother;
-    this.lineAlpha = LINE_OPACITY_MIN + Math.random() * (LINE_OPACITY_MAX - LINE_OPACITY_MIN);
+    this.lineAlpha = alpha || (LINE_OPACITY_MIN + Math.random() * (LINE_OPACITY_MAX - LINE_OPACITY_MIN));
     this.addComet(star, next, hops);
   }
 
@@ -223,9 +263,9 @@ window.StarChart = (function () {
           this.alpha = 0;
         }
         vkeys = Object.keys(this.visited);
-        r = (LINE_COLOR >> 16) & 0xff;
-        g = (LINE_COLOR >> 8) & 0xff;
-        b = LINE_COLOR & 0xff;
+        r = (STAR_COLORS[1] >> 16) & 0xff;
+        g = (STAR_COLORS[1] >> 8) & 0xff;
+        b = STAR_COLORS[1] & 0xff;
         r2 = r + ((0xff - r) * (1 - this.alpha));
         g2 = g + ((0xff - g) * (1 - this.alpha));
         b2 = b + ((0xff - b) * (1 - this.alpha));

@@ -11,7 +11,7 @@ Here are some of the highlights for the [March 14](//github.com/ipfs/pm/issues/9
 
 ## Updates
 
-![webui](/images/008_webui.gif)
+![webui]({attach}/images/008_webui.gif)
 
 ### [webui](//github.com/ipfs/webui)
 

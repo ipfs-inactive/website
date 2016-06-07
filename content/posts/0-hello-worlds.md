@@ -27,4 +27,4 @@ You can't _yet_ "follow" the blog with ipfs, but we're working on it and expect 
 
 Don't miss any InterPlanetary updates!
 
-![](/images/earthrise.png)
+![]({attach}/images/earthrise.png)
