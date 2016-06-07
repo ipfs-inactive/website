@@ -29,6 +29,9 @@ TAG_URL = 'tag/{slug}'
 
 PLUGIN_PATHS = ['pelican-plugins']
 PLUGINS = ['custom_article_urls']
+
+ARTICLE_PATHS = ['posts']
+PAGE_PATHS = ['pages']
 CUSTOM_ARTICLE_URLS = {
     'posts': {
         'URL': 'blog/{slug}',
@@ -39,11 +42,16 @@ CUSTOM_ARTICLE_URLS = {
 # DIRECT_TEMPLATES = ['index', 'categories', 'authors', 'archives']
 DIRECT_TEMPLATES = ['index']
 
+PAGE_PATHS = 'pages'
 IMAGE_PATH = 'images'
 
 STATIC_PATHS = ['images', 'static']
+
+# PAGE_EXCLUDES = 'static'
+# ARTICLE_EXCLUDES = 'static'
+
 EXTRA_PATH_METADATA = {
-    'uploads': {'path': 'uploads'}
+    'static': {'path': 'static'}
 }
 
 IGNORE_FILES = ['README.md']
