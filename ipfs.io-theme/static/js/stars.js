@@ -139,7 +139,9 @@ window.StarChart = (function () {
         this.stars[skey].setLinks();
       }.bind(this));
 
-      this.comets.push(new CometGroup(this, this.randomStar(), undefined, HOPS, true));
+      this.comets.push(new CometGroup(this, this.randomStar(), undefined, HOPS, true, 1));
+      this.comets.push(new CometGroup(this, this.randomStar(), undefined, HOPS, false));
+      this.comets.push(new CometGroup(this, this.randomStar(), undefined, HOPS, false));
       this.twinkleStar();
     }
 
@@ -193,7 +195,7 @@ window.StarChart = (function () {
 
   }).call(StarChart.prototype);
 
-  function CometGroup(game, star, next, hops, addAnother) {
+  function CometGroup(game, star, next, hops, addAnother, alpha) {
     this.children = [];
     this.game = game;
     this.hops = hops;
@@ -203,7 +205,7 @@ window.StarChart = (function () {
     this.fading = false;
     this.added = addAnother ? false : true;
     this.addAnother = addAnother;
-    this.lineAlpha = LINE_OPACITY_MIN + Math.random() * (LINE_OPACITY_MAX - LINE_OPACITY_MIN);
+    this.lineAlpha = alpha || (LINE_OPACITY_MIN + Math.random() * (LINE_OPACITY_MAX - LINE_OPACITY_MIN));
     this.addComet(star, next, hops);
   }
 
