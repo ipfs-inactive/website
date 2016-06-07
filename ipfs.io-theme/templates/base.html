@@ -52,9 +52,9 @@
           <label for="menu-toggle">Menu</label>
           <ul class="list-unstyled list-inline cf">
             <li><a href="{{ SITEURL }}{{ SITEPATH }}/">About</a></li>
-            <li><a href="{{ SITEURL }}{{ SITEPATH }}/docs/install">Install</a></li>
-            <li><a href="{{ SITEURL }}{{ SITEPATH }}/media">Media</a></li>
-            <li><a href="{{ SITEURL }}{{ SITEPATH }}/docs" {% if page and page.category.name == 'docs' %}class="current-item"{% endif %}>Docs</a></li>
+            <li><a href="{{ SITEURL }}{{ SITEPATH }}/docs/install" {% if page and page.pagename == 'install' %}class="current-item"{% endif %}>Install</a></li>
+            <li><a href="{{ SITEURL }}{{ SITEPATH }}/media" {% if page and page.pagename == 'media' %}class="current-item"{% endif %}>Media</a></li>
+            <li><a href="{{ SITEURL }}{{ SITEPATH }}/docs" {% if page and page.pagename != 'install' and page.category.name == 'docs' %}class="current-item"{% endif %}>Docs</a></li>
             <li><a href="{{ SITEURL }}{{ SITEPATH }}/blog" {% if article or (page_name == 'blog') %}class="current-item"{% endif %}>Blog</a></li>
           </ul>
         </nav>

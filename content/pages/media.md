@@ -1,4 +1,5 @@
 pagetype: major
+pagename: media
 section: Media
 title: Media
 url: media
