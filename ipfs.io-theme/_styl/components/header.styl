@@ -15,6 +15,12 @@ header
     position: relative
     z-index: 2
 
+body.home
+  header
+    height: 100vh
+    min-height: 550px
+    max-height: 1300px
+
 .header-has-logo > canvas
   position: absolute
   top: 0
@@ -24,9 +30,10 @@ header
   z-index: 1
 
 a.ipfs-logo
-  width: 200px
+  width: 132px
+  height: 50px
   display: block
-  background: url(/theme/images/ipfs-logo.svg) no-repeat center center
+  background: url(/theme/images/ipfs-logo.svg) no-repeat left center
   background-size: contain
   text-indent: -9999em
 
@@ -98,6 +105,10 @@ a.ipfs-logo
   width: 120px
 
 .view-more
+  display: none
+
+  .home &
+    display: block
 
   label
     text-indent: 100%

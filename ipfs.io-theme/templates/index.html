@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-<section id="content">
+<section id="content" class="blog">
 {% block content_title %}
 <h2>All articles</h2>
 {% endblock %}
@@ -18,6 +18,9 @@
                     </address>
                 </footer><!-- /.post-info -->
                 <div class="entry-content"> {{ article.summary }} </div><!-- /.entry-content -->
+                <div class="entry-content">
+                    <p><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">Continue reading »</a></p>
+                </div>
         </article></li>
 {% endfor %}
 </ol><!-- /#posts-list -->

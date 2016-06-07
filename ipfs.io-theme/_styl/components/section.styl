@@ -12,37 +12,41 @@ section
   &:last-child:after
     display: none
 
+.how-description h5
+  line-height: 1.5
 
 @media screen and (max-width: $breakpoint-mid-mobile)
 
-  #how .illustration
-    height: 180px
+  .how-item
+    margin-bottom: 50px
+    .illustration
+      height: 140px
+      margin-bottom: 20px
+  .how-description
+    text-align: center
+
+@media screen and (min-width: $breakpoint-mid-mobile + 1)
+
+  .how-item
+    max-width: 700px
+    margin: 30px auto
+    display: flex
+    align-items: center
+
+    .illustration
+      width: 35%
+      height: 146px
+      padding-right: 30px
+
+  .how-description
+    width: 65%
 
 @media screen and (max-width: $breakpoint-tablet)
 
   section:first-of-type
     padding-top: 20px
 
-@media screen and (min-width: $breakpoint-mid-mobile + 1)
-
-  .how-item
-    padding: 20px 0
-
-  #how .illustration
-    height: 200px
-
-  .how-description
-    height: 200px
-    padding-top: 70px
-
 @media screen and (min-width: $breakpoint-tablet + 1)
-
-  #how .illustration
-    height: 300px
-
-  .how-description
-    height: 300px
-    padding-top: 110px
 
   .service-providers
     position: relative
