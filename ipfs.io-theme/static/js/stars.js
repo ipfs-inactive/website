@@ -175,8 +175,7 @@ window.StarChart = (function () {
         this.cells.push(row);
       }
 
-      this.starTotal = this.starList.length;
-      this.twinkleRate = 1/ (TWINKLES_PER_SECOND_PER_STAR * this.starTotal);
+      this.twinkleRate = 1/ (TWINKLES_PER_SECOND_PER_STAR * this.starList.length);
 
       Object.keys(this.stars).forEach(function (skey) {
         this.stars[skey].setLinks();
@@ -227,7 +226,7 @@ window.StarChart = (function () {
         for (r = 0, l = this.comets.length; r < l; r++) {
             this.comets[r].animate(dt);
         }
-        if (this.removeComents.length > 0) {
+        if (this.removeComets.length > 0) {
           for (r = 0, l = this.removeComets.length; r < l; r++) {
             this.comets.splice(this.comets.indexOf(this.removeComets[r]), 1);
           }
