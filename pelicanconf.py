@@ -8,6 +8,8 @@ SITEPATH = ''
 DEFAULT_LANG = u'en'
 DEFAULT_PAGINATION = 10
 
+RELATIVE_URLS=True
+
 PATH = 'content'
 
 TIMEZONE = "Europe/Paris"  #Unused (Pelican complains if you don't provide it)
