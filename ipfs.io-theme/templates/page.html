@@ -32,13 +32,12 @@
         <li><a href="{{ SITEURL}}{{ SITEPATH }}/docs/api" {% if page.slug == 'api' %}class="current-item"{% endif %}>API</a></li>
         <li><a href="{{ SITEURL}}{{ SITEPATH }}/docs/commands" {% if page.slug == 'commands' %}class="current-item"{% endif %}>Commands</a></li>
         <li><a href="{{ SITEURL}}{{ SITEPATH }}/docs/examples" {% if page.slug == 'examples' %}class="current-item"{% endif %}>Examples</a></li>
-        <li><a href="{{ SITEURL}}{{ SITEPATH }}/docs/specs" {% if page.slug == 'specs' %}class="current-item"{% endif %}>Specs</a></li>
       </ul>
     {% endif %}
 
     <div class="content-wrapper">
       {{ page.content }}
-      {% if page.pagetype == 'home' %}
+      <!-- {% if page.pagetype == 'home' %}
         <section>
           <h4>From the blog</h4>
           {% set recent = articles if not all_articles else all_articles %}
@@ -52,7 +51,7 @@
           {% endfor %}
           </ul>
         </section>
-      {% endif %}
+      {% endif %} -->
 
     </div>
 {% endblock %}
