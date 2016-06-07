@@ -72,8 +72,8 @@ Congratulations! You now have a working IPFS installation on your computer.
 
 ## Building from Source
 
-<div class="alert alert-info">
-  **Warning:** In the past you could install IPFS using `go get` this
+<div class="message mb">
+  <strong>Warning:</strong> In the past you could install IPFS using <code>go get</code> this
   does not work anymore!
 </div>
 
