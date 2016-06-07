@@ -107,9 +107,10 @@ a.ipfs-logo
   margin: 0 auto 0 auto
 
 .cta .button
+  min-width: 150px
   position: relative
   z-index: 2
-  margin: 0 5px
+  margin: 0 5px 10px
   background-color: rgba($blue-space,1)
 
 .constellation
@@ -192,3 +193,9 @@ body.subdoc
   .hero-major
     min-height: 170px
     padding-top: 15px
+
+@media screen and (max-width: $breakpoint-smartphone)
+
+  .cta .button
+    width: 100%
+    margin-bottom: 10px
