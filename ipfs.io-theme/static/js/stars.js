@@ -140,8 +140,8 @@ window.StarChart = (function () {
       }.bind(this));
 
       this.comets.push(new CometGroup(this, this.randomStar(), undefined, HOPS, true, 1));
-      this.comets.push(new CometGroup(this, this.randomStar(), undefined, HOPS, false));
-      this.comets.push(new CometGroup(this, this.randomStar(), undefined, HOPS, false));
+      this.comets.push(new CometGroup(this, this.randomStar(), undefined, HOPS, true));
+      this.comets.push(new CometGroup(this, this.randomStar(), undefined, HOPS, true));
       this.twinkleStar();
     }
 
