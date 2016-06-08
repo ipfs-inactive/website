@@ -19,7 +19,7 @@
         <h2 class="headline-main {% if page.headlineclass %}{{ page.headlineclass }}{% endif %}">{{ page.title }}</h2>
       {% endif %}
       {% if page.constellation %}
-        <img src="{{ SITEURL}}/theme/images/{{ page.constellation }}" class="constellation"/>
+        <img src="{{ SITEURL }}{{ SITEPATH }}/theme/images/{{ page.constellation }}" class="constellation"/>
       {% endif %}
     </div>
   {% endif %}
@@ -38,21 +38,8 @@
 
     <div class="content-wrapper">
       {{ page.content }}
-      <!-- {% if page.pagetype == 'home' %}
-        <section>
-          <h4>From the blog</h4>
-          {% set recent = articles if not all_articles else all_articles %}
-          <ul id="recent-posts">
-          {% for a in recent %}
-            {% if loop.index <= 3 %}
-              <li>
-                <a href="{{SITEURL}}{{ SITEPATH }}/{{ a.url }}">{{ a.title }}</a>
-              </li>
-            {% endif %}
-          {% endfor %}
-          </ul>
-        </section>
-      {% endif %} -->
-
+      {% if page.pagetype == 'home' %}
+        {% include "latest.html" %}
+      {% endif %}
     </div>
 {% endblock %}
