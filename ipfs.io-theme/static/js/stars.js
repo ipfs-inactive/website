@@ -21,11 +21,10 @@ window.StarChart = (function () {
   var STARS_PER_CELL = 2;
   var FARTHEST_NEIGHBOR = 300; // if a star is within this range, it can connect
   var TWINKLE_SPEED = 6;
-  var TWINKLES_PER_SECOND = 500;
+  var TWINKLES_PER_SECOND_PER_STAR = .2;
 
   // ------- edit above
   var _STAR_OPACITY_DIFF = STAR_OPACITY_MAX - STAR_OPACITY_MIN;
-  var _TWINKLE_RATE = 1 / TWINKLES_PER_SECOND;
   var _LINE_FADE_SPEED = 1 / LINE_FADE_SECONDS;
   var _PIXEL_RATIO = window.devicePixelRatio || 1;
 
@@ -176,6 +175,8 @@ window.StarChart = (function () {
         this.cells.push(row);
       }
 
+      this.twinkleRate = 1/ (TWINKLES_PER_SECOND_PER_STAR * this.starList.length);
+
       Object.keys(this.stars).forEach(function (skey) {
         this.stars[skey].setLinks();
       }.bind(this));
@@ -209,24 +210,28 @@ window.StarChart = (function () {
       }
       if (dt > 0.041666666666666664) {
         this.lastNow = now;
-        if (lastTwinkle > _TWINKLE_RATE) {
+        if (lastTwinkle > this.twinkleRate) {
           lastTwinkle = 0;
           this.twinkleStar();
         }
         for (r = 0, l = this.animatingStars.length; r < l; r++) {
             this.animatingStars[r].animate(dt);
         }
-        for (r = 0, l = this.removeAnimatingStars.length; r < l; r++) {
-          this.animatingStars.splice(this.animatingStars.indexOf(this.removeAnimatingStars[r]), 1);
+        if (this.removeAnimatingStars.length > 0) {
+          for (r = 0, l = this.removeAnimatingStars.length; r < l; r++) {
+            this.animatingStars.splice(this.animatingStars.indexOf(this.removeAnimatingStars[r]), 1);
+          }
+          this.removeAnimatingStars = [];
         }
-        this.removeAnimatingStars = [];
         for (r = 0, l = this.comets.length; r < l; r++) {
             this.comets[r].animate(dt);
         }
-        for (r = 0, l = this.removeComets.length; r < l; r++) {
-          this.comets.splice(this.comets.indexOf(this.removeComets[r]), 1);
+        if (this.removeComets.length > 0) {
+          for (r = 0, l = this.removeComets.length; r < l; r++) {
+            this.comets.splice(this.comets.indexOf(this.removeComets[r]), 1);
+          }
+          this.removeComets = [];
         }
-        this.removeComets = [];
         this.renderer.render(this.stage);
       }
     };
