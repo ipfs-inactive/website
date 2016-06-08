@@ -5,6 +5,10 @@
     <meta name="save_as" content="index.html"/>
 </head>
 <body>
+  <div class="header">
+    <div class="window"></div>
+    <div class="simple-modal-title"></div>
+  </div>
   <section id="why">
     <h2 class="content-center">The web of tomorrow needs IPFS <strong>today</strong></h2>
     <div class="grid-flex-container">
@@ -12,7 +16,7 @@
         <div class="illustration">
           <img src="theme/images/ipfs-illustration-http.svg" />
         </div>
-        <h5>HTTP is inefficient and expensive</h5>
+        <h5 class="content-center"><strong>HTTP is inefficient and expensive</strong></h5>
         <p>HTTP downloads a file from a single computer at a time, instead of getting pieces from multiple computers simultaneously. <a href="http://math.oregonstate.edu/~kovchegy/web/papers/p2p-vdn.pdf">With video delivery, a P2P approach could save 60% in bandwidth costs.</a></p>
         <p>IPFS makes it possible to distribute high volumes of data with high efficiency. And zero duplication means savings in storage.</p>
       </div>
@@ -20,7 +24,7 @@
         <div class="illustration">
           <img src="theme/images/ipfs-illustration-history.svg" />
         </div>
-        <h5>Humanity's history is deleted daily</h5>
+        <h5 class="content-center"><strong>Humanity's history is deleted daily</strong></h5>
         <p><a href="https://blogs.loc.gov/digitalpreservation/2011/11/the-average-lifespan-of-a-webpage/">The average lifespan of a web page is 100 days.</a> Remember GeoCities? The web doesn't anymore. It's not good enough for the primary medium of our era to be so fragile.</p>
         <p>IPFS provides historic versioning (like git) and makes it simple to set up resilient networks for mirroring of data.</p>
       </div>
@@ -28,7 +32,7 @@
         <div class="illustration">
           <img src="theme/images/ipfs-illustration-centralized.svg" />
         </div>
-        <h5>The web's centralization limits opportunity</h5>
+        <h5 class="content-center"><strong>The web's centralization limits opportunity</strong></h5>
         <p>The Internet has been one of the great equalizers in human history and a real accelerator of innovation. But the increasing consolidation of control is a threat to that.</p>
         <p>IPFS remains true to the original vision of the open and flat web, but delivers the technology which makes that vision a reality.</p>
       </div>
@@ -36,7 +40,7 @@
         <div class="illustration">
           <img src="theme/images/ipfs-illustration-network.svg" />
         </div>
-        <h5>Our apps are addicted to the backbone</h5>
+        <h5 class="content-center"><strong>Our apps are addicted to the backbone</strong></h5>
         <p>Developing world. Offline. Natural disasters. Intermittent connections. All trivial compared to interplanetary networking. The networks we're using are so 20th Century. We can do better.</p>
         <p>IPFS powers the creation of diversely resilient networks which enable persistent availability with or without Internet backbone connectivity.</p>
       </div>
@@ -138,6 +142,45 @@
         </div>
         <h5>Content creators</h5>
         <p>IPFS brings the freedom and independent spirit of the web at full force—and at low cost. IPFS can help deliver content in a way which can save you considerable money.</p>
+      </div>
+    </div>
+  </section>
+  <section id="latest">
+    <h2 class="content-center mb2">The Latest</h2>
+    <div class="grid-flex-container">
+      <div class="grid-flex-cell">
+        <h5>IPFS Starlog</h5>
+        <ol class="latest-list list-unstyled">
+          <li><span class="date">01 Jun 2016</span> <a href="blog/17-distributions">IPFS distributions</a></li>
+          <li><span class="date">08 May 2016</span> <a href="blog/16-ipfs-weekly-10">IPFS Weekly 10</a></li>
+          <li><span class="date">20 Apr 2016</span> <a href="blog/15-ipfs-weekly-9">IPFS Weekly 9</a></li>
+          <li><span class="date">07 Apr 2016</span> <a href="blog/14-ipfs-0-4-0-released">go-ipfs 0.4.0 has been released</a></li>
+        </ol>
+      </div>
+      <div class="grid-flex-cell">
+        <h5>News coverage</h5>
+        <ol class="latest-list list-unstyled">
+          <li><span class="date">01 Jun 2016</span> <a href="">IPFS In the News Headline</a></li>
+          <li><span class="date">01 Jun 2016</span> <a href="">IPFS In the News Headline</a></li>
+          <li><span class="date">01 Jun 2016</span> <a href="">IPFS In the News Headline Wow This is a Long Headline</a></li>
+        </ol>
+      </div>
+      <div class="grid-flex-cell grid-flex-cell-1of2">
+        <h5>Videos</h5>
+        <ul class="latest-videos list-unstyled cf">
+          <li id="modal-nofooter">
+            <a class="popup-youtube video-thumb" href="https://www.youtube.com/watch?v=8CMxDNuuAiQ">
+              <img src="theme/images/video-still-demo.png" />
+            </a>
+            <a class="popup-youtube" href="https://www.youtube.com/watch?v=8CMxDNuuAiQ">IPFS Demo</a>
+          </li>
+          <li>
+            <a class="popup-youtube video-thumb" href="https://www.youtube.com/watch?v=HUVmypx9HGI">
+              <img src="theme/images/video-still-stanford-seminar.png" />
+            </a>
+            <a class="popup-youtube" href="https://www.youtube.com/watch?v=HUVmypx9HGI">The Distributed, Permanent Web</a>
+          </li>
+        </ul>
       </div>
     </div>
   </section>
