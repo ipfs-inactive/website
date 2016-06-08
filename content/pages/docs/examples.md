@@ -1,5 +1,5 @@
 section: Docs
-title: examples
+title: Examples | IPFS Docs
 pagetype: subdoc
 url: docs/examples
 save_as: docs/examples/index.html

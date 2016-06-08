@@ -1,7 +1,7 @@
 section: Docs
 pagename: install
 pagetype: subdoc
-title: Install
+title: Install IPFS | IPFS Docs
 url: docs/install
 save_as: docs/install/index.html
 

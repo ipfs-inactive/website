@@ -1,5 +1,5 @@
 section: Docs
-title: Getting Started
+title: Getting Started | IPFS Docs
 pagetype: subdoc
 url: docs/getting-started
 save_as: docs/getting-started/index.html

@@ -1,5 +1,5 @@
 section: Docs
-title: commands
+title: Commands | IPFS Docs
 pagetype: subdoc
 url: docs/commands
 save_as: docs/commands/index.html

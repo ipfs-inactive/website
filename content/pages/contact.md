@@ -1,5 +1,5 @@
 pagetype: major
-title: Contact
+title: Contact | IPFS
 section: Contact
 constellation: constellation-01.svg
 

@@ -1,6 +1,6 @@
 section: Docs
 pagetype: major
-title: Docs
+title: IPFS Docs
 constellation: constellation-01.svg
 
 ## Code

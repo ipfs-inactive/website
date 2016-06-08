@@ -1,7 +1,7 @@
 pagetype: major
 pagename: media
 section: Media
-title: Media
+title: Media | IPFS
 url: media
 save_as: media/index.html
 constellation: constellation-02.svg

@@ -1,4 +1,4 @@
-section: Legal
+section: Legal | IPFS
 pagetype: major
 title: Legal
 constellation: constellation-01.svg
