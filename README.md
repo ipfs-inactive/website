@@ -8,6 +8,10 @@ This site uses [Pelican](docs.getpelican.com) as a custom configured static site
 
 You may need to `easy_install pip` if `pip` gives you not found warnings.
 
+## Relative paths
+
+The site is presently built so that all paths are relative, making it easy to deploy to IPFS.
+
 ## Site structure
 
 Here's the key highlights of various important files and folders:
@@ -21,17 +25,17 @@ Here's the key highlights of various important files and folders:
 - [`ipfs.io-theme/templates/latest.html`](https://github.com/andyet/ipfs.io/blob/master/ipfs.io-theme/templates/latest.html) automatically adds the latest blog posts, plus includes custom links to featured articles and videos.
 - [`pelican-plugins`] just has relevant plugins used by pelican to build the site.
 
-## Frontend Workflow
-
-**Preliminary Development**
+## Theme
 
 The site theme files are contained in the `ipfs.io-theme` directory.
 
-*CSS*
+To work on the theme, install Grunt:
+
+`npm grunt-cli`
 
 CSS is compiled from stylus in the `_styl` directory.
 
-## Pages
+## Pages content
 
 Pages go in `./content/pages`
 
@@ -48,9 +52,9 @@ A "pagetype" that includes "major" will get a larger header. The text in "sectio
 
 Page urls can be defined (see the `docs` subfolder) or will default to a slugified version of the page name (i.e. `about.md` will end up at `/about`)
 
-## Blog
+## Blog content
 
-Blog articles go in `./content/articles` and should have a title, date,
+Blog articles go in `./content/posts` and should have a title, date,
 and author.
 
 If you have images to associate with a blog post, add them to `content/images`. Then, to refer to them in a way that will allow them to be built as siblings of the blog post html, prefix their path with {attach}, like so:
@@ -65,14 +69,10 @@ If you have files like [Asciinema](https://asciinema.org/), add those to `conten
 {attach}/static/file
 ```
 
-## Config
-
-There are two config files `pelicanconf.py` and `publishconf.py`
-
-Most of the config is in `pelicanconf.py` with a few things that override critical settings for building the actual production site in `publishconf.py`.  One of these things is the final url for the site.
-
-When developing locally, the site url and site path are both empty, so all urls are things like `/foo`.
-
-When building the production site, site url and site path are prepended to the links so they'll be something like `http://ipfs.io/ipfs/s0meth1ng/foo`
+## Building the site
 
 The site is built via make. Type `make` to see your options.
+
+You can run `./develop_server start` and the site will be automagically rebuilt while you're working on it.
+
+`./develop_server stop` will stop the server
