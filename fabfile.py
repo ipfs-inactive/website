@@ -8,7 +8,7 @@ import SocketServer
 from pelican.server import ComplexHTTPRequestHandler
 
 # Local path configuration (can be absolute or relative to fabfile)
-env.deploy_path = 'output'
+env.deploy_path = 'build'
 DEPLOY_PATH = env.deploy_path
 
 # Remote server configuration
