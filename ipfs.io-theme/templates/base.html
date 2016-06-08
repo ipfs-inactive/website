@@ -139,19 +139,21 @@
       var starchart = new StarChart(document.getElementById('stars'), PIXI, 70, 70, 2);
       starchart.run();
     </script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script src="{{ SITEURL }}{{ SITEPATH }}/theme/js/jquery.magnific-popup.min.js" type="text/javascript"></script>
-    <script type="text/javascript">
-      $(document).ready(function() {
-        $('.popup-youtube').magnificPopup({
-          disableOn: 700,
-          type: 'iframe',
-          mainClass: 'mfp-fade',
-          removalDelay: 160,
-          preloader: false,
-          fixedContentPos: false
+    {% if page and page.pagetype == 'home' %}
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+      <script src="{{ SITEURL }}{{ SITEPATH }}/theme/js/jquery.magnific-popup.min.js" type="text/javascript"></script>
+      <script type="text/javascript">
+        $(document).ready(function() {
+          $('.popup-youtube').magnificPopup({
+            disableOn: 700,
+            type: 'iframe',
+            mainClass: 'mfp-fade',
+            removalDelay: 160,
+            preloader: false,
+            fixedContentPos: false
+          });
         });
-      });
-    </script>
+      </script>
+    {% endif %}
   </body>
 </html>
