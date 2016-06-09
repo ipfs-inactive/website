@@ -2,6 +2,7 @@ section: Docs
 pagetype: major
 title: IPFS Docs
 constellation: constellation-01.svg
+save_as: docs/index.html
 
 ## Code
 
