@@ -7,7 +7,7 @@
       <ol class="latest-list list-unstyled">
         {% for a in recent %}
           {% if loop.index <= 4 %}
-            <li><span class="date">{{ a.date|strftime('%d %B %Y') }}</span> <a href="{{ SITEURL }}{{ SITEPATH }}{{ a.url }}">{{ a.title }}</a></li>
+            <li><span class="date">{{ a.date|strftime('%d %B %Y') }}</span> <a href="{{ SITEURL }}{{ SITEPATH }}/{{ a.url }}">{{ a.title }}</a></li>
           {% endif %}
         {% endfor %}
       </ol>
