@@ -1,0 +1,30 @@
+header.header-has-logo
+  .container.cf
+
+    h1.pull-left: a.logo.ipfs-logo.transition.transition-fadeout(href='/') IPFS
+
+    nav.pull-right.top-nav.top-nav-dark.cf(role='navigation')
+
+      input#menu-toggle.menu-toggle(type='checkbox')
+      label(for='menu-toggle') Menu
+
+      ul.list-unstyled.list-inline.cf
+        li
+          a Uses
+        li
+          a.current-item Docs
+        li
+          a Specs
+        li
+          a Press
+        li
+          a Blog
+
+    .hero
+      h2.headline-main(class='#{headlineClass}') #{headlineText}
+      span.divider
+      h3.subhead-main #{subheadText}
+
+  .view-more
+    label View more
+    a(href="#")

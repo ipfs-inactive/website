@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="{{ DEFAULT_LANG }}">
+  <head>
+    {% block head %}
+      <meta charset="utf-8">
+      <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
+      <meta name="viewport" content="width=device-width,initial-scale=1.0">
+      <meta name="description" content="{% block pageDescription %}{% endblock pageDescription %}">
+      <meta name="keywords" content="">
+      <meta name="author" content="">
+      <link rel="icon" type="image/png" href="{{ SITEURL }}{{ SITEPATH }}/theme/images/favicon.png">
+      <link rel="stylesheet" href="{{ SITEURL }}{{ SITEPATH }}/theme/css/main.css">
+      <script>
+        try{Typekit.load({async:true});}catch(e){}
+      </script>
+
+      {% if FEED_ALL_ATOM %}
+        <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Full Atom Feed" />
+      {% endif %}
+      {% if FEED_ALL_RSS %}
+        <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} Full RSS Feed" />
+      {% endif %}
+      {% if FEED_ATOM %}
+        <link href="{{ FEED_DOMAIN }}/{{ FEED_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Atom Feed" />
+      {% endif %}
+      {% if FEED_RSS %}
+        <link href="{{ FEED_DOMAIN }}/{{ FEED_RSS }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} RSS Feed" />
+      {% endif %}
+    {% endblock head %}
+  </head>
+
+  <body {% if page %}
+          {% if page.pagetype %}class="{{ page.pagetype }}"{% endif %}
+          {% if page.pagetype == 'subdoc' %}class="{{ page.pagetype }}"{% endif %}
+        {% endif %}
+        {% if article %}class="article"{% endif %}>
+    <header class="header-has-logo" id="stars">
+      <div class="container cf">
+        <h1 class="pull-left">
+          <a href="{{ SITEURL }}{{ SITEPATH }}/" class="logo ipfs-logo transition transition-fadeout">IPFS</a>
+        </h1>
+        <nav role="navigation" class="pull-right top-nav top-nav-dark cf">
+          <input id="menu-toggle" type="checkbox" class="menu-toggle">
+          <label for="menu-toggle">Menu</label>
+          <ul class="list-unstyled list-inline cf">
+            {% if page and page.pagetype == 'home' %}
+              <li><a href="{{ SITEURL }}{{ SITEPATH }}/#why">Why</a></li>
+              <li><a href="{{ SITEURL }}{{ SITEPATH }}/#how">How</a></li>
+              <li><a href="{{ SITEURL }}{{ SITEPATH }}/#uses">Uses</a></li>
+            {% else %}
+              <li><a href="{{ SITEURL }}{{ SITEPATH }}/">About</a></li>
+            {% endif %}
+            <li><a href="{{ SITEURL }}{{ SITEPATH }}/docs/install" {% if page and page.pagename == 'install' %}class="current-item"{% endif %}>Install</a></li>
+            <li><a href="{{ SITEURL }}{{ SITEPATH }}/media" {% if page and page.pagename == 'media' %}class="current-item"{% endif %}>Media</a></li>
+            <li><a href="{{ SITEURL }}{{ SITEPATH }}/docs" {% if page and page.pagename != 'install' and page.category.name == 'docs' %}class="current-item"{% endif %}>Docs</a></li>
+            <li><a href="{{ SITEURL }}{{ SITEPATH }}/blog" {% if article or (page_name == 'blog/index') %}class="current-item"{% endif %}>Blog</a></li>
+          </ul>
+        </nav>
+        {% block hero %}
+        {% endblock hero %}
+      </div>
+      <div class="view-more">
+        <label>View more</label><a href="#"></a>
+      </div>
+    </header>
+    <div class="container">
+      {% if active_page_is_blog|default("false") == "true" %}
+        <div class="page-content row">
+          <div class="large-8 medium-8 columns">
+            {% block blog_entries %}
+            {% endblock %}
+          </div>
+        </div>
+      {% else %}
+
+        {% block content %}
+        {% endblock content %}
+      {% endif %}
+    </div>
+    <footer role="contentinfo" class="footer-primary">
+      <div class="container cf">
+        <div class="cf">
+          <div class="sitemap-menu grid-flex-container">
+            <div class="grid-flex-cell">
+              <ul class="sitemap unstyled">
+                <li class="sitemap-head">IPN</li>
+                <li><a href="http://ipn.io">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li><a href="http://ipn.io/join">Join</a></li>
+              </ul>
+            </div>
+            <div class="grid-flex-cell">
+              <ul class="sitemap unstyled">
+                <li class="sitemap-head">IPFS</li>
+                <li><a href="/">About</a></li>
+                <li><a href="/docs/install/">Install</a></li>
+                <li><a href="/media">Media</a></li>
+                <li><a href="/docs/">Docs</a></li>
+                <li><a href="/docs/">Code</a></li>
+                <li><a href="/docs/">Community</a></li>
+                <li><a href="/blog/">Blog</a></li>
+                <li><a href="/legal/">Legal</a></li>
+              </ul>
+            </div>
+            <div class="grid-flex-cell">
+              <ul class="sitemap unstyled">
+                <li class="sitemap-head">Filecoin</li>
+                <li><a href="http://filecoin.io/">About</a></li>
+                <li><a href="http://filecoin.io/filecoin.pdf">Paper</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="share-links">
+            <ul class="share unstyled">
+              {% for title, link in SOCIAL %}
+                <li><a class="{{ title }}" href="{{ link }}">{{ title }}</a></li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+        <p class="footer-copyright center">© Protocol Labs | Except as <a href="http://ipn.io/legal/policies/">noted</a>, content licensed <a href="https://creativecommons.org/licenses/by/3.0/">CC-BY 3.0.</a></p>
+      </div>
+    </footer>
+    <script src="{{ SITEURL }}{{ SITEPATH }}/theme/js/pixi.min.js" type="text/javascript"></script>
+    <script src="{{ SITEURL }}{{ SITEPATH }}/theme/js/stars.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      var starchart = new StarChart(document.getElementById('stars'), PIXI, 70, 70, 2);
+      starchart.run();
+    </script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-52930282-2', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </body>
+</html>

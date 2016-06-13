@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %}{{ page.title }}{% endblock %}
+{% block hero %}
+  {% if page.pagetype == 'home' %}
+    <div class="hero hero-home">
+      <div class="hero-text">
+        <h2 class="headline-main">IPFS is the Distributed Web</h2>
+        <span class="divider"></span>
+        <h3 class="subhead-main">A peer-to-peer hypermedia protocol<br /> to make the web faster, safer, and more open.</h3>
+        <div class="cta">
+          <a class="button button-outlined" href="docs/getting-started">Try it</a>
+          <a class="button button-outlined popup-youtube" href="https://www.youtube.com/watch?v=8CMxDNuuAiQ">Watch demo</a>
+        </div>
+      </div>
+    </div>
+  {% else %}
+    <div class="hero {% if page.pagetype %}hero-{{ page.pagetype }}{% endif %}">
+      {% if page.title %}
+        <h2 class="headline-main {% if page.headlineclass %}{{ page.headlineclass }}{% endif %}">{{ page.title }}</h2>
+      {% endif %}
+      {% if page.constellation %}
+        <img src="{{ SITEURL }}{{ SITEPATH }}/theme/images/{{ page.constellation }}" class="constellation"/>
+      {% endif %}
+    </div>
+  {% endif %}
+{% endblock %}
+{% block content %}
+    {% if page.category.name == 'docs' %}
+      <ul class="docs-menu">
+        <li><a href="{{ SITEURL}}{{ SITEPATH }}/docs" {% if page.slug == 'docs' %}class="current-item"{% endif %}>Documentation</a></li>
+        <li><a href="{{ SITEURL}}{{ SITEPATH }}/docs/install" {% if page.slug == 'install' %}class="current-item"{% endif %}>Install</a></li>
+        <li><a href="{{ SITEURL}}{{ SITEPATH }}/docs/getting-started" {% if page.slug == 'getting-started' %}class="current-item"{% endif %}>Getting Started</a></li>
+        <li><a href="{{ SITEURL}}{{ SITEPATH }}/docs/api" {% if page.slug == 'api' %}class="current-item"{% endif %}>API</a></li>
+        <li><a href="{{ SITEURL}}{{ SITEPATH }}/docs/commands" {% if page.slug == 'commands' %}class="current-item"{% endif %}>Commands</a></li>
+        <li><a href="{{ SITEURL}}{{ SITEPATH }}/docs/examples" {% if page.slug == 'examples' %}class="current-item"{% endif %}>Examples</a></li>
+      </ul>
+    {% endif %}
+
+    <div class="content-wrapper">
+      {{ page.content }}
+      {% if page.pagetype == 'home' %}
+        {% include "latest.html" %}
+      {% endif %}
+    </div>
+{% endblock %}
