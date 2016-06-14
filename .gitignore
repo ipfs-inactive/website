@@ -7,3 +7,5 @@ ipfs.io-theme/build
 .DS_Store
 npm-debug.log
 
+auth.token
+venv/

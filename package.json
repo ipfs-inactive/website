@@ -1,0 +1,9 @@
+{
+  "name": "ipfs.io",
+  "private": true,
+  "dependencies": {
+  },
+  "devDependencies": {
+    "dnslink-deploy": "^1.0.7"
+  }
+}
