@@ -1,4 +1,28 @@
-# ipfs.io
+# website
+
+[![](https://img.shields.io/badge/made%20by-Protocol%20Labs-blue.svg?style=flat-square)](http://ipn.io)
+[![](https://img.shields.io/badge/project-IPFS-blue.svg?style=flat-square)](http://ipfs.io/)
+[![](https://img.shields.io/badge/freenode-%23ipfs-blue.svg?style=flat-square)](http://webchat.freenode.net/?channels=%23ipfs)
+[![standard-readme compliant](https://img.shields.io/badge/standard--readme-OK-green.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
+
+> ipfs website
+
+## Table of Contents
+
+- [Install](#install)
+  - [Dependencies](#dependencies)
+- [Relative paths](#relative-paths)
+- [Site structure](#site-structure)
+- [Theme](#theme)
+- [Pages content](#pages-content)
+- [Blog content](#blog-content)
+- [Building the site](#building-the-site)
+- [Contribute](#contribute)
+- [License](#license)
+
+## Install
+
+Simply clone this repository.
 
 ### Dependencies
 
@@ -7,6 +31,10 @@ This site uses [Pelican](docs.getpelican.com) as a custom configured static site
 `pip install pelican markdown`
 
 You may need to `easy_install pip` if `pip` gives you not found warnings.
+
+## Usage
+
+Open locally in the browser.
 
 ## Relative paths
 
@@ -76,3 +104,15 @@ The site is built via make. Type `make` to see your options.
 You can run `./develop_server start` and the site will be automagically rebuilt while you're working on it.
 
 `./develop_server stop` will stop the server
+
+## Contribute
+
+Feel free to join in. All welcome. Open an [issue](https://github.com/ipfs/website/issues)!
+
+This repository falls under the IPFS [Code of Conduct](https://github.com/ipfs/community/blob/master/code-of-conduct.md).
+
+[![](https://cdn.rawgit.com/jbenet/contribute-ipfs-gif/master/img/contribute.gif)](https://github.com/ipfs/community/blob/master/contributing.md)
+
+## License
+
+[MIT](LICENSE)
