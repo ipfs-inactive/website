@@ -6,7 +6,11 @@ save_as: docs/api/index.html
 
 # API Reference
 
-[Every command](../commands/) usable from the cli is also available through
+A live specification for the HTTP API can be found at [docs.ipfs.apiary.io](http://docs.ipfs.apiary.io). For issues and support, check out the [http-api-spec repository](https://github.com/ipfs/http-api-spec) on GitHub.
+
+## Commands
+
+[Every command](../commands/) usable from the CLI is also available through
 the HTTP API. For example:
 
 ```sh
@@ -73,10 +77,3 @@ Note that it can be used multiple times to signify multiple arguments:
   ]
 }
 ```
-
-## TODO <i class="fa fa-warning"></i>
-
-This page will contain a listing of all commands and query examples.
-If you're seeing this and you want the api reference faster, let us know or help us out here:
-
-- [github.com/ipfs/api/issues](https://github.com/ipfs/api/issues)
