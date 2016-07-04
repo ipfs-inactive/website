@@ -11,37 +11,37 @@ This list will [grow over time](https://github.com/protocol/ipfs-examples).
 The examples are viewed through an ipfs-hosted renderer.
 
 - [Dags and Objects and Blocks! (oh my)](
-  /ipfs/QmTkzDwWqPbnAh5YiV5VwcTLnGdwSNsNTn2aDxdXBFca7D/example#/ipfs/QmQwAP9vFjbCtKvD8RkJdCvPHqLQjZfW7Mqbbqx18zd8j7/data/readme.md
+  /ipfs/QmTkzDwWqPbnAh5YiV5VwcTLnGdwSNsNTn2aDxdXBFca7D/example#/ipfs/QmVkxR8gpmGwjoVBTcyxFxFQXVDgZVZFuawHGU1WqK5EoL/data/readme.md
 )
 - [Be the swarm](
-  /ipfs/QmTkzDwWqPbnAh5YiV5VwcTLnGdwSNsNTn2aDxdXBFca7D/example#/ipfs/QmQwAP9vFjbCtKvD8RkJdCvPHqLQjZfW7Mqbbqx18zd8j7/network/readme.md
+  /ipfs/QmTkzDwWqPbnAh5YiV5VwcTLnGdwSNsNTn2aDxdXBFca7D/example#/ipfs/QmVkxR8gpmGwjoVBTcyxFxFQXVDgZVZFuawHGU1WqK5EoL/network/readme.md
 )
 - [Pinning](
-  /ipfs/QmTkzDwWqPbnAh5YiV5VwcTLnGdwSNsNTn2aDxdXBFca7D/example#/ipfs/QmQwAP9vFjbCtKvD8RkJdCvPHqLQjZfW7Mqbbqx18zd8j7/pinning/readme.md
+  /ipfs/QmTkzDwWqPbnAh5YiV5VwcTLnGdwSNsNTn2aDxdXBFca7D/example#/ipfs/QmVkxR8gpmGwjoVBTcyxFxFQXVDgZVZFuawHGU1WqK5EoL/pinning/readme.md
 )
 - [Roll your own ipfs!](
-  /ipfs/QmTkzDwWqPbnAh5YiV5VwcTLnGdwSNsNTn2aDxdXBFca7D/example#/ipfs/QmQwAP9vFjbCtKvD8RkJdCvPHqLQjZfW7Mqbbqx18zd8j7/api/service/readme.md
+  /ipfs/QmTkzDwWqPbnAh5YiV5VwcTLnGdwSNsNTn2aDxdXBFca7D/example#/ipfs/QmVkxR8gpmGwjoVBTcyxFxFQXVDgZVZFuawHGU1WqK5EoL/api/service/readme.md
 )
 - [Trivial snapshots with ipfs](
-  /ipfs/QmTkzDwWqPbnAh5YiV5VwcTLnGdwSNsNTn2aDxdXBFca7D/example#/ipfs/QmQwAP9vFjbCtKvD8RkJdCvPHqLQjZfW7Mqbbqx18zd8j7/snapshots/readme.md
+  /ipfs/QmTkzDwWqPbnAh5YiV5VwcTLnGdwSNsNTn2aDxdXBFca7D/example#/ipfs/QmVkxR8gpmGwjoVBTcyxFxFQXVDgZVZFuawHGU1WqK5EoL/snapshots/readme.md
 )
 - [The Inter-Planetary Naming System](
-  /ipfs/QmTkzDwWqPbnAh5YiV5VwcTLnGdwSNsNTn2aDxdXBFca7D/example#/ipfs/QmQwAP9vFjbCtKvD8RkJdCvPHqLQjZfW7Mqbbqx18zd8j7/ipns/readme.md
+  /ipfs/QmTkzDwWqPbnAh5YiV5VwcTLnGdwSNsNTn2aDxdXBFca7D/example#/ipfs/QmVkxR8gpmGwjoVBTcyxFxFQXVDgZVZFuawHGU1WqK5EoL/ipns/readme.md
 )
 - [Modifying the bootstrap peers list](
-  /ipfs/QmTkzDwWqPbnAh5YiV5VwcTLnGdwSNsNTn2aDxdXBFca7D/example#/ipfs/QmQwAP9vFjbCtKvD8RkJdCvPHqLQjZfW7Mqbbqx18zd8j7/bootstrap/readme.md
+  /ipfs/QmTkzDwWqPbnAh5YiV5VwcTLnGdwSNsNTn2aDxdXBFca7D/example#/ipfs/QmVkxR8gpmGwjoVBTcyxFxFQXVDgZVZFuawHGU1WqK5EoL/bootstrap/readme.md
 )
 - [Configuring your node](
-  /ipfs/QmTkzDwWqPbnAh5YiV5VwcTLnGdwSNsNTn2aDxdXBFca7D/example#/ipfs/QmQwAP9vFjbCtKvD8RkJdCvPHqLQjZfW7Mqbbqx18zd8j7/config/readme.md
+  /ipfs/QmTkzDwWqPbnAh5YiV5VwcTLnGdwSNsNTn2aDxdXBFca7D/example#/ipfs/QmVkxR8gpmGwjoVBTcyxFxFQXVDgZVZFuawHGU1WqK5EoL/config/readme.md
 )
 - [Adding and Playing Videos](
-  /ipfs/QmTkzDwWqPbnAh5YiV5VwcTLnGdwSNsNTn2aDxdXBFca7D/example#/ipfs/QmQwAP9vFjbCtKvD8RkJdCvPHqLQjZfW7Mqbbqx18zd8j7/videos/readme.md
+  /ipfs/QmTkzDwWqPbnAh5YiV5VwcTLnGdwSNsNTn2aDxdXBFca7D/example#/ipfs/QmVkxR8gpmGwjoVBTcyxFxFQXVDgZVZFuawHGU1WqK5EoL/videos/readme.md
 )
 - [Visualizing objects with graphmd](
-  /ipfs/QmTkzDwWqPbnAh5YiV5VwcTLnGdwSNsNTn2aDxdXBFca7D/example#/ipfs/QmQwAP9vFjbCtKvD8RkJdCvPHqLQjZfW7Mqbbqx18zd8j7/graphmd/README.md
+  /ipfs/QmTkzDwWqPbnAh5YiV5VwcTLnGdwSNsNTn2aDxdXBFca7D/example#/ipfs/QmVkxR8gpmGwjoVBTcyxFxFQXVDgZVZFuawHGU1WqK5EoL/graphmd/README.md
 )
 - [Git, even more distributed](
-  /ipfs/QmTkzDwWqPbnAh5YiV5VwcTLnGdwSNsNTn2aDxdXBFca7D/example#/ipfs/QmQwAP9vFjbCtKvD8RkJdCvPHqLQjZfW7Mqbbqx18zd8j7/git/readme.md
+  /ipfs/QmTkzDwWqPbnAh5YiV5VwcTLnGdwSNsNTn2aDxdXBFca7D/example#/ipfs/QmVkxR8gpmGwjoVBTcyxFxFQXVDgZVZFuawHGU1WqK5EoL/git/readme.md
 )
 
 ## Simple JS Apps
