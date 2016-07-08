@@ -1,27 +1,29 @@
 {% extends "base.html" %}
 {% block title %}{{ page.title }}{% endblock %}
 {% block hero %}
-  {% if page.pagetype == 'home' %}
-    <div class="hero hero-home">
-      <div class="hero-text">
-        <h2 class="headline-main">IPFS is the Distributed Web</h2>
-        <span class="divider"></span>
-        <h3 class="subhead-main">A peer-to-peer hypermedia protocol<br /> to make the web faster, safer, and more open.</h3>
-        <div class="cta">
-          <a class="button button-outlined" href="docs/getting-started">Try it</a>
-          <a class="button button-outlined popup-youtube" href="https://www.youtube.com/watch?v=8CMxDNuuAiQ">Watch demo</a>
+  {% if page.pagetype != 'subdoc' %}
+    {% if page.pagetype == 'home' %}
+      <div class="hero hero-home">
+        <div class="hero-text">
+          <h2 class="headline-main">IPFS is the Distributed Web</h2>
+          <span class="divider"></span>
+          <h3 class="subhead-main">A peer-to-peer hypermedia protocol<br /> to make the web faster, safer, and more open.</h3>
+          <div class="cta">
+            <a class="button button-outlined" href="docs/getting-started">Try it</a>
+            <a class="button button-outlined popup-youtube" href="https://www.youtube.com/watch?v=8CMxDNuuAiQ">Watch demo</a>
+          </div>
         </div>
       </div>
-    </div>
-  {% else %}
-    <div class="hero {% if page.pagetype %}hero-{{ page.pagetype }}{% endif %}">
-      {% if page.title %}
-        <h2 class="headline-main {% if page.headlineclass %}{{ page.headlineclass }}{% endif %}">{{ page.title }}</h2>
-      {% endif %}
-      {% if page.constellation %}
-        <img src="{{ SITEURL }}{{ SITEPATH }}/theme/images/{{ page.constellation }}" class="constellation"/>
-      {% endif %}
-    </div>
+    {% else %}
+      <div class="hero {% if page.pagetype %}hero-{{ page.pagetype }}{% endif %}">
+        {% if page.title %}
+          <h2 class="headline-main {% if page.headlineclass %}{{ page.headlineclass }}{% endif %}">{{ page.title }}</h2>
+        {% endif %}
+        {% if page.constellation %}
+          <img src="{{ SITEURL }}{{ SITEPATH }}/theme/images/{{ page.constellation }}" class="constellation"/>
+        {% endif %}
+      </div>
+    {% endif %}
   {% endif %}
 {% endblock %}
 {% block content %}
