@@ -50,7 +50,7 @@ Congratulations! You now have a working IPFS installation on your computer.
 
 ### Windows
 
-After downloading, unzip the archive, and move `ipfs.exe`  somewhere in your `%PATH`.
+After downloading, unzip the archive, and move `ipfs.exe`  somewhere in your `%PATH%`.
 
 Test it out:
 
