@@ -22,7 +22,15 @@ Here are some presentations which provide a good introduction to IPFS.
 
 IPFS news, articles, references on the media, presence in conferences and talks, organized by chronological order.
 
+### 2016
+- [Jun 2 - Berlin IPFS/Blockstack Meetup at c-base](https://www.youtube.com/watch?v=CAfagNmIeOE)
+- [May 2 - IPFS Meetup Berlin](https://www.youtube.com/watch?v=UOC_QqtEJtg)
+- [Jan 21 - IPFS Workshop with Juan Benet, Open Knowledge Ireland](https://www.youtube.com/watch?v=S65z5NHfUT0)
+- [Jan 15 - DEVCON1: IPFS - Juan Batiz-Benet](https://www.youtube.com/watch?v=ewpIi1y_KDc)
+
 ### 2015
+- [Dec 26 - Redistributing the Web with IPFS + Slides - BattleMeshV8](https://www.youtube.com/watch?v=KGIyneFfiRE)
+- [Dec 15 - Interview with Juan Benet of IPFS at DEVCON1 in London](https://www.youtube.com/watch?v=t7VjUKCdfpg)
 - [Oct 21 - Stanford EE380 - Computer Systems Colloquium](http://www-cs.stanford.edu/events/computer-systems-colloquium-ipfs-and-permanent-web-juan-benet-protocol-labs)
 - [Oct 20 - IPFS Meetup hosted by Sourcegraph, San Francisco CA](http://attending.io/events/ipfs-san-francisco-october-2015)
 - [Oct 19 - Introduction to IPFS (InterPlanetary File System); A Brief Post About a Protocol That Changes Everything](https://www.linkedin.com/pulse/introduction-ipfs-interplanetary-file-system-brief-post-john-lilic?trk=hp-feed-article-title-like)
