@@ -92,13 +92,13 @@ If you have any problems, come get live help at
 
 ### Check Go Version
 
-IPFS works with Go 1.5.2+.
+IPFS works with Go 1.7.0 or later.
 To check what go version you have installed, type `go version`.
 Here's what I get:
 
 ```sh
 > go version
-go version go1.5.2 darwin/amd64
+go version go1.7 linux/amd64
 ```
 
 If you need to update, it is recommended to install from the
