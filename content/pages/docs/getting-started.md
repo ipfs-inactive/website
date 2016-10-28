@@ -39,7 +39,7 @@ ipfs cat /ipfs/QmYwAPJzv5CZsnA625s3Xf2nemtYgPpHdWEz79ojWnPbdG/readme
 
 You should see something like this:
 
-```sh
+```
 Hello and Welcome to IPFS!
 
 ██╗██████╗ ███████╗███████╗
