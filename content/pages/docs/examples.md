@@ -43,6 +43,9 @@ The examples are viewed through an ipfs-hosted renderer.
 - [Git, even more distributed](
   /ipfs/QmNZiPk974vDsPmQii3YbrMKfi12KTSNM7XMiYyiea4VYZ/example#/ipfs/QmQwAP9vFjbCtKvD8RkJdCvPHqLQjZfW7Mqbbqx18zd8j7/git/readme.md
 )
+- [IPFS for websites](
+  /ipfs/QmNZiPk974vDsPmQii3YbrMKfi12KTSNM7XMiYyiea4VYZ/example#/ipfs/QmQwAP9vFjbCtKvD8RkJdCvPHqLQjZfW7Mqbbqx18zd8j7/websites/README.md
+)
 
 ## Simple JS Apps
 
