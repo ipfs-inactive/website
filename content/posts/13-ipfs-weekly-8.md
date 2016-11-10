@@ -29,7 +29,7 @@ There are some active discussions on PubSub, following a good video chat last we
 
 `ipfs init` for js-ipfs [is almost complete](//github.com/ipfs/js-ipfs/pull/91), thanks to [@noffle](//github.com/noffle). This will have go-ipfs compatibility, but run using only JavaScript. If you like building tests and sharpening your semicolons, there's plenty of [opportunities to contribute](//github.com/ipfs/js-ipfs#contribute) in js-ipfs land.
 
-### [go-ipfs](//github.com/ifps/go-ipfs)
+### [go-ipfs](//github.com/ipfs/go-ipfs)
 
 This week in go-ipfs, we prepped for shipping version 0.4.0. This included lots of testing, writing of information, and verification of different aspects of IPFS. [@whyrusleeping](//github.com/whyrusleeping) wrote a stress test for the fs-repo-migrations that adds a very large number of objects (over 200,000) and pins a couple thousand of them, runs the migration, verifies ​everything​, runs a gc, and then verifies everything again. Once that got working, he kicked off a test run of that with the numbers bumped by a factor of 10 (over two million objects!) and everything completed just fine. This robustness means that 0.4.0 will be ready to ship very, very soon.
 

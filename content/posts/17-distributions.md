@@ -41,7 +41,7 @@ The site is also used directly by [`ipfs-update`](https://github.com/ipfs/ipfs-u
 
 In order to be added to the distributions page, a product must:
 
-- Originate from the IFPS community;
+- Originate from the IPFS community;
 - Have high-quality UX and documentation;
 - Be well maintained and active.
 

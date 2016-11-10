@@ -70,7 +70,7 @@ Thanks to [@diasdavid](//github.com/diasdavid), the DAG object manipulation comm
 [@dignifiedquire](//github.com/dignifiedquire) rewrote the generation
   script and cleaned up the code so that now the data is consistently
   reproducible and fully stored on IPFS. This ensures that geoip lookups
-  over IFPS will work in all future releases.
+  over IPFS will work in all future releases.
 
 #### [**fs-repo-migrations**](//github.com/ipfs/fs-repo-migrations)
 
