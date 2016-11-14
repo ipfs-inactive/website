@@ -32,6 +32,14 @@ This site uses [Pelican](docs.getpelican.com) as a custom configured static site
 
 You may need to `easy_install pip` if `pip` gives you not found warnings.
 
+If you have issues with any of the packages, it may be a good idea to use a virtual environment. To do this:
+
+```
+virtualenv venv/
+. venv/bin/activate
+pip install pelican markdown
+```
+
 ## Usage
 
 Open locally in the browser.
