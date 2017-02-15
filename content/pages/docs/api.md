@@ -7,7 +7,7 @@ save_as: docs/api/index.html
 
 # API Reference
 
-<sup>Generated on 2016-11-03, from go-ipfs v0.4.4.</sup>
+<sup>Generated on 2017-02-15, from go-ipfs v0.4.5.</sup>
 
 This is the HTTP API specification for IPFS.
 
@@ -83,11 +83,13 @@ flag is the `&encoding=json` query parameter below:
 ## Index
 
   *  [/add](#apiv0add)
+  *  [/bitswap/ledger](#apiv0bitswapledger)
   *  [/bitswap/stat](#apiv0bitswapstat)
   *  [/bitswap/unwant](#apiv0bitswapunwant)
   *  [/bitswap/wantlist](#apiv0bitswapwantlist)
   *  [/block/get](#apiv0blockget)
   *  [/block/put](#apiv0blockput)
+  *  [/block/rm](#apiv0blockrm)
   *  [/block/stat](#apiv0blockstat)
   *  [/bootstrap/add/default](#apiv0bootstrapadddefault)
   *  [/bootstrap/list](#apiv0bootstraplist)
@@ -97,9 +99,12 @@ flag is the `&encoding=json` query parameter below:
   *  [/config/edit](#apiv0configedit)
   *  [/config/replace](#apiv0configreplace)
   *  [/config/show](#apiv0configshow)
+  *  [/dag/get](#apiv0dagget)
+  *  [/dag/put](#apiv0dagput)
   *  [/dht/findpeer](#apiv0dhtfindpeer)
   *  [/dht/findprovs](#apiv0dhtfindprovs)
   *  [/dht/get](#apiv0dhtget)
+  *  [/dht/provide](#apiv0dhtprovide)
   *  [/dht/put](#apiv0dhtput)
   *  [/dht/query](#apiv0dhtquery)
   *  [/diag/cmds/clear](#apiv0diagcmdsclear)
@@ -119,6 +124,8 @@ flag is the `&encoding=json` query parameter below:
   *  [/files/write](#apiv0fileswrite)
   *  [/get](#apiv0get)
   *  [/id](#apiv0id)
+  *  [/key/gen](#apiv0keygen)
+  *  [/key/list](#apiv0keylist)
   *  [/log/level](#apiv0loglevel)
   *  [/log/ls](#apiv0logls)
   *  [/log/tail](#apiv0logtail)
@@ -141,6 +148,10 @@ flag is the `&encoding=json` query parameter below:
   *  [/pin/ls](#apiv0pinls)
   *  [/pin/rm](#apiv0pinrm)
   *  [/ping](#apiv0ping)
+  *  [/pubsub/ls](#apiv0pubsubls)
+  *  [/pubsub/peers](#apiv0pubsubpeers)
+  *  [/pubsub/pub](#apiv0pubsubpub)
+  *  [/pubsub/sub](#apiv0pubsubsub)
   *  [/refs/local](#apiv0refslocal)
   *  [/repo/fsck](#apiv0repofsck)
   *  [/repo/gc](#apiv0repogc)
@@ -171,22 +182,23 @@ flag is the `&encoding=json` query parameter below:
 
 ### /api/v0/add
 
-Add a file to ipfs.
+Add a file or directory to ipfs.
 
 
 #### Arguments
 
-  - `arg` [file]: The path to a file to be added to IPFS. Required: **yes**.
+  - `arg` [file]: The path to a file to be added to ipfs. Required: **yes**.
   - `recursive` [bool]: Add directory paths recursively. Default: "false". Required: no.
-  - `quiet` [bool]: Write minimal output. Default: "false". Required: no.
-  - `silent` [bool]: Write no output. Default: "false". Required: no.
+  - `quiet` [bool]: Write minimal output. Required: no.
+  - `silent` [bool]: Write no output. Required: no.
   - `progress` [bool]: Stream progress data. Required: no.
-  - `trickle` [bool]: Use trickle-dag format for dag generation. Default: "false". Required: no.
-  - `only-hash` [bool]: Only chunk and hash - do not write to disk. Default: "false". Required: no.
-  - `wrap-with-directory` [bool]: Wrap files with a directory object. Default: "false". Required: no.
-  - `hidden` [bool]: Include files that are hidden. Only takes effect on recursive add. Default: "false". Required: no.
+  - `trickle` [bool]: Use trickle-dag format for dag generation. Required: no.
+  - `only-hash` [bool]: Only chunk and hash - do not write to disk. Required: no.
+  - `wrap-with-directory` [bool]: Wrap files with a directory object. Required: no.
+  - `hidden` [bool]: Include files that are hidden. Only takes effect on recursive add. Required: no.
   - `chunker` [string]: Chunking algorithm to use. Required: no.
   - `pin` [bool]: Pin this object when adding. Default: "true". Required: no.
+  - `raw-leaves` [bool]: Use raw blocks for leaf nodes. (experimental). Required: no.
 
 
 #### Request Body
@@ -209,7 +221,38 @@ On success, the call to this endpoint will return with 200 and the following bod
 
 #### cURL Example
 
-`curl -F file=@myfile "http://localhost:5001/api/v0/add?recursive=false&quiet=false&silent=false&progress=<value>&trickle=false&only-hash=false&wrap-with-directory=false&hidden=false&chunker=<value>&pin=true"`
+`curl -F file=@myfile "http://localhost:5001/api/v0/add?recursive=false&quiet=<value>&silent=<value>&progress=<value>&trickle=<value>&only-hash=<value>&wrap-with-directory=<value>&hidden=<value>&chunker=<value>&pin=true&raw-leaves=<value>"`
+
+***
+
+### /api/v0/bitswap/ledger
+
+Show the current ledger for a peer.
+
+
+#### Arguments
+
+  - `arg` [string]: The PeerID (B58) of the ledger to inspect. Required: **yes**.
+
+
+#### Response
+
+On success, the call to this endpoint will return with 200 and the following body:
+
+```text
+{
+    "Peer": "<string>"
+    "Value": "<float64>"
+    "Sent": "<uint64>"
+    "Recv": "<uint64>"
+    "Exchanged": "<uint64>"
+}
+
+```
+
+#### cURL Example
+
+`curl "http://localhost:5001/api/v0/bitswap/ledger?arg=<peer>"`
 
 ***
 
@@ -230,9 +273,7 @@ On success, the call to this endpoint will return with 200 and the following bod
 ```text
 {
     "ProvideBufLen": "<int>"
-    "Wantlist": [
-        "<string>"
-    ]
+    "Wantlist": null
     "Peers": [
         "<string>"
     ]
@@ -289,9 +330,7 @@ On success, the call to this endpoint will return with 200 and the following bod
 
 ```text
 {
-    "Keys": [
-        "<string>"
-    ]
+    "Keys": null
 }
 
 ```
@@ -328,12 +367,15 @@ This endpoint returns a `text/plain` response body.
 
 ### /api/v0/block/put
 
-Stores input as an IPFS block.
+Store input as an IPFS block.
 
 
 #### Arguments
 
   - `arg` [file]: The data to be stored as an IPFS block. Required: **yes**.
+  - `format` [string]: cid format for blocks to be created with. Default: "v0". Required: no.
+  - `mhtype` [string]: multihash hash function. Default: "sha2-256". Required: no.
+  - `mhlen` [int]: multihash hash length. Default: "-1". Required: no.
 
 
 #### Request Body
@@ -355,7 +397,37 @@ On success, the call to this endpoint will return with 200 and the following bod
 
 #### cURL Example
 
-`curl -F file=@myfile "http://localhost:5001/api/v0/block/put"`
+`curl -F file=@myfile "http://localhost:5001/api/v0/block/put?format=v0&mhtype=sha2-256&mhlen=-1"`
+
+***
+
+### /api/v0/block/rm
+
+Remove IPFS block(s).
+
+
+#### Arguments
+
+  - `arg` [string]: Bash58 encoded multihash of block(s) to remove. Required: **yes**.
+  - `force` [bool]: Ignore nonexistent blocks. Default: "false". Required: no.
+  - `quiet` [bool]: Write minimal output. Default: "false". Required: no.
+
+
+#### Response
+
+On success, the call to this endpoint will return with 200 and the following body:
+
+```text
+{
+    "Hash": "<string>"
+    "Error": "<string>"
+}
+
+```
+
+#### cURL Example
+
+`curl "http://localhost:5001/api/v0/block/rm?arg=<hash>&force=false&quiet=false"`
 
 ***
 
@@ -447,7 +519,7 @@ On success, the call to this endpoint will return with 200 and the following bod
 
 ### /api/v0/bootstrap/rm/all
 
-Removes all peers from the bootstrap list.
+Remove all peers from the bootstrap list.
 
 
 #### Arguments
@@ -557,7 +629,7 @@ On success, the call to this endpoint will return with 200 and the following bod
 
 ### /api/v0/config/edit
 
-Opens the config file for editing in $EDITOR.
+Open the config file for editing in $EDITOR.
 
 
 #### Arguments
@@ -581,7 +653,7 @@ This endpoint returns a `text/plain` response body.
 
 ### /api/v0/config/replace
 
-Replaces the config with <file>.
+Replace the config with <file>.
 
 
 #### Arguments
@@ -610,7 +682,7 @@ This endpoint returns a `text/plain` response body.
 
 ### /api/v0/config/show
 
-Outputs the content of the config file.
+Output config file contents.
 
 
 #### Arguments
@@ -629,6 +701,70 @@ This endpoint returns a `text/plain` response body.
 #### cURL Example
 
 `curl "http://localhost:5001/api/v0/config/show"`
+
+***
+
+### /api/v0/dag/get
+
+Get a dag node from ipfs.
+
+
+#### Arguments
+
+  - `arg` [string]: The object to get Required: **yes**.
+
+
+#### Response
+
+On success, the call to this endpoint will return with 200 and the following body:
+
+```text
+This endpoint returns a `text/plain` response body.
+```
+
+#### cURL Example
+
+`curl "http://localhost:5001/api/v0/dag/get?arg=<ref>"`
+
+***
+
+### /api/v0/dag/put
+
+Add a dag node to ipfs.
+
+
+#### Arguments
+
+  - `arg` [file]: The object to put Required: **yes**.
+  - `format` [string]: Format that the object will be added as. Default: "cbor". Required: no.
+  - `input-enc` [string]: Format that the input object will be. Default: "json". Required: no.
+
+
+#### Request Body
+
+Argument "object data" is of file type. This endpoint expects a file in the body of the request as 'multipart/form-data'.
+
+
+#### Response
+
+On success, the call to this endpoint will return with 200 and the following body:
+
+```text
+{
+    "Cid": {
+        "version": "<uint64>"
+        "codec": "<uint64>"
+        "hash": [
+            "<uint8>"
+        ]
+    }
+}
+
+```
+
+#### cURL Example
+
+`curl -F file=@myfile "http://localhost:5001/api/v0/dag/put?format=cbor&input-enc=json"`
 
 ***
 
@@ -722,6 +858,38 @@ On success, the call to this endpoint will return with 200 and the following bod
 #### cURL Example
 
 `curl "http://localhost:5001/api/v0/dht/get?arg=<key>&verbose=false"`
+
+***
+
+### /api/v0/dht/provide
+
+Announce to the network that you are providing given values.
+
+
+#### Arguments
+
+  - `arg` [string]: The key[s] to send provide records for. Required: **yes**.
+  - `verbose` [bool]: Print extra information. Default: "false". Required: no.
+  - `recursive` [bool]: Recursively provide entire graph. Default: "false". Required: no.
+
+
+#### Response
+
+On success, the call to this endpoint will return with 200 and the following body:
+
+```text
+{
+    "ID": "<string>"
+    "Type": "<int>"
+    "Responses": null
+    "Extra": "<string>"
+}
+
+```
+
+#### cURL Example
+
+`curl "http://localhost:5001/api/v0/dht/provide?arg=<key>&verbose=false&recursive=false"`
 
 ***
 
@@ -838,7 +1006,7 @@ This endpoint returns a `text/plain` response body.
 
 ### /api/v0/diag/net
 
-Generates a network diagnostics report.
+Generate a network diagnostics report.
 
 
 #### Arguments
@@ -862,7 +1030,7 @@ This endpoint returns a `text/plain` response body.
 
 ### /api/v0/diag/sys
 
-Prints out system diagnostic information.
+Print system diagnostic information.
 
 
 #### Arguments
@@ -886,7 +1054,7 @@ This endpoint returns a `text/plain` response body.
 
 ### /api/v0/dns
 
-DNS link resolver.
+Resolve DNS links.
 
 
 #### Arguments
@@ -1007,7 +1175,7 @@ This endpoint returns a `text/plain` response body.
 
 ### /api/v0/files/ls
 
-List directories.
+List directories in the local mutable namespace.
 
 
 #### Arguments
@@ -1251,7 +1419,7 @@ This endpoint returns a `text/plain` response body.
 
 ### /api/v0/id
 
-Show IPFS Node ID info.
+Show ipfs node id info.
 
 
 #### Arguments
@@ -1283,6 +1451,68 @@ On success, the call to this endpoint will return with 200 and the following bod
 
 ***
 
+### /api/v0/key/gen
+
+Create a new keypair
+
+
+#### Arguments
+
+  - `arg` [string]: name of key to create Required: **yes**.
+  - `type` [string]: type of the key to create. Required: no.
+  - `size` [int]: size of the key to generate. Required: no.
+
+
+#### Response
+
+On success, the call to this endpoint will return with 200 and the following body:
+
+```text
+{
+    "Name": "<string>"
+    "Id": "<string>"
+}
+
+```
+
+#### cURL Example
+
+`curl "http://localhost:5001/api/v0/key/gen?arg=<name>&type=<value>&size=<value>"`
+
+***
+
+### /api/v0/key/list
+
+List all local keypairs
+
+
+#### Arguments
+
+  - `l` [bool]: Show extra information about keys. Required: no.
+
+
+#### Response
+
+On success, the call to this endpoint will return with 200 and the following body:
+
+```text
+{
+    "Keys": [
+        {
+            "Name": "<string>"
+            "Id": "<string>"
+        }
+    ]
+}
+
+```
+
+#### cURL Example
+
+`curl "http://localhost:5001/api/v0/key/list?l=<value>"`
+
+***
+
 ### /api/v0/log/level
 
 Change the logging level.
@@ -1292,7 +1522,7 @@ Change the logging level.
 
   - `arg` [string]: The subsystem logging identifier. Use 'all' for all subsystems. Required: **yes**.
   - `arg` [string]: The log level, with 'debug' the most verbose and 'critical' the least verbose.
-			One of: debug, info, notice, warning, error, critical.
+			One of: debug, info, warning, error, critical.
 		 Required: **yes**.
 
 
@@ -1344,7 +1574,7 @@ On success, the call to this endpoint will return with 200 and the following bod
 
 ### /api/v0/log/tail
 
-Read the logs.
+Read the event log.
 
 
 #### Arguments
@@ -1368,7 +1598,7 @@ This endpoint returns a `text/plain` response body.
 
 ### /api/v0/ls
 
-List links from an object.
+List directory contents for Unix filesystem objects.
 
 
 #### Arguments
@@ -1444,12 +1674,13 @@ Publish an object to IPNS.
 
 #### Arguments
 
-  - `arg` [string]: IPFS path of the object to be published. Required: **yes**.
+  - `arg` [string]: ipfs path of the object to be published. Required: **yes**.
   - `resolve` [bool]: Resolve given path before publishing. Default: "true". Required: no.
   - `lifetime` [string]: Time duration that the record will be valid for.
     This accepts durations such as "300s", "1.5h" or "2h45m". Valid time units are
     "ns", "us" (or "µs"), "ms", "s", "m", "h". Default: "24h". Required: no.
   - `ttl` [string]: Time duration this record should be cached for (caution: experimental). Required: no.
+  - `key` [string]: name of key to use. Default: "self". Required: no.
 
 
 #### Response
@@ -1466,13 +1697,13 @@ On success, the call to this endpoint will return with 200 and the following bod
 
 #### cURL Example
 
-`curl "http://localhost:5001/api/v0/name/publish?arg=<ipfs-path>&resolve=true&lifetime=24h&ttl=<value>"`
+`curl "http://localhost:5001/api/v0/name/publish?arg=<ipfs-path>&resolve=true&lifetime=24h&ttl=<value>&key=self"`
 
 ***
 
 ### /api/v0/name/resolve
 
-Gets the value currently published at an IPNS name.
+Get the value currently published at an IPNS name.
 
 
 #### Arguments
@@ -1501,7 +1732,7 @@ On success, the call to this endpoint will return with 200 and the following bod
 
 ### /api/v0/object/data
 
-Outputs the raw bytes in an IPFS object.
+Output the raw bytes of an IPFS object.
 
 
 #### Arguments
@@ -1525,7 +1756,7 @@ This endpoint returns a `text/plain` response body.
 
 ### /api/v0/object/diff
 
-Takes a diff of the two given objects.
+Display the diff between two ipfs objects.
 
 
 #### Arguments
@@ -1588,7 +1819,7 @@ On success, the call to this endpoint will return with 200 and the following bod
 
 ### /api/v0/object/links
 
-Outputs the links pointed to by the specified object.
+Output the links pointed to by the specified object.
 
 
 #### Arguments
@@ -1623,7 +1854,7 @@ On success, the call to this endpoint will return with 200 and the following bod
 
 ### /api/v0/object/new
 
-Creates a new object from an ipfs template.
+Create a new object from an ipfs template.
 
 
 #### Arguments
@@ -1769,7 +2000,7 @@ On success, the call to this endpoint will return with 200 and the following bod
 
 ### /api/v0/object/patch/set-data
 
-Set the data field of an ipfs object.
+Set the data field of an IPFS object.
 
 
 #### Arguments
@@ -1809,7 +2040,7 @@ On success, the call to this endpoint will return with 200 and the following bod
 
 ### /api/v0/object/put
 
-Stores input as a DAG object, outputs its key.
+Store input as a DAG object, print its key.
 
 
 #### Arguments
@@ -1882,7 +2113,7 @@ On success, the call to this endpoint will return with 200 and the following bod
 
 ### /api/v0/pin/add
 
-Pins objects to local storage.
+Pin objects to local storage.
 
 
 #### Arguments
@@ -1897,9 +2128,7 @@ On success, the call to this endpoint will return with 200 and the following bod
 
 ```text
 {
-    "Pins": [
-        "<string>"
-    ]
+    "Pins": null
 }
 
 ```
@@ -1945,7 +2174,7 @@ On success, the call to this endpoint will return with 200 and the following bod
 
 ### /api/v0/pin/rm
 
-Removes the pinned object from local storage.
+Remove pinned objects from local storage.
 
 
 #### Arguments
@@ -1960,9 +2189,7 @@ On success, the call to this endpoint will return with 200 and the following bod
 
 ```text
 {
-    "Pins": [
-        "<string>"
-    ]
+    "Pins": null
 }
 
 ```
@@ -2003,9 +2230,136 @@ On success, the call to this endpoint will return with 200 and the following bod
 
 ***
 
+### /api/v0/pubsub/ls
+
+List subscribed topics by name.
+
+
+#### Arguments
+
+This endpoint takes no arguments.
+
+
+#### Response
+
+On success, the call to this endpoint will return with 200 and the following body:
+
+```text
+{
+    "Strings": [
+        "<string>"
+    ]
+}
+
+```
+
+#### cURL Example
+
+`curl "http://localhost:5001/api/v0/pubsub/ls"`
+
+***
+
+### /api/v0/pubsub/peers
+
+List peers we are currently pubsubbing with.
+
+
+#### Arguments
+
+  - `arg` [string]: topic to list connected peers of Required: no.
+
+
+#### Response
+
+On success, the call to this endpoint will return with 200 and the following body:
+
+```text
+{
+    "Strings": [
+        "<string>"
+    ]
+}
+
+```
+
+#### cURL Example
+
+`curl "http://localhost:5001/api/v0/pubsub/peers?arg=<topic>"`
+
+***
+
+### /api/v0/pubsub/pub
+
+Publish a message to a given pubsub topic.
+
+
+#### Arguments
+
+  - `arg` [string]: Topic to publish to. Required: **yes**.
+  - `arg` [string]: Payload of message to publish. Required: **yes**.
+
+
+#### Response
+
+On success, the call to this endpoint will return with 200 and the following body:
+
+```text
+This endpoint returns a `text/plain` response body.
+```
+
+#### cURL Example
+
+`curl "http://localhost:5001/api/v0/pubsub/pub?arg=<topic>&arg=<data>"`
+
+***
+
+### /api/v0/pubsub/sub
+
+Subscribe to messages on a given topic.
+
+
+#### Arguments
+
+  - `arg` [string]: String name of topic to subscribe to. Required: **yes**.
+  - `discover` [bool]: try to discover other peers subscribed to the same topic. Required: no.
+
+
+#### Response
+
+On success, the call to this endpoint will return with 200 and the following body:
+
+```text
+{
+    "Message": {
+        "From": [
+            "<uint8>"
+        ]
+        "Data": [
+            "<uint8>"
+        ]
+        "Seqno": [
+            "<uint8>"
+        ]
+        "TopicIDs": [
+            "<string>"
+        ]
+        "XXX_unrecognized": [
+            "<uint8>"
+        ]
+    }
+}
+
+```
+
+#### cURL Example
+
+`curl "http://localhost:5001/api/v0/pubsub/sub?arg=<topic>&discover=<value>"`
+
+***
+
 ### /api/v0/refs/local
 
-Lists all local references.
+List all local references.
 
 
 #### Arguments
@@ -2033,7 +2387,7 @@ On success, the call to this endpoint will return with 200 and the following bod
 
 ### /api/v0/repo/fsck
 
-Removes repo lockfiles.
+Remove repo lockfiles.
 
 
 #### Arguments
@@ -2074,7 +2428,13 @@ On success, the call to this endpoint will return with 200 and the following bod
 
 ```text
 {
-    "Key": "<string>"
+    "Key": {
+        "version": "<uint64>"
+        "codec": "<uint64>"
+        "hash": [
+            "<uint8>"
+        ]
+    }
 }
 
 ```
@@ -2215,9 +2575,7 @@ On success, the call to this endpoint will return with 200 and the following bod
 ```text
 {
     "ProvideBufLen": "<int>"
-    "Wantlist": [
-        "<string>"
-    ]
+    "Wantlist": null
     "Peers": [
         "<string>"
     ]
@@ -2452,7 +2810,9 @@ List peers with open connections.
 
 #### Arguments
 
-  - `verbose` [bool]: Also display latency along with peer information in the following form: <peer address> <latency>. Required: no.
+  - `verbose` [bool]: display all extra information. Required: no.
+  - `streams` [bool]: Also list information about open streams for each peer. Required: no.
+  - `latency` [bool]: Also list information about latency to each peer. Required: no.
 
 
 #### Response
@@ -2461,8 +2821,18 @@ On success, the call to this endpoint will return with 200 and the following bod
 
 ```text
 {
-    "Strings": [
-        "<string>"
+    "Peers": [
+        {
+            "Addr": "<string>"
+            "Peer": "<string>"
+            "Latency": "<string>"
+            "Muxer": "<string>"
+            "Streams": [
+                {
+                    "Protocol": "<string>"
+                }
+            ]
+        }
     ]
 }
 
@@ -2470,7 +2840,7 @@ On success, the call to this endpoint will return with 200 and the following bod
 
 #### cURL Example
 
-`curl "http://localhost:5001/api/v0/swarm/peers?verbose=<value>"`
+`curl "http://localhost:5001/api/v0/swarm/peers?verbose=<value>&streams=<value>&latency=<value>"`
 
 ***
 
@@ -2515,7 +2885,7 @@ Export a tar file from IPFS.
 
 #### Arguments
 
-  - `arg` [string]: IPFS path of archive to export. Required: **yes**.
+  - `arg` [string]: ipfs path of archive to export. Required: **yes**.
 
 
 #### Response
@@ -2630,7 +3000,7 @@ This endpoint returns a `text/plain` response body.
 
 ### /api/v0/version
 
-Shows ipfs version information.
+Show ipfs version information.
 
 
 #### Arguments
