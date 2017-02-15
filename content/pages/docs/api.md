@@ -273,7 +273,9 @@ On success, the call to this endpoint will return with 200 and the following bod
 ```text
 {
     "ProvideBufLen": "<int>"
-    "Wantlist": null
+    "Wantlist": [
+        "<string>"
+    ]
     "Peers": [
         "<string>"
     ]
@@ -330,7 +332,9 @@ On success, the call to this endpoint will return with 200 and the following bod
 
 ```text
 {
-    "Keys": null
+    "Keys": [
+        "<string>"
+    ]
 }
 
 ```
@@ -751,13 +755,7 @@ On success, the call to this endpoint will return with 200 and the following bod
 
 ```text
 {
-    "Cid": {
-        "version": "<uint64>"
-        "codec": "<uint64>"
-        "hash": [
-            "<uint8>"
-        ]
-    }
+    "Cid": "<string>"
 }
 
 ```
@@ -787,7 +785,14 @@ On success, the call to this endpoint will return with 200 and the following bod
 {
     "ID": "<string>"
     "Type": "<int>"
-    "Responses": null
+    "Responses": [
+        {
+            "ID": "<string>"
+            "Addrs": [
+                "<object>"
+            ]
+        }
+    ]
     "Extra": "<string>"
 }
 
@@ -818,7 +823,14 @@ On success, the call to this endpoint will return with 200 and the following bod
 {
     "ID": "<string>"
     "Type": "<int>"
-    "Responses": null
+    "Responses": [
+        {
+            "ID": "<string>"
+            "Addrs": [
+                "<object>"
+            ]
+        }
+    ]
     "Extra": "<string>"
 }
 
@@ -849,7 +861,14 @@ On success, the call to this endpoint will return with 200 and the following bod
 {
     "ID": "<string>"
     "Type": "<int>"
-    "Responses": null
+    "Responses": [
+        {
+            "ID": "<string>"
+            "Addrs": [
+                "<object>"
+            ]
+        }
+    ]
     "Extra": "<string>"
 }
 
@@ -881,7 +900,14 @@ On success, the call to this endpoint will return with 200 and the following bod
 {
     "ID": "<string>"
     "Type": "<int>"
-    "Responses": null
+    "Responses": [
+        {
+            "ID": "<string>"
+            "Addrs": [
+                "<object>"
+            ]
+        }
+    ]
     "Extra": "<string>"
 }
 
@@ -913,7 +939,14 @@ On success, the call to this endpoint will return with 200 and the following bod
 {
     "ID": "<string>"
     "Type": "<int>"
-    "Responses": null
+    "Responses": [
+        {
+            "ID": "<string>"
+            "Addrs": [
+                "<object>"
+            ]
+        }
+    ]
     "Extra": "<string>"
 }
 
@@ -944,7 +977,14 @@ On success, the call to this endpoint will return with 200 and the following bod
 {
     "ID": "<string>"
     "Type": "<int>"
-    "Responses": null
+    "Responses": [
+        {
+            "ID": "<string>"
+            "Addrs": [
+                "<object>"
+            ]
+        }
+    ]
     "Extra": "<string>"
 }
 
@@ -1772,7 +1812,14 @@ On success, the call to this endpoint will return with 200 and the following bod
 
 ```text
 {
-    "Changes": null
+    "Changes": [
+        {
+            "Type": "<int>"
+            "Path": "<string>"
+            "Before": "<string>"
+            "After": "<string>"
+        }
+    ]
 }
 
 ```
@@ -2128,7 +2175,9 @@ On success, the call to this endpoint will return with 200 and the following bod
 
 ```text
 {
-    "Pins": null
+    "Pins": [
+        "<string>"
+    ]
 }
 
 ```
@@ -2189,7 +2238,9 @@ On success, the call to this endpoint will return with 200 and the following bod
 
 ```text
 {
-    "Pins": null
+    "Pins": [
+        "<string>"
+    ]
 }
 
 ```
@@ -2428,13 +2479,7 @@ On success, the call to this endpoint will return with 200 and the following bod
 
 ```text
 {
-    "Key": {
-        "version": "<uint64>"
-        "codec": "<uint64>"
-        "hash": [
-            "<uint8>"
-        ]
-    }
+    "Key": "<string>"
 }
 
 ```
@@ -2575,7 +2620,9 @@ On success, the call to this endpoint will return with 200 and the following bod
 ```text
 {
     "ProvideBufLen": "<int>"
-    "Wantlist": null
+    "Wantlist": [
+        "<string>"
+    ]
     "Peers": [
         "<string>"
     ]
