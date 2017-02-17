@@ -11,7 +11,6 @@ We recommend installing IPFS from a prebuilt package. You can obtain those from 
 
 For convenience here are the latest versions linked directly
 
-- <i class="fa fa-apple"></i> [Mac OS X 32bit](https://dist.ipfs.io/go-ipfs/v0.4.5/go-ipfs_v0.4.5_darwin-386.tar.gz)
 - <i class="fa fa-apple"></i> [Mac OS X 64bit](https://dist.ipfs.io/go-ipfs/v0.4.5/go-ipfs_v0.4.5_darwin-amd64.tar.gz)
 - <i class="fa fa-linux"></i> [Linux 32bit](https://dist.ipfs.io/go-ipfs/v0.4.5/go-ipfs_v0.4.5_linux-386.tar.gz)
 - <i class="fa fa-linux"></i> [Linux 64bit](https://dist.ipfs.io/go-ipfs/v0.4.5/go-ipfs_v0.4.5_linux-amd64.tar.gz)
