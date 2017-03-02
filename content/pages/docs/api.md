@@ -7,7 +7,7 @@ save_as: docs/api/index.html
 
 # API Reference
 
-<sup>Generated on 2017-02-15, from go-ipfs v0.4.5.</sup>
+<sup>Generated on 2017-03-02, from go-ipfs v0.4.6.</sup>
 
 This is the HTTP API specification for IPFS.
 
