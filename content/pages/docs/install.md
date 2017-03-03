@@ -11,13 +11,13 @@ We recommend installing IPFS from a prebuilt package. You can obtain those from 
 
 For convenience here are the latest versions linked directly
 
-- <i class="fa fa-apple"></i> [Mac OS X 64bit](https://dist.ipfs.io/go-ipfs/v0.4.5/go-ipfs_v0.4.5_darwin-amd64.tar.gz)
-- <i class="fa fa-linux"></i> [Linux 32bit](https://dist.ipfs.io/go-ipfs/v0.4.5/go-ipfs_v0.4.5_linux-386.tar.gz)
-- <i class="fa fa-linux"></i> [Linux 64bit](https://dist.ipfs.io/go-ipfs/v0.4.5/go-ipfs_v0.4.5_linux-amd64.tar.gz)
-- <i class="fa fa-linux"></i> [Linux ARM](https://dist.ipfs.io/go-ipfs/v0.4.5/go-ipfs_v0.4.5_linux-arm.tar.gz)
-- <i class="fa fa-windows"></i> [Windows 32bit](https://dist.ipfs.io/go-ipfs/v0.4.5/go-ipfs_v0.4.5_windows-386.zip)
-- <i class="fa fa-windows"></i> [Windows 64bit](https://dist.ipfs.io/go-ipfs/v0.4.5/go-ipfs_v0.4.5_windows-amd64.zip)
-- <i class="fa fa-freebsd"></i> [FreeBSD 64bit](https://dist.ipfs.io/go-ipfs/v0.4.5/go-ipfs_v0.4.5_freebsd-amd64.tar.gz)
+- <i class="fa fa-apple"></i> [Mac OS X 64bit](https://dist.ipfs.io/go-ipfs/v0.4.6/go-ipfs_v0.4.6_darwin-amd64.tar.gz)
+- <i class="fa fa-linux"></i> [Linux 32bit](https://dist.ipfs.io/go-ipfs/v0.4.6/go-ipfs_v0.4.6_linux-386.tar.gz)
+- <i class="fa fa-linux"></i> [Linux 64bit](https://dist.ipfs.io/go-ipfs/v0.4.6/go-ipfs_v0.4.6_linux-amd64.tar.gz)
+- <i class="fa fa-linux"></i> [Linux ARM](https://dist.ipfs.io/go-ipfs/v0.4.6/go-ipfs_v0.4.6_linux-arm.tar.gz)
+- <i class="fa fa-windows"></i> [Windows 32bit](https://dist.ipfs.io/go-ipfs/v0.4.6/go-ipfs_v0.4.6_windows-386.zip)
+- <i class="fa fa-windows"></i> [Windows 64bit](https://dist.ipfs.io/go-ipfs/v0.4.6/go-ipfs_v0.4.6_windows-amd64.zip)
+- <i class="fa fa-freebsd"></i> [FreeBSD 64bit](https://dist.ipfs.io/go-ipfs/v0.4.6/go-ipfs_v0.4.6_freebsd-amd64.tar.gz)
 
 
 
