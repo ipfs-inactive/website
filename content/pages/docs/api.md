@@ -7,7 +7,7 @@ save_as: docs/api/index.html
 
 # API Reference
 
-<sup>Generated on 2017-03-02, from go-ipfs v0.4.6.</sup>
+<sup>Generated on 2017-03-18, from go-ipfs v0.4.7.</sup>
 
 This is the HTTP API specification for IPFS.
 
@@ -190,6 +190,7 @@ Add a file or directory to ipfs.
   - `arg` [file]: The path to a file to be added to ipfs. Required: **yes**.
   - `recursive` [bool]: Add directory paths recursively. Default: "false". Required: no.
   - `quiet` [bool]: Write minimal output. Required: no.
+  - `quieter` [bool]: Write only final hash. Required: no.
   - `silent` [bool]: Write no output. Required: no.
   - `progress` [bool]: Stream progress data. Required: no.
   - `trickle` [bool]: Use trickle-dag format for dag generation. Required: no.
@@ -199,6 +200,8 @@ Add a file or directory to ipfs.
   - `chunker` [string]: Chunking algorithm to use. Required: no.
   - `pin` [bool]: Pin this object when adding. Default: "true". Required: no.
   - `raw-leaves` [bool]: Use raw blocks for leaf nodes. (experimental). Required: no.
+  - `nocopy` [bool]: Add the file using filestore. (experimental). Required: no.
+  - `fscache` [bool]: Check the filestore for pre-existing blocks. (experimental). Required: no.
 
 
 #### Request Body
@@ -221,7 +224,7 @@ On success, the call to this endpoint will return with 200 and the following bod
 
 #### cURL Example
 
-`curl -F file=@myfile "http://localhost:5001/api/v0/add?recursive=false&quiet=<value>&silent=<value>&progress=<value>&trickle=<value>&only-hash=<value>&wrap-with-directory=<value>&hidden=<value>&chunker=<value>&pin=true&raw-leaves=<value>"`
+`curl -F file=@myfile "http://localhost:5001/api/v0/add?recursive=false&quiet=<value>&quieter=<value>&silent=<value>&progress=<value>&trickle=<value>&only-hash=<value>&wrap-with-directory=<value>&hidden=<value>&chunker=<value>&pin=true&raw-leaves=<value>&nocopy=<value>&fscache=<value>"`
 
 ***
 
@@ -280,6 +283,9 @@ On success, the call to this endpoint will return with 200 and the following bod
         "<string>"
     ]
     "BlocksReceived": "<int>"
+    "DataReceived": "<uint64>"
+    "BlocksSent": "<int>"
+    "DataSent": "<uint64>"
     "DupBlksReceived": "<int>"
     "DupDataReceived": "<uint64>"
 }
@@ -1499,7 +1505,7 @@ Create a new keypair
 #### Arguments
 
   - `arg` [string]: name of key to create Required: **yes**.
-  - `type` [string]: type of the key to create. Required: no.
+  - `type` [string]: type of the key to create [rsa, ed25519]. Required: no.
   - `size` [int]: size of the key to generate. Required: no.
 
 
@@ -2167,6 +2173,7 @@ Pin objects to local storage.
 
   - `arg` [string]: Path to object(s) to be pinned. Required: **yes**.
   - `recursive` [bool]: Recursively pin the object linked to by the specified object(s). Default: "true". Required: no.
+  - `progress` [bool]: Show progress. Required: no.
 
 
 #### Response
@@ -2178,13 +2185,14 @@ On success, the call to this endpoint will return with 200 and the following bod
     "Pins": [
         "<string>"
     ]
+    "Progress": "<int>"
 }
 
 ```
 
 #### cURL Example
 
-`curl "http://localhost:5001/api/v0/pin/add?arg=<ipfs-path>&recursive=true"`
+`curl "http://localhost:5001/api/v0/pin/add?arg=<ipfs-path>&recursive=true&progress=<value>"`
 
 ***
 
@@ -2627,6 +2635,9 @@ On success, the call to this endpoint will return with 200 and the following bod
         "<string>"
     ]
     "BlocksReceived": "<int>"
+    "DataReceived": "<uint64>"
+    "BlocksSent": "<int>"
+    "DataSent": "<uint64>"
     "DupBlksReceived": "<int>"
     "DupDataReceived": "<uint64>"
 }
