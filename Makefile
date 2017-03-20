@@ -79,7 +79,7 @@ dnszone="ipfs.io"
 dnsrecord="@"
 
 ipfs: html
-	ipfs swarm peers >/dev/null || (echo "ipfs daemon must be online to publish" && exit 1)
+	ipfs swarm peers >/dev/null 2>/dev/null || echo "WARNING: ipfs daemon in offline mode"
 	ipfs add -r -q $(OUTPUTDIR) | tail -n1 >versions/current
 	cat versions/current >>versions/history
 	@export hash=`cat versions/current`; \
