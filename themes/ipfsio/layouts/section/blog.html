@@ -1,0 +1,14 @@
+{{ partial "default_head.html" . }}
+
+<div class="page-content row">
+  <div class="large-8 medium-8 columns">
+    {{ .Content }}
+    <ul>
+{{ range (.Paginate .Data.Pages).Pages }}
+      <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+{{ end }}
+    </ul>
+  </div>
+</div>
+
+{{ partial "default_foot.html" . }}

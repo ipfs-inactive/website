@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>IPFS is the Distributed Web</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <link rel="icon" type="image/png" href="{{ $.Site.BaseURL }}images/favicon.png">
+    <link rel="stylesheet" href="{{ $.Site.BaseURL }}css/main.css">
+    <meta name="ac-discovery" content="ipfs.io https://dist.ipfs.io/images/{name}-{version}-{os}-{arch}.{ext}">
+    <meta name="ac-discovery-pubkeys" content="ipfs.io https://dist.ipfs.io/ipfs.gpg">
+
+    <link href="/rss.xml" type="application/atom+xml" rel="alternate" title="IPFS.io Full Atom Feed" />
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ $.Site.BaseURL }}/index.xml">
+
+{{ if eq .URL "/" }}
+    <title>{{ .Title }}</title>
+    <meta property='og:title' content="{{ .Title }}">
+    <meta property="og:type" content="website">
+{{ else }}
+    <title>{{ .Title }} - {{ .Site.Title }}</title>
+    <meta property='og:title' content="{{ .Title }} - {{ .Site.Title }}">
+    <meta property="og:type" content="article">
+{{ end }}
+
+    <meta property="og:url" content="{{ .Permalink }}">
+{{ with .Description }}
+    <meta name="description" content="{{ . }}">
+{{ end }}
+{{ with .Params.image }}
+    <meta property="og:image" content="{{ $.Site.BaseURL }}images/{{ . }}">
+{{ end }}
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/{{ with .Site.Params.SyntaxHighlightTheme }}{{ . }}{{ else  }}solarized_dark.min.css{{ end }}">
+  </head>
+
+  <body class="{{ .Params.pagetype }}">
+    <header class="header-has-logo" id="stars">
+      <div class="container cf">
+        <h1 class="pull-left">
+          <a href="{{ $.Site.BaseURL }}" class="logo ipfs-logo transition transition-fadeout">IPFS</a>
+        </h1>
+        <nav role="navigation" class="pull-right top-nav top-nav-dark cf">
+          <input id="menu-toggle" type="checkbox" class="menu-toggle">
+          <label for="menu-toggle">Menu</label>
+          <ul class="list-unstyled list-inline cf">
+{{ if eq .URL "/" }}
+            <li><a href="#why">Why</a></li>
+            <li><a href="#how">How</a></li>
+            <li><a href="#uses">Uses</a></li>
+{{ else }}
+            <li><a href="{{ $.Site.BaseURL }}">About</a></li>
+{{ end }}
+            <li><a href="{{ $.Site.BaseURL }}docs/install" {{ if eq .URL "/docs/install/" }}class="current-item"{{ end }}>Install</a></li>
+            <li><a href="{{ $.Site.BaseURL }}media" {{ if eq .URL "/media/" }}class="current-item"{{ end }}>Media</a></li>
+            <li><a href="{{ $.Site.BaseURL }}docs" {{ if and (eq .Section "docs") (ne .URL "/docs/install/") }}class="current-item"{{ end }}>Docs</a></li>
+            <li><a href="{{ $.Site.BaseURL }}blog" {{ if eq .Section "blog" }}class="current-item"{{ end }}>Blog</a></li>
+          </ul>
+        </nav>
+{{ if eq .URL "/" }}
+        <div class="hero hero-home">
+          <div class="hero-text">
+            <h2 class="headline-main">IPFS is the Distributed Web</h2>
+            <span class="divider"></span>
+            <h3 class="subhead-main">A peer-to-peer hypermedia protocol<br /> to make the web faster, safer, and more open.</h3>
+            <div class="cta">
+              <a class="button button-outlined" href="docs/getting-started">Try it</a>
+              <a class="button button-outlined popup-youtube" href="https://www.youtube.com/watch?v=8CMxDNuuAiQ">Watch demo</a>
+            </div>
+          </div>
+        </div>
+{{ else if isset .Params "constellation" }}
+        <div class="hero {{ if isset .Params "pagetype" }}hero-{{ .Params.pagetype }}{{ end }}">
+          <h2 class="headline-main {{ if isset .Params "headlineclass" }}{{ .Params.headlineclass }}{{ end }}">{{ .Title }}</h2>
+          <img src="{{ $.Site.BaseURL }}images/{{ .Params.constellation }}" class="constellation"/>
+        </div>
+{{ end }}
+      </div>
+      <div class="view-more">
+        <label>View more</label><a href="#"></a>
+      </div>
+    </header>
+    <div class="container">

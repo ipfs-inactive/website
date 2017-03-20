@@ -1,0 +1,12 @@
+name = "IPFS.io"
+license = "MIT"
+licenselink = "https://github.com/ipfs/website/blob/master/LICENSE.md"
+description = "The hugo theme for ipfs.io"
+tags = ["ipfs", "website", "blog"]
+features = ["blog"]
+min_version = 0.15
+
+[author]
+    name = "Lars Gierth"
+    homepage = "https://ipfs.io/"
+
