@@ -31,7 +31,7 @@ IPFS news, articles, references on the media, presence in conferences and talks,
 ### 2015
 - [Dec 26 - Redistributing the Web with IPFS + Slides - BattleMeshV8](https://www.youtube.com/watch?v=KGIyneFfiRE)
 - [Dec 15 - Interview with Juan Benet of IPFS at DEVCON1 in London](https://www.youtube.com/watch?v=t7VjUKCdfpg)
-- [Oct 21 - Stanford EE380 - Computer Systems Colloquium](http://www-cs.stanford.edu/events/computer-systems-colloquium-ipfs-and-permanent-web-juan-benet-protocol-labs)
+- [Oct 21 - Stanford EE380 - Computer Systems Colloquium](https://www.youtube.com/watch?v=HUVmypx9HGI)
 - [Oct 20 - IPFS Meetup hosted by Sourcegraph, San Francisco CA](http://attending.io/events/ipfs-san-francisco-october-2015)
 - [Oct 19 - Introduction to IPFS (InterPlanetary File System); A Brief Post About a Protocol That Changes Everything](https://www.linkedin.com/pulse/introduction-ipfs-interplanetary-file-system-brief-post-john-lilic?trk=hp-feed-article-title-like)
 - [Oct 18 - Ian Preston - IPFS at Redecentralize Conf, London, UK](https://www.youtube.com/watch?v=TiCUIh7tNtU)
