@@ -61,4 +61,4 @@ IPFS news, articles, references on the media, presence in conferences and talks,
 - [Feb 20 - IPFS Alpha Release](https://www.youtube.com/watch?v=8CMxDNuuAiQ)
 
 ### 2014
-  - [Jul 22 - Talk at Sourcegraph, IPFS Meetup](https://sourcegraph.com/blog/117138056989/ipfs-the-permanent-web-by-juan-benet-talks-at) [(Video)](https://www.youtube.com/watch?v=Fa4pckodM9g) [(Slides)](https://speakerdeck.com/jbenet/ipfs-the-permanent-web-at-sourcegraph)
+  - [Jul 22 - Talk at Sourcegraph, IPFS Meetup](https://text.sourcegraph.com/ipfs-the-permanent-web-by-juan-benet-ae9901b338b1) [(Video)](https://www.youtube.com/watch?v=Fa4pckodM9g) [(Slides)](https://speakerdeck.com/jbenet/ipfs-the-permanent-web-at-sourcegraph)
