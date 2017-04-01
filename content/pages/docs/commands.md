@@ -6,7 +6,7 @@ save_as: docs/commands/index.html
 
 # ipfs command reference
 
-generated on 2017-03-18 03:54:23.004034
+generated on 2017-04-01 10:53:32.701039
 
 - [ipfs](#ipfs)
 - [ipfs add](#ipfs-add)
@@ -62,6 +62,10 @@ generated on 2017-03-18 03:54:23.004034
 - [ipfs files rm](#ipfs-files-rm)
 - [ipfs files stat](#ipfs-files-stat)
 - [ipfs files write](#ipfs-files-write)
+- [ipfs filestore](#ipfs-filestore)
+- [ipfs filestore dups](#ipfs-filestore-dups)
+- [ipfs filestore ls](#ipfs-filestore-ls)
+- [ipfs filestore verify](#ipfs-filestore-verify)
 - [ipfs get](#ipfs-get)
 - [ipfs id](#ipfs-id)
 - [ipfs init](#ipfs-init)
@@ -169,12 +173,13 @@ SUBCOMMANDS
     daemon        Start a long-running daemon process
     mount         Mount an IPFS read-only mountpoint
     resolve       Resolve any type of name
-    name          Publish or resolve IPNS names
+    name          Publish and resolve IPNS names
+    key           Create and list IPNS name keypairs
     dns           Resolve DNS links
     pin           Pin objects to local storage
     repo          Manipulate the IPFS repository
     stats         Various operational stats
-    key           Create and manipulate keypairs
+    filestore     Manage the filestore (experimental)
 
   NETWORK COMMANDS
     id            Show info about IPFS peers
@@ -1577,6 +1582,93 @@ DESCRIPTION
   stat' on the file or any of its ancestors.
 ```
 
+## ipfs filestore
+
+```
+USAGE
+  ipfs filestore - Interact with filestore objects.
+
+SYNOPSIS
+  ipfs filestore
+
+SUBCOMMANDS
+  ipfs filestore dups              - List blocks that are both in the filestore and standard block storage.
+  ipfs filestore ls [<obj>]...     - List objects in filestore.
+  ipfs filestore verify [<obj>]... - Verify objects in filestore.
+
+  Use 'ipfs filestore <subcmd> --help' for more information about each command.
+```
+
+## ipfs filestore dups
+
+```
+USAGE
+  ipfs filestore dups - List blocks that are both in the filestore and standard block storage.
+
+SYNOPSIS
+  ipfs filestore dups
+```
+
+## ipfs filestore ls
+
+```
+USAGE
+  ipfs filestore ls [<obj>]... - List objects in filestore.
+
+SYNOPSIS
+  ipfs filestore ls [--] [<obj>...]
+
+ARGUMENTS
+
+  [<obj>]... - Cid of objects to list.
+
+DESCRIPTION
+
+  List objects in the filestore.
+
+  If one or more <obj> is specified only list those specific objects,
+  otherwise list all objects.
+
+  The output is:
+
+  <hash> <size> <path> <offset>
+```
+
+## ipfs filestore verify
+
+```
+USAGE
+  ipfs filestore verify [<obj>]... - Verify objects in filestore.
+
+SYNOPSIS
+  ipfs filestore verify [--] [<obj>...]
+
+ARGUMENTS
+
+  [<obj>]... - Cid of objects to verify.
+
+DESCRIPTION
+
+  Verify objects in the filestore.
+
+  If one or more <obj> is specified only verify those specific objects,
+  otherwise verify all objects.
+
+  The output is:
+
+  <status> <hash> <size> <path> <offset>
+
+  Where <status> is one of:
+  ok:       the block can be reconstructed
+  changed:  the contents of the backing file have changed
+  no-file:  the backing file could not be found
+  error:    there was some other problem reading the file
+  missing:  <obj> could not be found in the filestore
+  ERROR:    internal error, most likely due to a corrupt database
+
+  For ERROR entries the error will also be printed to stderr.
+```
+
 ## ipfs get
 
 ```
@@ -1677,10 +1769,24 @@ DESCRIPTION
 
 ```
 USAGE
-  ipfs key - Create and manipulate keypairs
+  ipfs key - Create and list IPNS name keypairs
 
 SYNOPSIS
   ipfs key
+
+DESCRIPTION
+
+  'ipfs key gen' generates a new keypair for usage with IPNS and 'ipfs name publish'.
+
+    > ipfs key gen --type=rsa --size=2048 mykey
+    > ipfs name publish --key=mykey QmSomeHash
+
+  'ipfs key list' lists the available keys.
+
+    > ipfs key list
+    self
+    mykey
+
 
 SUBCOMMANDS
   ipfs key gen <name> - Create a new keypair
@@ -1883,7 +1989,7 @@ DESCRIPTION
 
 ```
 USAGE
-  ipfs name - Interact with the IPFS namespace (IPNS).
+  ipfs name - Publish and resolve IPNS names.
 
 SYNOPSIS
   ipfs name
@@ -1892,22 +1998,25 @@ DESCRIPTION
 
   IPNS is a PKI namespace, where names are the hashes of public keys, and
   the private key enables publishing new (signed) values. In both publish
-  and resolve, the default value of <name> is your own identity public key.
+  and resolve, the default name used is the node's own PeerID,
+  which is the hash of its public key.
 
+  You can use the 'ipfs key' commands to list and generate more names and their respective keys.
 
   Examples:
 
-  Publish an <ipfs-path> to your identity name:
+  Publish an <ipfs-path> with your default name:
 
     > ipfs name publish /ipfs/QmatmE9msSfkKxoffpHwNLNKgwZG8eT9Bud6YoPab52vpy
     Published to QmbCMUZw6JFeZ7Wp9jkzbye3Fzp2GGcPgC3nmeUjfVF87n: /ipfs/QmatmE9msSfkKxoffpHwNLNKgwZG8eT9Bud6YoPab52vpy
 
-  Publish an <ipfs-path> to another public key:
+  Publish an <ipfs-path> with another name, added by an 'ipfs key' command:
 
-    > ipfs name publish /ipfs/QmatmE9msSfkKxoffpHwNLNKgwZG8eT9Bud6YoPab52vpy QmbCMUZw6JFeZ7Wp9jkzbye3Fzp2GGcPgC3nmeUjfVF87n
+    > ipfs key gen --type=rsa --size=2048 mykey
+    > ipfs name publish --key=mykey /ipfs/QmatmE9msSfkKxoffpHwNLNKgwZG8eT9Bud6YoPab52vpy
     Published to QmbCMUZw6JFeZ7Wp9jkzbye3Fzp2GGcPgC3nmeUjfVF87n: /ipfs/QmatmE9msSfkKxoffpHwNLNKgwZG8eT9Bud6YoPab52vpy
 
-  Resolve the value of your identity:
+  Resolve the value of your name:
 
     > ipfs name resolve
     /ipfs/QmatmE9msSfkKxoffpHwNLNKgwZG8eT9Bud6YoPab52vpy
@@ -1917,14 +2026,14 @@ DESCRIPTION
     > ipfs name resolve QmaCpDMGvV2BGHeYERUEnRQAwe3N8SzbUtfsmvsqQLuvuJ
     /ipfs/QmSiTko9JZyabH56y2fussEt1A5oDqsFXB3CkvAqraFryz
 
-  Resolve the value of a reference:
+  Resolve the value of a dnslink:
 
     > ipfs name resolve ipfs.io
     /ipfs/QmaBvfZooxWkrv7D3r8LS9moNjzD2o525XMZze69hhoxf5
 
 SUBCOMMANDS
-  ipfs name publish <ipfs-path> - Publish an object to IPNS.
-  ipfs name resolve [<name>]    - Get the value currently published at an IPNS name.
+  ipfs name publish <ipfs-path> - Publish IPNS names.
+  ipfs name resolve [<name>]    - Resolve IPNS names.
 
   Use 'ipfs name <subcmd> --help' for more information about each command.
 ```
@@ -1933,7 +2042,7 @@ SUBCOMMANDS
 
 ```
 USAGE
-  ipfs name publish <ipfs-path> - Publish an object to IPNS.
+  ipfs name publish <ipfs-path> - Publish IPNS names.
 
 SYNOPSIS
   ipfs name publish [--resolve=false] [--lifetime=<lifetime> | -t] [--ttl=<ttl>] [--key=<key> | -k] [--] <ipfs-path>
@@ -1949,24 +2058,28 @@ OPTIONS
       This accepts durations such as "300s", "1.5h" or "2h45m". Valid time units are
       "ns", "us" (or "µs"), "ms", "s", "m", "h".
   --ttl               string - Time duration this record should be cached for (caution: experimental).
-  -k,      --key      string - name of key to use. Default: self.
+  -k,      --key      string - Name of the key to be used, as listed by 'ipfs key list'. Default: Default: self..
 
 DESCRIPTION
 
   IPNS is a PKI namespace, where names are the hashes of public keys, and
-  the private key enables publishing new (signed) values. In publish, the
-  default value of <name> is your own identity public key.
+  the private key enables publishing new (signed) values. In both publish
+  and resolve, the default name used is the node's own PeerID,
+  which is the hash of its public key.
+
+  You can use the 'ipfs key' commands to list and generate more names and their respective keys.
 
   Examples:
 
-  Publish an <ipfs-path> to your identity name:
+  Publish an <ipfs-path> with your default name:
 
     > ipfs name publish /ipfs/QmatmE9msSfkKxoffpHwNLNKgwZG8eT9Bud6YoPab52vpy
     Published to QmbCMUZw6JFeZ7Wp9jkzbye3Fzp2GGcPgC3nmeUjfVF87n: /ipfs/QmatmE9msSfkKxoffpHwNLNKgwZG8eT9Bud6YoPab52vpy
 
-  Publish an <ipfs-path> to another public key (not implemented):
+  Publish an <ipfs-path> with another name, added by an 'ipfs key' command:
 
-    > ipfs name publish /ipfs/QmatmE9msSfkKxoffpHwNLNKgwZG8eT9Bud6YoPab52vpy QmbCMUZw6JFeZ7Wp9jkzbye3Fzp2GGcPgC3nmeUjfVF87n
+    > ipfs key gen --type=rsa --size=2048 mykey
+    > ipfs name publish --key=mykey /ipfs/QmatmE9msSfkKxoffpHwNLNKgwZG8eT9Bud6YoPab52vpy
     Published to QmbCMUZw6JFeZ7Wp9jkzbye3Fzp2GGcPgC3nmeUjfVF87n: /ipfs/QmatmE9msSfkKxoffpHwNLNKgwZG8eT9Bud6YoPab52vpy
 ```
 
@@ -1974,7 +2087,7 @@ DESCRIPTION
 
 ```
 USAGE
-  ipfs name resolve [<name>] - Get the value currently published at an IPNS name.
+  ipfs name resolve [<name>] - Resolve IPNS names.
 
 SYNOPSIS
   ipfs name resolve [--recursive | -r] [--nocache | -n] [--] [<name>]
@@ -1991,13 +2104,15 @@ OPTIONS
 DESCRIPTION
 
   IPNS is a PKI namespace, where names are the hashes of public keys, and
-  the private key enables publishing new (signed) values. In resolve, the
-  default value of <name> is your own identity public key.
+  the private key enables publishing new (signed) values. In both publish
+  and resolve, the default name used is the node's own PeerID,
+  which is the hash of its public key.
 
+  You can use the 'ipfs key' commands to list and generate more names and their respective keys.
 
   Examples:
 
-  Resolve the value of your identity:
+  Resolve the value of your name:
 
     > ipfs name resolve
     /ipfs/QmatmE9msSfkKxoffpHwNLNKgwZG8eT9Bud6YoPab52vpy
@@ -2007,7 +2122,7 @@ DESCRIPTION
     > ipfs name resolve QmaCpDMGvV2BGHeYERUEnRQAwe3N8SzbUtfsmvsqQLuvuJ
     /ipfs/QmSiTko9JZyabH56y2fussEt1A5oDqsFXB3CkvAqraFryz
 
-  Resolve the value of a reference:
+  Resolve the value of a dnslink:
 
     > ipfs name resolve ipfs.io
     /ipfs/QmaBvfZooxWkrv7D3r8LS9moNjzD2o525XMZze69hhoxf5
@@ -2734,11 +2849,12 @@ USAGE
   ipfs repo gc - Perform a garbage collection sweep on the repo.
 
 SYNOPSIS
-  ipfs repo gc [--quiet | -q]
+  ipfs repo gc [--quiet | -q] [--stream-errors]
 
 OPTIONS
 
-  -q, --quiet bool - Write minimal output. Default: false.
+  -q,            --quiet bool - Write minimal output. Default: false.
+  --stream-errors        bool - Stream errors. Default: false.
 
 DESCRIPTION
 
