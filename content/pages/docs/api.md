@@ -7,7 +7,7 @@ save_as: docs/api/index.html
 
 # API Reference
 
-<sup>Generated on 2017-03-18, from go-ipfs v0.4.7.</sup>
+<sup>Generated on 2017-04-01, from go-ipfs v0.4.8.</sup>
 
 This is the HTTP API specification for IPFS.
 
@@ -122,6 +122,9 @@ flag is the `&encoding=json` query parameter below:
   *  [/files/rm](#apiv0filesrm)
   *  [/files/stat](#apiv0filesstat)
   *  [/files/write](#apiv0fileswrite)
+  *  [/filestore/dups](#apiv0filestoredups)
+  *  [/filestore/ls](#apiv0filestorels)
+  *  [/filestore/verify](#apiv0filestoreverify)
   *  [/get](#apiv0get)
   *  [/id](#apiv0id)
   *  [/key/gen](#apiv0keygen)
@@ -1435,6 +1438,98 @@ This endpoint returns a `text/plain` response body.
 
 ***
 
+### /api/v0/filestore/dups
+
+List blocks that are both in the filestore and standard block storage.
+
+
+#### Arguments
+
+This endpoint takes no arguments.
+
+
+#### Response
+
+On success, the call to this endpoint will return with 200 and the following body:
+
+```text
+{
+    "Ref": "<string>"
+    "Err": "<string>"
+}
+
+```
+
+#### cURL Example
+
+`curl "http://localhost:5001/api/v0/filestore/dups"`
+
+***
+
+### /api/v0/filestore/ls
+
+List objects in filestore.
+
+
+#### Arguments
+
+  - `arg` [string]: Cid of objects to list. Required: no.
+
+
+#### Response
+
+On success, the call to this endpoint will return with 200 and the following body:
+
+```text
+{
+    "Status": "<int32>"
+    "ErrorMsg": "<string>"
+    "Key": "<string>"
+    "FilePath": "<string>"
+    "Offset": "<uint64>"
+    "Size": "<uint64>"
+}
+
+```
+
+#### cURL Example
+
+`curl "http://localhost:5001/api/v0/filestore/ls?arg=<obj>"`
+
+***
+
+### /api/v0/filestore/verify
+
+Verify objects in filestore.
+
+
+#### Arguments
+
+  - `arg` [string]: Cid of objects to verify. Required: no.
+
+
+#### Response
+
+On success, the call to this endpoint will return with 200 and the following body:
+
+```text
+{
+    "Status": "<int32>"
+    "ErrorMsg": "<string>"
+    "Key": "<string>"
+    "FilePath": "<string>"
+    "Offset": "<uint64>"
+    "Size": "<uint64>"
+}
+
+```
+
+#### cURL Example
+
+`curl "http://localhost:5001/api/v0/filestore/verify?arg=<obj>"`
+
+***
+
 ### /api/v0/get
 
 Download IPFS objects.
@@ -1715,7 +1810,7 @@ On success, the call to this endpoint will return with 200 and the following bod
 
 ### /api/v0/name/publish
 
-Publish an object to IPNS.
+Publish IPNS names.
 
 
 #### Arguments
@@ -1726,7 +1821,7 @@ Publish an object to IPNS.
     This accepts durations such as "300s", "1.5h" or "2h45m". Valid time units are
     "ns", "us" (or "µs"), "ms", "s", "m", "h". Default: "24h". Required: no.
   - `ttl` [string]: Time duration this record should be cached for (caution: experimental). Required: no.
-  - `key` [string]: name of key to use. Default: "self". Required: no.
+  - `key` [string]: Name of the key to be used, as listed by 'ipfs key list'. Default:. Default: "self". Required: no.
 
 
 #### Response
@@ -1749,7 +1844,7 @@ On success, the call to this endpoint will return with 200 and the following bod
 
 ### /api/v0/name/resolve
 
-Get the value currently published at an IPNS name.
+Resolve IPNS names.
 
 
 #### Arguments
@@ -2479,6 +2574,7 @@ Perform a garbage collection sweep on the repo.
 #### Arguments
 
   - `quiet` [bool]: Write minimal output. Default: "false". Required: no.
+  - `stream-errors` [bool]: Stream errors. Default: "false". Required: no.
 
 
 #### Response
@@ -2488,13 +2584,14 @@ On success, the call to this endpoint will return with 200 and the following bod
 ```text
 {
     "Key": "<string>"
+    "Error": "<string>"
 }
 
 ```
 
 #### cURL Example
 
-`curl "http://localhost:5001/api/v0/repo/gc?quiet=false"`
+`curl "http://localhost:5001/api/v0/repo/gc?quiet=false&stream-errors=false"`
 
 ***
 
