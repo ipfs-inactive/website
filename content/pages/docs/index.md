@@ -27,3 +27,4 @@ These are links to some of the IPFS repositories.
 - Google Group: [ipfs-users@groups.google.com](https://groups.google.com/forum/#!forum/ipfs-users)
 - Twitter: [@IPFSbot](https://twitter.com/ipfsbot) for some news.
 - <a class='link-github' href='https://github.com/ipfs/community'>ipfs/community</a> for meta-questions on how we manage our community in general.
+- Discourse: [discuss.ipfs.io](https://discuss.ipfs.io) for the main place to ask questions, share information and find like-minded people who are using IPFS, libp2p, multiformats, orbit, orbit-db, IPLD, or any of the other libraries, tools and protocols created by the IPFS community.
