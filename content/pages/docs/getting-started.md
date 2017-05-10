@@ -153,6 +153,10 @@ This should bring up a console like this:
 
 <img class="screenshot" alt="Web console connection view" src="/images/webui-connection.png">
 
+## Installing a Browser Extension
+
+You can install a browser extension such as [IPFS Gateway Redirect](https://addons.mozilla.org/firefox/addon/ipfs-gateway-redirect/) for Firefox or [IPFS Station](https://chrome.google.com/webstore/detail/ipfs-station/kckhgoigikkadogfdiojcblegfhdnjei) for Chrome. These will automatically redirect IPFS gateway requests to your local daemon so that you are not relying on, or trusting, remote gateways.
+
 Now, you're ready:
 
 <a class="button button-primary" href="../examples" role="button">
