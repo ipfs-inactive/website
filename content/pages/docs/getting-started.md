@@ -14,7 +14,7 @@ During this tutorial, if you have any questions, feel free to ask them in [ipfs/
 
 ## init the repo
 
-`ipfs` uses a global local object repository, added to `~/.ipfs`:
+`ipfs` uses a global local object repository, added to `~/.go-ipfs`:
 
 ```sh
 > ipfs init
