@@ -67,7 +67,7 @@ The site theme files are contained in the `ipfs.io-theme` directory.
 
 To work on the theme, install Grunt:
 
-`npm grunt-cli`
+`npm install -g grunt-cli`
 
 CSS is compiled from stylus in the `_styl` directory.
 
