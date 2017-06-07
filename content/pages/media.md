@@ -22,6 +22,12 @@ Here are some presentations which provide a good introduction to IPFS.
 
 IPFS news, articles, references on the media, presence in conferences and talks, organized by chronological order.
 
+### 2017
+- [May 18 - Protocol Labs - BlueYard Capital](https://medium.com/@BlueYard/protocol-labs-35ceff61b031)
+- [May 18 - Protocol Labs - Union Square Ventures](https://www.usv.com/blog/protocol-labs)
+- [May 10 - Turkey Can’t Block This Copy of Wikipedia - Observer](http://observer.com/2017/05/turkey-wikipedia-ipfs/)
+- [Apr 29 - Ethereum Meets Zcash? Why IPFS Plans a Multi-Blockchain Browser - CoinDesk](http://www.coindesk.com/ethereum-meets-zcash-why-ipfs-plans-a-multi-blockchain-browser)
+
 ### 2016
 - [Jun 2 - Berlin IPFS/Blockstack Meetup at c-base](https://www.youtube.com/watch?v=CAfagNmIeOE)
 - [May 2 - IPFS Meetup Berlin](https://www.youtube.com/watch?v=UOC_QqtEJtg)
