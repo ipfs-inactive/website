@@ -25,6 +25,7 @@ IPFS news, articles, references on the media, presence in conferences and talks,
 ### 2016
 - [Jun 2 - Berlin IPFS/Blockstack Meetup at c-base](https://www.youtube.com/watch?v=CAfagNmIeOE)
 - [May 2 - IPFS Meetup Berlin](https://www.youtube.com/watch?v=UOC_QqtEJtg)
+- [Apr 14 - OpenBazaar Integrating InterPlanetary File System to Help Keep Stores Open Longer - Nasdaq](http://www.nasdaq.com/article/openbazaar-integrating-interplanetary-file-system-to-help-keep-stores-open-longer-cm606534)
 - [Jan 21 - IPFS Workshop with Juan Benet, Open Knowledge Ireland](https://www.youtube.com/watch?v=S65z5NHfUT0)
 - [Jan 15 - DEVCON1: IPFS - Juan Batiz-Benet](https://www.youtube.com/watch?v=ewpIi1y_KDc)
 
