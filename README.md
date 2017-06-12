@@ -67,7 +67,7 @@ The site theme files are contained in the `ipfs.io-theme` directory.
 
 To work on the theme, install Grunt:
 
-`npm grunt-cli`
+`npm install -g grunt-cli`
 
 CSS is compiled from stylus in the `_styl` directory.
 
@@ -109,9 +109,9 @@ If you have files like [Asciinema](https://asciinema.org/), add those to `conten
 
 The site is built via make. Type `make` to see your options.
 
-You can run `./develop_server start` and the site will be automagically rebuilt while you're working on it.
+You can run `./develop_server.sh start` and the site will be automagically rebuilt while you're working on it.
 
-`./develop_server stop` will stop the server
+`./develop_server.sh stop` will stop the server
 
 ## Contribute
 
