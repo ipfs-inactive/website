@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  {{ partial "head.html" . }}
+  {{ range .Keywords }}
+    <meta name="keywords" content="{{ . }}" />
+  {{ end }}
+  {{ range .Params.tags }}
+    <meta name="tags" content="{{ . }}" />
+  {{ end }}
+</head>
+
+<body>
+  {{ partial "header.html" (dict "hero" "" "baseUrl" ($.Param " baseURL ") "page" .) }}
+
+  <div class="container">  
+    <section id="content" class="body blog">
+      <ul class="docs-menu">
+        <li><a href="/docs" {{ if eq .Params.slug "docs" }}class="current-item"{{ end }}>Documentation</a></li>
+        <li><a href="/docs/install" {{ if eq .Params.slug "install" }}class="current-item"{{ end }}>Install</a></li>
+        <li><a href="/docs/getting-started" {{ if eq .Params.slug "getting started" }}class="current-item"{{ end }}>Getting Started</a></li>
+        <li><a href="/docs/api" {{ if eq .Params.slug "api" }}class="current-item"{{ end }}>API</a></li>
+        <li><a href="/docs/commands" {{ if eq .Params.slug "commands" }}class="current-item"{{ end }}>Commands</a></li>
+        <li><a href="/docs/examples" {{ if eq .Params.slug "examples" }}class="current-item"{{ end }}>Examples</a></li>
+      </ul>
+      <div class="content-wrapper">
+        {{ .Content }}
+      </div>
+      <!-- /.entry-content -->
+    </section>
+
+    <div class="content-wrapper">
+        {{ partial "latest.html" . }}
+    </div>
+      
+  </div>
+
+  {{ partial "footer.html" . }}  
+</body>
+
+</html>
