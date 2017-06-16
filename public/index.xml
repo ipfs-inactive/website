@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>IPFS is the distributable web</title>
+    <link>https://ipfs.io/</link>
+    <description>Recent content on IPFS is the distributable web</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 01 Jun 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ipfs.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>IPFS distributions</title>
+      <link>https://ipfs.io/post/17-distributions/</link>
+      <pubDate>Wed, 01 Jun 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://ipfs.io/post/17-distributions/</guid>
+      <description>dist.ipfs.io is the new distributions page for IPFS. This is the new one-stop-shop for finding and downloading all official binaries that the IPFS Team produces.
+The IPFS Distributions Website The distributions website itself is served by, hosted, and distributed through IPFS. The website assets and all of the binaries form one large IPFS content graph. This means that you can view and use this website through any IPFS node, even your own local ipfs node.</description>
+    </item>
+    
+    <item>
+      <title>IPFS Weekly 10</title>
+      <link>https://ipfs.io/post/16-ipfs-weekly-10/</link>
+      <pubDate>Sun, 08 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://ipfs.io/post/16-ipfs-weekly-10/</guid>
+      <description>IPFS is a new hypermedia distribution protocol, addressed by content and identities, aiming to make the web faster, safer, and more open. In these posts, we highlight some of the development that has happened in the past week. For anyone looking to get involved, follow the embedded hyperlinks, search the wealth of information on GitHub or join us on IRC (#ipfs on the Freenode network).
+If you would like to get this update as an email, sign up for our weekly newsletter!</description>
+    </item>
+    
+    <item>
+      <title>IPFS Weekly 9</title>
+      <link>https://ipfs.io/post/15-ipfs-weekly-9/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://ipfs.io/post/15-ipfs-weekly-9/</guid>
+      <description>IPFS is a new hypermedia distribution protocol, addressed by content and identities, aiming to make the web faster, safer, and more open. In these posts, we highlight some of the development that has happened in the past week. For anyone looking to get involved, follow the embedded hyperlinks, search the wealth of information on GitHub or join us on IRC (#ipfs on the Freenode network).
+If you would like to get this update as an email, sign up for our weekly newsletter!</description>
+    </item>
+    
+    <item>
+      <title>go-ipfs 0.4.0 has been released</title>
+      <link>https://ipfs.io/post/14-ipfs-0-4-0-released/</link>
+      <pubDate>Thu, 07 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://ipfs.io/post/14-ipfs-0-4-0-released/</guid>
+      <description>go-ipfs 0.4.0 has been released! Among the many changes are a revamped implementation of the IPFS communication protocols, increased performance, improvements to IPNS (the Interplanetary Naming System), many bugfixes, and lots of new features to make IPFS even more powerful.
+The IPFS Files API In 0.4.0, we&amp;rsquo;ve added a new feature, the Files API, available through the subcommand: ipfs files. This subcommand allows a program to interact with IPFS using familiar filesystem operations, namely: creating directories, reading, writing and deleting files, listing out different directories, and so on.</description>
+    </item>
+    
+    <item>
+      <title>IPFS Weekly 8</title>
+      <link>https://ipfs.io/post/13-ipfs-weekly-8/</link>
+      <pubDate>Tue, 22 Mar 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://ipfs.io/post/13-ipfs-weekly-8/</guid>
+      <description>IPFS is a new hypermedia distribution protocol, addressed by content and identities, aiming to make the web faster, safer, and more open. In these posts, we highlight some of the development that has happened in the past week. For anyone looking to get involved, follow the embedded hyperlinks, search the wealth of information on GitHub or join us on IRC (#ipfs on the Freenode network).
+If you would like to get this update as an email, sign up for our weekly newsletter!</description>
+    </item>
+    
+    <item>
+      <title>IPFS Weekly 7</title>
+      <link>https://ipfs.io/post/12-ipfs-weekly-7/</link>
+      <pubDate>Thu, 17 Mar 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://ipfs.io/post/12-ipfs-weekly-7/</guid>
+      <description>IPFS is a new hypermedia distribution protocol, addressed by content and identities, aiming to make the web faster, safer, and more open. In these posts, we highlight some of the development that has happened in the past week. For anyone looking to get involved, follow the embedded hyperlinks, search the wealth of information on GitHub or join us on IRC (#ipfs on the Freenode network).
+If you would like to get this update as an email, sign up for our weekly newsletter!</description>
+    </item>
+    
+    <item>
+      <title>IPFS Weekly 6</title>
+      <link>https://ipfs.io/post/11-ipfs-weekly-6/</link>
+      <pubDate>Wed, 09 Mar 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://ipfs.io/post/11-ipfs-weekly-6/</guid>
+      <description>IPFS is a new hypermedia distribution protocol, addressed by content and identities, aiming to make the web faster, safer, and more open. In these posts, we highlight some of the development that has happened in the past week. For anyone looking to get involved, follow the embedded hyperlinks, search the wealth of information on GitHub or join us on IRC (#ipfs on the Freenode network).
+If you would like to get this update as an email, sign up for our weekly newsletter!</description>
+    </item>
+    
+    <item>
+      <title>IPFS Weekly 5</title>
+      <link>https://ipfs.io/post/10-ipfs-weekly-5/</link>
+      <pubDate>Fri, 04 Mar 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://ipfs.io/post/10-ipfs-weekly-5/</guid>
+      <description>IPFS is a new hypermedia distribution protocol, addressed by content and identities, aiming to make the web faster, safer, and more open. In these posts, we highlight some of the development that has happened in the past week. For anyone looking to get involved, follow the embedded hyperlinks, search the wealth of information on GitHub or join us on IRC (#ipfs on the Freenode network).
+If you would like to get this update as an email, sign up for our weekly newsletter!</description>
+    </item>
+    
+    <item>
+      <title>Migrating ipfs.io from go-ipfs 0.3.x to 0.4.0</title>
+      <link>https://ipfs.io/post/9-ipfs-weekly-v04x-migration/</link>
+      <pubDate>Fri, 12 Feb 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://ipfs.io/post/9-ipfs-weekly-v04x-migration/</guid>
+      <description>Good news everyone! We&amp;rsquo;ll soon release go-ipfs 0.4.0, which contains lots of great changes and enhancements. An upcoming post will detail the improvements of 0.4.0. This post is about important things to be aware of when upgrading. Users who already rely on go-ipfs or the ipfs.io services should pay special attention.
+There are breaking changes which prevent 0.4.x nodes from communicating with 0.3.x nodes. We know breaking changes are painful.</description>
+    </item>
+    
+    <item>
+      <title>IPFS Weekly 4</title>
+      <link>https://ipfs.io/post/7-ipfs-weekly-4/</link>
+      <pubDate>Fri, 05 Feb 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://ipfs.io/post/7-ipfs-weekly-4/</guid>
+      <description>IPFS is a new hypermedia distribution protocol, addressed by content and identities, aiming to make the web faster, safer, and more open. In these posts, we highlight some of the development that has happened in the past week. For anyone looking to get involved, follow the embedded hyperlinks, search the wealth of information on GitHub or join us on IRC (#ipfs on the Freenode network).
+If you would like to get this update as an email, sign up for our weekly newsletter!</description>
+    </item>
+    
+    <item>
+      <title>IPFS Weekly 3</title>
+      <link>https://ipfs.io/post/6-ipfs-weekly-3/</link>
+      <pubDate>Mon, 01 Feb 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://ipfs.io/post/6-ipfs-weekly-3/</guid>
+      <description>tags: [] categories: [] description: TBC IPFS is a new hypermedia distribution protocol, addressed by content and identities, aiming to make the web faster, safer, and more open. In these posts, we highlight some of the development that has happened in the past week. For anyone looking to get involved, follow the embedded hyperlinks, search the wealth of information on GitHub or join us on IRC (#ipfs on the Freenode network).</description>
+    </item>
+    
+    <item>
+      <title>IPFS Weekly 2</title>
+      <link>https://ipfs.io/post/5-ipfs-weekly-2/</link>
+      <pubDate>Wed, 13 Jan 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://ipfs.io/post/5-ipfs-weekly-2/</guid>
+      <description>IPFS is a new hypermedia distribution protocol, addressed by content and identities, aiming to make the web faster, safer, and more open. In these posts, we highlight some of the development that has happened in the past week. For anyone looking to get involved, follow the embedded hyperlinks, search the wealth of information on GitHub or join us on IRC (#ipfs on the Freenode network).
+Here are some of the highlights for the January 5th Sprint:</description>
+    </item>
+    
+    <item>
+      <title>IPFS Weekly 1</title>
+      <link>https://ipfs.io/post/4-ipfs-weekly-1/</link>
+      <pubDate>Mon, 11 Jan 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://ipfs.io/post/4-ipfs-weekly-1/</guid>
+      <description>tags: [] categories: [] description: TBC Welcome to the first edition of IPFS Weekly!
+IPFS is a new hypermedia distribution protocol, addressed by content and identities, aiming to make the web faster, safer, and more open. In these posts, we will try to highlight some of the development that happened in the past week. For anyone looking to get involved, follow the embedded hyperlinks, search the wealth of information on github or join us on IRC (#ipfs on the Freenode network).</description>
+    </item>
+    
+    <item>
+      <title>Stellar Module Management - Install your Node.js modules using IPFS</title>
+      <link>https://ipfs.io/post/8-registry-mirror/</link>
+      <pubDate>Tue, 08 Dec 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://ipfs.io/post/8-registry-mirror/</guid>
+      <description>Node.js Interactive, the first Node.js conference organized by the Linux Foundation, happened on Dec 8-9 of 2015. There were hundreds of participants, and dozens of really amazing talks divided in 3 specific tracks: backend, frontend and IoT.
+I was fortunate to attend and present a project we&amp;rsquo;ve been developing at Protocol Labs, that builds on on top of IPFS, the InterPlanetary FileSystem.
+You can learn about that project in this blog post, check out the talk slides or wait for the video recording of the talk.</description>
+    </item>
+    
+    <item>
+      <title>ipscend - Publish static web content to IPFS</title>
+      <link>https://ipfs.io/post/3-ipscend/</link>
+      <pubDate>Fri, 27 Nov 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://ipfs.io/post/3-ipscend/</guid>
+      <description>ipscend is a new tool to help developers publish their static web content to IPFS and share it easily, while keeping history and more. It is heavily inspired by previous static web content publishing tools, like GitHub Pages and surge.
+Features Currently, ipscend offers a set of features, accessible through a CLI, and installable through npm (npm i -g ipscend), which enable a simple workflow for working in your Web page/app and publishing it to the IPFS network.</description>
+    </item>
+    
+    <item>
+      <title>Run IPFS in a Docker container</title>
+      <link>https://ipfs.io/post/1-run-ipfs-on-docker/</link>
+      <pubDate>Sat, 11 Jul 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://ipfs.io/post/1-run-ipfs-on-docker/</guid>
+      <description>In recent years, Docker and a few other projects have redefined how we run server applications. In the future, we might be running containerized apps in our personal devices. At its core, this fast-paced improvement is a combination of good interfaces to standardize how to do things, and great tooling to make using containers easy.
+The IPFS Project has many things planned for the world of containers. The most interesting is using IPFS to distribute containers hyper efficiently across data-centers and the internet.</description>
+    </item>
+    
+    <item>
+      <title>Hello Worlds</title>
+      <link>https://ipfs.io/post/0-hello-worlds/</link>
+      <pubDate>Tue, 05 May 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://ipfs.io/post/0-hello-worlds/</guid>
+      <description>&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;&amp;gt; echo &amp;quot;hello worlds&amp;quot; | ipfs add
+added QmZ4tDuvesekSs4qM5ZBKpXiZGun7S2CYtEZRB3DYXkjGx
+&amp;gt; ipfs cat QmZ4tDuvesekSs4qM5ZBKpXiZGun7S2CYtEZRB3DYXkjGx
+hello worlds
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Greetings Internet!&lt;/p&gt;
+
+&lt;p&gt;This post kicks off the official IPFS (InterPlanetary File System) Blog. This is long overdue&amp;ndash; the project is many months old. We will be making a series of posts explaining various aspects of IPFS, its development, our growing community, and so on. This blog will also be used to make all important announcements henceforth.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://ipfs.io/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ipfs.io/</guid>
+      <description>{{ partial &#34;head.html&#34; . }}  {{ partial &#34;header.html&#34; (dict &#34;hero&#34; &#34;homepage&#34; &#34;baseUrl&#34; ($.Param &#34; baseURL &#34;) &#34;page&#34; .) }} The web of tomorrow needs IPFS today  HTTP is inefficient and expensive HTTP downloads a file from a single computer at a time, instead of getting pieces from multiple computers simultaneously. With video delivery, a P2P approach could save 60% in bandwidth costs.
+IPFS makes it possible to distribute high volumes of data with high efficiency.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://ipfs.io/static/run-ipfs-on-docker/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ipfs.io/static/run-ipfs-on-docker/</guid>
+      <description>window.NREUM||(NREUM={});NREUM.info={&#34;beacon&#34;:&#34;bam.nr-data.net&#34;,&#34;errorBeacon&#34;:&#34;bam.nr-data.net&#34;,&#34;licenseKey&#34;:&#34;f2b551a2d0&#34;,&#34;applicationID&#34;:&#34;3289000&#34;,&#34;transactionName&#34;:&#34;ew5WREZdD10GFB9QSVFOWUNXWwpSAhVEQhZLCVdH&#34;,&#34;queueTime&#34;:0,&#34;applicationTime&#34;:11,&#34;ttGuid&#34;:&#34;&#34;,&#34;agentToken&#34;:null,&#34;agent&#34;:&#34;js-agent.newrelic.com/nr-632.min.js&#34;,&#34;extra&#34;:&#34;&#34;} window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o?o:n)},o,o.exports)}return n[t].exports}if(&#34;function&#34;==typeof __nr_require)return __nr_require;for(var o=0;op;p++)u[p].apply(s,t);return s}function a(e,n){f[e]=c(e).concat(n)}function c(e){return f[e]||[]}function u(){return t(n)}var f={};return{on:a,emit:n,create:u,listeners:c,_events:f}}function r(){return{}}var o=&#34;nr@context&#34;,i=e(&#34;gos&#34;);n.exports=t()},{gos:&#34;7eSDFh&#34;}],ee:[function(e,n){n.exports=e(&#34;QJf3ax&#34;)},{}],3:[function(e,n){function t(e){return function(){r(e,[(new Date).getTime()].concat(i(arguments)))}}var r=e(&#34;handle&#34;),o=e(1),i=e(2);&#34;undefined&#34;==typeof window.newrelic&amp;&amp;(newrelic=window.NREUM);var a=[&#34;setPageViewName&#34;,&#34;addPageAction&#34;,&#34;setCustomAttribute&#34;,&#34;finished&#34;,&#34;addToTrace&#34;,&#34;inlineHit&#34;,&#34;noticeError&#34;];o(a,function(e,n){window.NREUM[n]=t(&#34;api-&#34;+n)}),n.exports=window.NREUM},{1:12,2:13,handle:&#34;D5DuLP&#34;}],&#34;7eSDFh&#34;:[function(e,n){function t(e,n,t){if(r.call(e,n))return e[n];var o=t();if(Object.defineProperty&amp;&amp;Object.keys)try{return Object.defineProperty(e,n,{value:o,writable:!0,enumerable:!1}),o}catch(i){}return e[n]=o,o}var r=Object.prototype.hasOwnProperty;n.exports=t},{}],gos:[function(e,n){n.exports=e(&#34;7eSDFh&#34;)},{}],handle:[function(e,n){n.exports=e(&#34;D5DuLP&#34;)},{}],D5DuLP:[function(e,n){function t(e,n,t){return r.listeners(e).length?r.emit(e,n,t):(o[e]||(o[e]=[]),void o[e].push(n))}var r=e(&#34;ee&#34;).create(),o={};n.exports=t,t.ee=r,r.q=o},{ee:&#34;QJf3ax&#34;}],id:[function(e,n){n.exports=e(&#34;XL7HBI&#34;)},{}],XL7HBI:[function(e,n){function t(e){var n=typeof e;return!e||&#34;object&#34;!==n&amp;&amp;&#34;function&#34;!==n?-1:e===window?0:i(e,o,function(){return r++})}var r=1,o=&#34;nr@id&#34;,i=e(&#34;gos&#34;);n.exports=t},{gos:&#34;7eSDFh&#34;}],G9z0Bl:[function(e,n){function t(){var e=d.info=NREUM.info,n=f.getElementsByTagName(&#34;script&#34;)[0];if(e&amp;&amp;e.licenseKey&amp;&amp;e.applicationID&amp;&amp;n){c(p,function(n,t){n in e||(e[n]=t)});var t=&#34;https&#34;===s.split(&#34;:&#34;)[0]||e.sslForHttp;d.proto=t?&#34;https://&#34;:&#34;http://&#34;,a(&#34;mark&#34;,[&#34;onload&#34;,i()]);var r=f.createElement(&#34;script&#34;);r.src=d.proto+e.agent,n.parentNode.insertBefore(r,n)}}function r(){&#34;complete&#34;===f.readyState&amp;&amp;o()}function o(){a(&#34;mark&#34;,[&#34;domContent&#34;,i()])}function i(){return(new Date).getTime()}var a=e(&#34;handle&#34;),c=e(1),u=(e(2),window),f=u.document,s=(&#34;&#34;+location).split(&#34;?&#34;)[0],p={beacon:&#34;bam.nr-data.net&#34;,errorBeacon:&#34;bam.nr-data.net&#34;,agent:&#34;js-agent.newrelic.com/nr-632.min.js&#34;},d=n.exports={offset:i(),origin:s,features:{}};f.addEventListener?(f.addEventListener(&#34;DOMContentLoaded&#34;,o,!1),u.addEventListener(&#34;load&#34;,t,!1)):(f.attachEvent(&#34;onreadystatechange&#34;,r),u.attachEvent(&#34;onload&#34;,t)),a(&#34;mark&#34;,[&#34;firstbyte&#34;,i()])},{1:12,2:3,handle:&#34;D5DuLP&#34;}],loader:[function(e,n){n.exports=e(&#34;G9z0Bl&#34;)},{}],12:[function(e,n){function t(e,n){var t=[],o=&#34;&#34;,i=0;for(o in e)r.call(e,o)&amp;&amp;(t[i]=n(o,e[o]),i+=1);return t}var r=Object.prototype.hasOwnProperty;n.exports=t},{}],13:[function(e,n){function t(e,n,t){n||(n=0),&#34;undefined&#34;==typeof t&amp;&amp;(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(0o?0:o);++rasciinema - Record and share your terminal sessions, the right way</description>
+    </item>
+    
+  </channel>
+</rss>
