@@ -14,7 +14,8 @@
     "main": "index.js",
     "scripts": {
         "build": "npm-run-all -p build:*",
-        "build:css": "stylus -u autoprefixer-stylus -I node_modules/yeticss/lib -c -o static/css > _styl/main.styl",
+        "build:css": "stylus -u autoprefixer-stylus -I node_modules/yeticss/lib -c -o static/css _styl/main.styl",
+        "build:hugo": "hugo",
         "test": "echo \"Error: no test specified\" && exit 1",
         "watch": "npm-run-all -p watch:*",
         "watch:css": "stylus -u autoprefixer-stylus -I node_modules/yeticss/lib -w _styl/main.styl -c -o static/css",

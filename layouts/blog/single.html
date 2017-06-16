@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  {{ partial "head.html" . }}
+  {{ range .Keywords }}
+    <meta name="keywords" content="{{ . }}" />
+  {{ end }}
+  {{ range .Params.tags }}
+    <meta name="tags" content="{{ . }}" />
+  {{ end }}
+</head>
+
+<body>
+  {{ partial "header.html" (dict "hero" "" "baseUrl" ($.Param " baseURL ") "page" .) }}
+
+  <div class="container">  
+    <section id="content" class="body blog">
+      <header>
+        <h2 class="entry-title">
+          <a href="{{ .URL }}" rel="bookmark" title="Permalink to {{ .Title }}">{{ .Title }}</a>
+        </h2>
+      </header>
+      <footer class="post-info">
+        <abbr class="published" title="{{ dateFormat " 2006-01-02T15:04 " .Date }}">
+        {{ dateFormat "Mon 02 Jan 2006" .Date }}
+      </abbr>
+      <!--{{ if isset .Params "lastmod" }}
+        <abbr class="modified" title="{{ dateFormat " 2007-04-05T14:30 " .Lastmod }}">
+          {{ .Lastmod }}
+        </abbr>
+      {{ end }}-->
+      {{ if isset .Params "author" }}
+        <address class="vcard author">
+          By <a class="url fn" href="/TODO">{{ .Params.author }}</a>
+        </address>
+      {{ end }}
+      </footer>
+      <!-- /.post-info -->
+      <div class="entry-content">
+        {{ .Content }}
+      </div>
+      <!-- /.entry-content -->
+    </section>
+    <div class="content-wrapper">
+        {{ partial "latest.html" . }}
+    </div>
+      
+  </div>
+
+  {{ partial "footer.html" . }}  
+</body>
+
+</html>
