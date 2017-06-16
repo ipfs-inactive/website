@@ -14,9 +14,9 @@
         {{ else }}
           <li><a href="/">About</a></li>
         {{ end }}
-        <li><a href="/docs/install" {{ if eq .page.URL "/install" }}class="current-item"{{ end }}>Install</a></li>
+        <li><a href="/docs/install" {{ if eq .page.Params.pagename "install" }}class="current-item"{{ end }}>Install</a></li>
         <li><a href="/media" {{ if eq .page.URL "/media" }}class="current-item"{{ end }}>Media</a></li>
-        <li><a href="/docs" {{ if false }}class="current-item"{{ end }}>Docs</a></li>
+        <li><a href="/docs" {{ if and (eq .page.Type "docs") (not (eq .page.Params.pagename "install")) }}class="current-item"{{ end }}>Docs</a></li>
         <li><a href="/blog" {{ if eq .page.Type "blog" }}class="current-item"{{ end }}>Blog</a></li>
       </ul>
     </nav>
@@ -38,9 +38,12 @@
           <img src="/images/constellation-01.svg" class="constellation"/>
       </div>
     {{ else }}
-      <div class="hero {{ if .page.Type }}hero-{{ .page.Type }}{{ end }}">
-        {{ if .constellation }}
-          <img src="/images/{{ .constellation }}" class="constellation"/>
+      <div class="hero{{ if isset .page.Params "pagetype" }} hero-{{ .page.Params.pagetype }}{{ end }}">
+        {{ if isset .page.Params "constellation" }}
+          {{ if isset .page.Params "title" }}
+            <h2 class="headline-main">{{ .page.Params.title }}</h2>
+          {{ end }}
+          <img src="/images/{{ .page.Params.constellation }}" class="constellation"/>
         {{ end }}
       </div>    
     {{ end }}
