@@ -4,7 +4,7 @@
     <div class="grid-flex-cell">
       <h5>IPFS Starlog</h5>
       <ol class="latest-list list-unstyled">
-      {{ range first 4 (where .Site.Pages "Section" "post") }}
+      {{ range first 4 (where .Site.Pages "Section" "blog") }}
         <li><span class="date">{{ dateFormat "2 January 2006" .Date }}</span> <a href="{{ .URL }}">{{ .Title }}</a></li>
       {{ end }}
       </ol>
@@ -22,13 +22,13 @@
       <ul class="latest-videos list-unstyled cf">
         <li id="modal-nofooter">
           <a class="popup-youtube video-thumb" href="https://www.youtube.com/watch?v=8CMxDNuuAiQ">
-            <img src="images/video-still-demo.png" />
+            <img src="/images/video-still-demo.png" />
           </a>
           <a class="popup-youtube" href="https://www.youtube.com/watch?v=8CMxDNuuAiQ">IPFS Demo</a>
         </li>
         <li>
           <a class="popup-youtube video-thumb" href="https://www.youtube.com/watch?v=HUVmypx9HGI">
-            <img src="images/video-still-stanford-seminar.png" />
+            <img src="/images/video-still-stanford-seminar.png" />
           </a>
           <a class="popup-youtube" href="https://www.youtube.com/watch?v=HUVmypx9HGI">The Distributed, Permanent Web</a>
         </li>
@@ -39,7 +39,7 @@
 </section>
 
 <script src="https://ipfs.io/ipfs/QmSb8577TaDYTN2Zo1bZ43PCUYfEneM2REuWZsDGtURLDn/"></script>
-<script src="js/jquery.magnific-popup.min.js" type="text/javascript"></script>
+<script src="/js/jquery.magnific-popup.min.js" type="text/javascript"></script>
 <script type="text/javascript">
   $(document).ready(function() {
     $('.popup-youtube').magnificPopup({
