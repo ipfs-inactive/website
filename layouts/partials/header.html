@@ -17,7 +17,7 @@
         <li><a href="/docs/install" {{ if eq .page.Params.pagename "install" }}class="current-item"{{ end }}>Install</a></li>
         <li><a href="/media" {{ if eq .page.Type "media" }}class="current-item"{{ end }}>Media</a></li>
         <li><a href="/docs" {{ if and (eq .page.Type "docs") (not (eq .page.Params.pagename "install")) }}class="current-item"{{ end }}>Docs</a></li>
-        <li><a href="/blog" {{ if or (eq .page.Type "blog") (eq .page.Data.Singular "author") }}class="current-item"{{ end }}>Blog</a></li>
+        <li><a href="{{ .page.Site.Params.blogurl }}" {{ if or (eq .page.Type "blog") (eq .page.Data.Singular "author") }}class="current-item"{{ end }}>Blog</a></li>
       </ul>
     </nav>
     {{ if eq .hero "homepage" }}

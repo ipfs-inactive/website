@@ -7,9 +7,10 @@ preserveTaxonomyNames = true
 [params]
   domain = "ipfs.io"
   name = "IPFS"
-  title = "IPFS is the distributable web"
+  title = "IPFS is the Distributed Web"
   description = "A peer-to-peer hypermedia protocol to make the web faster, safer, and more open."
   author = "Protocol Labs"
+  blogURL = "https://ipfs.io/blog"
   github = "https://github.com/ipfs/ipfs"
   specifications = "https://github.com/ipfs/specs"
   social = [ { title = "Twitter", link = "http://twitter.com/ipfsbot" },
