@@ -12,7 +12,7 @@
 {{ if isSet .Params "author" }}<meta name="author" content="{{ .Params.author }}" />{{ end }}
 <!-- open graph -->
 <meta property="og:type" content="website" />
-{{ if isSet .Params "description" }}<meta property="og:description" content="{{ .Params.description }}" />{{ end }}
+<meta property="og:description" content="{{ $.Param "description" }}" />
 <meta property="og:title" content="{{ if isSet .Params "title" }}{{ .Params.title }}{{ else }}{{ .Site.Params.name }}{{ end }}" />
 <meta property="og:site_name" content="{{ .Site.Params.name }}" />
 <meta property="og:url" content="{{ .Permalink }}" />
@@ -26,8 +26,8 @@
 <meta name="twitter:site" content="{{ .Site.Params.name }}" />
 <meta name="twitter:title" content="{{ if isSet .Params "title" }}{{ .Params.title }}{{ else }}{{ .Site.Params.name }}{{ end }}" />
 {{ if isSet .Params "author" }}<meta name="twitter:creator" content="{{ .Params.author }}" />{{ end }}
-{{ if isSet .Params "description" }}<meta name="twitter:description" content="{{ .Params.description }}" />{{ end }}
-<meta name="twitter:domain" content="{{ .Site.BaseURL }}" />
+<meta name="twitter:description" content="{{ $.Param "description" }}" />
+<meta name="twitter:domain" content="{{ .Site.Params.domain }}" />
 <meta name="twitter:image:src" content="/img/ipld-logo.png" />
 <link href="" type="application/atom+xml" rel="alternate" title="{{ .Site.Params.name }} Full Atom Feed" />
 <link href="" type="application/rss+xml" rel="alternate" title="{{ .Site.Params.name }} Full RSS Feed" />
