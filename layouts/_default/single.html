@@ -3,12 +3,6 @@
 
 <head>
   {{ partial "head.html" . }}
-  {{ range .Keywords }}
-    <meta name="keywords" content="{{ . }}" />
-  {{ end }}
-  {{ range .Params.tags }}
-    <meta name="tags" content="{{ . }}" />
-  {{ end }}
 </head>
 
 <body>
