@@ -16,6 +16,8 @@ IPFS even more powerful.
 
 ![0.4.0](/images/content/fireworks.jpg)
 
+<!--more-->
+
 ## The IPFS **Files API**
 
 In 0.4.0, we've added a new feature, the Files API, available through the

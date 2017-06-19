@@ -14,6 +14,8 @@ An upcoming post will detail the improvements of 0.4.0.
 This post is about important things to be aware of when upgrading.
 Users who already rely on go-ipfs or the ipfs.io services should pay special attention.
 
+<!--more-->
+
 There are breaking changes
 which prevent 0.4.x nodes from communicating with 0.3.x nodes.
 We know breaking changes are painful. We avoid them.

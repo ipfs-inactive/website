@@ -12,6 +12,8 @@ description: TBC
 
 Node.js Interactive, the first Node.js conference organized by the Linux Foundation, happened on Dec 8-9 of 2015. There were hundreds of participants, and dozens of really amazing talks divided in 3 specific tracks: backend, frontend and IoT.
 
+<!--more-->
+
 I was fortunate to attend and present a project we've been developing at [Protocol Labs](https://ipn.io), that builds on on top of [IPFS, the InterPlanetary FileSystem](https://ipfs.io).
 
 You can learn about that project in this blog post, check out the [talk slides](http://www.slideshare.net/DavidDias11/nodejs-interactive) or wait for the video recording of the talk. I will update this blog post when that happens.

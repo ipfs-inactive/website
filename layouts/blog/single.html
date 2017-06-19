@@ -18,7 +18,7 @@
     <section id="content" class="body blog">
       <header>
         <h2 class="entry-title">
-          <a href="{{ .URL }}" rel="bookmark" title="Permalink to {{ .Title }}">{{ .Title }}</a>
+          <a href="{{ .Permalink }}" rel="bookmark" title="Permalink to {{ .Title }}">{{ .Title }}</a>
         </h2>
       </header>
       <footer class="post-info">
@@ -32,7 +32,7 @@
       {{ end }}-->
       {{ if isset .Params "author" }}
         <address class="vcard author">
-          By <a class="url fn" href="/TODO">{{ .Params.author }}</a>
+          By <a class="url fn" href="/author/{{ .Params.author | urlize }}">{{ .Params.author }}</a>
         </address>
       {{ end }}
       </footer>
