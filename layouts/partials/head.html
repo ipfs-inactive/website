@@ -29,10 +29,7 @@
 <meta name="twitter:description" content="{{ $.Param "description" }}" />
 <meta name="twitter:domain" content="{{ .Site.Params.domain }}" />
 <meta name="twitter:image:src" content="/img/ipld-logo.png" />
-<link href="" type="application/atom+xml" rel="alternate" title="{{ .Site.Params.name }} Full Atom Feed" />
-<link href="" type="application/rss+xml" rel="alternate" title="{{ .Site.Params.name }} Full RSS Feed" />
-<link href="" type="application/atom+xml" rel="alternate" title="{{ .Site.Params.name }} Atom Feed" />
-<link href="" type="application/rss+xml" rel="alternate" title="{{ .Site.Params.name }} RSS Feed" />
+<link href="{{ .Site.RSSLink }}" rel="alternate feed" type="application/rss+xml" title="{{ .Site.Title }}" />
 <script src="//use.typekit.net/qbm6mtp.js"></script>
 <script>
   try {
