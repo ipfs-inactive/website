@@ -11,6 +11,8 @@ categories: []
 
 [dist.ipfs.io](https://dist.ipfs.io/) is the new distributions page for IPFS. This is the new one-stop-shop for finding and downloading all official binaries that the IPFS Team produces.
 
+<!--more-->
+
 ## The IPFS Distributions Website
 
 The distributions website itself is served by, hosted, and distributed through IPFS. The website assets and all of the binaries form one large IPFS content graph. This means that you can view and use this website through any IPFS node, even your own local ipfs node. All you need to do is to run an IPFS daemon and direct your browser to http://localhost:8080/ipns/dist.ipfs.io. Of course, you'll need to be online and connected to the internet, so you can find other ipfs nodes that have this website.

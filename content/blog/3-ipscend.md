@@ -12,6 +12,8 @@ description: TBC
 
 [`ipscend`](https://github.com/diasdavid/ipscend) is a new tool to help developers publish their static web content to IPFS and share it easily, while keeping history and more. It is heavily inspired by previous static web content publishing tools, like GitHub Pages and surge.
 
+<!--more-->
+
 ## Features
 
 Currently, `ipscend` offers a set of features, accessible through a CLI, and installable through npm (`npm i -g ipscend`), which enable a simple workflow for working in your Web page/app and publishing it to the IPFS network.

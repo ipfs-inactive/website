@@ -1,5 +1,8 @@
 baseURL = "https://ipfs.io"
 relativeURLs = true
+preserveTaxonomyNames = true
+[taxonomies]
+  author = "author"
 
 [params]
   domain = "ipfs.io"

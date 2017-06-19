@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  {{ partial "head.html" . }}
+  {{ range .Keywords }}
+    <meta name="keywords" content="{{ . }}" />
+  {{ end }}
+  {{ range .Params.tags }}
+    <meta name="tags" content="{{ . }}" />
+  {{ end }}
+</head>
+
+<body>
+  {{ partial "header.html" (dict "hero" "" "baseUrl" ($.Param " baseURL ") "hero" "starlog" "page" .) }}
+
+  <div class="container">  
+    <section id="content" class="blog">
+      {{ partial "blog-list.html" . }}
+    </section>
+  </div>
+
+  {{ partial "footer.html" . }}  
+</body>
+
+</html>
