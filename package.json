@@ -1,9 +1,37 @@
 {
-  "name": "ipfs.io",
-  "private": true,
-  "dependencies": {
-  },
-  "devDependencies": {
-    "dnslink-deploy": "^1.0.7"
-  }
+    "name": "ipfs.io",
+    "private": true,
+    "dependencies": {},
+    "devDependencies": {
+        "autoprefixer-stylus": "^0.14.0",
+        "dnslink-deploy": "^1.0.7",
+        "npm-run-all": "^4.0.2",
+        "stylus": "^0.54.5",
+        "yeticss": "^7.3.0"
+    },
+    "description": "[![](https://img.shields.io/badge/made%20by-Protocol%20Labs-blue.svg?style=flat-square)](http://ipn.io) [![](https://img.shields.io/badge/project-IPFS-blue.svg?style=flat-square)](http://ipfs.io/) [![](https://img.shields.io/badge/freenode-%23ipfs-blue.svg?style=flat-square)](http://webchat.freenode.net/?channels=%23ipfs) [![standard-readme compliant](https://img.shields.io/badge/standard--readme-OK-green.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+        "build": "npm-run-all -p build:*",
+        "build:css": "stylus -u autoprefixer-stylus -I node_modules/yeticss/lib -c -o static/css _styl/main.styl",
+        "build:hugo": "hugo",
+        "deploy": "hugo && ipfs add -r public",
+        "deploy:surge": "hugo && surge --project public --domain ipfs.surge.sh",
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "watch": "npm-run-all -p watch:*",
+        "watch:css": "stylus -u autoprefixer-stylus -I node_modules/yeticss/lib -w _styl/main.styl -c -o static/css",
+        "watch:server": "hugo server -ws ."
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/tableflip/ipfs-website.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/tableflip/ipfs-website/issues"
+    },
+    "homepage": "https://github.com/tableflip/ipfs-website#readme"
 }
