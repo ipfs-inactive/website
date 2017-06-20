@@ -13,7 +13,6 @@
   - [Dependencies](#dependencies)
 - [Relative paths](#relative-paths)
 - [Site structure](#site-structure)
-- [Theme](#theme)
 - [Pages content](#pages-content)
 - [Blog content](#blog-content)
 - [Building the site](#building-the-site)
@@ -36,9 +35,13 @@ It also requires [Node and NPM](https://nodejs.org/en/download/), the latter to 
 $ npm i
 ```
 
-## Usage
+## Running on a local dev server
 
-Open locally in the browser at [localhost:1313](localhost:1313).
+```
+$ npm run watch
+```
+
+Open in the browser at [localhost:1313](localhost:1313).
 
 ## Relative paths
 
@@ -46,21 +49,58 @@ The site is presently built so that all paths are relative, making it easy to de
 
 ## Site structure
 
-TBC
+Here are the key highlights of various important files and folders:
 
-## Theme
+- [`content`](https://github.com/ipfs/website/tree/master/content) is where the site's content goes. There contents are:
+  - [`index.html`](https://github.com/ipfs/website/tree/master/content/index.html) (the landing page)
+  - [`blog`](https://github.com/ipfs/website/tree/master/content/blog) (blog posts)
+  - [`docs`](https://github.com/ipfs/website/tree/master/content/docs) (documentation)
+  - [`legal`](https://github.com/ipfs/website/tree/master/content/legal) (legal info, a single index page)
+  - [`media`](https://github.com/ipfs/website/tree/master/content/media) (media coverage, a single index page)
+  - [`contact-ipfs`](https://github.com/ipfs/website/tree/master/content/contact-ipfs) (contact info, a single index page)
 
-TBC
+Static content related to a specific page should be put inside the `static` folder within that subfolder (e.g. `/content/blog/static`).
+
+- [`layouts`](https://github.com/ipfs/website/tree/master/layouts) is where the layout templates go. There contents are:
+  - [`_default`](https://github.com/ipfs/website/tree/master/layouts/_default) (default page template)
+  - [`blog`](https://github.com/ipfs/website/tree/master/layouts/blog) (single and list blog templates)
+  - [`docs`](https://github.com/ipfs/website/tree/master/layouts/docs) (documentation template)
+  - [`partials`](https://github.com/ipfs/website/tree/master/layouts/partials) (reuseable chunks for including in full templates)
+  - [`taxonomy`](https://github.com/ipfs/website/tree/master/layouts/media) (layout template for the *author* page).
+
+- [`_styl`](https://github.com/ipfs/website/tree/master/_styl) Stylus theme files which are compiled to CSS in the build process
+- [`js`](https://github.com/ipfs/website/tree/master/js) JS files which are browserified in the build process
+- [`static`](https://github.com/ipfs/website/tree/master/static) All other static files
 
 ## Pages content
 
-TBC
+New pages which are not blog posts or documentation should be created as `index.html` files in their own dedicated folder underneath `content`.
+
+Pages should set their title at the top of each md file and add content below. Optionally, they can also set `section`, `pagetype`, and `constellation`. For example, see this one for the Contact page:
+
+```
+pagetype: major
+title: Contact | IPFS
+section: Contact
+constellation: constellation-01.svg
+```
+
+A "pagetype" that includes "major" will get a larger header. The text in "section" will denote what the title embedded in the header will be, and "constellation" will allow selection of one of the pieces of constellation artwork that accompanies the headers.
+
+Page urls can be defined (see the `docs` subfolder) or will default to a slugified version of the folder name (i.e. `about/index.html` will end up at `/about`)
 
 ## Blog content
 
-TBC
+Blog articles go in `./content/blog` and should have a title, date,
+and author.
 
-## Building the site
+If you have images to associate with a blog post, add them to `content/blog/static`, and refer to them as follows:
+
+```
+![](/blog/static/earthrise.png)
+```
+
+## Building the site - TODO
 
 The site is built via make. Type `make` to see your options.
 
