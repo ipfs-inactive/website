@@ -1,4 +1,4 @@
-<header class="header-has-logo" id="stars">
+<header class="header-has-logo"{{ if eq .page.Params.pagetype "subdoc"}}{{ else }} id="stars"{{ end }}>
   <div class="container cf">
     <h1 class="pull-left">
       <a href="/" class="logo ipfs-logo transition transition-fadeout">IPFS</a>
