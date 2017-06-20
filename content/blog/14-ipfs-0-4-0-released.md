@@ -14,7 +14,7 @@ communication protocols, increased performance, improvements to IPNS (the
 Interplanetary Naming System), many bugfixes, and lots of new features to make
 IPFS even more powerful.
 
-![0.4.0](/images/content/fireworks.jpg)
+![0.4.0](/blog/static/fireworks.jpg)
 
 <!--more-->
 

@@ -26,7 +26,7 @@ See the [blog](http://blog.ipfs.io/14-ipfs-0-4-0-released/) for more details.
 
 [@haadcode](https://github.com/haadcode) upgraded all of his projects to use 0.4.0, got [orbit-db](https://github.com/haadcode/orbit-db) and [ipfs-log](https://github.com/haadcode/ipfs-log) working in the browser, and improved Orbit's UX. As a result, Orbit is much faster and more stable than it was under 0.3! We now have working distributables for [orbit-db](https://github.com/haadcode/orbit-db) and [ipfs-log](https://github.com/haadcode/ipfs-log) in the browser. They still require a local daemon to run to work but this will change when js-ipfs ships. [@haadcode](https://github.com/haadcode) added some new features to Orbit: preview files directly in the chat with code highlighting, players for audio and video, and improved the files browsing functionality in general. You can now also copy the hash of a file to clipboard. It looks like this:
 
-![Orbit](/images/content/010_orbit.png)
+![Orbit](/blog/static/010_orbit.png)
 
 Finally, [@haadcode](https://github.com/haadcode) also created a simple JavaScript logging module called [logplease](https://github.com/haadcode/logplease), which works in Node.js and browsers. logplease does two simple things: output log messages to the console and/or to a file (Node.js only) and display the log messages with nice colors. It was inspired by [log4js](https://github.com/stritti/log4js) and [debug](https://github.com/visionmedia/debug).
 
@@ -44,7 +44,7 @@ As part of this, [@whyrusleeping](https://github.com/whyrusleeping) removed over
 
 ### js-ipld
 
-![libp2p-cli](/images/content/010_js-libp2p.png)
+![libp2p-cli](/blog/static/010_js-libp2p.png)
 
 [@dignifiedquire](https://github.com/dignifiedquire) shipped an updated version of [js-ipld](https://npmjs.org/ipld) which now conforms to the [latest spec of IPLD](https://github.com/ipfs/specs/tree/master/ipld). In addition [js-ipfs-ipld](https://npmjs.org/ipfs-ipld) was created, which implements the building blocks to use IPLD in js-ipfs. The third package that was published is [js-ipfs-cli](https://npmjs.org/ipld-cli) which gives you a cli tool to interact and experiment with IPLD.
 
@@ -88,7 +88,7 @@ go-ipfs has support for restricting peer connections to certain IP address range
 
 ### MIT Meetup
 
-![IPFS Meeting in Cambridge](/images/content/010_ipfs-boston.jpg)
+![IPFS Meeting in Cambridge](/blog/static/010_ipfs-boston.jpg)
 
 We had the first ever IPFS meetup in Cambridge, at MIT. It was sponsored by [Consensys](https://consensys.net), and hosted by the [MIT Bitcoin Club](http://bitcoin.mit.edu/). [@jbenet](https://github.com/jbenet), [@nicola](https://github.com/nicola), and [@CReckhow](https://twitter.com/CReckhow) each gave talks. A full writeup will appear on the blog as soon as we have edited the videos and posted them on the IPFS YouTube channel. We'll let you know when that happens, here.
 

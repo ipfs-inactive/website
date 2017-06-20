@@ -8,7 +8,7 @@ categories: []
 description: TBC
 ---
 
-![](/images/content/node-interactive-logo.png)
+![](/blog/static/node-interactive-logo.png)
 
 Node.js Interactive, the first Node.js conference organized by the Linux Foundation, happened on Dec 8-9 of 2015. There were hundreds of participants, and dozens of really amazing talks divided in 3 specific tracks: backend, frontend and IoT.
 
@@ -20,7 +20,7 @@ You can learn about that project in this blog post, check out the [talk slides](
 
 ## Enter registry-mirror
 
-![](/images/content/enter-registry-mirror.png)
+![](/blog/static/enter-registry-mirror.png)
 [![](https://img.shields.io/badge/made%20by-Protocol%20Labs-blue.svg?style=flat-square)](http://ipn.io) [![](https://img.shields.io/badge/project-IPFS-blue.svg?style=flat-square)](http://ipfs.io/) [![](https://img.shields.io/badge/freenode-%23ipfs-blue.svg?style=flat-square)](http://webchat.freenode.net/?channels=%23ipfs)
 
 `registry-mirror` enables distributed discovery of npm modules by fetching and caching the latest state of npm through IPNS, the InterPlanetary Naming System. With this state, a node in the network is capable of querying IPFS network for an npm module's cryptographic hash, fetching it from any peer that has it available.
