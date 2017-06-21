@@ -2,12 +2,14 @@ HUGO?=hugo
 HUGOOPTS=
 
 NPM?=npm
+NPMBIN=./node_modules/.bin
 
 BASEDIR=$(CURDIR)
-INPUTDIR=$(BASEDIR)
+INPUTDIR=$(BASEDIR)/content
 OUTPUTDIR=$(BASEDIR)/public
 CONFFILE=$(BASEDIR)/config.toml
 PUBLISHCONF=$(BASEDIR)/config.toml
+PIDFILE=watch.PID
 
 DEBUG ?= 0
 ifeq ($(DEBUG), 1)
@@ -36,17 +38,42 @@ help:
 install:
 	$(NPM) i
 
+mkdirs:
+	[ -d static/js ] && mkdir -p static/js && \
+	[ -d static/css ] && mkdir -p static/css
 
+prebuild: install mkdirs
+	$(NPMBIN)/browserify js/popup.js -o static/js/popup.js & \
+	$(NPMBIN)/browserify js/stars.js -o static/js/stars.js & \
+	$(NPMBIN)/stylus -u autoprefixer-stylus -I node_modules/yeticss/lib -c -o static/css _styl/main.styl & \
+	wait
 
-html:
-	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
+html: prebuild
+	$(HUGO) -c $(INPUTDIR) -d $(OUTPUTDIR) --config $(CONFFILE)
+
+minify: html
+	find public/images -type d -exec $(NPMBIN)/imagemin {}/* --out-dir={} \; & \
+	find public/blog/static -type d -exec $(NPMBIN)/imagemin {}/* --out-dir={} \; & \
+	find public/js -name '*.js' -exec $(NPMBIN)/uglifyjs {} --compress --output {} \; & \
+	wait
 
 clean:
-	[ ! -d $(OUTPUTDIR) ] || rm -rf $(OUTPUTDIR)
+	[ ! -d $(OUTPUTDIR) ] || rm -rf $(OUTPUTDIR) && \
+	[ ! -d static/js ] || rm -rf static/js && \
+	[ ! -d static/css ] || rm -rf static/css
 
-regenerate:
-	$(PELICAN) -r $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
+devserver: install mkdirs
+	rm $(PIDFILE) ; \
+	touch $(PIDFILE) ; \
+	$(HUGO) -c $(INPUTDIR) -d $(OUTPUTDIR) --config $(CONFFILE) -w & echo $$! >> $(PIDFILE) & \
+	$(NPMBIN)/stylus -u autoprefixer-stylus -I node_modules/yeticss/lib -w _styl/main.styl -c -o static/css & echo $$! >> $(PIDFILE) & \
+	$(NPMBIN)/nodemon --watch js --exec "browserify js/popup.js -o static/js/popup.js" & echo $$! >> $(PIDFILE) & \
+	$(NPMBIN)/nodemon --watch js --exec "browserify js/stars.js -o static/js/stars.js" & echo $$! >> $(PIDFILE) &
 
+stopserver:
+	touch $(PIDFILE) ; \
+	kill `(cat $(PIDFILE))` && rm $(PIDFILE)
+	
 serve:
 ifdef PORT
 	cd $(OUTPUTDIR) && $(PY) -m pelican.server $(PORT)
