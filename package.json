@@ -12,6 +12,7 @@
         "imagemin-svgo": "^5.2.2",
         "jquery": "^3.2.1",
         "magnific-popup": "^1.1.0",
+        "node-static": "^0.7.9",
         "nodemon": "^1.11.0",
         "npm-run-all": "^4.0.2",
         "pixi.js": "^4.5.3",

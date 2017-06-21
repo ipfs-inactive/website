@@ -1,6 +1,7 @@
 HUGO?=hugo
 HUGOOPTS=
 PORT=8080
+SERVER=0.0.0.0
 
 NPM?=npm
 NPMBIN=./node_modules/.bin
@@ -60,6 +61,12 @@ clean:
 	[ ! -d $(OUTPUTDIR) ] || rm -rf $(OUTPUTDIR) && \
 	[ ! -d static/js ] || rm -rf static/js && \
 	[ ! -d static/css ] || rm -rf static/css
+
+serve: html
+	$(NPMBIN)/static -p $(PORT) ./public
+
+serve-global: html
+	$(NPMBIN)/static -p $(PORT) ./public -a $(SERVER)
 
 devserver: install
 	[ ! -f $(PIDFILE) ] || rm $(PIDFILE) ; \
