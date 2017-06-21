@@ -61,7 +61,7 @@ clean:
 	[ ! -d static/css ] || rm -rf static/css
 
 devserver: install
-	rm $(PIDFILE) ; \
+	[ ! -f $(PIDFILE) ] || rm $(PIDFILE) ; \
 	touch $(PIDFILE) ; \
 	$(NPMBIN)/stylus -u autoprefixer-stylus -I node_modules/yeticss/lib -w _styl/main.styl -c -o static/css & echo $$! >> $(PIDFILE) & \
 	$(NPMBIN)/nodemon --watch js --exec "browserify js/popup.js -o static/js/popup.js" & echo $$! >> $(PIDFILE) & \
