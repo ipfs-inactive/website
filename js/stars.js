@@ -1,4 +1,4 @@
-const pixi = require('pixi.js');
+var pixi = require('pixi.js');
 
 window.StarChart = (function () {
   var STAR_COLORS = [0xffffff, 0xffffff];

@@ -58,3 +58,6 @@ typings/
 .env
 
 public
+static/js
+static/css
+watch.PID
