@@ -39,8 +39,8 @@ help:
 
 install:
 	$(NPM) i && \
-	[ -d static/js ] && mkdir -p static/js && \
-	[ -d static/css ] && mkdir -p static/css
+	[ -d static/js ] || mkdir -p static/js && \
+	[ -d static/css ] || mkdir -p static/css
 
 prebuild: install
 	$(NPMBIN)/browserify js/popup.js -o static/js/popup.js & \
@@ -51,7 +51,11 @@ prebuild: install
 html: prebuild
 	$(HUGO) -c $(INPUTDIR) -d $(OUTPUTDIR) --config $(CONFFILE)
 
-minify: html
+publish: prebuild
+	$(HUGO) -c $(INPUTDIR) -d $(OUTPUTDIR) --config $(PUBLISHCONF)
+	$(MAKE) minify
+
+minify:
 	find public/images -type d -exec $(NPMBIN)/imagemin {}/* --out-dir={} \; & \
 	find public/blog/static -type d -exec $(NPMBIN)/imagemin {}/* --out-dir={} \; & \
 	find public/js -name '*.js' -exec $(NPMBIN)/uglifyjs {} --compress --output {} \; & \
@@ -84,7 +88,7 @@ stopserver:
 dnszone="ipfs.io"
 dnsrecord="@"
 
-ipfs: minify
+ipfs: publish
 	ipfs swarm peers >/dev/null || (echo "ipfs daemon must be online to publish" && exit 1)
 	ipfs add -r -q $(OUTPUTDIR) | tail -n1 >versions/current
 	cat versions/current >>versions/history
@@ -98,12 +102,12 @@ ipfs: minify
 		echo "- ipfs pin add -r /ipfs/$$hash"; \
 		echo "- make ipfsio"; \
 
-ipfsio: node_modules/.bin/dnslink-deploy
+ipfsio: $(NPMBIN)/dnslink-deploy
 	DIGITAL_OCEAN=$(shell cat auth.token) node_modules/.bin/dnslink-deploy \
 		--domain=$(dnszone) --record=$(dnsrecord) --path=/ipfs/$(shell cat versions/current)
 
-node_modules/.bin/dnslink-deploy: package.json
+$(NPMBIN)/dnslink-deploy: package.json
 	npm install
 	touch node_modules
 
-.PHONY: help install prebuild html minify clean devserver stopserver ipfs ipfsio
+.PHONY: help install prebuild html publish minify clean serve server-global devserver stopserver ipfs ipfsio
