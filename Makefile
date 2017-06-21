@@ -17,32 +17,30 @@ ifeq ($(DEBUG), 1)
 endif
 
 help:
-	@echo 'Makefile for a pelican Web site                                           '
-	@echo '                                                                          '
-	@echo 'Usage:                                                                    '
-	@echo '   make html                           (re)generate the web site          '
-	@echo '   make clean                          remove the generated files         '
-	@echo '   make regenerate                     regenerate files upon modification '
-	@echo '   make publish                        generate using production settings '
-	@echo '   make serve [PORT=8000]              serve site at http://localhost:8000'
-	@echo '   make serve-global [SERVER=0.0.0.0]  serve (as root) to $(SERVER):80    '
-	@echo '   make devserver [PORT=8000]          start/restart develop_server.sh    '
-	@echo '   make stopserver                     stop local server                  '
-	@echo '   make ipfs                           publish the website to IPFS        '
-	@echo '   make ipfsio                         update ipfs.io dnslink TXT record  '
-	@echo '                                                                          '
-	@echo 'Set the DEBUG variable to 1 to enable debugging, e.g. make DEBUG=1 html   '
-	@echo 'Set the RELATIVE variable to 1 to enable relative urls                    '
-	@echo '                                                                          '
+	@echo 'Makefile for a pelican Web site                                                                           '
+	@echo '                                                                                                          '
+	@echo 'Usage:                                                                                                    '
+	@echo '   make html                           (re)generate the web site                                          '
+	@echo '   make publish                        generate using production settings                                 '
+	@echo '   make minify                         minify generated js and images                                     '
+	@echo '   make clean                          remove the generated files                                         '
+	@echo '   make serve [PORT=8000]              serve site at http://localhost:8000                                '
+	@echo '   make serve-global [SERVER=0.0.0.0]  serve (as root) to $(SERVER):80                                    '
+	@echo '   make devserver [PORT=8000]          start/restart develop_server.sh, restarting when files are modified'
+	@echo '   make stopserver                     stop local server                                                  '
+	@echo '   make ipfs                           publish the website to IPFS                                        '
+	@echo '   make ipfsio                         update ipfs.io dnslink TXT record                                  '
+	@echo '                                                                                                          '
+	@echo 'Set the DEBUG variable to 1 to enable debugging, e.g. make DEBUG=1 html                                   '
+	@echo 'Set the RELATIVE variable to 1 to enable relative urls                                                    '
+	@echo '                                                                                                          '
 
 install:
-	$(NPM) i
-
-mkdirs:
+	$(NPM) i && \
 	[ -d static/js ] && mkdir -p static/js && \
 	[ -d static/css ] && mkdir -p static/css
 
-prebuild: install mkdirs
+prebuild: install
 	$(NPMBIN)/browserify js/popup.js -o static/js/popup.js & \
 	$(NPMBIN)/browserify js/stars.js -o static/js/stars.js & \
 	$(NPMBIN)/stylus -u autoprefixer-stylus -I node_modules/yeticss/lib -c -o static/css _styl/main.styl & \
@@ -62,51 +60,22 @@ clean:
 	[ ! -d static/js ] || rm -rf static/js && \
 	[ ! -d static/css ] || rm -rf static/css
 
-devserver: install mkdirs
+devserver: install
 	rm $(PIDFILE) ; \
 	touch $(PIDFILE) ; \
-	$(HUGO) -c $(INPUTDIR) -d $(OUTPUTDIR) --config $(CONFFILE) -w & echo $$! >> $(PIDFILE) & \
 	$(NPMBIN)/stylus -u autoprefixer-stylus -I node_modules/yeticss/lib -w _styl/main.styl -c -o static/css & echo $$! >> $(PIDFILE) & \
 	$(NPMBIN)/nodemon --watch js --exec "browserify js/popup.js -o static/js/popup.js" & echo $$! >> $(PIDFILE) & \
-	$(NPMBIN)/nodemon --watch js --exec "browserify js/stars.js -o static/js/stars.js" & echo $$! >> $(PIDFILE) &
+	$(NPMBIN)/nodemon --watch js --exec "browserify js/stars.js -o static/js/stars.js" & echo $$! >> $(PIDFILE) & \
+	$(HUGO) -c $(INPUTDIR) -d $(OUTPUTDIR) --config $(CONFFILE) -w & echo $$! >> $(PIDFILE) &
 
 stopserver:
 	touch $(PIDFILE) ; \
 	kill `(cat $(PIDFILE))` && rm $(PIDFILE)
-	
-serve:
-ifdef PORT
-	cd $(OUTPUTDIR) && $(PY) -m pelican.server $(PORT)
-else
-	cd $(OUTPUTDIR) && $(PY) -m pelican.server
-endif
-
-serve-global:
-ifdef SERVER
-	cd $(OUTPUTDIR) && $(PY) -m pelican.server 80 $(SERVER)
-else
-	cd $(OUTPUTDIR) && $(PY) -m pelican.server 80 0.0.0.0
-endif
-
-
-devserver:
-ifdef PORT
-	$(BASEDIR)/develop_server.sh restart $(PORT)
-else
-	$(BASEDIR)/develop_server.sh restart
-endif
-
-stopserver:
-	$(BASEDIR)/develop_server.sh stop
-	@echo 'Stopped Pelican and SimpleHTTPServer processes running in background.'
-
-publish:
-	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS)
 
 dnszone="ipfs.io"
 dnsrecord="@"
 
-ipfs: html
+ipfs: minify
 	ipfs swarm peers >/dev/null || (echo "ipfs daemon must be online to publish" && exit 1)
 	ipfs add -r -q $(OUTPUTDIR) | tail -n1 >versions/current
 	cat versions/current >>versions/history
@@ -128,4 +97,4 @@ node_modules/.bin/dnslink-deploy: package.json
 	npm install
 	touch node_modules
 
-.PHONY: html help clean regenerate serve serve-global devserver publish ipfs ipfsio
+.PHONY: help install prebuild html minify clean devserver stopserver ipfs ipfsio
