@@ -1,21 +1,17 @@
-PY?=python
-PELICAN?=pelican
-PELICANOPTS=
+HUGO?=hugo
+HUGOOPTS=
+
+NPM?=npm
 
 BASEDIR=$(CURDIR)
-INPUTDIR=$(BASEDIR)/content
-OUTPUTDIR=$(BASEDIR)/build
-CONFFILE=$(BASEDIR)/pelicanconf.py
-PUBLISHCONF=$(BASEDIR)/publishconf.py
+INPUTDIR=$(BASEDIR)
+OUTPUTDIR=$(BASEDIR)/public
+CONFFILE=$(BASEDIR)/config.toml
+PUBLISHCONF=$(BASEDIR)/config.toml
 
 DEBUG ?= 0
 ifeq ($(DEBUG), 1)
-	PELICANOPTS += -D
-endif
-
-RELATIVE ?= 0
-ifeq ($(RELATIVE), 1)
-	PELICANOPTS += --relative-urls
+	HUGOOPTS += -D
 endif
 
 help:
@@ -36,6 +32,11 @@ help:
 	@echo 'Set the DEBUG variable to 1 to enable debugging, e.g. make DEBUG=1 html   '
 	@echo 'Set the RELATIVE variable to 1 to enable relative urls                    '
 	@echo '                                                                          '
+
+install:
+	$(NPM) i
+
+
 
 html:
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
