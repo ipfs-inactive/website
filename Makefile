@@ -1,5 +1,6 @@
 HUGO?=hugo
 HUGOOPTS=
+PORT=8080
 
 NPM?=npm
 NPMBIN=./node_modules/.bin
@@ -63,14 +64,15 @@ clean:
 devserver: install
 	[ ! -f $(PIDFILE) ] || rm $(PIDFILE) ; \
 	touch $(PIDFILE) ; \
-	$(NPMBIN)/stylus -u autoprefixer-stylus -I node_modules/yeticss/lib -w _styl/main.styl -c -o static/css & echo $$! >> $(PIDFILE) & \
-	$(NPMBIN)/nodemon --watch js --exec "browserify js/popup.js -o static/js/popup.js" & echo $$! >> $(PIDFILE) & \
-	$(NPMBIN)/nodemon --watch js --exec "browserify js/stars.js -o static/js/stars.js" & echo $$! >> $(PIDFILE) & \
-	$(HUGO) -c $(INPUTDIR) -d $(OUTPUTDIR) --config $(CONFFILE) -w & echo $$! >> $(PIDFILE) &
+	($(NPMBIN)/stylus -u autoprefixer-stylus -I node_modules/yeticss/lib -w _styl/main.styl -c -o static/css & echo $$! >> $(PIDFILE) ; \
+	$(NPMBIN)/nodemon --watch js --exec "browserify js/popup.js -o static/js/popup.js" & echo $$! >> $(PIDFILE) ; \
+	$(NPMBIN)/nodemon --watch js --exec "browserify js/stars.js -o static/js/stars.js" & echo $$! >> $(PIDFILE) ; \
+	$(HUGO) server -c $(INPUTDIR) --config $(CONFFILE) --port $(PORT) -w & echo $$! >> $(PIDFILE))
 
 stopserver:
 	touch $(PIDFILE) ; \
-	kill `(cat $(PIDFILE))` && rm $(PIDFILE)
+	[ -z "`(cat $(PIDFILE))`" ] || kill `(cat $(PIDFILE))` ; \
+	rm $(PIDFILE)
 
 dnszone="ipfs.io"
 dnsrecord="@"
