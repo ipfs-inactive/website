@@ -7,7 +7,7 @@ NPMBIN=./node_modules/.bin
 OUTPUTDIR=public
 PIDFILE=dev.pid
 
-build: clean install lint js css html minify
+build: clean install lint js css minify
 	echo "Site built out to ./public dir"
 
 help:
@@ -27,25 +27,26 @@ help:
 	@echo '   make clean                          remove the generated files                                         '
 	@echo '                                                                                                          '
 
-serve: install lint js css html minify
+serve: install lint js css minify
 	hugo server
 
 node_modules:
 	$(NPM) i
 
 install: node_modules
+	[ -d static/js ] || mkdir -p static/js && \
+	[ -d static/css ] || mkdir -p static/css
 
 lint: install
 	$(NPMBIN)/standard && $(NPMBIN)/stylint _styl/
 
 js: install
-	$(NPMBIN)/browserify js/**.js -o static/js/**.js
+	$(NPMBIN)/browserify js/stars.js -o static/js/stars.js --noparse=jquery & \
+	$(NPMBIN)/browserify js/popup.js -o static/js/popup.js --noparse=jquery & \
+	wait
 
 css: install
 	$(NPMBIN)/stylus -u autoprefixer-stylus -I node_modules/yeticss/lib -c -o static/css _styl/main.styl
-
-html: install
-	hugo
 
 minify: install minify-js minify-img
 
@@ -53,15 +54,16 @@ minify-js: install
 	find static/js -name '*.js' -exec $(NPMBIN)/uglifyjs {} --compress --output {} \;
 
 minify-img: install
-	find public/images -type d -exec $(NPMBIN)/imagemin {}/* --out-dir={} \; & \
-	find public/blog/static -type d -exec $(NPMBIN)/imagemin {}/* --out-dir={} \; & \
+	find static/images -type d -exec $(NPMBIN)/imagemin {}/* --out-dir={} \; & \
+	find content/blog/static -type d -exec $(NPMBIN)/imagemin {}/* --out-dir={} \; & \
 	wait
 
 dev: install js css
 	[ ! -f $(PIDFILE) ] || rm $(PIDFILE) ; \
 	touch $(PIDFILE) ; \
 	($(NPMBIN)/stylus -u autoprefixer-stylus -I node_modules/yeticss/lib -w _styl/main.styl -c -o static/css & echo $$! >> $(PIDFILE) ; \
-	$(NPMBIN)/nodemon --watch js --exec "browserify js/**.js -o static/js/**.js" & echo $$! >> $(PIDFILE) ; \
+	$(NPMBIN)/nodemon --watch js --exec "browserify js/stars.js -o static/js/stars.js --noparse=jquery" & echo $$! >> $(PIDFILE) ; \
+	$(NPMBIN)/nodemon --watch js --exec "browserify js/popup.js -o static/js/popup.js --noparse=jquery" & echo $$! >> $(PIDFILE) ; \
 	hugo server -w & echo $$! >> $(PIDFILE))
 
 dev-stop:
