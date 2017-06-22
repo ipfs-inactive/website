@@ -103,13 +103,14 @@ a.ipfs-logo
   display: block
   margin: 0 auto 0 auto
 
+header .button
+  z-index: 2
+  margin: 0 5px 10px
+  background-color: rgba(6, 27, 45, .6)
+
 .cta .button
   min-width: 150px
   position: relative
-  z-index: 2
-  margin: 0 5px 10px
-  // background-color: rgba($blue-space,1)
-  background-color: rgba(6, 27, 45, .6)
 
 .constellation
   width: 120px
@@ -149,6 +150,22 @@ body.article,
 body.subdoc
   header canvas
     display: none
+
+#toggle-animation
+  min-width: initial
+  position: absolute
+  bottom: 0
+  left: 0
+  margin: 5px
+  padding: 6px 8px
+  border: none
+  font-size: 12px
+  line-height: 1
+  color: #8c9aa2
+
+  &:hover
+    color: $brand-teal
+    background-color: rgba(6,27,45,0.6)
 
 @media screen and (max-width: $breakpoint-desktop)
 
