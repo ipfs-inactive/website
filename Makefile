@@ -1,109 +1,95 @@
-HUGO?=hugo
-HUGOOPTS=
-PORT=8080
-SERVER=0.0.0.0
-
+DNSZONE="ipfs.io"
+DNSRECORD="@"
+IPFSLOCAL="http://localhost:8080/ipfs/"
+IPFSGATEWAY="https://ipfs.io/ipfs/"
 NPM?=npm
 NPMBIN=./node_modules/.bin
+OUTPUTDIR=public
+PIDFILE=dev.pid
 
-BASEDIR=$(CURDIR)
-INPUTDIR=$(BASEDIR)/content
-OUTPUTDIR=$(BASEDIR)/public
-CONFFILE=$(BASEDIR)/config.toml
-PUBLISHCONF=$(BASEDIR)/config.toml
-PIDFILE=watch.PID
-
-DEBUG ?= 0
-ifeq ($(DEBUG), 1)
-	HUGOOPTS += -D
-endif
+build: clean install lint js css html minify
+	echo "Site built out to ./public dir"
 
 help:
-	@echo 'Makefile for a pelican Web site                                                                           '
+	@echo 'Makefile for a libp2p, a hugo built static site.                                                          '
 	@echo '                                                                                                          '
 	@echo 'Usage:                                                                                                    '
-	@echo '   make html                           (re)generate the web site                                          '
-	@echo '   make publish                        generate using production settings                                 '
-	@echo '   make minify                         minify generated js and images                                     '
+	@echo '   make                                Build the optimised site to ./$(OUTPUTDIR)                         '
+	@echo '   make serve                          Preview the production ready site at http://localhost:1313         '
+	@echo '   make lint                           Check your JS and CSS are ok                                       '
+	@echo '   make js                             Browserify the *.js to ./static/js                                 '
+	@echo '   make css                            Compile the *.styl to ./static/css                                 '
+	@echo '   make minify                         Optimise all the things!                                           '
+	@echo '   make dev                            Start a hot-reloding dev server on http://localhost:1313           '
+	@echo '   make dev-stop                       Stop the dev server                                                '
+	@echo '   make deploy                         Add the website to your local IPFS node                            '
+	@echo '   make publish-to-domain              Update $(DNSZONE) DNS record to the ipfs hash from the last deploy '
 	@echo '   make clean                          remove the generated files                                         '
-	@echo '   make serve [PORT=8000]              serve site at http://localhost:8000                                '
-	@echo '   make serve-global [SERVER=0.0.0.0]  serve (as root) to $(SERVER):80                                    '
-	@echo '   make devserver [PORT=8000]          start/restart develop_server.sh, restarting when files are modified'
-	@echo '   make stopserver                     stop local server                                                  '
-	@echo '   make ipfs                           publish the website to IPFS                                        '
-	@echo '   make ipfsio                         update ipfs.io dnslink TXT record                                  '
-	@echo '                                                                                                          '
-	@echo 'Set the DEBUG variable to 1 to enable debugging, e.g. make DEBUG=1 html                                   '
-	@echo 'Set the RELATIVE variable to 1 to enable relative urls                                                    '
 	@echo '                                                                                                          '
 
-install:
-	$(NPM) i && \
-	[ -d static/js ] && mkdir -p static/js && \
-	[ -d static/css ] && mkdir -p static/css
+serve: install lint js css html minify
+	hugo server
 
-prebuild: install
-	$(NPMBIN)/browserify js/popup.js -o static/js/popup.js & \
-	$(NPMBIN)/browserify js/stars.js -o static/js/stars.js & \
-	$(NPMBIN)/stylus -u autoprefixer-stylus -I node_modules/yeticss/lib -c -o static/css _styl/main.styl & \
-	wait
+node_modules:
+	$(NPM) i
 
-html: prebuild
-	$(HUGO) -c $(INPUTDIR) -d $(OUTPUTDIR) --config $(CONFFILE)
+install: node_modules
 
-minify: html
+lint: install
+	$(NPMBIN)/standard && $(NPMBIN)/stylint _styl/
+
+js: install
+	$(NPMBIN)/browserify js/**.js -o static/js/**.js
+
+css: install
+	$(NPMBIN)/stylus -u autoprefixer-stylus -I node_modules/yeticss/lib -c -o static/css _styl/main.styl
+
+html: install
+	hugo
+
+minify: install minify-js minify-img
+
+minify-js: install
+	find static/js -name '*.js' -exec $(NPMBIN)/uglifyjs {} --compress --output {} \;
+
+minify-img: install
 	find public/images -type d -exec $(NPMBIN)/imagemin {}/* --out-dir={} \; & \
 	find public/blog/static -type d -exec $(NPMBIN)/imagemin {}/* --out-dir={} \; & \
-	find public/js -name '*.js' -exec $(NPMBIN)/uglifyjs {} --compress --output {} \; & \
 	wait
 
-clean:
-	[ ! -d $(OUTPUTDIR) ] || rm -rf $(OUTPUTDIR) && \
-	[ ! -d static/js ] || rm -rf static/js && \
-	[ ! -d static/css ] || rm -rf static/css
-
-serve: html
-	$(NPMBIN)/static -p $(PORT) ./public
-
-serve-global: html
-	$(NPMBIN)/static -p $(PORT) ./public -a $(SERVER)
-
-devserver: install
+dev: install js css
 	[ ! -f $(PIDFILE) ] || rm $(PIDFILE) ; \
 	touch $(PIDFILE) ; \
 	($(NPMBIN)/stylus -u autoprefixer-stylus -I node_modules/yeticss/lib -w _styl/main.styl -c -o static/css & echo $$! >> $(PIDFILE) ; \
-	$(NPMBIN)/nodemon --watch js --exec "browserify js/popup.js -o static/js/popup.js" & echo $$! >> $(PIDFILE) ; \
-	$(NPMBIN)/nodemon --watch js --exec "browserify js/stars.js -o static/js/stars.js" & echo $$! >> $(PIDFILE) ; \
-	$(HUGO) server -c $(INPUTDIR) --config $(CONFFILE) --port $(PORT) -w & echo $$! >> $(PIDFILE))
+	$(NPMBIN)/nodemon --watch js --exec "browserify js/**.js -o static/js/**.js" & echo $$! >> $(PIDFILE) ; \
+	hugo server -w & echo $$! >> $(PIDFILE))
 
-stopserver:
+dev-stop:
 	touch $(PIDFILE) ; \
 	[ -z "`(cat $(PIDFILE))`" ] || kill `(cat $(PIDFILE))` ; \
 	rm $(PIDFILE)
 
-dnszone="ipfs.io"
-dnsrecord="@"
-
-ipfs: minify
+deploy:
 	ipfs swarm peers >/dev/null || (echo "ipfs daemon must be online to publish" && exit 1)
 	ipfs add -r -q $(OUTPUTDIR) | tail -n1 >versions/current
 	cat versions/current >>versions/history
 	@export hash=`cat versions/current`; \
 		echo ""; \
 		echo "published website:"; \
-		echo "- http://localhost:8080/ipfs/$$hash"; \
-		echo "- https://ipfs.io/ipfs/$$hash"; \
+		echo "- $(IPFSLOCAL)$$hash"; \
+		echo "- $(IPFSGATEWAY)$$hash"; \
 		echo ""; \
 		echo "next steps:"; \
 		echo "- ipfs pin add -r /ipfs/$$hash"; \
-		echo "- make ipfsio"; \
+		echo "- make publish-to-domain"; \
 
-ipfsio: node_modules/.bin/dnslink-deploy
-	DIGITAL_OCEAN=$(shell cat auth.token) node_modules/.bin/dnslink-deploy \
-		--domain=$(dnszone) --record=$(dnsrecord) --path=/ipfs/$(shell cat versions/current)
+publish-to-domain: install auth.token
+	DIGITAL_OCEAN=$(shell cat auth.token) $(NPMBIN)/dnslink-deploy \
+		--domain=$(DNSZONE) --record=$(DNSRECORD) --path=/ipfs/$(shell cat versions/current)
 
-node_modules/.bin/dnslink-deploy: package.json
-	npm install
-	touch node_modules
+clean:
+	[ ! -d $(OUTPUTDIR) ] || rm -rf $(OUTPUTDIR) && \
+	[ ! -d static/js ] || rm -rf static/js/*.js && \
+	[ ! -d static/css ] || rm -rf static/css/*.css
 
-.PHONY: help install prebuild html minify clean devserver stopserver ipfs ipfsio
+.PHONY: build help install lint js css minify minify-js minify-img  dev stopdev deploy publish-to-domain clean
