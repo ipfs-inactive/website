@@ -8,6 +8,8 @@ OUTPUTDIR=public
 PIDFILE=dev.pid
 
 build: clean install lint js css minify
+	@hugo && \
+	echo "" && \
 	echo "Site built out to ./public dir"
 
 help:
@@ -38,15 +40,15 @@ install: node_modules
 	[ -d static/css ] || mkdir -p static/css
 
 lint: install
-	$(NPMBIN)/standard && $(NPMBIN)/stylint _styl/
+	$(NPMBIN)/standard && $(NPMBIN)/stylint layouts/_styl/
 
 js: install
-	$(NPMBIN)/browserify js/stars.js -o static/js/stars.js --noparse=jquery & \
-	$(NPMBIN)/browserify js/popup.js -o static/js/popup.js --noparse=jquery & \
+	$(NPMBIN)/browserify layouts/js/stars.js -o static/js/stars.js --noparse=jquery & \
+	$(NPMBIN)/browserify layouts/js/popup.js -o static/js/popup.js --noparse=jquery & \
 	wait
 
 css: install
-	$(NPMBIN)/stylus -u autoprefixer-stylus -I node_modules/yeticss/lib -c -o static/css _styl/main.styl
+	$(NPMBIN)/stylus -u autoprefixer-stylus -I node_modules/yeticss/lib -c -o static/css layouts/_styl/main.styl
 
 minify: install minify-js minify-img
 
@@ -61,9 +63,9 @@ minify-img: install
 dev: install js css
 	[ ! -f $(PIDFILE) ] || rm $(PIDFILE) ; \
 	touch $(PIDFILE) ; \
-	($(NPMBIN)/stylus -u autoprefixer-stylus -I node_modules/yeticss/lib -w _styl/main.styl -c -o static/css & echo $$! >> $(PIDFILE) ; \
-	$(NPMBIN)/nodemon --watch js --exec "browserify js/stars.js -o static/js/stars.js --noparse=jquery" & echo $$! >> $(PIDFILE) ; \
-	$(NPMBIN)/nodemon --watch js --exec "browserify js/popup.js -o static/js/popup.js --noparse=jquery" & echo $$! >> $(PIDFILE) ; \
+	($(NPMBIN)/stylus -u autoprefixer-stylus -I node_modules/yeticss/lib -w layouts/_styl/main.styl -c -o static/css & echo $$! >> $(PIDFILE) ; \
+	$(NPMBIN)/nodemon --watch js --exec "browserify layouts/js/stars.js -o static/js/stars.js --noparse=jquery" & echo $$! >> $(PIDFILE) ; \
+	$(NPMBIN)/nodemon --watch js --exec "browserify layouts/js/popup.js -o static/js/popup.js --noparse=jquery" & echo $$! >> $(PIDFILE) ; \
 	hugo server -w & echo $$! >> $(PIDFILE))
 
 dev-stop:
