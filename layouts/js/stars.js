@@ -1,5 +1,9 @@
-var pixi = require('pixi.js')
-window.StarChart = (function () {
+(function () {
+  var starsElement = document.getElementById('stars')
+  if (!starsElement) {
+    return
+  }
+
   var STAR_COLORS = [0xffffff, 0xffffff]
   var FILL_COLOR = 0xffffff
   var LINE_COLOR = 0x6acad1
@@ -47,8 +51,7 @@ window.StarChart = (function () {
     this.div = div
     this.pixi = pixi
 
-    // hack to disable console message (https://github.com/pixijs/pixi.js/issues/1900)
-    this.pixi.utils._saidHello = true
+    this.pixi.utils.skipHello()
 
     this.renderer = new pixi.CanvasRenderer(800, 600, {
       antialias: true,
@@ -630,32 +633,32 @@ window.StarChart = (function () {
     }
   }.call(Star.prototype))
 
-  return StarChart
-}())
+  var pixi = require('pixi.js')
 
-var ANIMATION_ENABLED_KEY = 'ipfs.io:animation-enabled'
-var ENABLE_ANIMATION_LABEL = 'Enable animation'
-var DISABLE_ANIMATION_LABEL = 'Disable animation'
+  var ANIMATION_ENABLED_KEY = 'ipfs.io:animation-enabled'
+  var ENABLE_ANIMATION_LABEL = 'Enable animation'
+  var DISABLE_ANIMATION_LABEL = 'Disable animation'
 
-var starChart = new window.StarChart(document.getElementById('stars'), pixi)
-var toggleAnimationButton = document.getElementById('toggle-animation')
+  var starChart = new StarChart(starsElement, pixi)
+  var toggleAnimationButton = document.getElementById('toggle-animation')
 
-function setAnimationEnabled (enabled) {
-  window.localStorage.setItem(ANIMATION_ENABLED_KEY, enabled)
+  function setAnimationEnabled (enabled) {
+    window.localStorage.setItem(ANIMATION_ENABLED_KEY, enabled)
 
-  var buttonLabel = enabled ? DISABLE_ANIMATION_LABEL : ENABLE_ANIMATION_LABEL
-  toggleAnimationButton.textContent = buttonLabel
+    var buttonLabel = enabled ? DISABLE_ANIMATION_LABEL : ENABLE_ANIMATION_LABEL
+    toggleAnimationButton.textContent = buttonLabel
 
-  starChart.setAnimationEnabled(enabled)
-}
+    starChart.setAnimationEnabled(enabled)
+  }
 
-toggleAnimationButton.addEventListener('click', function (event) {
-  setAnimationEnabled(!starChart.animationEnabled)
-})
+  toggleAnimationButton.addEventListener('click', function (event) {
+    setAnimationEnabled(!starChart.animationEnabled)
+  })
 
-var animationEnabled = window.localStorage.getItem(ANIMATION_ENABLED_KEY) !== 'false'
-setAnimationEnabled(animationEnabled)
+  var animationEnabled = window.localStorage.getItem(ANIMATION_ENABLED_KEY) !== 'false'
+  setAnimationEnabled(animationEnabled)
 
-if (!animationEnabled) {
-  starChart.render()
-}
+  if (!animationEnabled) {
+    starChart.render()
+  }
+})()
