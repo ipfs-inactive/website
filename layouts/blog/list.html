@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  {{ partial "head.html" . }}
+</head>
+
+<body>
+  {{ partial "header.html" (dict "hero" "" "baseUrl" ($.Param " baseURL ") "hero" "starlog" "page" .) }}
+
+  <div class="container">  
+    <section id="content" class="blog">
+      {{ partial "blog-list.html" . }}
+    </section>
+  </div>
+
+  {{ partial "footer.html" . }}  
+</body>
+
+</html>

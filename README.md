@@ -1,126 +1,93 @@
-# website
+# [ipfs-website](ifps.io)
 
 [![](https://img.shields.io/badge/made%20by-Protocol%20Labs-blue.svg?style=flat-square)](http://ipn.io)
-[![](https://img.shields.io/badge/project-IPFS-blue.svg?style=flat-square)](http://ipfs.io/)
-[![](https://img.shields.io/badge/freenode-%23ipfs-blue.svg?style=flat-square)](http://webchat.freenode.net/?channels=%23ipfs)
+[![](https://img.shields.io/badge/project-ipfs-blue.svg?style=flat-square)](http://github.com/ipfs/ipfs)
 [![standard-readme compliant](https://img.shields.io/badge/standard--readme-OK-green.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
 
-> ipfs website
+> Official website for IPFS http://ipfs.io
 
-## Table of Contents
+This repository contains the source code for the IPFS website available at http://ipfs.io
 
-- [Install](#install)
-  - [Dependencies](#dependencies)
-- [Relative paths](#relative-paths)
-- [Site structure](#site-structure)
-- [Theme](#theme)
-- [Pages content](#pages-content)
-- [Blog content](#blog-content)
-- [Building the site](#building-the-site)
-- [Contribute](#contribute)
-- [License](#license)
+This project builds out a static site to explain IPFS, ready for deployment on ipfs itself. It uses `hugo` to glue the html together. It provides an informative, public-facing website. The most important things are the words, concepts and links it presents.
+
+Much of the site content is data-driven; take a look at the `data` dir where find the data behind the implementations and bundles information as json.
 
 ## Install
 
-Simply clone this repository.
-
-### Dependencies
-
-This site uses [Pelican](docs.getpelican.com) as a custom configured static site generator.
-
-`pip install pelican markdown`
-
-You may need to `easy_install pip` if `pip` gives you not found warnings.
-
-If you have issues with any of the packages, it may be a good idea to use a virtual environment. To do this:
-
-```
-virtualenv venv/
-. venv/bin/activate
-pip install pelican markdown
+```sh
+git clone https://github.com/ipfs/website
 ```
 
 ## Usage
 
-Open locally in the browser.
+To deploy the site libp2p.io, run:
 
-## Relative paths
+```sh
+# Build out the optimised site to ./public, where you can check it locally.
+make
 
-The site is presently built so that all paths are relative, making it easy to deploy to IPFS.
+# Add the site to your local ipfs, you can check it via /ipfs/<hash>
+make deploy
 
-## Site structure
+# Save your dnsimple api token as auth.token
+cat "<api token here>" > auth.token
 
-Here's the key highlights of various important files and folders:
-
-- [`content`](https://github.com/ipfs/website/tree/master/content) is where the site's content goes. There are subfolders for:
-  - [`pages`](https://github.com/ipfs/website/tree/master/content/pages) (general site content and documentation)
-  - [`posts`](https://github.com/ipfs/website/tree/master/content/posts) (blog posts) folder.
-  - [`images`](https://github.com/ipfs/website/tree/master/content/images) folder for any images associated with a page or blog post
-  - [`static`](https://github.com/ipfs/website/tree/master/content/static) folder for other kinds of embedded content, like [Asciinema](https://asciinema.org/) files.
-- [`ipfs.io-theme`](https://github.com/ipfs/website/tree/master/ipfs.io-theme) contains the site's look and feel. This folder includes a `templates` folder, using fairly straightforward templates to build the site with. The `_styl` folder contains the stylus files that are used to build the site's CSS.
-- [`ipfs.io-theme/templates/latest.html`](https://github.com/ipfs/website/blob/master/ipfs.io-theme/templates/latest.html) automatically adds the latest blog posts, plus includes custom links to featured articles and videos.
-- [`pelican-plugins`] just has relevant plugins used by pelican to build the site.
-
-## Theme
-
-The site theme files are contained in the `ipfs.io-theme` directory.
-
-To work on the theme, install Grunt:
-
-`npm install -g grunt-cli`
-
-CSS is compiled from stylus in the `_styl` directory.
-
-## Pages content
-
-Pages go in `./content/pages`
-
-Pages should set their title at the top of each md file and add content below. Optionally, they can also set `section`, `pagetype`, and `constellation`. For example, see this one for the Contact page:
-
-```
-pagetype: major
-title: Contact | IPFS
-section: Contact
-constellation: constellation-01.svg
+# Update the dns record for libp2p to point to the new ipfs hash.
+make publish-to-domain
 ```
 
-A "pagetype" that includes "major" will get a larger header. The text in "section" will denote what the title embedded in the header will be, and "constellation" will allow selection of one of the pieces of constellation artwork that accompanies the headers.
+The following commands are available:
 
-Page urls can be defined (see the `docs` subfolder) or will default to a slugified version of the page name (i.e. `about.md` will end up at `/about`)
+### `make`
 
-## Blog content
+Build the optimised site to the `./public` dir
 
-Blog articles go in `./content/posts` and should have a title, date,
-and author.
+### `make serve`
 
-If you have images to associate with a blog post, add them to `content/images`. Then, to refer to them in a way that will allow them to be built as siblings of the blog post html, prefix their path with {attach}, like so:
+Preview the production ready site at http://localhost:1313 _(requires `hugo` on your `PATH`)_
 
+### `make dev`
+
+Start a hot-reloading dev server on http://localhost:1313 _(requires `hugo` on your `PATH`)_
+
+### `make dev-stop`
+
+Stop that server (and take a break!)
+
+### `make minfy`
+
+Optimise all the things!
+
+### `make deploy`
+
+Build the site in the `public` dir and add to `ipfs` _(requires `hugo` & `ipfs` on your `PATH`)_
+
+### `make publish-to-domain` :rocket:
+
+Update the DNS record for `libp2p.io`.  _(requires an `auto.token` file to be saved in the project root.)_
+
+If you'd like to update the dnslink TXT record for another domain, pass `DOMAIN=<your domain here>` like so:
+
+```sh
+make publish-to-domain DOMAIN=tableflip.io
 ```
-![]({attach}/images/earthrise.png)
-```
 
-If you have files like [Asciinema](https://asciinema.org/), add those to `content/static` and refer to them as
+---
 
-```
-{attach}/static/file
-```
+See the `Makefile` for the full list or run `make help` in the project root.
 
-## Building the site
+## Dependencies
 
-The site is built via make. Type `make` to see your options.
+* `hugo` to build website
+* `ipfs` to deploy changes
+* `jq`, `curl` and an `auth.token` file in the project root containing your dnsimple api token to update the dns
 
-You can run `./develop_server.sh start` and the site will be automagically rebuilt while you're working on it.
-
-`./develop_server.sh stop` will stop the server
+All other dependencies are pulled from `npm` and the Makefile will run `npm install` for you because it's nice like that.
 
 ## Contribute
 
-Feel free to join in. All welcome. Open an [issue](https://github.com/ipfs/website/issues)!
+Please do! Check out [the issues](https://github.com/ipfs/website/issues), or open a PR!
 
-This repository falls under the IPFS [Code of Conduct](https://github.com/ipfs/community/blob/master/code-of-conduct.md).
+Check out our [notes on contributing ](https://github.com/ipfs/js-ipfs#contribute) for more information on how we work, and about contributing in general. Please be aware that all interactions related to IPFS are subject to the IPFS [Code of Conduct](https://github.com/ipfs/community/blob/master/code-of-conduct.md).
 
-[![](https://cdn.rawgit.com/jbenet/contribute-ipfs-gif/master/img/contribute.gif)](https://github.com/ipfs/community/blob/master/contributing.md)
-
-## License
-
-[MIT](LICENSE)
+Small note: If editing the README, please conform to the [standard-readme](https://github.com/RichardLitt/standard-readme) specification.
