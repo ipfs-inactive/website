@@ -45,11 +45,11 @@
           {{ end }}
           <img src="/images/{{ .page.Params.constellation }}" class="constellation"/>
         {{ end }}
-      </div>    
+      </div>
     {{ end }}
   </div>
   <div class="view-more">
     <label>View more</label><a href="#"></a>
   </div>
-  <a class="button" id="toggle-animation">Disable animation</a>
+  {{ if eq .page.Params.pagetype "subdoc"}}{{ else }}<a class="button" id="toggle-animation">Disable animation</a>{{ end }}
 </header>
