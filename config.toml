@@ -1,6 +1,8 @@
 baseURL = "https://ipfs.io"
 relativeURLs = true
 preserveTaxonomyNames = true
+disableRSS = true
+
 [taxonomies]
   author = "author"
 
