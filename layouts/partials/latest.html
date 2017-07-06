@@ -3,11 +3,7 @@
   <div class="grid-flex-container">
     <div class="grid-flex-cell">
       <h5>IPFS Starlog</h5>
-      <ol class="latest-list list-unstyled">
-      {{ range first 4 (where .Site.Pages "Section" "blog") }}
-        <li><span class="date">{{ dateFormat "02 January 2006" .Date }}</span> <a href="{{ .URL }}">{{ .Title }}</a></li>
-      {{ end }}
-      </ol>
+      <ol class="latest-list list-unstyled" id="latest-list"></ol>
     </div>
     <div class="grid-flex-cell">
       <h5>Coverage</h5>
@@ -39,3 +35,5 @@
 </section>
 
 <script src="/js/popup.js"></script>
+<script type="text/javascript">window.BLOG_URL = {{ $.blogURL }}</script>
+<script src="/js/blog-feed.js"></script>

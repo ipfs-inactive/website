@@ -156,7 +156,7 @@
         </section>
 
         <div class="content-wrapper">
-            {{ partial "latest.html" . }}
+            {{ partial "latest.html" (dict "blogURL" .Site.Params.blogURL) }}
         </div>
         
     </div>
