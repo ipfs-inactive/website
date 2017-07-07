@@ -7,8 +7,16 @@ NPMBIN=./node_modules/.bin
 OUTPUTDIR=public
 PIDFILE=dev.pid
 
+ifeq ($(DEBUG), true)
+	PREPEND=
+	APPEND=
+else
+	PREPEND=@
+	APPEND=1>/dev/null
+endif
+
 build: clean install lint js css minify
-	@hugo && \
+	$(PREPEND)hugo && \
 	echo "" && \
 	echo "Site built out to ./public dir"
 
@@ -30,54 +38,54 @@ help:
 	@echo '                                                                                                          '
 
 serve: install lint js css minify
-	hugo server
+	$(PREPEND)hugo server $(APPEND)
 
 node_modules:
-	$(NPM) i
+	$(PREPEND)$(NPM) i $(APPEND)
 
 install: node_modules
-	[ -d static/js ] || mkdir -p static/js && \
+	$(PREPEND)[ -d static/js ] || mkdir -p static/js && \
 	[ -d static/css ] || mkdir -p static/css
 
 lint: install
-	$(NPMBIN)/standard && $(NPMBIN)/stylint layouts/_styl/
+	$(PREPEND)$(NPMBIN)/standard && $(NPMBIN)/stylint layouts/_styl/
 
 js: install
-	$(NPMBIN)/browserify layouts/js/stars.js -o static/js/stars.js --noparse=jquery & \
-	$(NPMBIN)/browserify layouts/js/popup.js -o static/js/popup.js --noparse=jquery & \
+	$(PREPEND)$(NPMBIN)/browserify layouts/js/stars.js -o static/js/stars.js --noparse=jquery $(APPEND) & \
+	$(NPMBIN)/browserify layouts/js/popup.js -o static/js/popup.js --noparse=jquery $(APPEND) & \
 	wait
 
 css: install
-	$(NPMBIN)/stylus -u autoprefixer-stylus -I node_modules/yeticss/lib -c -o static/css layouts/_styl/main.styl
+	$(PREPEND)$(NPMBIN)/stylus -u autoprefixer-stylus -I node_modules/yeticss/lib -c -o static/css layouts/_styl/main.styl $(APPEND)
 
 minify: install minify-js minify-img
 
 minify-js: install
-	find static/js -name '*.js' -exec $(NPMBIN)/uglifyjs {} --compress --output {} \;
+	$(PREPEND)find static/js -name '*.js' -exec $(NPMBIN)/uglifyjs {} --compress --output {} $(APPEND) \;
 
 minify-img: install
-	find static/images -type d -exec $(NPMBIN)/imagemin {}/* --out-dir={} \; & \
-	find content/blog/static -type d -exec $(NPMBIN)/imagemin {}/* --out-dir={} \; & \
+	$(PREPEND)find static/images -type d -exec $(NPMBIN)/imagemin {}/* --out-dir={} $(APPEND) \; & \
+	find content/blog/static -type d -exec $(NPMBIN)/imagemin {}/* --out-dir={} $(APPEND) \; & \
 	wait
 
 dev: install js css
-	[ ! -f $(PIDFILE) ] || rm $(PIDFILE) ; \
+	$(PREPEND)[ ! -f $(PIDFILE) ] || rm $(PIDFILE) ; \
 	touch $(PIDFILE) ; \
-	($(NPMBIN)/stylus -u autoprefixer-stylus -I node_modules/yeticss/lib -w layouts/_styl/main.styl -c -o static/css & echo $$! >> $(PIDFILE) ; \
-	$(NPMBIN)/nodemon --watch js --exec "browserify layouts/js/stars.js -o static/js/stars.js --noparse=jquery" & echo $$! >> $(PIDFILE) ; \
-	$(NPMBIN)/nodemon --watch js --exec "browserify layouts/js/popup.js -o static/js/popup.js --noparse=jquery" & echo $$! >> $(PIDFILE) ; \
+	($(NPMBIN)/stylus -u autoprefixer-stylus -I node_modules/yeticss/lib -w layouts/_styl/main.styl -c -o static/css $(APPEND) & echo $$! >> $(PIDFILE) ; \
+	$(NPMBIN)/nodemon --watch js --exec "browserify layouts/js/stars.js -o static/js/stars.js --noparse=jquery $(APPEND)" & echo $$! >> $(PIDFILE) ; \
+	$(NPMBIN)/nodemon --watch js --exec "browserify layouts/js/popup.js -o static/js/popup.js --noparse=jquery $(APPEND)" & echo $$! >> $(PIDFILE) ; \
 	hugo server -w & echo $$! >> $(PIDFILE))
 
 dev-stop:
-	touch $(PIDFILE) ; \
+	$(PREPEND)touch $(PIDFILE) ; \
 	[ -z "`(cat $(PIDFILE))`" ] || kill `(cat $(PIDFILE))` ; \
 	rm $(PIDFILE)
 
 deploy:
-	ipfs swarm peers >/dev/null || (echo "ipfs daemon must be online to publish" && exit 1)
+	$(PREPEND)ipfs swarm peers >/dev/null || (echo "ipfs daemon must be online to publish" && exit 1)
 	ipfs add -r -q $(OUTPUTDIR) | tail -n1 >versions/current
 	cat versions/current >>versions/history
-	@export hash=`cat versions/current`; \
+	export hash=`cat versions/current`; \
 		echo ""; \
 		echo "published website:"; \
 		echo "- $(IPFSLOCAL)$$hash"; \
@@ -88,11 +96,11 @@ deploy:
 		echo "- make publish-to-domain"; \
 
 publish-to-domain: auth.token versions/current
-	DNSIMPLE_TOKEN=$(shell cat auth.token) \
+	$(PREPEND)DNSIMPLE_TOKEN=$(shell cat auth.token) \
 	./dnslink.sh $(DOMAIN) $(shell cat versions/current)
 
 clean:
-	[ ! -d $(OUTPUTDIR) ] || rm -rf $(OUTPUTDIR) && \
+	$(PREPEND)[ ! -d $(OUTPUTDIR) ] || rm -rf $(OUTPUTDIR) && \
 	[ ! -d static/js ] || rm -rf static/js/*.js && \
 	[ ! -d static/css ] || rm -rf static/css/*.css
 
