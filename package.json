@@ -19,7 +19,8 @@
     "npm-run-all": "^4.0.2",
     "pixi.js": "^4.5.3",
     "standard": "^10.0.2",
-    "uglify-js": "^3.0.18"
+    "uglify-js": "^3.0.18",
+    "watchify": "^3.9.0"
   },
   "description": "[![](https://img.shields.io/badge/made%20by-Protocol%20Labs-blue.svg?style=flat-square)](http://ipn.io) [![](https://img.shields.io/badge/project-Filecoin-blue.svg?style=flat-square)](http://filecoin.io/) [![](https://img.shields.io/badge/freenode-%23Filecoin-blue.svg?style=flat-square)](http://webchat.freenode.net/?channels=%23filecoin) [![standard-readme compliant](https://img.shields.io/badge/standard--readme-OK-green.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)",
   "version": "1.0.0",

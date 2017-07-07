@@ -38,7 +38,7 @@ help:
 	@echo '                                                                                                          '
 
 serve: install lint js css minify
-	$(PREPEND)hugo server $(APPEND)
+	$(PREPEND)hugo server
 
 node_modules:
 	$(PREPEND)$(NPM) i $(APPEND)
@@ -48,15 +48,15 @@ install: node_modules
 	[ -d static/css ] || mkdir -p static/css
 
 lint: install
-	$(PREPEND)$(NPMBIN)/standard && $(NPMBIN)/stylint layouts/_styl/
+	$(PREPEND)$(NPMBIN)/standard && $(NPMBIN)/lessc --lint less/*
 
 js: install
-	$(PREPEND)$(NPMBIN)/browserify layouts/js/stars.js -o static/js/stars.js --noparse=jquery $(APPEND) & \
-	$(NPMBIN)/browserify layouts/js/popup.js -o static/js/popup.js --noparse=jquery $(APPEND) & \
+	$(PREPEND)$(NPMBIN)/browserify js/stars.js -o static/js/stars.js --noparse=jquery $(APPEND) & \
+	$(NPMBIN)/browserify js/popup.js -o static/js/popup.js --noparse=jquery $(APPEND) & \
 	wait
 
 css: install
-	$(PREPEND)$(NPMBIN)/lessc --clean-css --autoprefix layouts/less/main.less static/css/main.css $(APPEND)
+	$(PREPEND)$(NPMBIN)/lessc --clean-css --autoprefix less/main.less static/css/main.css $(APPEND)
 
 minify: install minify-js minify-img
 
@@ -71,9 +71,9 @@ minify-img: install
 dev: install js css
 	$(PREPEND)[ ! -f $(PIDFILE) ] || rm $(PIDFILE) ; \
 	touch $(PIDFILE) ; \
-	($(NPMBIN)/nodemon --watch layouts/less --exec "$(NPMBIN)/lessc --clean-css --autoprefix layouts/less/main.less static/css/main.css $(APPEND)" & echo $$! >> $(PIDFILE) ; \
-	$(NPMBIN)/nodemon --watch js --exec "browserify layouts/js/stars.js -o static/js/stars.js --noparse=jquery" & echo $$! >> $(PIDFILE) ; \
-	$(NPMBIN)/nodemon --watch js --exec "browserify layouts/js/popup.js -o static/js/popup.js --noparse=jquery" & echo $$! >> $(PIDFILE) ; \
+	($(NPMBIN)/nodemon --watch less --exec "$(NPMBIN)/lessc --clean-css --autoprefix less/main.less static/css/main.css" & echo $$! >> $(PIDFILE) ; \
+	$(NPMBIN)/watchify js/stars.js -o static/js/stars.js --noparse=jquery" & echo $$! >> $(PIDFILE) ; \
+	$(NPMBIN)/watchify js/popup.js -o static/js/popup.js --noparse=jquery" & echo $$! >> $(PIDFILE) ; \
 	hugo server -w & echo $$! >> $(PIDFILE))
 
 dev-stop:
@@ -95,13 +95,13 @@ deploy:
 		echo "- ipfs pin add -r /ipfs/$$hash"; \
 		echo "- make publish-to-domain"; \
 
-publish-to-domain: auth.token versions/current
-	$(PREPEND)DNSIMPLE_TOKEN=$(shell cat auth.token) \
+publish-to-domain: versions/current
+	DNSSIMPLE_TOKEN="$(shell if [ -f auth.token ]; then cat auth.token; else cat $$HOME/.protocol/dnsimple.token; fi)"; \
 	./dnslink.sh $(DOMAIN) $(shell cat versions/current)
 
 clean:
 	$(PREPEND)[ ! -d $(OUTPUTDIR) ] || rm -rf $(OUTPUTDIR) && \
-	[ ! -d static/js ] || rm -rf static/js/*.js && \
-	[ ! -d static/css ] || rm -rf static/css/*.css
+	[ ! -d static/js ] || rm -rf static/js/* && \
+	[ ! -d static/css ] || rm -rf static/css/*
 
 .PHONY: build help install lint js css minify minify-js minify-img  dev stopdev deploy publish-to-domain clean
