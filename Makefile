@@ -97,7 +97,7 @@ deploy:
 		echo "- make publish-to-domain"; \
 
 publish-to-domain: versions/current
-	DNSSIMPLE_TOKEN="$(shell if [ -f auth.token ]; then cat auth.token; else cat $$HOME/.protocol/dnsimple.token; fi)"; \
+	$(PREPEND)DNSSIMPLE_TOKEN="$(shell if [ -f auth.token ]; then cat auth.token; else cat $$HOME/.protocol/dnsimple.token; fi)"; \
 	./dnslink.sh $(DOMAIN) $(shell cat versions/current)
 
 clean:
