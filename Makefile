@@ -21,7 +21,7 @@ build: clean install lint js css minify
 	echo "Site built out to ./public dir"
 
 help:
-	@echo 'Makefile for a ipfs.io, a hugo built static site.                                                          '
+	@echo 'Makefile for a ipfs.io, a hugo built static site.                                                         '
 	@echo '                                                                                                          '
 	@echo 'Usage:                                                                                                    '
 	@echo '   make                                Build the optimised site to ./$(OUTPUTDIR)                         '
@@ -36,6 +36,7 @@ help:
 	@echo '   make publish-to-domain              Update $(DOMAIN) DNS record to the ipfs hash from the last deploy  '
 	@echo '   make clean                          remove the generated files                                         '
 	@echo '                                                                                                          '
+	@echo '   DEBUG=true make [command] for increased verbosity                                                      '
 
 serve: install lint js css minify
 	$(PREPEND)hugo server
