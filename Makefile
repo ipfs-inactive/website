@@ -40,7 +40,7 @@ install: node_modules
 	[ -d static/css ] || mkdir -p static/css
 
 lint: install
-	$(NPMBIN)/standard && $(NPMBIN)/stylint layouts/_styl/
+	$(NPMBIN)/standard && $(NPMBIN)/lessc --lint less/*
 
 js: install
 	$(NPMBIN)/browserify layouts/js/stars.js -o static/js/stars.js --noparse=jquery & \
