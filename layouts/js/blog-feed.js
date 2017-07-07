@@ -5,7 +5,6 @@ var url = window.BLOG_URL + '/index.json'
 xmlhttp.onreadystatechange = function () {
   if (this.readyState === 4 && this.status === 200) {
     var data = JSON.parse(this.responseText)
-    console.log(data)
     renderPosts(data.posts)
   }
 }
