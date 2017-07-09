@@ -40,7 +40,7 @@ install: node_modules
 	[ -d static/css ] || mkdir -p static/css
 
 lint: install
-	$(NPMBIN)/standard && $(NPMBIN)/stylint layouts/_styl/
+	$(NPMBIN)/standard && $(NPMBIN)/lessc --lint less/*
 
 js: install
 	$(NPMBIN)/browserify layouts/js/stars.js -o static/js/stars.js --noparse=jquery & \
@@ -48,7 +48,7 @@ js: install
 	wait
 
 css: install
-	$(NPMBIN)/stylus -u autoprefixer-stylus -I node_modules/yeticss/lib -c -o static/css layouts/_styl/main.styl
+	$(NPMBIN)/lessc --clean-css --autoprefix layouts/less/main.less static/css/main.css
 
 minify: install minify-js minify-img
 
@@ -63,7 +63,7 @@ minify-img: install
 dev: install js css
 	[ ! -f $(PIDFILE) ] || rm $(PIDFILE) ; \
 	touch $(PIDFILE) ; \
-	($(NPMBIN)/stylus -u autoprefixer-stylus -I node_modules/yeticss/lib -w layouts/_styl/main.styl -c -o static/css & echo $$! >> $(PIDFILE) ; \
+	($(NPMBIN)/nodemon --watch layouts/less --exec "$(NPMBIN)/lessc --clean-css --autoprefix layouts/less/main.less static/css/main.css" & echo $$! >> $(PIDFILE) ; \
 	$(NPMBIN)/nodemon --watch js --exec "browserify layouts/js/stars.js -o static/js/stars.js --noparse=jquery" & echo $$! >> $(PIDFILE) ; \
 	$(NPMBIN)/nodemon --watch js --exec "browserify layouts/js/popup.js -o static/js/popup.js --noparse=jquery" & echo $$! >> $(PIDFILE) ; \
 	hugo server -w & echo $$! >> $(PIDFILE))

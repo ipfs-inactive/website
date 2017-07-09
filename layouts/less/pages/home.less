@@ -1,0 +1,49 @@
+/*--------------------------------------------------------------------
+*
+* @HOME
+*
+--------------------------------------------------------------------*/
+
+.latest-list {
+  margin-bottom: 0;
+
+  li {
+    margin-bottom: 10px;
+  }
+
+  .date, .publication {
+    display: block;
+    font-size: 13px;
+    color: @gray-light;
+  }
+}
+
+.latest-videos {
+  margin-bottom: 0;
+
+  li {
+    float: left;
+    width: 45%;
+
+    &:nth-child(odd) {
+      margin-right: 5%;
+    }
+  }
+
+  .video-thumb {
+    display: block;
+    position: relative;
+    border-radius: 3px;
+
+    &:after {
+      width: 44px;
+      height: 44px;
+      content: '';
+      background: url(../images/video-play.svg) no-repeat 0 0;
+      background-size: contain;
+      position: absolute;
+      left: calc(50% - 22px);
+      top: calc(50% - 22px);
+    }
+  }
+}
