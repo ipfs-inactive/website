@@ -25,12 +25,14 @@
     </section>
 
     <div class="content-wrapper">
-        {{ partial "latest.html" (dict "blogURL" .Site.Params.blogURL) }}
+        {{ partial "latest.html" . }}
     </div>
       
   </div>
 
-  {{ partial "footer.html" . }}  
+  {{ partial "footer.html" . }}
+  <script src="/js/common.js"></script>  
+  <script src="/js/header-and-latest.js"></script>  
 </body>
 
 </html>

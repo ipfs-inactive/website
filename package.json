@@ -1,7 +1,9 @@
 {
   "name": "ipfs.io",
   "private": true,
-  "dependencies": {},
+  "dependencies": {
+    "factor-bundle": "^2.5.0"
+  },
   "devDependencies": {
     "browserify": "^14.4.0",
     "dnslink-deploy": "^1.0.7",

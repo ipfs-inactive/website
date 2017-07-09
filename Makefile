@@ -1,3 +1,4 @@
+SHELL=/bin/bash
 DOMAIN="ipfs.io"
 
 IPFSLOCAL="http://localhost:8080/ipfs/"
@@ -52,9 +53,7 @@ lint: install
 	$(PREPEND)$(NPMBIN)/standard && $(NPMBIN)/lessc --lint less/*
 
 js: install
-	$(PREPEND)$(NPMBIN)/browserify js/stars.js -o static/js/stars.js --noparse=jquery $(APPEND) & \
-	$(NPMBIN)/browserify js/popup.js -o static/js/popup.js --noparse=jquery $(APPEND) & \
-	wait
+	$(PREPEND)$(NPMBIN)/browserify --noparse=jquery js/{header-and-latest,header}.js -p [ factor-bundle -o static/js/header-and-latest.js -o static/js/header.js ] -o static/js/common.js $(APPEND)
 
 css: install
 	$(PREPEND)$(NPMBIN)/lessc --clean-css --autoprefix less/main.less static/css/main.css $(APPEND)
@@ -73,8 +72,7 @@ dev: install js css
 	$(PREPEND)[ ! -f $(PIDFILE) ] || rm $(PIDFILE) ; \
 	touch $(PIDFILE) ; \
 	($(NPMBIN)/nodemon --watch less --exec "$(NPMBIN)/lessc --clean-css --autoprefix less/main.less static/css/main.css" & echo $$! >> $(PIDFILE) ; \
-	$(NPMBIN)/watchify js/stars.js -o static/js/stars.js --noparse=jquery" & echo $$! >> $(PIDFILE) ; \
-	$(NPMBIN)/watchify js/popup.js -o static/js/popup.js --noparse=jquery" & echo $$! >> $(PIDFILE) ; \
+	$(NPMBIN)/watchify --noparse=jquery js/{header-and-latest,header}.js -p [ factor-bundle -o static/js/header-and-latest.js -o static/js/header.js ] -o static/js/common.js & echo $$! >> $(PIDFILE) ; \
 	hugo server -w & echo $$! >> $(PIDFILE))
 
 dev-stop:
