@@ -7,13 +7,21 @@ NPMBIN=./node_modules/.bin
 OUTPUTDIR=public
 PIDFILE=dev.pid
 
+ifeq ($(DEBUG), true)
+	PREPEND=
+	APPEND=
+else
+	PREPEND=@
+	APPEND=1>/dev/null
+endif
+
 build: clean install lint js css minify
-	@hugo && \
+	$(PREPEND)hugo && \
 	echo "" && \
 	echo "Site built out to ./public dir"
 
 help:
-	@echo 'Makefile for a ipfs.io, a hugo built static site.                                                          '
+	@echo 'Makefile for a ipfs.io, a hugo built static site.                                                         '
 	@echo '                                                                                                          '
 	@echo 'Usage:                                                                                                    '
 	@echo '   make                                Build the optimised site to ./$(OUTPUTDIR)                         '
@@ -28,56 +36,57 @@ help:
 	@echo '   make publish-to-domain              Update $(DOMAIN) DNS record to the ipfs hash from the last deploy  '
 	@echo '   make clean                          remove the generated files                                         '
 	@echo '                                                                                                          '
+	@echo '   DEBUG=true make [command] for increased verbosity                                                      '
 
 serve: install lint js css minify
-	hugo server
+	$(PREPEND)hugo server
 
 node_modules:
-	$(NPM) i
+	$(PREPEND)$(NPM) i $(APPEND)
 
 install: node_modules
-	[ -d static/js ] || mkdir -p static/js && \
+	$(PREPEND)[ -d static/js ] || mkdir -p static/js && \
 	[ -d static/css ] || mkdir -p static/css
 
 lint: install
-	$(NPMBIN)/standard && $(NPMBIN)/lessc --lint less/*
+	$(PREPEND)$(NPMBIN)/standard && $(NPMBIN)/lessc --lint less/*
 
 js: install
-	$(NPMBIN)/browserify layouts/js/stars.js -o static/js/stars.js --noparse=jquery & \
-	$(NPMBIN)/browserify layouts/js/popup.js -o static/js/popup.js --noparse=jquery & \
+	$(PREPEND)$(NPMBIN)/browserify js/stars.js -o static/js/stars.js --noparse=jquery $(APPEND) & \
+	$(NPMBIN)/browserify js/popup.js -o static/js/popup.js --noparse=jquery $(APPEND) & \
 	wait
 
 css: install
-	$(NPMBIN)/lessc --clean-css --autoprefix layouts/less/main.less static/css/main.css
+	$(PREPEND)$(NPMBIN)/lessc --clean-css --autoprefix less/main.less static/css/main.css $(APPEND)
 
 minify: install minify-js minify-img
 
 minify-js: install
-	find static/js -name '*.js' -exec $(NPMBIN)/uglifyjs {} --compress --output {} \;
+	$(PREPEND)find static/js -name '*.js' -exec $(NPMBIN)/uglifyjs {} --compress --output {} $(APPEND) \;
 
 minify-img: install
-	find static/images -type d -exec $(NPMBIN)/imagemin {}/* --out-dir={} \; & \
-	find content/blog/static -type d -exec $(NPMBIN)/imagemin {}/* --out-dir={} \; & \
+	$(PREPEND)find static/images -type d -exec $(NPMBIN)/imagemin {}/* --out-dir={} $(APPEND) \; & \
+	find content/blog/static -type d -exec $(NPMBIN)/imagemin {}/* --out-dir={} $(APPEND) \; & \
 	wait
 
 dev: install js css
-	[ ! -f $(PIDFILE) ] || rm $(PIDFILE) ; \
+	$(PREPEND)[ ! -f $(PIDFILE) ] || rm $(PIDFILE) ; \
 	touch $(PIDFILE) ; \
-	($(NPMBIN)/nodemon --watch layouts/less --exec "$(NPMBIN)/lessc --clean-css --autoprefix layouts/less/main.less static/css/main.css" & echo $$! >> $(PIDFILE) ; \
-	$(NPMBIN)/nodemon --watch js --exec "browserify layouts/js/stars.js -o static/js/stars.js --noparse=jquery" & echo $$! >> $(PIDFILE) ; \
-	$(NPMBIN)/nodemon --watch js --exec "browserify layouts/js/popup.js -o static/js/popup.js --noparse=jquery" & echo $$! >> $(PIDFILE) ; \
+	($(NPMBIN)/nodemon --watch less --exec "$(NPMBIN)/lessc --clean-css --autoprefix less/main.less static/css/main.css" & echo $$! >> $(PIDFILE) ; \
+	$(NPMBIN)/watchify js/stars.js -o static/js/stars.js --noparse=jquery" & echo $$! >> $(PIDFILE) ; \
+	$(NPMBIN)/watchify js/popup.js -o static/js/popup.js --noparse=jquery" & echo $$! >> $(PIDFILE) ; \
 	hugo server -w & echo $$! >> $(PIDFILE))
 
 dev-stop:
-	touch $(PIDFILE) ; \
+	$(PREPEND)touch $(PIDFILE) ; \
 	[ -z "`(cat $(PIDFILE))`" ] || kill `(cat $(PIDFILE))` ; \
 	rm $(PIDFILE)
 
 deploy:
-	ipfs swarm peers >/dev/null || (echo "ipfs daemon must be online to publish" && exit 1)
+	$(PREPEND)ipfs swarm peers >/dev/null || (echo "ipfs daemon must be online to publish" && exit 1)
 	ipfs add -r -q $(OUTPUTDIR) | tail -n1 >versions/current
 	cat versions/current >>versions/history
-	@export hash=`cat versions/current`; \
+	export hash=`cat versions/current`; \
 		echo ""; \
 		echo "published website:"; \
 		echo "- $(IPFSLOCAL)$$hash"; \
@@ -87,13 +96,13 @@ deploy:
 		echo "- ipfs pin add -r /ipfs/$$hash"; \
 		echo "- make publish-to-domain"; \
 
-publish-to-domain: auth.token versions/current
-	DNSIMPLE_TOKEN=$(shell cat auth.token) \
+publish-to-domain: versions/current
+	$(PREPEND)DNSSIMPLE_TOKEN="$(shell if [ -f auth.token ]; then cat auth.token; else cat $$HOME/.protocol/dnsimple.token; fi)"; \
 	./dnslink.sh $(DOMAIN) $(shell cat versions/current)
 
 clean:
-	[ ! -d $(OUTPUTDIR) ] || rm -rf $(OUTPUTDIR) && \
-	[ ! -d static/js ] || rm -rf static/js/*.js && \
-	[ ! -d static/css ] || rm -rf static/css/*.css
+	$(PREPEND)[ ! -d $(OUTPUTDIR) ] || rm -rf $(OUTPUTDIR) && \
+	[ ! -d static/js ] || rm -rf static/js/* && \
+	[ ! -d static/css ] || rm -rf static/css/*
 
 .PHONY: build help install lint js css minify minify-js minify-img  dev stopdev deploy publish-to-domain clean
