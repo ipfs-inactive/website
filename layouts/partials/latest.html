@@ -1,9 +1,15 @@
+{{ $dataJ := getJSON "https://ipfs.io/blog/index.json" }}
+
 <section id="latest">
   <h2 class="content-center mb2">The Latest</h2>
   <div class="grid-flex-container">
     <div class="grid-flex-cell">
       <h5>IPFS Starlog</h5>
-      <ol class="latest-list list-unstyled" id="latest-list"></ol>
+      <ol class="latest-list list-unstyled" id="latest-list">
+        {{ range $dataJ.posts }}
+          <li><span class="date">{{ .date }}</span> <a href="{{ .url }}">{{ .title }}</a></li>
+        {{ end }}
+      </ol>
     </div>
     <div class="grid-flex-cell">
       <h5>Coverage</h5>
