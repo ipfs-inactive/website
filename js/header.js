@@ -1,3 +1,3 @@
-const stars = require('./lib/stars')
+var stars = require('./lib/stars')
 
 stars()
