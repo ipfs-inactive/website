@@ -1,14 +1,19 @@
-{{ $dataJ := getJSON "https://ipfs.io/blog/index.json" }}
-
 <section id="latest">
   <h2 class="content-center mb2">The Latest</h2>
   <div class="grid-flex-container">
     <div class="grid-flex-cell">
       <h5>IPFS Starlog</h5>
       <ol class="latest-list list-unstyled" id="latest-list">
-        {{ range $dataJ.posts }}
-          <li><span class="date">{{ .date }}</span> <a href="{{ .url }}">{{ .title }}</a></li>
-        {{ end }}
+        <!--This code adds the latest available blog posts at build time, which will be replaced client-side
+        if newer versions are available.  However, it is commented out as Hugo's build process fails if
+        the remote resource is not found, so it needs https://ipfs.io/blog/index.json to be accessible
+        before it can be used.-->
+        {{/*
+          {{ $dataJ := getJSON "https://ipfs.io/blog/index.json" }}
+          {{ range $dataJ.posts }}
+            <li><span class="date">{{ .date }}</span> <a href="{{ .url }}">{{ .title }}</a></li>
+          {{ end }}
+        */}}
       </ol>
     </div>
     <div class="grid-flex-cell">
