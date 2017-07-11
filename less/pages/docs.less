@@ -1,0 +1,55 @@
+/*--------------------------------------------------------------------
+*
+* @DOCS
+*
+--------------------------------------------------------------------*/
+
+.docs-menu {
+  vertical-align: top;
+  display: inline-block;
+  box-sizing: border-box;
+  width: 25%;
+  margin: 0;
+  padding: 0;
+  li {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  a.current-item {
+    font-weight: 400;
+  }
+}
+
+.docs-menu + .content-wrapper {
+  vertical-align: top;
+  display: inline-block;
+  box-sizing: border-box;
+  width: 74%;
+
+  ul li {
+    margin-bottom: 8px;
+  }
+}
+
+.link-github {
+  margin-bottom: 4px;
+  padding: 4px 8px 2px;
+  padding-left: 30px;
+  display: inline-block;
+  background: url(../images/icon-github-grey.svg) no-repeat 8px center;
+  background-size: 16px 16px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+}
+
+@media (max-width: 970px) {
+  .docs-menu {
+    margin-bottom: 40px;
+  }
+
+  .docs-menu, .docs-menu + .content-wrapper {
+    display: block;
+    width: 100%;
+  }
+}

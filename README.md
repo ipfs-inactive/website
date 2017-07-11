@@ -74,11 +74,12 @@ make publish-to-domain DOMAIN=tableflip.io
 
 ---
 
-See the `Makefile` for the full list or run `make help` in the project root.
+See the `Makefile` for the full list or run `make help` in the project root. You can pass the env var `DEBUG=true` to increase the verbosity of your chosen command.
 
 ## Dependencies
 
 * `hugo` to build website
+* `Node.js` and `npm` for build tools
 * `ipfs` to deploy changes
 * `jq`, `curl` and an `auth.token` file in the project root containing your dnsimple api token to update the dns
 

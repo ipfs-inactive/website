@@ -1,6 +1,9 @@
 baseURL = "https://ipfs.io"
 relativeURLs = true
 preserveTaxonomyNames = true
+googleAnalytics = "UA-52930282-2"
+disableRSS = true
+
 [taxonomies]
   author = "author"
 
@@ -10,7 +13,6 @@ preserveTaxonomyNames = true
   title = "IPFS is the Distributed Web"
   description = "A peer-to-peer hypermedia protocol to make the web faster, safer, and more open."
   author = "Protocol Labs"
-  blogURL = "https://ipfs.io/blog"
   github = "https://github.com/ipfs/ipfs"
   specifications = "https://github.com/ipfs/specs"
   social = [ { title = "Twitter", link = "http://twitter.com/ipfsbot" },

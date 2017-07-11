@@ -1,4 +1,4 @@
-(function () {
+module.exports = function () {
   var starsElement = document.getElementById('stars')
   if (!starsElement) {
     return
@@ -661,4 +661,4 @@
   if (!animationEnabled) {
     starChart.render()
   }
-})()
+}

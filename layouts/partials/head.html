@@ -7,8 +7,8 @@
 <link rel="icon" type="image/png" href="/images/favicon.png">
 <!-- search and social meta data -->
 <title>{{ $.Param "title" }}</title>
-{{ if isSet .Params "description" }}<meta name="description" content="{{ .Params.description }}" />{{ end }}
-{{ if isSet .Params "author" }}<meta name="author" content="{{ .Params.author }}" />{{ end }}
+<meta name="description" content="{{ $.Param "description" }}" />
+<meta name="author" content="{{ $.Param "author" }}" />
 <!-- open graph -->
 <meta property="og:type" content="website" />
 <meta property="og:description" content="{{ $.Param "description" }}" />
@@ -16,19 +16,19 @@
 <meta property="og:site_name" content="{{ .Site.Params.name }}" />
 <meta property="og:url" content="{{ .Permalink }}" />
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="/images/ipfs-logo.svg" />
-<meta property="og:image:type" content="image/png" />
+<meta property="og:image" content="{{ .Site.BaseURL }}images/ipfs-logo.svg" />
+<meta property="og:image:type" content="image/svg+xml" />
 <meta property="og:image:width" contentlogo="146" />
 <meta property="og:image:height" content="166" />
 <!--Twitter Cards-->
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:site" content="{{ .Site.Params.name }}" />
 <meta name="twitter:title" content="{{ $.Param "title" }}" />
-{{ if isSet .Params "author" }}<meta name="twitter:creator" content="{{ .Params.author }}" />{{ end }}
+<meta name="twitter:creator" content="{{ $.Param "author" }}" />
 <meta name="twitter:description" content="{{ $.Param "description" }}" />
 <meta name="twitter:domain" content="{{ .Site.Params.domain }}" />
-<meta name="twitter:image:src" content="/img/ipld-logo.png" />
-<link href="{{ .Site.RSSLink }}" rel="alternate feed" type="application/rss+xml" title="{{ .Site.Title }}" />
+<meta name="twitter:image:src" content="{{ .Site.BaseURL }}images/ipfs-logo.svg" />
+<link href="/blog/index.xml" rel="alternate feed" type="application/rss+xml" title="{{ .Site.Title }}" />
 <script src="//use.typekit.net/qbm6mtp.js"></script>
 <script>
   try {
@@ -37,3 +37,4 @@
     });
   } catch (e) {}
 </script>
+{{ template "_internal/google_analytics_async.html" . }}
