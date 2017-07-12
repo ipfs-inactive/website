@@ -53,5 +53,10 @@
   "bugs": {
     "url": "https://github.com/tableflip/ipfs-website/issues"
   },
-  "homepage": "https://github.com/tableflip/ipfs-website#readme"
+  "homepage": "https://github.com/tableflip/ipfs-website#readme",
+  "standard": {
+    "ignore": [
+      "layouts/js/blackout.js"
+    ]
+  }
 }
