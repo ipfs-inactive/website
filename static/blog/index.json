@@ -1,0 +1,28 @@
+{
+    "posts" : [
+        {
+            "title" : "This is a placeholder",
+            "date" : "12 July 2017",
+            "url" : "http://placeholder.org/",
+            "author" : "Placey McHold"
+        },
+        {
+            "title" : "I should not appear in production",
+            "date" : "29 February 2017",
+            "url" : "http://dictionary.cambridge.org/dictionary/english/warning",
+            "author" : "Admin"
+        },
+        {
+            "title" : "An article about cheese",
+            "date" : "3 January 2017",
+            "url" : "http://time.com/4619162/cheese-health-food-cholesterol/",
+            "author" : "Mandy Oaklander"
+        },
+        {
+            "title" : "The Big Bang",
+            "date" : "The very dawn of time",
+            "url" : "https://en.wikipedia.org/wiki/Big_Bang",
+            "author" : "???"
+        }
+    ]
+}

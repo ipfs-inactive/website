@@ -1,12 +1,11 @@
 {
   "name": "ipfs.io",
   "private": true,
-  "dependencies": {
-    "factor-bundle": "^2.5.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "browserify": "^14.4.0",
     "dnslink-deploy": "^1.0.7",
+    "factor-bundle": "^2.5.0",
     "imagemin-cli": "^3.0.0",
     "imagemin-jpegtran": "^5.0.2",
     "imagemin-optipng": "^5.2.1",
