@@ -28,7 +28,7 @@ RECORD_NAME="_dnslink"
 RECORD_TTL=120
 
 record_id=$(
-  curl -s "https://api.dnsimple.com/v1/domains/$ZONE/records?name=$RECORD_NAME&type=TXT" \
+  curl -v -s "https://api.dnsimple.com/v1/domains/$ZONE/records?name=$RECORD_NAME&type=TXT" \
     -H "X-DNSimple-Domain-Token: $DNSIMPLE_TOKEN" \
     -H "Accept: application/json" \
     | jq -r '.[].record.id'

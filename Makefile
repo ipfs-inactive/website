@@ -96,8 +96,8 @@ deploy:
 		echo "- make publish-to-domain"; \
 
 publish-to-domain: versions/current
-	$(PREPEND)DNSSIMPLE_TOKEN="$(shell if [ -f auth.token ]; then cat auth.token; else cat $$HOME/.protocol/dnsimple.token; fi)"; \
-	./dnslink.sh $(DOMAIN) $(shell cat versions/current)
+	DNSIMPLE_TOKEN="$(shell cat $(HOME)/.protocol/dnsimple.ipfs.io.token)" \
+		./dnslink.sh $(DOMAIN) $(shell cat versions/current)
 
 clean:
 	$(PREPEND)[ ! -d $(OUTPUTDIR) ] || rm -rf $(OUTPUTDIR) && \
