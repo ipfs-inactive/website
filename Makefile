@@ -82,9 +82,10 @@ dev-stop:
 	rm $(PIDFILE)
 
 deploy:
-	$(PREPEND)ipfs swarm peers >/dev/null || (echo "ipfs daemon must be online to publish" && exit 1)
-	ipfs add -r -q $(OUTPUTDIR) | tail -n1 >versions/current
-	cat versions/current >>versions/history
+	$(PREPEND)rm -rf public/blog ; \
+	ipfs swarm peers >/dev/null || (echo "ipfs daemon must be online to publish" && exit 1) ; \
+	ipfs add -r -q $(OUTPUTDIR) | tail -n1 >versions/current ; \
+	cat versions/current >>versions/history ; \
 	export hash=`cat versions/current`; \
 		echo ""; \
 		echo "published website:"; \
@@ -94,6 +95,7 @@ deploy:
 		echo "next steps:"; \
 		echo "- ipfs pin add -r /ipfs/$$hash"; \
 		echo "- make publish-to-domain"; \
+	rsync -r static/blog public
 
 publish-to-domain: versions/current
 	DNSIMPLE_TOKEN="$(shell cat $(HOME)/.protocol/dnsimple.ipfs.io.token)" \
