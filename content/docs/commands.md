@@ -49,7 +49,6 @@ generated on 2017-04-01 10:53:32.701039
 - [ipfs diag cmds](#ipfs-diag-cmds)
 - [ipfs diag cmds clear](#ipfs-diag-cmds-clear)
 - [ipfs diag cmds set-time](#ipfs-diag-cmds-set-time)
-- [ipfs diag net](#ipfs-diag-net)
 - [ipfs diag sys](#ipfs-diag-sys)
 - [ipfs dns](#ipfs-dns)
 - [ipfs file](#ipfs-file)
@@ -1135,51 +1134,6 @@ SYNOPSIS
 ARGUMENTS
 
   <time> - Time to keep inactive requests in log.
-```
-
-## ipfs diag net
-
-```
-USAGE
-  ipfs diag net - Generate a network diagnostics report.
-
-SYNOPSIS
-  ipfs diag net [--vis=<vis>]
-
-OPTIONS
-
-  --vis string - Output format. One of: d3, dot, text. Default: text.
-
-DESCRIPTION
-
-  Sends out a message to each node in the network recursively
-  requesting a listing of data about them including number of
-  connected peers and latencies between them.
-
-  The given timeout will be decremented 2s at every network hop,
-  ensuring peers try to return their diagnostics before the initiator's
-  timeout. If the timeout is too small, some peers may not be reached.
-  30s and 60s are reasonable timeout values, though networks vary.
-  The default timeout is 20 seconds.
-
-  The 'vis' option may be used to change the output format.
-  Three formats are supported:
-   * text - Easy to read. Default.
-   * d3 - json ready to be fed into d3view
-   * dot - graphviz format
-
-  The 'd3' format will output a json object ready to be consumed by
-  the chord network viewer, available at the following hash:
-
-      /ipfs/QmbesKpGyQGd5jtJFUGEB1ByPjNFpukhnKZDnkfxUiKn38
-
-  To view your diag output, 'ipfs add' the d3 vis output, and
-  open the following link:
-
-  	http://gateway.ipfs.io/ipfs/QmbesKpGyQGd5jtJFUGEB1ByPjNFpukhnKZDnkfxUiKn38/chord#<your hash>
-
-  The 'dot' format can be fed into graphviz and other programs
-  that consume the dot format to generate graphs of the network.
 ```
 
 ## ipfs diag sys
