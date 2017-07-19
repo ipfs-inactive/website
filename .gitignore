@@ -60,6 +60,5 @@ typings/
 public
 static/js
 static/css
-dev.pid
 package-lock.json
 auth.token
