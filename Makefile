@@ -6,7 +6,6 @@ IPFSGATEWAY="https://ipfs.io/ipfs/"
 NPM=npm
 NPMBIN=./node_modules/.bin
 OUTPUTDIR=public
-PIDFILE=dev.pid
 
 ifeq ($(DEBUG), true)
 	PREPEND=
@@ -32,7 +31,6 @@ help:
 	@echo '   make css                            Compile the *.styl to ./static/css                                 '
 	@echo '   make minify                         Optimise all the things!                                           '
 	@echo '   make dev                            Start a hot-reloding dev server on http://localhost:1313           '
-	@echo '   make dev-stop                       Stop the dev server                                                '
 	@echo '   make deploy                         Add the website to your local IPFS node                            '
 	@echo '   make publish-to-domain              Update $(DOMAIN) DNS record to the ipfs hash from the last deploy  '
 	@echo '   make clean                          remove the generated files                                         '
@@ -70,20 +68,14 @@ minify-img: install
 	wait
 
 dev: install js css
-	$(PREPEND)[ ! -f $(PIDFILE) ] || rm $(PIDFILE) ; \
-	touch $(PIDFILE) ; \
-	($(NPMBIN)/nodemon --watch less --exec "$(NPMBIN)/lessc --clean-css --autoprefix less/main.less static/css/main.css" & echo $$! >> $(PIDFILE) ; \
-	$(NPMBIN)/watchify --noparse=jquery js/{header-and-latest,header}.js -p [ factor-bundle -o static/js/header-and-latest.js -o static/js/header.js ] -o static/js/common.js & echo $$! >> $(PIDFILE) ; \
-	hugo server -w & echo $$! >> $(PIDFILE))
-
-dev-stop:
-	$(PREPEND)touch $(PIDFILE) ; \
-	[ -z "`(cat $(PIDFILE))`" ] || kill `(cat $(PIDFILE))` ; \
-	rm $(PIDFILE)
+	$(PREPEND)( \
+		$(NPMBIN)/nodemon --watch less --exec "$(NPMBIN)/lessc --clean-css --autoprefix less/main.less static/css/main.css" & \
+		$(NPMBIN)/watchify --noparse=jquery js/{header-and-latest,header}.js -p [ factor-bundle -o static/js/header-and-latest.js -o static/js/header.js ] -o static/js/common.js & \
+		hugo server -w \
+	)
 
 deploy:
 	$(PREPEND)rm -rf public/blog ; \
-	ipfs swarm peers >/dev/null || (echo "ipfs daemon must be online to publish" && exit 1) ; \
 	ipfs add -r -q $(OUTPUTDIR) | tail -n1 >versions/current ; \
 	cat versions/current >>versions/history ; \
 	export hash=`cat versions/current`; \
