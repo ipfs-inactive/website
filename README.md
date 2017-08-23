@@ -1,12 +1,10 @@
-# [ipfs-website](ifps.io)
+# [IPFS Website](ipfs.io)
 
 [![](https://img.shields.io/badge/made%20by-Protocol%20Labs-blue.svg?style=flat-square)](http://ipn.io)
 [![](https://img.shields.io/badge/project-ipfs-blue.svg?style=flat-square)](http://github.com/ipfs/ipfs)
-[![standard-readme compliant](https://img.shields.io/badge/standard--readme-OK-green.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
+[![](https://img.shields.io/badge/standard--readme-OK-green.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
 
 > Official website for IPFS http://ipfs.io
-
-This repository contains the source code for the IPFS website available at http://ipfs.io
 
 This project builds out a static site to explain IPFS, ready for deployment on ipfs itself. It uses `hugo` to glue the html together. It provides an informative, public-facing website. The most important things are the words, concepts and links it presents.
 
@@ -15,7 +13,7 @@ Much of the site content is data-driven; take a look at the `data` dir where fin
 ## Install
 
 ```sh
-git clone https://github.com/ipfs/website
+> git clone https://github.com/ipfs/website
 ```
 
 ## Usage
@@ -24,16 +22,16 @@ To deploy the site ipfs.io, run:
 
 ```sh
 # Build out the optimised site to ./public, where you can check it locally.
-make
+> make
 
 # Add the site to your local ipfs, you can check it via /ipfs/<hash>
-make deploy
+> make deploy
 
 # Save your dnsimple api token as auth.token
-cat "<api token here>" > auth.token
+> cat "<api token here>" > auth.token
 
 # Update the dns record for ipfs.io to point to the new ipfs hash.
-make publish-to-domain
+> make publish-to-domain
 ```
 
 The following commands are available:
@@ -65,7 +63,7 @@ Update the DNS record for `ipfs.io`.  _(requires an `auto.token` file to be save
 If you'd like to update the dnslink TXT record for another domain, pass `DOMAIN=<your domain here>` like so:
 
 ```sh
-make publish-to-domain DOMAIN=tableflip.io
+> make publish-to-domain DOMAIN=tableflip.io
 ```
 
 ---
@@ -81,10 +79,10 @@ The *IPFS Starlog* list in the *Latest* section is populated from the [IPFS blog
 
 ## Dependencies
 
-* `hugo` to build website
-* `Node.js` and `npm` for build tools
-* `ipfs` to deploy changes
-* `jq`, `curl` and an `auth.token` file in the project root containing your dnsimple api token to update the dns
+- `hugo` to build website
+- `Node.js` and `npm` for build tools
+- `ipfs` to deploy changes
+- `jq`, `curl` and an `auth.token` file in the project root containing your dnsimple api token to update the dns
 
 All other dependencies are pulled from `npm` and the Makefile will run `npm install` for you because it's nice like that.
 
