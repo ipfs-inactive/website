@@ -1,14 +1,13 @@
----
 section: Docs
 title: API | IPFS Docs
 pagetype: subdoc
 url: docs/api
 save_as: docs/api/index.html
----
+
 
 # API Reference
 
-<sup>Generated on 2017-04-01, from go-ipfs v0.4.8.</sup>
+<sup>Generated on 2017-08-23, from go-ipfs v0.4.11-dev.</sup>
 
 This is the HTTP API specification for IPFS.
 
@@ -83,102 +82,112 @@ flag is the `&encoding=json` query parameter below:
 ```
 ## Index
 
-  *  [/add](#api-v0-add)
-  *  [/bitswap/ledger](#api-v0-bitswap-ledger)
-  *  [/bitswap/stat](#api-v0-bitswap-stat)
-  *  [/bitswap/unwant](#api-v0-bitswap-unwant)
-  *  [/bitswap/wantlist](#api-v0-bitswap-wantlist)
-  *  [/block/get](#api-v0-block-get)
-  *  [/block/put](#api-v0-block-put)
-  *  [/block/rm](#api-v0-block-rm)
-  *  [/block/stat](#api-v0-block-stat)
-  *  [/bootstrap/add/default](#api-v0-bootstrap-add-default)
-  *  [/bootstrap/list](#api-v0-bootstrap-list)
-  *  [/bootstrap/rm/all](#api-v0-bootstrap-rm-all)
-  *  [/cat](#api-v0-cat)
-  *  [/commands](#api-v0-commands)
-  *  [/config/edit](#api-v0-config-edit)
-  *  [/config/replace](#api-v0-config-replace)
-  *  [/config/show](#api-v0-config-show)
-  *  [/dag/get](#api-v0-dag-get)
-  *  [/dag/put](#api-v0-dag-put)
-  *  [/dht/findpeer](#api-v0-dht-findpeer)
-  *  [/dht/findprovs](#api-v0-dht-findprovs)
-  *  [/dht/get](#api-v0-dht-get)
-  *  [/dht/provide](#api-v0-dht-provide)
-  *  [/dht/put](#api-v0-dht-put)
-  *  [/dht/query](#api-v0-dht-query)
-  *  [/diag/cmds/clear](#api-v0-diag-cmds-clear)
-  *  [/diag/cmds/set-time](#api-v0-diag-cmds-set-time)
-  *  [/diag/net](#api-v0-diag-net)
-  *  [/diag/sys](#api-v0-diag-sys)
-  *  [/dns](#api-v0-dns)
-  *  [/file/ls](#api-v0-file-ls)
-  *  [/files/cp](#api-v0-files-cp)
-  *  [/files/flush](#api-v0-files-flush)
-  *  [/files/ls](#api-v0-files-ls)
-  *  [/files/mkdir](#api-v0-files-mkdir)
-  *  [/files/mv](#api-v0-files-mv)
-  *  [/files/read](#api-v0-files-read)
-  *  [/files/rm](#api-v0-files-rm)
-  *  [/files/stat](#api-v0-files-stat)
-  *  [/files/write](#api-v0-files-write)
-  *  [/filestore/dups](#api-v0-filestore-dups)
-  *  [/filestore/ls](#api-v0-filestore-ls)
-  *  [/filestore/verify](#api-v0-filestore-verify)
-  *  [/get](#api-v0-get)
-  *  [/id](#api-v0-id)
-  *  [/key/gen](#api-v0-key-gen)
-  *  [/key/list](#api-v0-key-list)
-  *  [/log/level](#api-v0-log-level)
-  *  [/log/ls](#api-v0-log-ls)
-  *  [/log/tail](#api-v0-log-tail)
-  *  [/ls](#api-v0-ls)
-  *  [/mount](#api-v0-mount)
-  *  [/name/publish](#api-v0-name-publish)
-  *  [/name/resolve](#api-v0-name-resolve)
-  *  [/object/data](#api-v0-object-data)
-  *  [/object/diff](#api-v0-object-diff)
-  *  [/object/get](#api-v0-object-get)
-  *  [/object/links](#api-v0-object-links)
-  *  [/object/new](#api-v0-object-new)
-  *  [/object/patch/add-link](#api-v0-object-patch-add-link)
-  *  [/object/patch/append-data](#api-v0-object-patch-append-data)
-  *  [/object/patch/rm-link](#api-v0-object-patch-rm-link)
-  *  [/object/patch/set-data](#api-v0-object-patch-set-data)
-  *  [/object/put](#api-v0-object-put)
-  *  [/object/stat](#api-v0-object-stat)
-  *  [/pin/add](#api-v0-pin-add)
-  *  [/pin/ls](#api-v0-pin-ls)
-  *  [/pin/rm](#api-v0-pin-rm)
-  *  [/ping](#api-v0-ping)
-  *  [/pubsub/ls](#api-v0-pubsub-ls)
-  *  [/pubsub/peers](#api-v0-pubsub-peers)
-  *  [/pubsub/pub](#api-v0-pubsub-pub)
-  *  [/pubsub/sub](#api-v0-pubsub-sub)
-  *  [/refs/local](#api-v0-refs-local)
-  *  [/repo/fsck](#api-v0-repo-fsck)
-  *  [/repo/gc](#api-v0-repo-gc)
-  *  [/repo/stat](#api-v0-repo-stat)
-  *  [/repo/verify](#api-v0-repo-verify)
-  *  [/repo/version](#api-v0-repo-version)
-  *  [/resolve](#api-v0-resolve)
-  *  [/stats/bitswap](#api-v0-stats-bitswap)
-  *  [/stats/bw](#api-v0-stats-bw)
-  *  [/stats/repo](#api-v0-statsrepo)
-  *  [/swarm/addrs/local](#api-v0-swarm-addrs-local)
-  *  [/swarm/connect](#api-v0-swarm-connect)
-  *  [/swarm/disconnect](#api-v0-swarm-disconnect)
-  *  [/swarm/filters/add](#api-v0-swarm-filters-add)
-  *  [/swarm/filters/rm](#api-v0-swarm-filters-rm)
-  *  [/swarm/peers](#api-v0-swarm-peers)
-  *  [/tar/add](#api-v0-tar-add)
-  *  [/tar/cat](#api-v0-tar-cat)
-  *  [/tour/list](#api-v0-tour-list)
-  *  [/tour/next](#api-v0-tour-next)
-  *  [/tour/restart](#api-v0-tour-restart)
-  *  [/update](#api-v0-update)
-  *  [/version](#api-v0-version)
+  *  [/add](#apiv0add)
+  *  [/bitswap/ledger](#apiv0bitswapledger)
+  *  [/bitswap/reprovide](#apiv0bitswapreprovide)
+  *  [/bitswap/stat](#apiv0bitswapstat)
+  *  [/bitswap/unwant](#apiv0bitswapunwant)
+  *  [/bitswap/wantlist](#apiv0bitswapwantlist)
+  *  [/block/get](#apiv0blockget)
+  *  [/block/put](#apiv0blockput)
+  *  [/block/rm](#apiv0blockrm)
+  *  [/block/stat](#apiv0blockstat)
+  *  [/bootstrap/add/default](#apiv0bootstrapadddefault)
+  *  [/bootstrap/list](#apiv0bootstraplist)
+  *  [/bootstrap/rm/all](#apiv0bootstraprmall)
+  *  [/cat](#apiv0cat)
+  *  [/commands](#apiv0commands)
+  *  [/config/edit](#apiv0configedit)
+  *  [/config/replace](#apiv0configreplace)
+  *  [/config/show](#apiv0configshow)
+  *  [/dag/get](#apiv0dagget)
+  *  [/dag/put](#apiv0dagput)
+  *  [/dag/resolve](#apiv0dagresolve)
+  *  [/dht/findpeer](#apiv0dhtfindpeer)
+  *  [/dht/findprovs](#apiv0dhtfindprovs)
+  *  [/dht/get](#apiv0dhtget)
+  *  [/dht/provide](#apiv0dhtprovide)
+  *  [/dht/put](#apiv0dhtput)
+  *  [/dht/query](#apiv0dhtquery)
+  *  [/diag/cmds/clear](#apiv0diagcmdsclear)
+  *  [/diag/cmds/set-time](#apiv0diagcmdsset-time)
+  *  [/diag/sys](#apiv0diagsys)
+  *  [/dns](#apiv0dns)
+  *  [/file/ls](#apiv0filels)
+  *  [/files/cp](#apiv0filescp)
+  *  [/files/flush](#apiv0filesflush)
+  *  [/files/ls](#apiv0filesls)
+  *  [/files/mkdir](#apiv0filesmkdir)
+  *  [/files/mv](#apiv0filesmv)
+  *  [/files/read](#apiv0filesread)
+  *  [/files/rm](#apiv0filesrm)
+  *  [/files/stat](#apiv0filesstat)
+  *  [/files/write](#apiv0fileswrite)
+  *  [/filestore/dups](#apiv0filestoredups)
+  *  [/filestore/ls](#apiv0filestorels)
+  *  [/filestore/verify](#apiv0filestoreverify)
+  *  [/get](#apiv0get)
+  *  [/id](#apiv0id)
+  *  [/key/gen](#apiv0keygen)
+  *  [/key/list](#apiv0keylist)
+  *  [/key/rename](#apiv0keyrename)
+  *  [/key/rm](#apiv0keyrm)
+  *  [/log/level](#apiv0loglevel)
+  *  [/log/ls](#apiv0logls)
+  *  [/log/tail](#apiv0logtail)
+  *  [/ls](#apiv0ls)
+  *  [/mount](#apiv0mount)
+  *  [/name/publish](#apiv0namepublish)
+  *  [/name/resolve](#apiv0nameresolve)
+  *  [/object/data](#apiv0objectdata)
+  *  [/object/diff](#apiv0objectdiff)
+  *  [/object/get](#apiv0objectget)
+  *  [/object/links](#apiv0objectlinks)
+  *  [/object/new](#apiv0objectnew)
+  *  [/object/patch/add-link](#apiv0objectpatchadd-link)
+  *  [/object/patch/append-data](#apiv0objectpatchappend-data)
+  *  [/object/patch/rm-link](#apiv0objectpatchrm-link)
+  *  [/object/patch/set-data](#apiv0objectpatchset-data)
+  *  [/object/put](#apiv0objectput)
+  *  [/object/stat](#apiv0objectstat)
+  *  [/p2p/listener/close](#apiv0p2plistenerclose)
+  *  [/p2p/listener/ls](#apiv0p2plistenerls)
+  *  [/p2p/listener/open](#apiv0p2plisteneropen)
+  *  [/p2p/stream/close](#apiv0p2pstreamclose)
+  *  [/p2p/stream/dial](#apiv0p2pstreamdial)
+  *  [/p2p/stream/ls](#apiv0p2pstreamls)
+  *  [/pin/add](#apiv0pinadd)
+  *  [/pin/ls](#apiv0pinls)
+  *  [/pin/rm](#apiv0pinrm)
+  *  [/pin/update](#apiv0pinupdate)
+  *  [/pin/verify](#apiv0pinverify)
+  *  [/ping](#apiv0ping)
+  *  [/pubsub/ls](#apiv0pubsubls)
+  *  [/pubsub/peers](#apiv0pubsubpeers)
+  *  [/pubsub/pub](#apiv0pubsubpub)
+  *  [/pubsub/sub](#apiv0pubsubsub)
+  *  [/refs/local](#apiv0refslocal)
+  *  [/repo/fsck](#apiv0repofsck)
+  *  [/repo/gc](#apiv0repogc)
+  *  [/repo/stat](#apiv0repostat)
+  *  [/repo/verify](#apiv0repoverify)
+  *  [/repo/version](#apiv0repoversion)
+  *  [/resolve](#apiv0resolve)
+  *  [/shutdown](#apiv0shutdown)
+  *  [/stats/bitswap](#apiv0statsbitswap)
+  *  [/stats/bw](#apiv0statsbw)
+  *  [/stats/repo](#apiv0statsrepo)
+  *  [/swarm/addrs/listen](#apiv0swarmaddrslisten)
+  *  [/swarm/addrs/local](#apiv0swarmaddrslocal)
+  *  [/swarm/connect](#apiv0swarmconnect)
+  *  [/swarm/disconnect](#apiv0swarmdisconnect)
+  *  [/swarm/filters/add](#apiv0swarmfiltersadd)
+  *  [/swarm/filters/rm](#apiv0swarmfiltersrm)
+  *  [/swarm/peers](#apiv0swarmpeers)
+  *  [/tar/add](#apiv0taradd)
+  *  [/tar/cat](#apiv0tarcat)
+  *  [/update](#apiv0update)
+  *  [/version](#apiv0version)
 
 
 ## Endpoints
@@ -206,6 +215,8 @@ Add a file or directory to ipfs.
   - `raw-leaves` [bool]: Use raw blocks for leaf nodes. (experimental). Required: no.
   - `nocopy` [bool]: Add the file using filestore. (experimental). Required: no.
   - `fscache` [bool]: Check the filestore for pre-existing blocks. (experimental). Required: no.
+  - `cid-version` [int]: Cid version. Non-zero value will change default of 'raw-leaves' to true. (experimental). Default: "0". Required: no.
+  - `hash` [string]: Hash function to use. Will set Cid version to 1 if used. (experimental). Default: "sha2-256". Required: no.
 
 
 #### Request Body
@@ -222,13 +233,14 @@ On success, the call to this endpoint will return with 200 and the following bod
     "Name": "<string>"
     "Hash": "<string>"
     "Bytes": "<int64>"
+    "Size": "<string>"
 }
 
 ```
 
 #### cURL Example
 
-`curl -F file=@myfile "http://localhost:5001/api/v0/add?recursive=false&quiet=<value>&quieter=<value>&silent=<value>&progress=<value>&trickle=<value>&only-hash=<value>&wrap-with-directory=<value>&hidden=<value>&chunker=<value>&pin=true&raw-leaves=<value>&nocopy=<value>&fscache=<value>"`
+`curl -F file=@myfile "http://localhost:5001/api/v0/add?recursive=false&quiet=<value>&quieter=<value>&silent=<value>&progress=<value>&trickle=<value>&only-hash=<value>&wrap-with-directory=<value>&hidden=<value>&chunker=<value>&pin=true&raw-leaves=<value>&nocopy=<value>&fscache=<value>&cid-version=0&hash=sha2-256"`
 
 ***
 
@@ -263,6 +275,30 @@ On success, the call to this endpoint will return with 200 and the following bod
 
 ***
 
+### /api/v0/bitswap/reprovide
+
+Trigger reprovider.
+
+
+#### Arguments
+
+This endpoint takes no arguments.
+
+
+#### Response
+
+On success, the call to this endpoint will return with 200 and the following body:
+
+```text
+This endpoint returns a `text/plain` response body.
+```
+
+#### cURL Example
+
+`curl "http://localhost:5001/api/v0/bitswap/reprovide"`
+
+***
+
 ### /api/v0/bitswap/stat
 
 Show some diagnostic information on the bitswap agent.
@@ -286,11 +322,11 @@ On success, the call to this endpoint will return with 200 and the following bod
     "Peers": [
         "<string>"
     ]
-    "BlocksReceived": "<int>"
+    "BlocksReceived": "<uint64>"
     "DataReceived": "<uint64>"
-    "BlocksSent": "<int>"
+    "BlocksSent": "<uint64>"
     "DataSent": "<uint64>"
-    "DupBlksReceived": "<int>"
+    "DupBlksReceived": "<uint64>"
     "DupDataReceived": "<uint64>"
 }
 
@@ -752,6 +788,8 @@ Add a dag node to ipfs.
   - `arg` [file]: The object to put Required: **yes**.
   - `format` [string]: Format that the object will be added as. Default: "cbor". Required: no.
   - `input-enc` [string]: Format that the input object will be. Default: "json". Required: no.
+  - `pin` [bool]: Pin this object when adding. Default: "false". Required: no.
+  - `hash` [string]: Hash function to use. Default: . Required: no.
 
 
 #### Request Body
@@ -772,7 +810,35 @@ On success, the call to this endpoint will return with 200 and the following bod
 
 #### cURL Example
 
-`curl -F file=@myfile "http://localhost:5001/api/v0/dag/put?format=cbor&input-enc=json"`
+`curl -F file=@myfile "http://localhost:5001/api/v0/dag/put?format=cbor&input-enc=json&pin=false&hash=<value>"`
+
+***
+
+### /api/v0/dag/resolve
+
+Resolve ipld block
+
+
+#### Arguments
+
+  - `arg` [string]: The path to resolve Required: **yes**.
+
+
+#### Response
+
+On success, the call to this endpoint will return with 200 and the following body:
+
+```text
+{
+    "Cid": "<string>"
+    "RemPath": "<string>"
+}
+
+```
+
+#### cURL Example
+
+`curl "http://localhost:5001/api/v0/dag/resolve?arg=<ref>"`
 
 ***
 
@@ -823,6 +889,7 @@ Find peers in the DHT that can provide a specific value, given a key.
 
   - `arg` [string]: The key to find providers for. Required: **yes**.
   - `verbose` [bool]: Print extra information. Default: "false". Required: no.
+  - `num-providers` [int]: The number of providers to find. Default: "20". Required: no.
 
 
 #### Response
@@ -848,7 +915,7 @@ On success, the call to this endpoint will return with 200 and the following bod
 
 #### cURL Example
 
-`curl "http://localhost:5001/api/v0/dht/findprovs?arg=<key>&verbose=false"`
+`curl "http://localhost:5001/api/v0/dht/findprovs?arg=<key>&verbose=false&num-providers=20"`
 
 ***
 
@@ -1051,30 +1118,6 @@ This endpoint returns a `text/plain` response body.
 #### cURL Example
 
 `curl "http://localhost:5001/api/v0/diag/cmds/set-time?arg=<time>"`
-
-***
-
-### /api/v0/diag/net
-
-Generate a network diagnostics report.
-
-
-#### Arguments
-
-  - `vis` [string]: Output format. One of: d3, dot, text. Default: "text". Required: no.
-
-
-#### Response
-
-On success, the call to this endpoint will return with 200 and the following body:
-
-```text
-This endpoint returns a `text/plain` response body.
-```
-
-#### cURL Example
-
-`curl "http://localhost:5001/api/v0/diag/net?vis=text"`
 
 ***
 
@@ -1475,6 +1518,7 @@ List objects in filestore.
 #### Arguments
 
   - `arg` [string]: Cid of objects to list. Required: no.
+  - `file-order` [bool]: sort the results based on the path of the backing file. Required: no.
 
 
 #### Response
@@ -1495,7 +1539,7 @@ On success, the call to this endpoint will return with 200 and the following bod
 
 #### cURL Example
 
-`curl "http://localhost:5001/api/v0/filestore/ls?arg=<obj>"`
+`curl "http://localhost:5001/api/v0/filestore/ls?arg=<obj>&file-order=<value>"`
 
 ***
 
@@ -1507,6 +1551,7 @@ Verify objects in filestore.
 #### Arguments
 
   - `arg` [string]: Cid of objects to verify. Required: no.
+  - `file-order` [bool]: verify the objects based on the order of the backing file. Required: no.
 
 
 #### Response
@@ -1527,7 +1572,7 @@ On success, the call to this endpoint will return with 200 and the following bod
 
 #### cURL Example
 
-`curl "http://localhost:5001/api/v0/filestore/verify?arg=<obj>"`
+`curl "http://localhost:5001/api/v0/filestore/verify?arg=<obj>&file-order=<value>"`
 
 ***
 
@@ -1652,6 +1697,71 @@ On success, the call to this endpoint will return with 200 and the following bod
 #### cURL Example
 
 `curl "http://localhost:5001/api/v0/key/list?l=<value>"`
+
+***
+
+### /api/v0/key/rename
+
+Rename a keypair
+
+
+#### Arguments
+
+  - `arg` [string]: name of key to rename Required: **yes**.
+  - `arg` [string]: new name of the key Required: **yes**.
+  - `force` [bool]: Allow to overwrite an existing key. Required: no.
+
+
+#### Response
+
+On success, the call to this endpoint will return with 200 and the following body:
+
+```text
+{
+    "Was": "<string>"
+    "Now": "<string>"
+    "Id": "<string>"
+    "Overwrite": "<bool>"
+}
+
+```
+
+#### cURL Example
+
+`curl "http://localhost:5001/api/v0/key/rename?arg=<name>&arg=<newName>&force=<value>"`
+
+***
+
+### /api/v0/key/rm
+
+Remove a keypair
+
+
+#### Arguments
+
+  - `arg` [string]: names of keys to remove Required: **yes**.
+  - `l` [bool]: Show extra information about keys. Required: no.
+
+
+#### Response
+
+On success, the call to this endpoint will return with 200 and the following body:
+
+```text
+{
+    "Keys": [
+        {
+            "Name": "<string>"
+            "Id": "<string>"
+        }
+    ]
+}
+
+```
+
+#### cURL Example
+
+`curl "http://localhost:5001/api/v0/key/rm?arg=<name>&l=<value>"`
 
 ***
 
@@ -1822,7 +1932,7 @@ Publish IPNS names.
     This accepts durations such as "300s", "1.5h" or "2h45m". Valid time units are
     "ns", "us" (or "µs"), "ms", "s", "m", "h". Default: "24h". Required: no.
   - `ttl` [string]: Time duration this record should be cached for (caution: experimental). Required: no.
-  - `key` [string]: Name of the key to be used, as listed by 'ipfs key list'. Default:. Default: "self". Required: no.
+  - `key` [string]: Name of the key to be used or a valid PeerID, as listed by 'ipfs key list -l'. Default:. Default: "self". Required: no.
 
 
 #### Response
@@ -2197,6 +2307,7 @@ Store input as a DAG object, print its key.
   - `arg` [file]: Data to be stored as a DAG object. Required: **yes**.
   - `inputenc` [string]: Encoding type of input data. One of: {"protobuf", "json"}. Default: "json". Required: no.
   - `datafieldenc` [string]: Encoding type of the data field, either "text" or "base64". Default: "text". Required: no.
+  - `pin` [bool]: Pin this object when adding. Default: "false". Required: no.
 
 
 #### Request Body
@@ -2224,7 +2335,7 @@ On success, the call to this endpoint will return with 200 and the following bod
 
 #### cURL Example
 
-`curl -F file=@myfile "http://localhost:5001/api/v0/object/put?inputenc=json&datafieldenc=text"`
+`curl -F file=@myfile "http://localhost:5001/api/v0/object/put?inputenc=json&datafieldenc=text&pin=false"`
 
 ***
 
@@ -2257,6 +2368,175 @@ On success, the call to this endpoint will return with 200 and the following bod
 #### cURL Example
 
 `curl "http://localhost:5001/api/v0/object/stat?arg=<key>"`
+
+***
+
+### /api/v0/p2p/listener/close
+
+Close active p2p listener.
+
+
+#### Arguments
+
+  - `arg` [string]: P2P listener protocol Required: no.
+  - `all` [bool]: Close all listeners. Default: "false". Required: no.
+
+
+#### Response
+
+On success, the call to this endpoint will return with 200 and the following body:
+
+```text
+This endpoint returns a `text/plain` response body.
+```
+
+#### cURL Example
+
+`curl "http://localhost:5001/api/v0/p2p/listener/close?arg=<Protocol>&all=false"`
+
+***
+
+### /api/v0/p2p/listener/ls
+
+List active p2p listeners.
+
+
+#### Arguments
+
+  - `headers` [bool]: Print table headers (HandlerID, Protocol, Local, Remote). Default: "false". Required: no.
+
+
+#### Response
+
+On success, the call to this endpoint will return with 200 and the following body:
+
+```text
+{
+    "Listeners": [
+        {
+            "Protocol": "<string>"
+            "Address": "<string>"
+        }
+    ]
+}
+
+```
+
+#### cURL Example
+
+`curl "http://localhost:5001/api/v0/p2p/listener/ls?headers=false"`
+
+***
+
+### /api/v0/p2p/listener/open
+
+Forward p2p connections to a network multiaddr.
+
+
+#### Arguments
+
+  - `arg` [string]: Protocol identifier. Required: **yes**.
+  - `arg` [string]: Request handling application address. Required: **yes**.
+
+
+#### Response
+
+On success, the call to this endpoint will return with 200 and the following body:
+
+```text
+This endpoint returns a `text/plain` response body.
+```
+
+#### cURL Example
+
+`curl "http://localhost:5001/api/v0/p2p/listener/open?arg=<Protocol>&arg=<Address>"`
+
+***
+
+### /api/v0/p2p/stream/close
+
+Close active p2p stream.
+
+
+#### Arguments
+
+  - `arg` [string]: Stream HandlerID Required: no.
+  - `all` [bool]: Close all streams. Default: "false". Required: no.
+
+
+#### Response
+
+On success, the call to this endpoint will return with 200 and the following body:
+
+```text
+This endpoint returns a `text/plain` response body.
+```
+
+#### cURL Example
+
+`curl "http://localhost:5001/api/v0/p2p/stream/close?arg=<HandlerID>&all=false"`
+
+***
+
+### /api/v0/p2p/stream/dial
+
+Dial to a p2p listener.
+
+
+#### Arguments
+
+  - `arg` [string]: Remote peer to connect to Required: **yes**.
+  - `arg` [string]: Protocol identifier. Required: **yes**.
+  - `arg` [string]: Address to listen for connection/s (default: /ip4/127.0.0.1/tcp/0). Required: no.
+
+
+#### Response
+
+On success, the call to this endpoint will return with 200 and the following body:
+
+```text
+This endpoint returns a `text/plain` response body.
+```
+
+#### cURL Example
+
+`curl "http://localhost:5001/api/v0/p2p/stream/dial?arg=<Peer>&arg=<Protocol>&arg=<BindAddress>"`
+
+***
+
+### /api/v0/p2p/stream/ls
+
+List active p2p streams.
+
+
+#### Arguments
+
+  - `headers` [bool]: Print table headers (HagndlerID, Protocol, Local, Remote). Default: "false". Required: no.
+
+
+#### Response
+
+On success, the call to this endpoint will return with 200 and the following body:
+
+```text
+{
+    "Streams": [
+        {
+            "HandlerID": "<string>"
+            "Protocol": "<string>"
+            "LocalPeer": "<string>"
+            "LocalAddress": "<string>"
+            "RemotePeer": "<string>"
+            "RemoteAddress": "<string>"
+        }
+    ]
+}
+
+```
+
+#### cURL Example
+
+`curl "http://localhost:5001/api/v0/p2p/stream/ls?headers=false"`
 
 ***
 
@@ -2352,6 +2632,74 @@ On success, the call to this endpoint will return with 200 and the following bod
 #### cURL Example
 
 `curl "http://localhost:5001/api/v0/pin/rm?arg=<ipfs-path>&recursive=true"`
+
+***
+
+### /api/v0/pin/update
+
+Update a recursive pin
+
+
+#### Arguments
+
+  - `arg` [string]: Path to old object. Required: **yes**.
+  - `arg` [string]: Path to new object to be pinned. Required: **yes**.
+  - `unpin` [bool]: Remove the old pin. Default: "true". Required: no.
+
+
+#### Response
+
+On success, the call to this endpoint will return with 200 and the following body:
+
+```text
+{
+    "Pins": [
+        "<string>"
+    ]
+}
+
+```
+
+#### cURL Example
+
+`curl "http://localhost:5001/api/v0/pin/update?arg=<from-path>&arg=<to-path>&unpin=true"`
+
+***
+
+### /api/v0/pin/verify
+
+Verify that recursive pins are complete.
+
+
+#### Arguments
+
+  - `verbose` [bool]: Also write the hashes of non-broken pins. Required: no.
+  - `quiet` [bool]: Write just hashes of broken pins. Required: no.
+
+
+#### Response
+
+On success, the call to this endpoint will return with 200 and the following body:
+
+```text
+{
+    "Cid": "<string>"
+    "PinStatus": {
+        "Ok": "<bool>"
+        "BadNodes": [
+            {
+                "Cid": "<string>"
+                "Err": "<string>"
+            }
+        ]
+    }
+}
+
+```
+
+#### cURL Example
+
+`curl "http://localhost:5001/api/v0/pin/verify?verbose=<value>&quiet=<value>"`
 
 ***
 
@@ -2616,6 +2964,7 @@ On success, the call to this endpoint will return with 200 and the following bod
     "RepoSize": "<uint64>"
     "RepoPath": "<string>"
     "Version": "<string>"
+    "StorageMax": "<uint64>"
 }
 
 ```
@@ -2709,6 +3058,30 @@ On success, the call to this endpoint will return with 200 and the following bod
 
 ***
 
+### /api/v0/shutdown
+
+Shut down the ipfs daemon
+
+
+#### Arguments
+
+This endpoint takes no arguments.
+
+
+#### Response
+
+On success, the call to this endpoint will return with 200 and the following body:
+
+```text
+This endpoint returns a `text/plain` response body.
+```
+
+#### cURL Example
+
+`curl "http://localhost:5001/api/v0/shutdown"`
+
+***
+
 ### /api/v0/stats/bitswap
 
 Show some diagnostic information on the bitswap agent.
@@ -2732,11 +3105,11 @@ On success, the call to this endpoint will return with 200 and the following bod
     "Peers": [
         "<string>"
     ]
-    "BlocksReceived": "<int>"
+    "BlocksReceived": "<uint64>"
     "DataReceived": "<uint64>"
-    "BlocksSent": "<int>"
+    "BlocksSent": "<uint64>"
     "DataSent": "<uint64>"
-    "DupBlksReceived": "<int>"
+    "DupBlksReceived": "<uint64>"
     "DupDataReceived": "<uint64>"
 }
 
@@ -2804,6 +3177,7 @@ On success, the call to this endpoint will return with 200 and the following bod
     "RepoSize": "<uint64>"
     "RepoPath": "<string>"
     "Version": "<string>"
+    "StorageMax": "<uint64>"
 }
 
 ```
@@ -2811,6 +3185,35 @@ On success, the call to this endpoint will return with 200 and the following bod
 #### cURL Example
 
 `curl "http://localhost:5001/api/v0/stats/repo?human=false"`
+
+***
+
+### /api/v0/swarm/addrs/listen
+
+List interface listening addresses.
+
+
+#### Arguments
+
+This endpoint takes no arguments.
+
+
+#### Response
+
+On success, the call to this endpoint will return with 200 and the following body:
+
+```text
+{
+    "Strings": [
+        "<string>"
+    ]
+}
+
+```
+
+#### cURL Example
+
+`curl "http://localhost:5001/api/v0/swarm/addrs/listen"`
 
 ***
 
@@ -3024,6 +3427,7 @@ On success, the call to this endpoint will return with 200 and the following bod
     "Name": "<string>"
     "Hash": "<string>"
     "Bytes": "<int64>"
+    "Size": "<string>"
 }
 
 ```
@@ -3055,78 +3459,6 @@ This endpoint returns a `text/plain` response body.
 #### cURL Example
 
 `curl "http://localhost:5001/api/v0/tar/cat?arg=<path>"`
-
-***
-
-### /api/v0/tour/list
-
-Show a list of IPFS Tour topics.
-
-
-#### Arguments
-
-This endpoint takes no arguments.
-
-
-#### Response
-
-On success, the call to this endpoint will return with 200 and the following body:
-
-```text
-This endpoint returns a `text/plain` response body.
-```
-
-#### cURL Example
-
-`curl "http://localhost:5001/api/v0/tour/list"`
-
-***
-
-### /api/v0/tour/next
-
-Show the next IPFS Tour topic.
-
-
-#### Arguments
-
-This endpoint takes no arguments.
-
-
-#### Response
-
-On success, the call to this endpoint will return with 200 and the following body:
-
-```text
-This endpoint returns a `text/plain` response body.
-```
-
-#### cURL Example
-
-`curl "http://localhost:5001/api/v0/tour/next"`
-
-***
-
-### /api/v0/tour/restart
-
-Restart the IPFS Tour.
-
-
-#### Arguments
-
-This endpoint takes no arguments.
-
-
-#### Response
-
-On success, the call to this endpoint will return with 200 and the following body:
-
-```text
-This endpoint returns a `text/plain` response body.
-```
-
-#### cURL Example
-
-`curl "http://localhost:5001/api/v0/tour/restart"`
 
 ***
 
