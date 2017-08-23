@@ -20,7 +20,7 @@ These are links to some of the IPFS repositories.
 ## Community
 
 - <a class='link-github' href='https://github.com/ipfs/ipfs'>ipfs/ipfs</a> as a landing repository, with links to various other repositories.
-- <a class='link-github' href='https://discuss.ipfs.io/'>ipfs/support</a> for issues with getting ipfs up and running.
+- <a class='link-github' href='https://discuss.ipfs.io/'>Discourse</a> for issues with getting ipfs up and running.
 - <a class='link-github' href='https://github.com/ipfs/go-ipfs'>ipfs/go-ipfs</a> for the go-ipfs implementation.
 - <a class='link-github' href='https://github.com/ipfs/faq'>ipfs/faq</a> for questions you might have about IPFS.
 - <a class='link-github' href='https://github.com/ipfs/reading-list'>ipfs/reading-list</a> for papers to read to understand IPFS.
