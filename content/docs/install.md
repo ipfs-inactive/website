@@ -27,7 +27,16 @@ We recommend installing IPFS from a prebuilt package:
 
 ## Installing from a Prebuilt Package
 
-### Mac OS X and Linux
+### Linux
+
+You may install the snap package, <a href="https://snapcraft.io/docs/core/install" target="_blank">if your distribution supports it</a>:
+```sh
+$ sudo snap install ipfs
+```
+
+Otherwise, follow the instructions for Mac OS X.
+
+### Mac OS X
 
 After downloading, untar the archive, and move the `ipfs` binary somewhere in your executables `$PATH`:
 
