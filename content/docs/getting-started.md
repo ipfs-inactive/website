@@ -112,9 +112,15 @@ These are a combination of `<transport address>/ipfs/<hash-of-public-key>`.
 
 Now, you should be able to get objects from the network. Try:
 
+Linux:
 ```
 ipfs cat /ipfs/QmW2WQi7j6c7UgJTarActp7tDNikE4B2qXtFCfLPdsgaTQ/cat.jpg >cat.jpg
 open cat.jpg
+```
+Windows:
+```
+ipfs cat /ipfs/QmW2WQi7j6c7UgJTarActp7tDNikE4B2qXtFCfLPdsgaTQ/cat.jpg >cat.jpg
+start cat.jpg
 ```
 
 And, you should be able to give the network objects. Try adding one, and then
