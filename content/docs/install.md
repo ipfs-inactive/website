@@ -92,7 +92,7 @@ When installing new versions of `ipfs` or upgrading make sure you are using the 
 `ipfs-update versions` lists all the available `ipfs` versions which are available for download:
 
 ```
-$ ipfs-update-versions
+$ ipfs-update versions
 v0.3.2
 v0.3.4
 v0.3.5
