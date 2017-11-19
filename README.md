@@ -70,7 +70,7 @@ If you'd like to update the dnslink TXT record for another domain, pass `DOMAIN=
 
 See the `Makefile` for the full list or run `make help` in the project root. You can pass the env var `DEBUG=true` to increase the verbosity of your chosen command.
 
-## Latest blog posts
+## Latest Blog Posts
 
 The *IPFS Starlog* list in the *Latest* section is populated from the [IPFS blog](https://github.com/ipfs/blog), which has a separate build and deploy process.  That process includes building an `index.json` file containing the latest post data in the blog's root directory.  Latest posts can be rendered by this project via two mechanisms:
 
