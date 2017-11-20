@@ -199,7 +199,7 @@ go version go1.7 linux/amd64
 ```
 
 If you need to update, it is recommended to install from the
-[canonical Go packages](https://golang.org/doc/install/).
+[canonical Go packages](https://golang.org/doc/install).
 Package managers often contain out-of-date Go packages.
 
 ### Install FUSE
