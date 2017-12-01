@@ -1,9 +1,10 @@
+---
 section: Docs
 title: API | IPFS Docs
 pagetype: subdoc
 url: docs/api
 save_as: docs/api/index.html
-
+---
 
 # API Reference
 
