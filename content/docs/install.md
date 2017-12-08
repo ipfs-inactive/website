@@ -29,11 +29,11 @@ We recommend installing IPFS from a prebuilt package:
 
 ### Mac OS X and Linux
 
-After downloading, untar the archive, and move the `ipfs` binary somewhere in your executables `$PATH`:
+After downloading, untar the archive, and move the `ipfs` binary somewhere in your executables `$PATH` using the `install.sh` script:
 
 ```sh
 tar xvfz go-ipfs.tar.gz
-mv go-ipfs/ipfs /usr/local/bin/ipfs
+./go-ipfs/install.sh
 ```
 
 Test it out:
