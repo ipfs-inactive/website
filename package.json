@@ -55,7 +55,6 @@
   "homepage": "https://github.com/tableflip/ipfs-website#readme",
   "standard": {
     "ignore": [
-      "layouts/js/blackout.js",
       "content/docs/examples/"
     ]
   }
