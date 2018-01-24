@@ -33,7 +33,8 @@ After downloading, untar the archive, and move the `ipfs` binary somewhere in yo
 
 ```sh
 tar xvfz go-ipfs.tar.gz
-./go-ipfs/install.sh
+cd go-ipfs
+./install.sh
 ```
 
 Test it out:
