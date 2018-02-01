@@ -44,7 +44,7 @@ IPFS news, articles, references on the media, presence in conferences and talks,
 - [Oct 20 - IPFS Meetup hosted by Sourcegraph, San Francisco CA](https://attending.io/events/ipfs-san-francisco-october-2015)
 - [Oct 19 - Introduction to IPFS (InterPlanetary File System); A Brief Post About a Protocol That Changes Everything](https://www.linkedin.com/pulse/introduction-ipfs-interplanetary-file-system-brief-post-john-lilic?trk=hp-feed-article-title-like)
 - [Oct 18 - Ian Preston - IPFS at Redecentralize Conf, London, UK](https://www.youtube.com/watch?v=TiCUIh7tNtU)
-- [Oct 12 - Epicenter Bitcoin Interviews Juan Benet - Decentralizing The Web With The Inter-Planetary File System (IPFS)](https://epicenterbitcoin.com/podcast/100/)
+- [Oct 12 - Epicenter Bitcoin Interviews Juan Benet - Decentralizing The Web With The Inter-Planetary File System (IPFS)](https://epicenter.tv/episode/100/)
 - [Oct 12 - Decentralizing the Web with IPFS](https://blog.resellerclub.com/decentralizing-the-web-with-ipfs/)
 - [Oct 9 - FreeNAS Alpha Ships with IPFS as a Transport](http://www.freenas.org/whats-new/2015/10/announcing-freenas-10-alpha.html)
 - [Oct 6-8 - AndyetConf - Richland, WA](http://andyetconf.com) [(Video forthcoming)](#)
