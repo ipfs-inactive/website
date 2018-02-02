@@ -25,7 +25,8 @@ in your web browser! Next, to view it coming from another ipfs node, you can try
 `http://gateway.ipfs.io/ipfs/$SITE_HASH`. Cool, right?  But those hashes are
 rather ugly. Let's look at some ways to get rid of them.
 
-First, you can do a simple DNS TXT record, containing `dnslink=/ipfs/$SITE_HASH`.
+First, you can do a simple DNS TXT record. In your domain's DNS management settings, create a new TXT record. In the Name/Host/Alias field, enter @ or leave it blank. Your other DNS records may indicate which you should use. In the
+ Value/Answer/Destination field, enter `dnslink=/ipfs/$SITE_HASH`.
 Once that record propagates, you should be able to view your site at
 `http://localhost:8080/ipns/your.domain`. Now that's quite a bit cleaner.
 You can also try this on the gateway at `http://gateway.ipfs.io/ipns/your.domain`
@@ -49,7 +50,7 @@ leading to outdated/missing assets unless accounted for)
 
 Now, you can test that it worked by viewing: `http://localhost:8080/ipns/<your peer id>`.
 And also try the same link on the public gateway. Once you're convinced that works,
-let's again hide the hash. Change your DNS TXT record to `dnslink=/ipns/<your peer id>`,
+let's again hide the hash. Change your DNS TXT record value to `dnslink=/ipns/<your peer id>` (note *ipns*),
 wait for that record to propagate, and then try accessing `http://localhost:8080/ipns/your.domain`.
 
 At this point, you have a website on ipfs/ipns, and you may be wondering how
@@ -75,9 +76,11 @@ as a TXT to refer to the ipfs/ipns record. Because of this, ipfs allows to
 create a DNS TXT record for `_dnslink.your.domain` with
 `dnslink=/ipns/<yourpeer id>`.
 
-So by creating a CNAME for `your.domain` to `gateway.ipfs.io` and adding a
+So by creating a CNAME record for `your.domain` to `gateway.ipfs.io` and adding a
 `_dnslink.your.domain` record with `dnslink=/ipns/<your peer id>` you can host
 your website without explicitly referring to IP addresses of the ipfs gateway.
+
+**Bonus:** To set up your site on a subdomain eg. `subdomain.yourdomain.com`, simply change the Name/Host/Alias field of your CNAME/A and DNS TXT records to `<your subdomain>`.
 
 Happy Hacking!
 
