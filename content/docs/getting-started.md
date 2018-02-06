@@ -16,7 +16,7 @@ During this tutorial, if you have any questions, feel free to ask them in [https
 
 ## init the repo
 
-`ipfs` uses a global local object repository, added to `~/.ipfs`:
+`ipfs` uses a global local object repository, created at `~/.ipfs`. To initialize it, run:
 
 ```sh
 > ipfs init
@@ -28,6 +28,9 @@ to get started, enter:
   ipfs cat /ipfs/QmYwAPJzv5CZsnA625s3Xf2nemtYgPpHdWEz79ojWnPbdG/readme
 
 ```
+<div class="alert alert-warning">
+If you're running IPFS in the cloud, you should initialize IPFS with the `server` profile (`ipfs init --profile=server`) to avoid aggravating your service provider. See [go-ipfs#4343](https://github.com/ipfs/go-ipfs/issues/4343) for details.
+</div>
 
 <div class="alert alert-info">
 The hash after `peer identity: ` is your peer's ID. That's how other nodes on the network can find and connect to you. Don't bother writing it down, you can run `ipfs id` at any time if you need it.
