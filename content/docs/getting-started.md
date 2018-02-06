@@ -30,10 +30,14 @@ to get started, enter:
 ```
 
 <div class="alert alert-info">
-Note the hash there may differ. If it does, use the one you got.
+The hash after `peer identity: ` is your peer's ID. That's how other nodes on the network can find and connect to you. Don't bother writing it down, you can run `ipfs id` at any time if you need it.
 </div>
 
-Now, try running:
+<div class="alert alert-info">
+Note, `HASH` in the `ipfs cat /ipfs/HASH/readme` command may differ. If it does, use the one you got. Do *not* use your peer ID.
+</div>
+
+Now, try following the instructions given to you by `ipfs init`:
 
 ```sh
 ipfs cat /ipfs/QmYwAPJzv5CZsnA625s3Xf2nemtYgPpHdWEz79ojWnPbdG/readme
