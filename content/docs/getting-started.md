@@ -28,16 +28,17 @@ to get started, enter:
   ipfs cat /ipfs/QmYwAPJzv5CZsnA625s3Xf2nemtYgPpHdWEz79ojWnPbdG/readme
 
 ```
+
 <div class="alert alert-warning">
 If you're running IPFS in the cloud, you should initialize IPFS with the `server` profile (`ipfs init --profile=server`) to avoid aggravating your service provider. See [go-ipfs#4343](https://github.com/ipfs/go-ipfs/issues/4343) for details.
 </div>
 
 <div class="alert alert-info">
-The hash after `peer identity: ` is your peer's ID. That's how other nodes on the network can find and connect to you. Don't bother writing it down, you can run `ipfs id` at any time if you need it.
+The hash after `peer identity: ` is your peer's ID and will be different from the one shown in the above output. That's how other nodes on the network can find and connect to you. Don't bother writing it down, you can run `ipfs id` at any time if you need it.
 </div>
 
 <div class="alert alert-info">
-Note, `HASH` in the `ipfs cat /ipfs/HASH/readme` command may differ. If it does, use the one you got. Do *not* use your peer ID.
+The `HASH` in the `ipfs cat /ipfs/HASH/readme` line above may differ from the `HASH` in your output. If it does, use the one you got. Be sure not to confuse these hashes with your peer identity hash; `ipfs cat /ipfs/PEER_ID/readme` won't work.
 </div>
 
 Now, try following the instructions given to you by `ipfs init`:
