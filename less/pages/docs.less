@@ -43,6 +43,36 @@
   border-radius: 3px;
 }
 
+.alert {
+    padding: 10px;
+    border-left-width: 4px;
+    border-left-style: solid;
+    margin-bottom: 1em;
+
+    &::after {
+        font-family: emoji;
+        margin-right: 5px;
+        display: block;
+        text-align: right;
+        opacity: 0.5;
+    }
+
+    &.alert-warning {
+        border-color: #eeaa55;
+        background: #ffeecc;
+        &::after {
+            content: "⚠️";
+        }
+    }
+    &.alert-info {
+        border-color: #9edfff;
+        background: #e3f6ff;
+        &::after {
+            content: "ℹ️️";
+        }
+    }
+}
+
 @media (max-width: 970px) {
   .docs-menu {
     margin-bottom: 40px;
