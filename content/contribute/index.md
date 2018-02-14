@@ -74,7 +74,7 @@ We do most support via the forum we have at: https://discuss.ipfs.io/
 ### Testing
 
 We’re continously improving IPFS every day, but mistakes can happen and we
-could release something that doesn’t work as well as it should—or simply doesn't
+could release something that doesn’t work as well as it should — or simply doesn't
 work at all! If you like to dig into edge-cases or write testing scenarios,
 wrangling our testing infrastructure could be the job for you.
 
