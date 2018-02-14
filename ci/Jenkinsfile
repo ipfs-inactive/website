@@ -1,1 +1,5 @@
-website([website: 'ipfs.io', record: '_dnslink'])
+website([
+  website: 'ipfs.io',
+  record: '_dnslink',
+  disable_publish: true // we're not ready to publish this yet
+])
