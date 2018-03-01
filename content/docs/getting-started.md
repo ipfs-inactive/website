@@ -94,11 +94,11 @@ Gateway server listening on /ip4/127.0.0.1/tcp/8080
 Wait for all three lines to appear.
 
 <div class="alert alert-info">
-Make note of the tcp ports you get. if they are different, use yours in the commands below.
+Make note of the tcp ports you get. If they are different, use yours in the commands below.
 </div>
 
-Now, if you're connected to the network,
-you should be able to see the ipfs addresses of your peers:
+Now, switch back to your original terminal. If you're connected to the network,
+you should be able to see the ipfs addresses of your peers when you run:
 
 ```sh
 > ipfs swarm peers
