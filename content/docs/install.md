@@ -84,7 +84,11 @@ Congratulations! You now have a working IPFS installation on your computer.
 
 `ipfs-update` can be downloaded for your platform at: https://dist.ipfs.io/#ipfs-update
 
-If you have a working Go environment (>=1.8), you can also install it with: `go get -u github.com/ipfs/ipfs-update`.
+If you have a working Go environment (>=1.8), you can also install it with: 
+```
+go get -u github.com/ipfs/ipfs-update
+```
+
 
 When installing new versions of `ipfs` or upgrading make sure you are using the latest version of `ipfs-update`.
 
