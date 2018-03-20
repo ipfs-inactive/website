@@ -16,7 +16,7 @@ During this tutorial, if you have any questions, feel free to ask them in [https
 
 ## init the repo
 
-`ipfs` uses a global local object repository, added to `~/.ipfs`:
+`ipfs` uses a global local object repository, created at `~/.ipfs`. To initialize it, run:
 
 ```sh
 > ipfs init
@@ -29,11 +29,19 @@ to get started, enter:
 
 ```
 
-<div class="alert alert-info">
-Note the hash there may differ. If it does, use the one you got.
+<div class="alert alert-warning">
+If you're running IPFS in the cloud, you should initialize IPFS with the <code>server</code> profile (<code>ipfs init --profile=server</code>) to avoid aggravating your service provider. See <a href="https://github.com/ipfs/go-ipfs/issues/4343">go-ipfs#4343</a> for details.
 </div>
 
-Now, try running:
+<div class="alert alert-info">
+The hash after <code>peer identity: </code> is your peer's ID and will be different from the one shown in the above output. That's how other nodes on the network can find and connect to you. Don't bother writing it down, you can run <code>ipfs id</code> at any time if you need it.
+</div>
+
+<div class="alert alert-info">
+The <code>HASH</code> in the <code>ipfs cat /ipfs/HASH/readme</code> line above may differ from the <code>HASH</code> in your output. If it does, use the one you got. Be sure not to confuse these hashes with your peer identity hash; <code>ipfs cat /ipfs/PEER_ID/readme</code> won't work.
+</div>
+
+Now, try following the instructions given to you by `ipfs init`:
 
 ```sh
 ipfs cat /ipfs/QmYwAPJzv5CZsnA625s3Xf2nemtYgPpHdWEz79ojWnPbdG/readme
@@ -132,7 +140,7 @@ the DHT, found your machine, requested the file, your machine sent it to the
 gateway, and the gateway sent it to your browser.
 
 <div class="alert alert-warning">
-Note: depending on the state of the network, the `curl` may take a while. The public gateways may be overloaded or having a hard time reaching you.
+Note: depending on the state of the network, the <code>curl</code> may take a while. The public gateways may be overloaded or having a hard time reaching you.
 </div>
 
 You can also check it out at your own local gateway:
