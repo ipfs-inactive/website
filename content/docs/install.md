@@ -27,6 +27,10 @@ We recommend installing IPFS from a prebuilt package:
 
 ## Installing from a Prebuilt Package
 
+### Mac OS X
+
+If you use and prefer `brew` then installing `ipfs` is as simple as `brew install ipfs`
+
 ### Mac OS X and Linux
 
 After downloading, untar the archive, and move the `ipfs` binary somewhere in your executables `$PATH` using the `install.sh` script:
