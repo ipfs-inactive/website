@@ -6,7 +6,7 @@ When using ipfs for storing files, or writing more complex datastructures,
 it is often very useful to visualize the merkledag being created. For this,
 I wrote a simple tool called `graphmd` (graph merkle dag).
 
-`graphmd` is a very short shell script ([source](./graphmd)). It uses the
+`graphmd` is a very short shell script ([source](/ipfs/QmfT4cEw9zezKaV6wF9aELFtpuovxFCR8CXSkUb6enAgw8/graphmd)). It uses the
 `ipfs refs --format` flag to produce `dot` output.
 
 ## Install graphmd
@@ -93,7 +93,7 @@ digraph {
 }
 ```
 
-Pipe it to `dot` to produce `svg`, `pdf`, `png` or [whatever](http://www.graphviz.org/Documentation/dotguide.pdf)
+Pipe it to `dot` to produce `svg`, `pdf`, `png` or [whatever](https://web.archive.org/web/20180216175016/http://www.graphviz.org/pdf/dotguide.pdf)
 
 ```
 graphmd QmRCJXG7HSmprrYwDrK1GctXHgbV7EYpVcJPQPwevoQuqF | dot -Tsvg >output/graph.svg
