@@ -27,9 +27,17 @@ We recommend installing IPFS from a prebuilt package:
 
 ## Installing from a Prebuilt Package
 
+### Linux snap package
+
+Linux `snap` users may take advantage of installing `ipfs` with a single command:
+
+    $ sudo snap install ipfs
+    $ ipfs --version
+    ipfs version 0.4.14
+
 ### Mac OS X and Linux
 
-After downloading, untar the archive, and move the `ipfs` binary somewhere in your executables `$PATH` using the `install.sh` script:
+An alternative method for Linux and recommended one for Mac OS X is to download binary archive, untar it, and move the `ipfs` binary somewhere in your executables `$PATH` using the `install.sh` script:
 
 ```sh
 tar xvfz go-ipfs.tar.gz
