@@ -8,12 +8,13 @@ save_as: docs/commands/index.html
 
 # ipfs command reference
 
-generated on 2017-04-01 10:53:32.701039
+generated on 2018-04-09 13:54:54.079504
 
 - [ipfs](#ipfs)
 - [ipfs add](#ipfs-add)
 - [ipfs bitswap](#ipfs-bitswap)
 - [ipfs bitswap ledger](#ipfs-bitswap-ledger)
+- [ipfs bitswap reprovide](#ipfs-bitswap-reprovide)
 - [ipfs bitswap stat](#ipfs-bitswap-stat)
 - [ipfs bitswap unwant](#ipfs-bitswap-unwant)
 - [ipfs bitswap wantlist](#ipfs-bitswap-wantlist)
@@ -32,12 +33,15 @@ generated on 2017-04-01 10:53:32.701039
 - [ipfs commands](#ipfs-commands)
 - [ipfs config](#ipfs-config)
 - [ipfs config edit](#ipfs-config-edit)
+- [ipfs config profile](#ipfs-config-profile)
+- [ipfs config profile apply](#ipfs-config-profile-apply)
 - [ipfs config replace](#ipfs-config-replace)
 - [ipfs config show](#ipfs-config-show)
 - [ipfs daemon](#ipfs-daemon)
 - [ipfs dag](#ipfs-dag)
 - [ipfs dag get](#ipfs-dag-get)
 - [ipfs dag put](#ipfs-dag-put)
+- [ipfs dag resolve](#ipfs-dag-resolve)
 - [ipfs dht](#ipfs-dht)
 - [ipfs dht findpeer](#ipfs-dht-findpeer)
 - [ipfs dht findprovs](#ipfs-dht-findprovs)
@@ -54,6 +58,7 @@ generated on 2017-04-01 10:53:32.701039
 - [ipfs file](#ipfs-file)
 - [ipfs file ls](#ipfs-file-ls)
 - [ipfs files](#ipfs-files)
+- [ipfs files chcid](#ipfs-files-chcid)
 - [ipfs files cp](#ipfs-files-cp)
 - [ipfs files flush](#ipfs-files-flush)
 - [ipfs files ls](#ipfs-files-ls)
@@ -73,6 +78,8 @@ generated on 2017-04-01 10:53:32.701039
 - [ipfs key](#ipfs-key)
 - [ipfs key gen](#ipfs-key-gen)
 - [ipfs key list](#ipfs-key-list)
+- [ipfs key rename](#ipfs-key-rename)
+- [ipfs key rm](#ipfs-key-rm)
 - [ipfs log](#ipfs-log)
 - [ipfs log level](#ipfs-log-level)
 - [ipfs log ls](#ipfs-log-ls)
@@ -81,6 +88,10 @@ generated on 2017-04-01 10:53:32.701039
 - [ipfs mount](#ipfs-mount)
 - [ipfs name](#ipfs-name)
 - [ipfs name publish](#ipfs-name-publish)
+- [ipfs name pubsub](#ipfs-name-pubsub)
+- [ipfs name pubsub cancel](#ipfs-name-pubsub-cancel)
+- [ipfs name pubsub state](#ipfs-name-pubsub-state)
+- [ipfs name pubsub subs](#ipfs-name-pubsub-subs)
 - [ipfs name resolve](#ipfs-name-resolve)
 - [ipfs object](#ipfs-object)
 - [ipfs object data](#ipfs-object-data)
@@ -95,10 +106,21 @@ generated on 2017-04-01 10:53:32.701039
 - [ipfs object patch set-data](#ipfs-object-patch-set-data)
 - [ipfs object put](#ipfs-object-put)
 - [ipfs object stat](#ipfs-object-stat)
+- [ipfs p2p](#ipfs-p2p)
+- [ipfs p2p listener](#ipfs-p2p-listener)
+- [ipfs p2p listener close](#ipfs-p2p-listener-close)
+- [ipfs p2p listener ls](#ipfs-p2p-listener-ls)
+- [ipfs p2p listener open](#ipfs-p2p-listener-open)
+- [ipfs p2p stream](#ipfs-p2p-stream)
+- [ipfs p2p stream close](#ipfs-p2p-stream-close)
+- [ipfs p2p stream dial](#ipfs-p2p-stream-dial)
+- [ipfs p2p stream ls](#ipfs-p2p-stream-ls)
 - [ipfs pin](#ipfs-pin)
 - [ipfs pin add](#ipfs-pin-add)
 - [ipfs pin ls](#ipfs-pin-ls)
 - [ipfs pin rm](#ipfs-pin-rm)
+- [ipfs pin update](#ipfs-pin-update)
+- [ipfs pin verify](#ipfs-pin-verify)
 - [ipfs ping](#ipfs-ping)
 - [ipfs pubsub](#ipfs-pubsub)
 - [ipfs pubsub ls](#ipfs-pubsub-ls)
@@ -114,12 +136,14 @@ generated on 2017-04-01 10:53:32.701039
 - [ipfs repo verify](#ipfs-repo-verify)
 - [ipfs repo version](#ipfs-repo-version)
 - [ipfs resolve](#ipfs-resolve)
+- [ipfs shutdown](#ipfs-shutdown)
 - [ipfs stats](#ipfs-stats)
 - [ipfs stats bitswap](#ipfs-stats-bitswap)
 - [ipfs stats bw](#ipfs-stats-bw)
 - [ipfs stats repo](#ipfs-stats-repo)
 - [ipfs swarm](#ipfs-swarm)
 - [ipfs swarm addrs](#ipfs-swarm-addrs)
+- [ipfs swarm addrs listen](#ipfs-swarm-addrs-listen)
 - [ipfs swarm addrs local](#ipfs-swarm-addrs-local)
 - [ipfs swarm connect](#ipfs-swarm-connect)
 - [ipfs swarm disconnect](#ipfs-swarm-disconnect)
@@ -130,10 +154,6 @@ generated on 2017-04-01 10:53:32.701039
 - [ipfs tar](#ipfs-tar)
 - [ipfs tar add](#ipfs-tar-add)
 - [ipfs tar cat](#ipfs-tar-cat)
-- [ipfs tour](#ipfs-tour)
-- [ipfs tour list](#ipfs-tour-list)
-- [ipfs tour next](#ipfs-tour-next)
-- [ipfs tour restart](#ipfs-tour-restart)
 - [ipfs update](#ipfs-update)
 - [ipfs version](#ipfs-version)
 
@@ -148,12 +168,15 @@ SYNOPSIS
 
 OPTIONS
 
-  -c,   --config string - Path to the configuration file to use.
-  -D,   --debug  bool   - Operate in debug mode. Default: false.
-  --help         bool   - Show the full command help text. Default: false.
-  -h             bool   - Show a short version of the command help text. Default: false.
-  -L,   --local  bool   - Run the command locally, instead of using the daemon. Default: false.
-  --api          string - Use a specific API instance (defaults to /ip4/127.0.0.1/tcp/5001).
+  -c,              --config   string - Path to the configuration file to use.
+  -D,              --debug    bool   - Operate in debug mode.
+  --help                      bool   - Show the full command help text.
+  -h                          bool   - Show a short version of the command help text.
+  -L,              --local    bool   - Run the command locally, instead of using the daemon.
+  --api                       string - Use a specific API instance (defaults to /ip4/127.0.0.1/tcp/5001).
+  --enc,           --encoding string - The encoding type the output should be encoded with (json, xml, or text). Default: text.
+  --stream-channels           bool   - Stream channel output.
+  --timeout                   string - set a global timeout on the command.
 
 SUBCOMMANDS
   BASIC COMMANDS
@@ -163,13 +186,13 @@ SUBCOMMANDS
     get <ref>     Download IPFS objects
     ls <ref>      List links from an object
     refs <ref>    List hashes of links from an object
-
+  
   DATA STRUCTURE COMMANDS
     block         Interact with raw blocks in the datastore
     object        Interact with raw dag nodes
     files         Interact with objects as if they were a unix filesystem
     dag           Interact with IPLD documents (experimental)
-
+  
   ADVANCED COMMANDS
     daemon        Start a long-running daemon process
     mount         Mount an IPFS read-only mountpoint
@@ -180,8 +203,9 @@ SUBCOMMANDS
     pin           Pin objects to local storage
     repo          Manipulate the IPFS repository
     stats         Various operational stats
+    p2p           Libp2p stream mounting
     filestore     Manage the filestore (experimental)
-
+  
   NETWORK COMMANDS
     id            Show info about IPFS peers
     bootstrap     Add or remove bootstrap peers
@@ -189,24 +213,25 @@ SUBCOMMANDS
     dht           Query the DHT for values or peers
     ping          Measure the latency of a connection
     diag          Print diagnostics
-
+  
   TOOL COMMANDS
     config        Manage configuration
     version       Show ipfs version information
     update        Download and apply go-ipfs updates
     commands      List all available commands
-
+  
   Use 'ipfs <command> --help' to learn more about each command.
-
-  ipfs uses a repository in the local file system. By default, the repo is located
-  at ~/.ipfs. To change the repo location, set the $IPFS_PATH environment variable:
-
+  
+  ipfs uses a repository in the local file system. By default, the repo is
+  located at ~/.ipfs. To change the repo location, set the $IPFS_PATH
+  environment variable:
+  
     export IPFS_PATH=/path/to/ipfsrepo
-
+  
   EXIT STATUS
-
+  
   The CLI will exit with one of the following values:
-
+  
   0     Successful execution.
   1     Failed executions.
 
@@ -220,7 +245,7 @@ USAGE
   ipfs add <path>... - Add a file or directory to ipfs.
 
 SYNOPSIS
-  ipfs add [--recursive | -r] [--quiet | -q] [--quieter | -Q] [--silent] [--progress | -p] [--trickle | -t] [--only-hash | -n] [--wrap-with-directory | -w] [--hidden | -H] [--chunker=<chunker> | -s] [--pin=false] [--raw-leaves] [--nocopy] [--fscache] [--] <path>...
+  ipfs add [--recursive | -r] [--quiet | -q] [--quieter | -Q] [--silent] [--progress | -p] [--trickle | -t] [--only-hash | -n] [--wrap-with-directory | -w] [--hidden | -H] [--chunker=<chunker> | -s] [--pin=false] [--raw-leaves] [--nocopy] [--fscache] [--cid-version=<cid-version>] [--hash=<hash>] [--] <path>...
 
 ARGUMENTS
 
@@ -228,41 +253,67 @@ ARGUMENTS
 
 OPTIONS
 
-  -r,         --recursive           bool   - Add directory paths recursively. Default: false.
-  -q,         --quiet               bool   - Write minimal output.
-  -Q,         --quieter             bool   - Write only final hash.
-  --silent                          bool   - Write no output.
-  -p,         --progress            bool   - Stream progress data.
-  -t,         --trickle             bool   - Use trickle-dag format for dag generation.
-  -n,         --only-hash           bool   - Only chunk and hash - do not write to disk.
-  -w,         --wrap-with-directory bool   - Wrap files with a directory object.
-  -H,         --hidden              bool   - Include files that are hidden. Only takes effect on recursive add.
-  -s,         --chunker             string - Chunking algorithm to use.
-  --pin                             bool   - Pin this object when adding. Default: true.
-  --raw-leaves                      bool   - Use raw blocks for leaf nodes. (experimental).
-  --nocopy                          bool   - Add the file using filestore. (experimental).
-  --fscache                         bool   - Check the filestore for pre-existing blocks. (experimental).
+  -r,          --recursive           bool   - Add directory paths recursively. Default: false.
+  -q,          --quiet               bool   - Write minimal output.
+  -Q,          --quieter             bool   - Write only final hash.
+  --silent                           bool   - Write no output.
+  -p,          --progress            bool   - Stream progress data.
+  -t,          --trickle             bool   - Use trickle-dag format for dag generation.
+  -n,          --only-hash           bool   - Only chunk and hash - do not write to disk.
+  -w,          --wrap-with-directory bool   - Wrap files with a directory object.
+  -H,          --hidden              bool   - Include files that are hidden. Only takes effect on recursive add.
+  -s,          --chunker             string - Chunking algorithm, size-[bytes] or rabin-[min]-[avg]-[max]. Default: size-262144.
+  --pin                              bool   - Pin this object when adding. Default: true.
+  --raw-leaves                       bool   - Use raw blocks for leaf nodes. (experimental).
+  --nocopy                           bool   - Add the file using filestore. Implies raw-leaves. (experimental).
+  --fscache                          bool   - Check the filestore for pre-existing blocks. (experimental).
+  --cid-version                      int    - CID version. Defaults to 0 unless an option that depends on CIDv1 is passed. (experimental).
+  --hash                             string - Hash function to use. Implies CIDv1 if not sha2-256. (experimental). Default: sha2-256.
 
 DESCRIPTION
 
   Adds contents of <path> to ipfs. Use -r to add directories.
   Note that directories are added recursively, to form the ipfs
   MerkleDAG.
-
+  
   The wrap option, '-w', wraps the file (or files, if using the
   recursive option) in a directory. This directory contains only
   the files which have been added, and means that the file retains
   its filename. For example:
-
+  
     > ipfs add example.jpg
     added QmbFMke1KXqnYyBBWxB74N4c5SBnJMVAiMNRcGu6x1AwQH example.jpg
     > ipfs add example.jpg -w
     added QmbFMke1KXqnYyBBWxB74N4c5SBnJMVAiMNRcGu6x1AwQH example.jpg
     added QmaG4FuMqEBnQNn3C8XJ5bpW8kLs7zq2ZXgHptJHbKDDVx
-
+  
   You can now refer to the added file in a gateway, like so:
-
+  
     /ipfs/QmaG4FuMqEBnQNn3C8XJ5bpW8kLs7zq2ZXgHptJHbKDDVx/example.jpg
+  
+  The chunker option, '-s', specifies the chunking strategy that dictates
+  how to break files into blocks. Blocks with same content can
+  be deduplicated. The default is a fixed block size of
+  256 * 1024 bytes, 'size-262144'. Alternatively, you can use the
+  rabin chunker for content defined chunking by specifying
+  rabin-[min]-[avg]-[max] (where min/avg/max refer to the resulting
+  chunk sizes). Using other chunking strategies will produce
+  different hashes for the same file.
+  
+    > ipfs add --chunker=size-2048 ipfs-logo.svg
+    added QmafrLBfzRLV4XSH1XcaMMeaXEUhDJjmtDfsYU95TrWG87 ipfs-logo.svg
+    > ipfs add --chunker=rabin-512-1024-2048 ipfs-logo.svg
+    added Qmf1hDN65tR55Ubh2RN1FPxr69xq3giVBz1KApsresY8Gn ipfs-logo.svg
+  
+  You can now check what blocks have been created by:
+  
+    > ipfs object links QmafrLBfzRLV4XSH1XcaMMeaXEUhDJjmtDfsYU95TrWG87
+    QmY6yj1GsermExDXoosVE3aSPxdMNYr6aKuw3nA8LoWPRS 2059
+    Qmf7ZQeSxq2fJVJbCmgTrLLVN9tDR9Wy5k75DxQKuz5Gyt 1195
+    > ipfs object links Qmf1hDN65tR55Ubh2RN1FPxr69xq3giVBz1KApsresY8Gn
+    QmY6yj1GsermExDXoosVE3aSPxdMNYr6aKuw3nA8LoWPRS 2059
+    QmerURi9k4XzKCaaPbsK6BL5pMEjF7PGphjDvkkjDtsVf3 868
+    QmQB28iwSriSUSMqG2nXDTLtdPHgWb4rebBrU7Q1j4vxPv 338
 ```
 
 ## ipfs bitswap
@@ -276,6 +327,7 @@ SYNOPSIS
 
 SUBCOMMANDS
   ipfs bitswap ledger <peer>   - Show the current ledger for a peer.
+  ipfs bitswap reprovide       - Trigger reprovider.
   ipfs bitswap stat            - Show some diagnostic information on the bitswap agent.
   ipfs bitswap unwant <key>... - Remove a given block from your wantlist.
   ipfs bitswap wantlist        - Show blocks currently on the wantlist.
@@ -301,6 +353,20 @@ DESCRIPTION
   The Bitswap decision engine tracks the number of bytes exchanged between IPFS
   nodes, and stores this information as a collection of ledgers. This command
   prints the ledger associated with a given peer.
+```
+
+## ipfs bitswap reprovide
+
+```
+USAGE
+  ipfs bitswap reprovide - Trigger reprovider.
+
+SYNOPSIS
+  ipfs bitswap reprovide
+
+DESCRIPTION
+
+  Trigger reprovider to announce our data to network.
 ```
 
 ## ipfs bitswap stat
@@ -428,8 +494,8 @@ ARGUMENTS
 
 OPTIONS
 
-  -f, --force bool - Ignore nonexistent blocks. Default: false.
-  -q, --quiet bool - Write minimal output. Default: false.
+  -f, --force bool - Ignore nonexistent blocks.
+  -q, --quiet bool - Write minimal output.
 
 DESCRIPTION
 
@@ -454,7 +520,7 @@ DESCRIPTION
 
   'ipfs block stat' is a plumbing command for retrieving information
   on raw IPFS blocks. It outputs the following to stdout:
-
+  
   	Key  - the base58 encoded multihash
   	Size - the size of the block in bytes
 ```
@@ -471,9 +537,9 @@ SYNOPSIS
 DESCRIPTION
 
   Running 'ipfs bootstrap' with no arguments will run 'ipfs bootstrap list'.
-
+  
   SECURITY WARNING:
-
+  
   The bootstrap command manipulates the "bootstrap list", which contains
   the addresses of bootstrap nodes. These are the *trusted peers* from
   which to learn about other peers in the network. Only edit this list
@@ -508,9 +574,9 @@ DESCRIPTION
 
   Outputs a list of peers that were added (that weren't already
   in the bootstrap list).
-
+  
   SECURITY WARNING:
-
+  
   The bootstrap command manipulates the "bootstrap list", which contains
   the addresses of bootstrap nodes. These are the *trusted peers* from
   which to learn about other peers in the network. Only edit this list
@@ -571,9 +637,9 @@ OPTIONS
 DESCRIPTION
 
   Outputs the list of peers that were removed.
-
+  
   SECURITY WARNING:
-
+  
   The bootstrap command manipulates the "bootstrap list", which contains
   the addresses of bootstrap nodes. These are the *trusted peers* from
   which to learn about other peers in the network. Only edit this list
@@ -606,11 +672,16 @@ USAGE
   ipfs cat <ipfs-path>... - Show IPFS object data.
 
 SYNOPSIS
-  ipfs cat [--] <ipfs-path>...
+  ipfs cat [--offset=<offset> | -o] [--length=<length> | -l] [--] <ipfs-path>...
 
 ARGUMENTS
 
   <ipfs-path>... - The path to the IPFS object(s) to be outputted.
+
+OPTIONS
+
+  -o, --offset int - Byte offset to begin reading from.
+  -l, --length int - Maximum number of bytes to read.
 
 DESCRIPTION
 
@@ -628,7 +699,7 @@ SYNOPSIS
 
 OPTIONS
 
-  -f, --flags bool - Show command flags. Default: false.
+  -f, --flags bool - Show command flags.
 
 DESCRIPTION
 
@@ -651,27 +722,28 @@ ARGUMENTS
 
 OPTIONS
 
-  --bool bool - Set a boolean value. Default: false.
-  --json bool - Parse stringified JSON. Default: false.
+  --bool bool - Set a boolean value.
+  --json bool - Parse stringified JSON.
 
 DESCRIPTION
 
   'ipfs config' controls configuration variables. It works
   much like 'git config'. The configuration values are stored in a config
   file inside your IPFS repository.
-
+  
   Examples:
-
+  
   Get the value of the 'Datastore.Path' key:
-
+  
     $ ipfs config Datastore.Path
-
+  
   Set the value of the 'Datastore.Path' key:
-
+  
     $ ipfs config Datastore.Path ~/.ipfs/datastore
 
 SUBCOMMANDS
   ipfs config edit           - Open the config file for editing in $EDITOR.
+  ipfs config profile        - Apply profiles to config.
   ipfs config replace <file> - Replace the config with <file>.
   ipfs config show           - Output config file contents.
 
@@ -693,6 +765,35 @@ DESCRIPTION
   variable set to your preferred text editor.
 ```
 
+## ipfs config profile
+
+```
+USAGE
+  ipfs config profile - Apply profiles to config.
+
+SYNOPSIS
+  ipfs config profile
+
+SUBCOMMANDS
+  ipfs config profile apply <profile> - Apply profile to config.
+
+  Use 'ipfs config profile <subcmd> --help' for more information about each command.
+```
+
+## ipfs config profile apply
+
+```
+USAGE
+  ipfs config profile apply <profile> - Apply profile to config.
+
+SYNOPSIS
+  ipfs config profile apply [--] <profile>
+
+ARGUMENTS
+
+  <profile> - The profile to apply to the config.
+```
+
 ## ipfs config replace
 
 ```
@@ -708,7 +809,7 @@ ARGUMENTS
 
 DESCRIPTION
 
-  Make sure to back up the config file first if neccessary, as this operation
+  Make sure to back up the config file first if necessary, as this operation
   can't be undone.
 ```
 
@@ -723,8 +824,7 @@ SYNOPSIS
 
 DESCRIPTION
 
-  WARNING: Your private key is stored in the config file, and it will be
-  included in the output of this command.
+  NOTE: For security reasons, this command will omit your private key. If you would like to make a full backup of your config (private key included), you must copy the config file from your repo.
 ```
 
 ## ipfs daemon
@@ -734,23 +834,24 @@ USAGE
   ipfs daemon - Run a network-connected IPFS node.
 
 SYNOPSIS
-  ipfs daemon [--init] [--routing=<routing>] [--mount] [--writable] [--mount-ipfs=<mount-ipfs>] [--mount-ipns=<mount-ipns>] [--unrestricted-api] [--disable-transport-encryption] [--enable-gc] [--manage-fdlimit=false] [--offline] [--migrate] [--enable-pubsub-experiment] [--enable-mplex-experiment=false]
+  ipfs daemon [--init] [--routing=<routing>] [--mount] [--writable] [--mount-ipfs=<mount-ipfs>] [--mount-ipns=<mount-ipns>] [--unrestricted-api] [--disable-transport-encryption] [--enable-gc] [--manage-fdlimit=false] [--offline] [--migrate] [--enable-pubsub-experiment] [--enable-namesys-pubsub] [--enable-mplex-experiment=false]
 
 OPTIONS
 
-  --init                         bool   - Initialize ipfs with default settings if not already initialized. Default: false.
+  --init                         bool   - Initialize ipfs with default settings if not already initialized.
   --routing                      string - Overrides the routing option. Default: dht.
-  --mount                        bool   - Mounts IPFS to the filesystem. Default: false.
-  --writable                     bool   - Enable writing objects (with POST, PUT and DELETE). Default: false.
+  --mount                        bool   - Mounts IPFS to the filesystem.
+  --writable                     bool   - Enable writing objects (with POST, PUT and DELETE).
   --mount-ipfs                   string - Path to the mountpoint for IPFS (if using --mount). Defaults to config setting.
   --mount-ipns                   string - Path to the mountpoint for IPNS (if using --mount). Defaults to config setting.
-  --unrestricted-api             bool   - Allow API access to unlisted hashes. Default: false.
-  --disable-transport-encryption bool   - Disable transport encryption (for debugging protocols). Default: false.
-  --enable-gc                    bool   - Enable automatic periodic repo garbage collection. Default: false.
+  --unrestricted-api             bool   - Allow API access to unlisted hashes.
+  --disable-transport-encryption bool   - Disable transport encryption (for debugging protocols).
+  --enable-gc                    bool   - Enable automatic periodic repo garbage collection.
   --manage-fdlimit               bool   - Check and raise file descriptor limits if needed. Default: true.
-  --offline                      bool   - Run offline. Do not connect to the rest of the network but provide local API. Default: false.
+  --offline                      bool   - Run offline. Do not connect to the rest of the network but provide local API.
   --migrate                      bool   - If true, assume yes at the migrate prompt. If false, assume no.
   --enable-pubsub-experiment     bool   - Instantiate the ipfs daemon with the experimental pubsub feature enabled.
+  --enable-namesys-pubsub        bool   - Enable IPNS record distribution through pubsub; enables pubsub.
   --enable-mplex-experiment      bool   - Add the experimental 'go-multiplex' stream muxer to libp2p on construction. Default: true.
 
 DESCRIPTION
@@ -758,78 +859,78 @@ DESCRIPTION
   The daemon will start listening on ports on the network, which are
   documented in (and can be modified through) 'ipfs config Addresses'.
   For example, to change the 'Gateway' port:
-
-      ipfs config Addresses.Gateway /ip4/127.0.0.1/tcp/8082
-
+  
+    ipfs config Addresses.Gateway /ip4/127.0.0.1/tcp/8082
+  
   The API address can be changed the same way:
-
-     ipfs config Addresses.API /ip4/127.0.0.1/tcp/5002
-
+  
+    ipfs config Addresses.API /ip4/127.0.0.1/tcp/5002
+  
   Make sure to restart the daemon after changing addresses.
-
+  
   By default, the gateway is only accessible locally. To expose it to
   other computers in the network, use 0.0.0.0 as the ip address:
-
-     ipfs config Addresses.Gateway /ip4/0.0.0.0/tcp/8080
-
+  
+    ipfs config Addresses.Gateway /ip4/0.0.0.0/tcp/8080
+  
   Be careful if you expose the API. It is a security risk, as anyone could
   control your node remotely. If you need to control the node remotely,
   make sure to protect the port as you would other services or database
   (firewall, authenticated proxy, etc).
-
+  
   HTTP Headers
-
+  
   ipfs supports passing arbitrary headers to the API and Gateway. You can
   do this by setting headers on the API.HTTPHeaders and Gateway.HTTPHeaders
   keys:
-
-  	ipfs config --json API.HTTPHeaders.X-Special-Header '["so special :)"]'
-  	ipfs config --json Gateway.HTTPHeaders.X-Special-Header '["so special :)"]'
-
+  
+    ipfs config --json API.HTTPHeaders.X-Special-Header '["so special :)"]'
+    ipfs config --json Gateway.HTTPHeaders.X-Special-Header '["so special :)"]'
+  
   Note that the value of the keys is an _array_ of strings. This is because
   headers can have more than one value, and it is convenient to pass through
   to other libraries.
-
+  
   CORS Headers (for API)
-
+  
   You can setup CORS headers the same way:
-
-  	ipfs config --json API.HTTPHeaders.Access-Control-Allow-Origin '["example.com"]'
-  	ipfs config --json API.HTTPHeaders.Access-Control-Allow-Methods '["PUT", "GET", "POST"]'
-  	ipfs config --json API.HTTPHeaders.Access-Control-Allow-Credentials '["true"]'
-
+  
+    ipfs config --json API.HTTPHeaders.Access-Control-Allow-Origin '["example.com"]'
+    ipfs config --json API.HTTPHeaders.Access-Control-Allow-Methods '["PUT", "GET", "POST"]'
+    ipfs config --json API.HTTPHeaders.Access-Control-Allow-Credentials '["true"]'
+  
   Shutdown
-
+  
   To shutdown the daemon, send a SIGINT signal to it (e.g. by pressing 'Ctrl-C')
   or send a SIGTERM signal to it (e.g. with 'kill'). It may take a while for the
   daemon to shutdown gracefully, but it can be killed forcibly by sending a
   second signal.
-
+  
   IPFS_PATH environment variable
-
+  
   ipfs uses a repository in the local file system. By default, the repo is
   located at ~/.ipfs. To change the repo location, set the $IPFS_PATH
   environment variable:
-
-      export IPFS_PATH=/path/to/ipfsrepo
-
+  
+    export IPFS_PATH=/path/to/ipfsrepo
+  
   Routing
-
+  
   IPFS by default will use a DHT for content routing. There is a highly
-  experimental alternative that operates the DHT in a 'client only' mode that can
-  be enabled by running the daemon as:
-
-      ipfs daemon --routing=dhtclient
-
+  experimental alternative that operates the DHT in a 'client only' mode that
+  can be enabled by running the daemon as:
+  
+    ipfs daemon --routing=dhtclient
+  
   This will later be transitioned into a config option once it gets out of the
   'experimental' stage.
-
+  
   DEPRECATION NOTICE
-
+  
   Previously, ipfs used an environment variable as seen below:
-
-     export API_ORIGIN="http://localhost:8888/"
-
+  
+    export API_ORIGIN="http://localhost:8888/"
+  
   This is deprecated. It is still honored in this version, but will be removed
   in a future version, along with this notice. Please move to setting the HTTP
   Headers.
@@ -847,14 +948,15 @@ SYNOPSIS
 DESCRIPTION
 
   'ipfs dag' is used for creating and manipulating dag objects.
-
+  
   This subcommand is currently an experimental feature, but it is intended
   to deprecate and replace the existing 'ipfs object' command moving forward.
-
+  		
 
 SUBCOMMANDS
-  ipfs dag get <ref>         - Get a dag node from ipfs.
-  ipfs dag put <object data> - Add a dag node to ipfs.
+  ipfs dag get <ref>            - Get a dag node from ipfs.
+  ipfs dag put <object data>... - Add a dag node to ipfs.
+  ipfs dag resolve <ref>        - Resolve ipld block
 
   Use 'ipfs dag <subcmd> --help' for more information about each command.
 ```
@@ -874,31 +976,52 @@ ARGUMENTS
 
 DESCRIPTION
 
-  'ipfs dag get' fetches a dag node from ipfs and prints it out in the specifed format.
+  'ipfs dag get' fetches a dag node from ipfs and prints it out in the specifed
+  format.
 ```
 
 ## ipfs dag put
 
 ```
 USAGE
-  ipfs dag put <object data> - Add a dag node to ipfs.
+  ipfs dag put <object data>... - Add a dag node to ipfs.
 
 SYNOPSIS
-  ipfs dag put [--format=<format> | -f] [--input-enc=<input-enc>] [--] <object data>
+  ipfs dag put [--format=<format> | -f] [--input-enc=<input-enc>] [--pin] [--hash=<hash>] [--] <object data>...
 
 ARGUMENTS
 
-  <object data> - The object to put
+  <object data>... - The object to put
 
 OPTIONS
 
   -f,        --format string - Format that the object will be added as. Default: cbor.
   --input-enc         string - Format that the input object will be. Default: json.
+  --pin               bool   - Pin this object when adding.
+  --hash              string - Hash function to use. Default: .
 
 DESCRIPTION
 
   'ipfs dag put' accepts input from a file or stdin and parses it
   into an object of the specified format.
+```
+
+## ipfs dag resolve
+
+```
+USAGE
+  ipfs dag resolve <ref> - Resolve ipld block
+
+SYNOPSIS
+  ipfs dag resolve [--] <ref>
+
+ARGUMENTS
+
+  <ref> - The path to resolve
+
+DESCRIPTION
+
+  'ipfs dag resolve' fetches a dag node from ipfs, prints it's address and remaining path.
 ```
 
 ## ipfs dht
@@ -936,7 +1059,7 @@ ARGUMENTS
 
 OPTIONS
 
-  -v, --verbose bool - Print extra information. Default: false.
+  -v, --verbose bool - Print extra information.
 
 DESCRIPTION
 
@@ -950,7 +1073,7 @@ USAGE
   ipfs dht findprovs <key>... - Find peers in the DHT that can provide a specific value, given a key.
 
 SYNOPSIS
-  ipfs dht findprovs [--verbose | -v] [--] <key>...
+  ipfs dht findprovs [--verbose | -v] [--num-providers=<num-providers> | -n] [--] <key>...
 
 ARGUMENTS
 
@@ -958,7 +1081,8 @@ ARGUMENTS
 
 OPTIONS
 
-  -v, --verbose bool - Print extra information. Default: false.
+  -v, --verbose       bool - Print extra information.
+  -n, --num-providers int  - The number of providers to find. Default: 20.
 
 DESCRIPTION
 
@@ -980,12 +1104,12 @@ ARGUMENTS
 
 OPTIONS
 
-  -v, --verbose bool - Print extra information. Default: false.
+  -v, --verbose bool - Print extra information.
 
 DESCRIPTION
 
   Outputs the best value for the given key.
-
+  
   There may be several different values for a given key stored in the DHT; in
   this context 'best' means the record that is most desirable. There is no one
   metric for 'best': it depends entirely on the key type. For IPNS, 'best' is
@@ -1008,8 +1132,8 @@ ARGUMENTS
 
 OPTIONS
 
-  -v, --verbose   bool - Print extra information. Default: false.
-  -r, --recursive bool - Recursively provide entire graph. Default: false.
+  -v, --verbose   bool - Print extra information.
+  -r, --recursive bool - Recursively provide entire graph.
 ```
 
 ## ipfs dht put
@@ -1028,24 +1152,24 @@ ARGUMENTS
 
 OPTIONS
 
-  -v, --verbose bool - Print extra information. Default: false.
+  -v, --verbose bool - Print extra information.
 
 DESCRIPTION
 
   Given a key of the form /foo/bar and a value of any form, this will write that
   value to the DHT with that key.
-
+  
   Keys have two parts: a keytype (foo) and the key name (bar). IPNS uses the
   /ipns keytype, and expects the key name to be a Peer ID. IPNS entries are
   specifically formatted (protocol buffer).
-
+  
   You may only use keytypes that are supported in your ipfs binary: currently
   this is only /ipns. Unless you have a relatively deep understanding of the
   go-ipfs DHT internals, you likely want to be using 'ipfs name publish' instead
   of this.
-
+  
   Value is arbitrary text. Standard input can be used to provide value.
-
+  
   NOTE: A value may not exceed 2048 bytes.
 ```
 
@@ -1064,7 +1188,7 @@ ARGUMENTS
 
 OPTIONS
 
-  -v, --verbose bool - Print extra information. Default: false.
+  -v, --verbose bool - Print extra information.
 
 DESCRIPTION
 
@@ -1082,7 +1206,6 @@ SYNOPSIS
 
 SUBCOMMANDS
   ipfs diag cmds - List commands run on this IPFS node.
-  ipfs diag net  - Generate a network diagnostics report.
   ipfs diag sys  - Print system diagnostic information.
 
   Use 'ipfs diag <subcmd> --help' for more information about each command.
@@ -1099,7 +1222,7 @@ SYNOPSIS
 
 OPTIONS
 
-  -v, --verbose bool - Print extra information. Default: false.
+  -v, --verbose bool - Print extra information.
 
 DESCRIPTION
 
@@ -1165,7 +1288,7 @@ ARGUMENTS
 
 OPTIONS
 
-  -r, --recursive bool - Resolve until the result is not a DNS link. Default: false.
+  -r, --recursive bool - Resolve until the result is not a DNS link.
 
 DESCRIPTION
 
@@ -1173,19 +1296,19 @@ DESCRIPTION
   remember.  To create memorable aliases for multihashes, DNS TXT
   records can point to other DNS links, IPFS objects, IPNS keys, etc.
   This command resolves those links to the referenced object.
-
+  
   For example, with this DNS TXT record:
-
+  
   	> dig +short TXT _dnslink.ipfs.io
   	dnslink=/ipfs/QmRzTuh2Lpuz7Gr39stNr6mTFdqAghsZec1JoUnfySUzcy
-
+  
   The resolver will give:
-
+  
   	> ipfs dns ipfs.io
   	/ipfs/QmRzTuh2Lpuz7Gr39stNr6mTFdqAghsZec1JoUnfySUzcy
-
+  
   The resolver can recursively resolve:
-
+  
   	> dig +short TXT recursive.ipfs.io
   	dnslink=/ipns/ipfs.io
   	> ipfs dns -r recursive.ipfs.io
@@ -1229,21 +1352,21 @@ ARGUMENTS
 DESCRIPTION
 
   Displays the contents of an IPFS or IPNS object(s) at the given path.
-
+  
   The JSON output contains size information. For files, the child size
   is the total size of the file contents. For directories, the child
   size is the IPFS link size.
-
+  
   The path can be a prefixless ref; in this case, we assume it to be an
   /ipfs ref and not /ipns.
-
+  
   Example:
-
+  
       > ipfs file ls QmW2WQi7j6c7UgJTarActp7tDNikE4B2qXtFCfLPdsgaTQ
       cat.jpg
       > ipfs file ls /ipfs/QmW2WQi7j6c7UgJTarActp7tDNikE4B2qXtFCfLPdsgaTQ
       cat.jpg
-
+  
   This functionality is deprecated, and will be removed in future versions. If
   possible, please use 'ipfs ls' instead.
 ```
@@ -1265,7 +1388,7 @@ DESCRIPTION
 
   Files is an API for manipulating IPFS objects as if they were a unix
   filesystem.
-
+  
   NOTE:
   Most of the subcommands of 'ipfs files' accept the '--flush' flag. It defaults
   to true. Use caution when setting this flag to false. It will improve
@@ -1276,6 +1399,7 @@ DESCRIPTION
   operations.
 
 SUBCOMMANDS
+  ipfs files chcid [<path>]      - Change the cid version or hash function of the root node of a given path.
   ipfs files cp <source> <dest>  - Copy files into mfs.
   ipfs files flush [<path>]      - Flush a given path's data to disk.
   ipfs files ls [<path>]         - List directories in the local mutable namespace.
@@ -1287,6 +1411,29 @@ SUBCOMMANDS
   ipfs files write <path> <data> - Write to a mutable file in a given filesystem.
 
   Use 'ipfs files <subcmd> --help' for more information about each command.
+```
+
+## ipfs files chcid
+
+```
+USAGE
+  ipfs files chcid [<path>] - Change the cid version or hash function of the root node of a given path.
+
+SYNOPSIS
+  ipfs files chcid [--cid-version=<cid-version> | --cid-ver] [--hash=<hash>] [--] [<path>]
+
+ARGUMENTS
+
+  [<path>] - Path to change. Default: '/'.
+
+OPTIONS
+
+  --cid-ver, --cid-version int    - Cid version to use. (experimental).
+  --hash                   string - Hash function to use. Will set Cid version to 1 if used. (experimental).
+
+DESCRIPTION
+
+  Change the cid version or hash function of the root node of a given path.
 ```
 
 ## ipfs files cp
@@ -1343,9 +1490,9 @@ OPTIONS
 DESCRIPTION
 
   List directories in the local mutable namespace.
-
+  
   Examples:
-
+  
       $ ipfs files ls /welcome/docs/
       about
       contact
@@ -1353,7 +1500,7 @@ DESCRIPTION
       quick-start
       readme
       security-notes
-
+  
       $ ipfs files ls /myfiles/a/b/c/d
       foo
       bar
@@ -1366,7 +1513,7 @@ USAGE
   ipfs files mkdir <path> - Make directories.
 
 SYNOPSIS
-  ipfs files mkdir [--parents | -p] [--] <path>
+  ipfs files mkdir [--parents | -p] [--cid-version=<cid-version> | --cid-ver] [--hash=<hash>] [--] <path>
 
 ARGUMENTS
 
@@ -1374,18 +1521,23 @@ ARGUMENTS
 
 OPTIONS
 
-  -p, --parents bool - No error if existing, make parent directories as needed.
+  -p,        --parents     bool   - No error if existing, make parent directories as needed.
+  --cid-ver, --cid-version int    - Cid version to use. (experimental).
+  --hash                   string - Hash function to use. Will set Cid version to 1 if used. (experimental).
 
 DESCRIPTION
 
   Create the directory if it does not already exist.
-
+  
+  The directory will have the same CID version and hash function of the
+  parent directory unless the --cid-version and --hash options are used.
+  
   NOTE: All paths must be absolute.
-
+  
   Examples:
-
-      $ ipfs mfs mkdir /test/newdir
-      $ ipfs mfs mkdir -p /test/does/not/exist/yet
+  
+      $ ipfs files mkdir /test/newdir
+      $ ipfs files mkdir -p /test/does/not/exist/yet
 ```
 
 ## ipfs files mv
@@ -1405,9 +1557,9 @@ ARGUMENTS
 DESCRIPTION
 
   Move files around. Just like traditional unix mv.
-
+  
   Example:
-
+  
       $ ipfs files mv /myfs/a/b/c /myfs/foo/newc
 ```
 
@@ -1433,9 +1585,9 @@ DESCRIPTION
 
   Read a specified number of bytes from a file at a given offset. By default,
   will read the entire file similar to unix cat.
-
+  
   Examples:
-
+  
       $ ipfs files read /test/hello
       hello
 ```
@@ -1460,7 +1612,7 @@ OPTIONS
 DESCRIPTION
 
   Remove files or directories.
-
+  
       $ ipfs files rm /foo
       $ ipfs files ls /bar
       cat
@@ -1476,7 +1628,7 @@ USAGE
   ipfs files stat <path> - Display file status.
 
 SYNOPSIS
-  ipfs files stat [--format=<format>] [--hash] [--size] [--] <path>
+  ipfs files stat [--format=<format>] [--hash] [--size] [--with-local] [--] <path>
 
 ARGUMENTS
 
@@ -1484,13 +1636,14 @@ ARGUMENTS
 
 OPTIONS
 
-  --format string - Print statistics in given format. Allowed tokens: <hash> <size> <cumulsize> <type> <childs>. Conflicts with other format options. Default: <hash>
+  --format     string - Print statistics in given format. Allowed tokens: <hash> <size> <cumulsize> <type> <childs>. Conflicts with other format options. Default: <hash>
   Size: <size>
   CumulativeSize: <cumulsize>
   ChildBlocks: <childs>
   Type: <type>.
-  --hash   bool   - Print only hash. Implies '--format=<hash>'. Conflicts with other format options. Default: false.
-  --size   bool   - Print only size. Implies '--format=<cumulsize>'. Conflicts with other format options. Default: false.
+  --hash       bool   - Print only hash. Implies '--format=<hash>'. Conflicts with other format options.
+  --size       bool   - Print only size. Implies '--format=<cumulsize>'. Conflicts with other format options.
+  --with-local bool   - Compute the amount of the dag that is local, and if possible the total size.
 ```
 
 ## ipfs files write
@@ -1500,7 +1653,7 @@ USAGE
   ipfs files write <path> <data> - Write to a mutable file in a given filesystem.
 
 SYNOPSIS
-  ipfs files write [--offset=<offset> | -o] [--create | -e] [--truncate | -t] [--count=<count> | -n] [--] <path> <data>
+  ipfs files write [--offset=<offset> | -o] [--create | -e] [--truncate | -t] [--count=<count> | -n] [--raw-leaves] [--cid-version=<cid-version> | --cid-ver] [--hash=<hash>] [--] <path> <data>
 
 ARGUMENTS
 
@@ -1509,30 +1662,41 @@ ARGUMENTS
 
 OPTIONS
 
-  -o, --offset   int  - Byte offset to begin writing at.
-  -e, --create   bool - Create the file if it does not exist.
-  -t, --truncate bool - Truncate the file to size zero before writing.
-  -n, --count    int  - Maximum number of bytes to read.
+  -o,         --offset      int    - Byte offset to begin writing at.
+  -e,         --create      bool   - Create the file if it does not exist.
+  -t,         --truncate    bool   - Truncate the file to size zero before writing.
+  -n,         --count       int    - Maximum number of bytes to read.
+  --raw-leaves              bool   - Use raw blocks for newly created leaf nodes. (experimental).
+  --cid-ver,  --cid-version int    - Cid version to use. (experimental).
+  --hash                    string - Hash function to use. Will set Cid version to 1 if used. (experimental).
 
 DESCRIPTION
 
   Write data to a file in a given filesystem. This command allows you to specify
-  a beginning offset to write to. The entire length of the input will be written.
-
+  a beginning offset to write to. The entire length of the input will be
+  written.
+  
   If the '--create' option is specified, the file will be created if it does not
   exist. Nonexistant intermediate directories will not be created.
-
+  
+  Newly created files will have the same CID version and hash function of the
+  parent directory unless the --cid-version and --hash options are used.
+  
+  Newly created leaves will be in the legacy format (Protobuf) if the
+  CID version is 0, or raw is the CID version is non-zero.  Use of the
+  --raw-leaves option will override this behavior.
+  
   If the '--flush' option is set to false, changes will not be propogated to the
   merkledag root. This can make operations much faster when doing a large number
   of writes to a deeper directory structure.
-
+  
   EXAMPLE:
-
+  
       echo "hello world" | ipfs files write --create /myfs/a/b/file
       echo "hello world" | ipfs files write --truncate /myfs/a/b/file
-
+  
   WARNING:
-
+  
   Usage of the '--flush=false' option does not guarantee data durability until
   the tree has been flushed. This can be accomplished by running 'ipfs files
   stat' on the file or any of its ancestors.
@@ -1572,21 +1736,25 @@ USAGE
   ipfs filestore ls [<obj>]... - List objects in filestore.
 
 SYNOPSIS
-  ipfs filestore ls [--] [<obj>...]
+  ipfs filestore ls [--file-order] [--] [<obj>...]
 
 ARGUMENTS
 
   [<obj>]... - Cid of objects to list.
 
+OPTIONS
+
+  --file-order bool - sort the results based on the path of the backing file.
+
 DESCRIPTION
 
   List objects in the filestore.
-
+  
   If one or more <obj> is specified only list those specific objects,
   otherwise list all objects.
-
+  
   The output is:
-
+  
   <hash> <size> <path> <offset>
 ```
 
@@ -1597,23 +1765,27 @@ USAGE
   ipfs filestore verify [<obj>]... - Verify objects in filestore.
 
 SYNOPSIS
-  ipfs filestore verify [--] [<obj>...]
+  ipfs filestore verify [--file-order] [--] [<obj>...]
 
 ARGUMENTS
 
   [<obj>]... - Cid of objects to verify.
 
+OPTIONS
+
+  --file-order bool - verify the objects based on the order of the backing file.
+
 DESCRIPTION
 
   Verify objects in the filestore.
-
+  
   If one or more <obj> is specified only verify those specific objects,
   otherwise verify all objects.
-
+  
   The output is:
-
+  
   <status> <hash> <size> <path> <offset>
-
+  
   Where <status> is one of:
   ok:       the block can be reconstructed
   changed:  the contents of the backing file have changed
@@ -1621,7 +1793,7 @@ DESCRIPTION
   error:    there was some other problem reading the file
   missing:  <obj> could not be found in the filestore
   ERROR:    internal error, most likely due to a corrupt database
-
+  
   For ERROR entries the error will also be printed to stderr.
 ```
 
@@ -1641,19 +1813,19 @@ ARGUMENTS
 OPTIONS
 
   -o, --output            string - The path where the output should be stored.
-  -a, --archive           bool   - Output a TAR archive. Default: false.
-  -C, --compress          bool   - Compress the output with GZIP compression. Default: false.
-  -l, --compression-level int    - The level of compression (1-9). Default: -1.
+  -a, --archive           bool   - Output a TAR archive.
+  -C, --compress          bool   - Compress the output with GZIP compression.
+  -l, --compression-level int    - The level of compression (1-9).
 
 DESCRIPTION
 
   Stores to disk the data contained an IPFS or IPNS object(s) at the given path.
-
+  
   By default, the output will be stored at './<ipfs-path>', but an alternate
   path can be specified with '--output=<path>' or '-o=<path>'.
-
+  
   To output a TAR archive instead of unpacked files, use '--archive' or '-a'.
-
+  
   To compress the output with GZIP compression, use '--compress' or '-C'. You
   may also specify the level of compression by specifying '-l=<1-9>'.
 ```
@@ -1679,16 +1851,16 @@ DESCRIPTION
 
   Prints out information about the specified peer.
   If no peer is specified, prints out information for local peers.
-
+  
   'ipfs id' supports the format option for output with the following keys:
   <id> : The peers id.
   <aver>: Agent version.
   <pver>: Protocol version.
   <pubkey>: Public key.
   <addrs>: Addresses (newline delimited).
-
+  
   EXAMPLE:
-
+  
       ipfs id Qmece2RkXhsKe5CRooNisBTh4SK119KrXXGmoK6V3kb8aH -f="<addrs>\n"
 ```
 
@@ -1699,7 +1871,7 @@ USAGE
   ipfs init [<default-config>] - Initializes ipfs config file.
 
 SYNOPSIS
-  ipfs init [--bits=<bits> | -b] [--empty-repo | -e] [--] [<default-config>]
+  ipfs init [--bits=<bits> | -b] [--empty-repo | -e] [--profile=<profile> | -p] [--] [<default-config>]
 
 ARGUMENTS
 
@@ -1707,17 +1879,27 @@ ARGUMENTS
 
 OPTIONS
 
-  -b, --bits       int  - Number of bits to use in the generated RSA private key. Default: 2048.
-  -e, --empty-repo bool - Don't add and pin help files to the local storage. Default: false.
+  -b, --bits       int    - Number of bits to use in the generated RSA private key. Default: 2048.
+  -e, --empty-repo bool   - Don't add and pin help files to the local storage.
+  -p, --profile    string - Apply profile settings to config. Multiple profiles can be separated by ','.
 
 DESCRIPTION
 
   Initializes ipfs configuration files and generates a new keypair.
-
+  
+  If you are going to run IPFS in server environment, you may want to
+  initialize it using 'server' profile.
+  
+  Available profiles:
+      'server' - Disables local host discovery, recommended when
+          running IPFS on machines with public IPv4 addresses.
+      'test' - Reduces external interference of IPFS daemon, this
+          is useful when using the daemon in test environments.
+  
   ipfs uses a repository in the local file system. By default, the repo is
   located at ~/.ipfs. To change the repo location, set the $IPFS_PATH
   environment variable:
-
+  
       export IPFS_PATH=/path/to/ipfsrepo
 ```
 
@@ -1732,21 +1914,24 @@ SYNOPSIS
 
 DESCRIPTION
 
-  'ipfs key gen' generates a new keypair for usage with IPNS and 'ipfs name publish'.
-
+  'ipfs key gen' generates a new keypair for usage with IPNS and 'ipfs name
+  publish'.
+  
     > ipfs key gen --type=rsa --size=2048 mykey
     > ipfs name publish --key=mykey QmSomeHash
-
+  
   'ipfs key list' lists the available keys.
-
+  
     > ipfs key list
     self
     mykey
-
+  		
 
 SUBCOMMANDS
-  ipfs key gen <name> - Create a new keypair
-  ipfs key list       - List all local keypairs
+  ipfs key gen <name>              - Create a new keypair
+  ipfs key list                    - List all local keypairs
+  ipfs key rename <name> <newName> - Rename a keypair
+  ipfs key rm <name>...            - Remove a keypair
 
   Use 'ipfs key <subcmd> --help' for more information about each command.
 ```
@@ -1778,6 +1963,43 @@ USAGE
 
 SYNOPSIS
   ipfs key list [-l]
+
+OPTIONS
+
+  -l bool - Show extra information about keys.
+```
+
+## ipfs key rename
+
+```
+USAGE
+  ipfs key rename <name> <newName> - Rename a keypair
+
+SYNOPSIS
+  ipfs key rename [--force | -f] [--] <name> <newName>
+
+ARGUMENTS
+
+  <name>    - name of key to rename
+  <newName> - new name of the key
+
+OPTIONS
+
+  -f, --force bool - Allow to overwrite an existing key.
+```
+
+## ipfs key rm
+
+```
+USAGE
+  ipfs key rm <name>... - Remove a keypair
+
+SYNOPSIS
+  ipfs key rm [-l] [--] <name>...
+
+ARGUMENTS
+
+  <name>... - names of keys to remove
 
 OPTIONS
 
@@ -1820,11 +2042,12 @@ ARGUMENTS
   <subsystem> - The subsystem logging identifier. Use 'all' for all subsystems.
   <level>     - The log level, with 'debug' the most verbose and 'critical' the least verbose.
   			One of: debug, info, warning, error, critical.
-
+  		
 
 DESCRIPTION
 
-  Change the verbosity of one or all subsystems log output. This does not affect the event log.
+  Change the verbosity of one or all subsystems log output. This does not affect
+  the event log.
 ```
 
 ## ipfs log ls
@@ -1871,16 +2094,16 @@ ARGUMENTS
 
 OPTIONS
 
-  -v,           --headers bool - Print table headers (Hash, Size, Name). Default: false.
+  -v,           --headers bool - Print table headers (Hash, Size, Name).
   --resolve-type          bool - Resolve linked objects to find out their types. Default: true.
 
 DESCRIPTION
 
   Displays the contents of an IPFS or IPNS object(s) at the given path, with
   the following format:
-
+  
     <link base58 hash> <link size in bytes> <link name>
-
+  
   The JSON output contains type information.
 ```
 
@@ -1901,19 +2124,19 @@ OPTIONS
 DESCRIPTION
 
   Mount IPFS at a read-only mountpoint on the OS. The default, /ipfs and /ipns,
-  are set in the configutation file, but can be overriden by the options.
+  are set in the configuration file, but can be overriden by the options.
   All IPFS objects will be accessible under this directory. Note that the
   root will not be listable, as it is virtual. Access known paths directly.
-
+  
   You may have to create /ipfs and /ipns before using 'ipfs mount':
-
+  
   > sudo mkdir /ipfs /ipns
   > sudo chown `whoami` /ipfs /ipns
   > ipfs daemon &
   > ipfs mount
-
+  
   Example:
-
+  
   # setup
   > mkdir foo
   > echo "baz" > foo/bar
@@ -1924,7 +2147,7 @@ DESCRIPTION
   QmWLdkp93sNxGRjnFHPaYg8tCQ35NBY3XPn6KiETd3Z4WR 12 bar
   > ipfs cat QmWLdkp93sNxGRjnFHPaYg8tCQ35NBY3XPn6KiETd3Z4WR
   baz
-
+  
   # mount
   > ipfs daemon &
   > ipfs mount
@@ -1956,39 +2179,41 @@ DESCRIPTION
   the private key enables publishing new (signed) values. In both publish
   and resolve, the default name used is the node's own PeerID,
   which is the hash of its public key.
-
-  You can use the 'ipfs key' commands to list and generate more names and their respective keys.
-
+  
+  You can use the 'ipfs key' commands to list and generate more names and their
+  respective keys.
+  
   Examples:
-
+  
   Publish an <ipfs-path> with your default name:
-
+  
     > ipfs name publish /ipfs/QmatmE9msSfkKxoffpHwNLNKgwZG8eT9Bud6YoPab52vpy
     Published to QmbCMUZw6JFeZ7Wp9jkzbye3Fzp2GGcPgC3nmeUjfVF87n: /ipfs/QmatmE9msSfkKxoffpHwNLNKgwZG8eT9Bud6YoPab52vpy
-
+  
   Publish an <ipfs-path> with another name, added by an 'ipfs key' command:
-
+  
     > ipfs key gen --type=rsa --size=2048 mykey
     > ipfs name publish --key=mykey /ipfs/QmatmE9msSfkKxoffpHwNLNKgwZG8eT9Bud6YoPab52vpy
-    Published to QmbCMUZw6JFeZ7Wp9jkzbye3Fzp2GGcPgC3nmeUjfVF87n: /ipfs/QmatmE9msSfkKxoffpHwNLNKgwZG8eT9Bud6YoPab52vpy
-
+    Published to QmSrPmbaUKA3ZodhzPWZnpFgcPMFWF4QsxXbkWfEptTBJd: /ipfs/QmatmE9msSfkKxoffpHwNLNKgwZG8eT9Bud6YoPab52vpy
+  
   Resolve the value of your name:
-
+  
     > ipfs name resolve
     /ipfs/QmatmE9msSfkKxoffpHwNLNKgwZG8eT9Bud6YoPab52vpy
-
+  
   Resolve the value of another name:
-
+  
     > ipfs name resolve QmaCpDMGvV2BGHeYERUEnRQAwe3N8SzbUtfsmvsqQLuvuJ
     /ipfs/QmSiTko9JZyabH56y2fussEt1A5oDqsFXB3CkvAqraFryz
-
+  
   Resolve the value of a dnslink:
-
+  
     > ipfs name resolve ipfs.io
     /ipfs/QmaBvfZooxWkrv7D3r8LS9moNjzD2o525XMZze69hhoxf5
 
 SUBCOMMANDS
   ipfs name publish <ipfs-path> - Publish IPNS names.
+  ipfs name pubsub              - IPNS pubsub management
   ipfs name resolve [<name>]    - Resolve IPNS names.
 
   Use 'ipfs name <subcmd> --help' for more information about each command.
@@ -2014,7 +2239,7 @@ OPTIONS
       This accepts durations such as "300s", "1.5h" or "2h45m". Valid time units are
       "ns", "us" (or "µs"), "ms", "s", "m", "h".
   --ttl               string - Time duration this record should be cached for (caution: experimental).
-  -k,      --key      string - Name of the key to be used, as listed by 'ipfs key list'. Default: Default: self..
+  -k,      --key      string - Name of the key to be used or a valid PeerID, as listed by 'ipfs key list -l'. Default: Default: self..
 
 DESCRIPTION
 
@@ -2022,21 +2247,85 @@ DESCRIPTION
   the private key enables publishing new (signed) values. In both publish
   and resolve, the default name used is the node's own PeerID,
   which is the hash of its public key.
-
-  You can use the 'ipfs key' commands to list and generate more names and their respective keys.
-
+  
+  You can use the 'ipfs key' commands to list and generate more names and their
+  respective keys.
+  
   Examples:
-
+  
   Publish an <ipfs-path> with your default name:
-
+  
     > ipfs name publish /ipfs/QmatmE9msSfkKxoffpHwNLNKgwZG8eT9Bud6YoPab52vpy
     Published to QmbCMUZw6JFeZ7Wp9jkzbye3Fzp2GGcPgC3nmeUjfVF87n: /ipfs/QmatmE9msSfkKxoffpHwNLNKgwZG8eT9Bud6YoPab52vpy
-
+  
   Publish an <ipfs-path> with another name, added by an 'ipfs key' command:
-
+  
     > ipfs key gen --type=rsa --size=2048 mykey
     > ipfs name publish --key=mykey /ipfs/QmatmE9msSfkKxoffpHwNLNKgwZG8eT9Bud6YoPab52vpy
+    Published to QmSrPmbaUKA3ZodhzPWZnpFgcPMFWF4QsxXbkWfEptTBJd: /ipfs/QmatmE9msSfkKxoffpHwNLNKgwZG8eT9Bud6YoPab52vpy
+  
+  Alternatively, publish an <ipfs-path> using a valid PeerID (as listed by 
+  'ipfs key list -l'):
+  
+   > ipfs name publish --key=QmbCMUZw6JFeZ7Wp9jkzbye3Fzp2GGcPgC3nmeUjfVF87n /ipfs/QmatmE9msSfkKxoffpHwNLNKgwZG8eT9Bud6YoPab52vpy
     Published to QmbCMUZw6JFeZ7Wp9jkzbye3Fzp2GGcPgC3nmeUjfVF87n: /ipfs/QmatmE9msSfkKxoffpHwNLNKgwZG8eT9Bud6YoPab52vpy
+```
+
+## ipfs name pubsub
+
+```
+USAGE
+  ipfs name pubsub - IPNS pubsub management
+
+SYNOPSIS
+  ipfs name pubsub
+
+DESCRIPTION
+
+  Manage and inspect the state of the IPNS pubsub resolver.
+  
+  Note: this command is experimental and subject to change as the system is refined
+
+SUBCOMMANDS
+  ipfs name pubsub cancel <name> - Cancel a name subscription
+  ipfs name pubsub state         - Query the state of IPNS pubsub
+  ipfs name pubsub subs          - Show current name subscriptions
+
+  Use 'ipfs name pubsub <subcmd> --help' for more information about each command.
+```
+
+## ipfs name pubsub cancel
+
+```
+USAGE
+  ipfs name pubsub cancel <name> - Cancel a name subscription
+
+SYNOPSIS
+  ipfs name pubsub cancel [--] <name>
+
+ARGUMENTS
+
+  <name> - Name to cancel the subscription for.
+```
+
+## ipfs name pubsub state
+
+```
+USAGE
+  ipfs name pubsub state - Query the state of IPNS pubsub
+
+SYNOPSIS
+  ipfs name pubsub state
+```
+
+## ipfs name pubsub subs
+
+```
+USAGE
+  ipfs name pubsub subs - Show current name subscriptions
+
+SYNOPSIS
+  ipfs name pubsub subs
 ```
 
 ## ipfs name resolve
@@ -2054,8 +2343,8 @@ ARGUMENTS
 
 OPTIONS
 
-  -r, --recursive bool - Resolve until the result is not an IPNS name. Default: false.
-  -n, --nocache   bool - Do not use cached entries. Default: false.
+  -r, --recursive bool - Resolve until the result is not an IPNS name.
+  -n, --nocache   bool - Do not use cached entries.
 
 DESCRIPTION
 
@@ -2063,23 +2352,24 @@ DESCRIPTION
   the private key enables publishing new (signed) values. In both publish
   and resolve, the default name used is the node's own PeerID,
   which is the hash of its public key.
-
-  You can use the 'ipfs key' commands to list and generate more names and their respective keys.
-
+  
+  You can use the 'ipfs key' commands to list and generate more names and their
+  respective keys.
+  
   Examples:
-
+  
   Resolve the value of your name:
-
+  
     > ipfs name resolve
     /ipfs/QmatmE9msSfkKxoffpHwNLNKgwZG8eT9Bud6YoPab52vpy
-
+  
   Resolve the value of another name:
-
+  
     > ipfs name resolve QmaCpDMGvV2BGHeYERUEnRQAwe3N8SzbUtfsmvsqQLuvuJ
     /ipfs/QmSiTko9JZyabH56y2fussEt1A5oDqsFXB3CkvAqraFryz
-
+  
   Resolve the value of a dnslink:
-
+  
     > ipfs name resolve ipfs.io
     /ipfs/QmaBvfZooxWkrv7D3r8LS9moNjzD2o525XMZze69hhoxf5
 ```
@@ -2128,7 +2418,7 @@ DESCRIPTION
 
   'ipfs object data' is a plumbing command for retrieving the raw bytes stored
   in a DAG node. It outputs to stdout, and <key> is a base58 encoded multihash.
-
+  
   Note that the "--encoding" option does not affect the output, since the output
   is the raw data of the object.
 ```
@@ -2155,9 +2445,9 @@ DESCRIPTION
 
   'ipfs object diff' is a command used to show the differences between
   two IPFS objects.
-
+  
   Example:
-
+  
      > ls foo
      bar baz/ giraffe
      > ipfs add -r foo
@@ -2191,7 +2481,7 @@ DESCRIPTION
   'ipfs object get' is a plumbing command for retrieving DAG nodes.
   It serializes the DAG node to the format specified by the "--encoding"
   flag. It outputs to stdout, and <key> is a base58 encoded multihash.
-
+  
   This command outputs data in the following encodings:
     * "protobuf"
     * "json"
@@ -2214,7 +2504,7 @@ ARGUMENTS
 
 OPTIONS
 
-  -v, --headers bool - Print table headers (Hash, Size, Name). Default: false.
+  -v, --headers bool - Print table headers (Hash, Size, Name).
 
 DESCRIPTION
 
@@ -2242,7 +2532,7 @@ DESCRIPTION
   By default it creates and returns a new empty merkledag node, but
   you may pass an optional template argument to create a preformatted
   node.
-
+  
   Available templates:
   	* unixfs-dir
 ```
@@ -2288,18 +2578,18 @@ ARGUMENTS
 
 OPTIONS
 
-  -p, --create bool - Create intermediary nodes. Default: false.
+  -p, --create bool - Create intermediary nodes.
 
 DESCRIPTION
 
   Add a Merkle-link to the given object and return the hash of the result.
-
+  
   Example:
-
+  
       $ EMPTY_DIR=$(ipfs object new unixfs-dir)
       $ BAR=$(echo "bar" | ipfs add -q)
       $ ipfs object patch $EMPTY_DIR add-link foo $BAR
-
+  
   This takes an empty directory, and adds a link named 'foo' under it, pointing
   to a file containing 'bar', and returns the hash of the new object.
 ```
@@ -2321,11 +2611,11 @@ ARGUMENTS
 DESCRIPTION
 
   Append data to what already exists in the data segment in the given object.
-
+  
   Example:
-
+  
   	$ echo "hello" | ipfs object patch $HASH append-data
-
+  
   NOTE: This does not append data to a file - it modifies the actual raw
   data within an object. Objects have a max size of 1MB and objects larger than
   the limit will not be respected by the network.
@@ -2367,9 +2657,9 @@ ARGUMENTS
 DESCRIPTION
 
   Set the data of an IPFS object from stdin or with the contents of a file.
-
+  
   Example:
-
+  
       $ echo "my data" | ipfs object patch $MYHASH set-data
 ```
 
@@ -2380,7 +2670,7 @@ USAGE
   ipfs object put <data> - Store input as a DAG object, print its key.
 
 SYNOPSIS
-  ipfs object put [--inputenc=<inputenc>] [--datafieldenc=<datafieldenc>] [--] <data>
+  ipfs object put [--inputenc=<inputenc>] [--datafieldenc=<datafieldenc>] [--pin] [--quiet | -q] [--] <data>
 
 ARGUMENTS
 
@@ -2388,26 +2678,28 @@ ARGUMENTS
 
 OPTIONS
 
-  --inputenc     string - Encoding type of input data. One of: {"protobuf", "json"}. Default: json.
-  --datafieldenc string - Encoding type of the data field, either "text" or "base64". Default: text.
+  --inputenc            string - Encoding type of input data. One of: {"protobuf", "json"}. Default: json.
+  --datafieldenc        string - Encoding type of the data field, either "text" or "base64". Default: text.
+  --pin                 bool   - Pin this object when adding.
+  -q,           --quiet bool   - Write minimal output.
 
 DESCRIPTION
 
   'ipfs object put' is a plumbing command for storing DAG nodes.
   It reads from stdin, and the output is a base58 encoded multihash.
-
+  
   Data should be in the format specified by the --inputenc flag.
   --inputenc may be one of the following:
   	* "protobuf"
   	* "json" (default)
-
+  
   Examples:
-
+  
   	$ echo '{ "Data": "abc" }' | ipfs object put
-
+  
   This creates a node with the data 'abc' and no links. For an object with
   links, create a file named 'node.json' with the contents:
-
+  
       {
           "Data": "another",
           "Links": [ {
@@ -2416,9 +2708,9 @@ DESCRIPTION
               "Size": 8
           } ]
       }
-
+  
   And then run:
-
+  
   	$ ipfs object put node.json
 ```
 
@@ -2439,12 +2731,187 @@ DESCRIPTION
 
   'ipfs object stat' is a plumbing command to print DAG node statistics.
   <key> is a base58 encoded multihash. It outputs to stdout:
-
+  
   	NumLinks        int number of links in link table
   	BlockSize       int size of the raw, encoded data
   	LinksSize       int size of the links segment
   	DataSize        int size of the data segment
   	CumulativeSize  int cumulative size of object and its references
+```
+
+## ipfs p2p
+
+```
+USAGE
+  ipfs p2p - Libp2p stream mounting.
+
+SYNOPSIS
+  ipfs p2p
+
+DESCRIPTION
+
+  Create and use tunnels to remote peers over libp2p
+  
+  Note: this command is experimental and subject to change as usecases and APIs
+  are refined
+
+SUBCOMMANDS
+  ipfs p2p listener - P2P listener management.
+  ipfs p2p stream   - P2P stream management.
+
+  Use 'ipfs p2p <subcmd> --help' for more information about each command.
+```
+
+## ipfs p2p listener
+
+```
+USAGE
+  ipfs p2p listener - P2P listener management.
+
+SYNOPSIS
+  ipfs p2p listener
+
+DESCRIPTION
+
+  Create and manage listener p2p endpoints
+
+SUBCOMMANDS
+  ipfs p2p listener close [<Protocol>]        - Close active p2p listener.
+  ipfs p2p listener ls                        - List active p2p listeners.
+  ipfs p2p listener open <Protocol> <Address> - Forward p2p connections to a network multiaddr.
+
+  Use 'ipfs p2p listener <subcmd> --help' for more information about each command.
+```
+
+## ipfs p2p listener close
+
+```
+USAGE
+  ipfs p2p listener close [<Protocol>] - Close active p2p listener.
+
+SYNOPSIS
+  ipfs p2p listener close [--all | -a] [--] [<Protocol>]
+
+ARGUMENTS
+
+  [<Protocol>] - P2P listener protocol
+
+OPTIONS
+
+  -a, --all bool - Close all listeners.
+```
+
+## ipfs p2p listener ls
+
+```
+USAGE
+  ipfs p2p listener ls - List active p2p listeners.
+
+SYNOPSIS
+  ipfs p2p listener ls [--headers | -v]
+
+OPTIONS
+
+  -v, --headers bool - Print table headers (HandlerID, Protocol, Local, Remote).
+```
+
+## ipfs p2p listener open
+
+```
+USAGE
+  ipfs p2p listener open <Protocol> <Address> - Forward p2p connections to a network multiaddr.
+
+SYNOPSIS
+  ipfs p2p listener open [--] <Protocol> <Address>
+
+ARGUMENTS
+
+  <Protocol> - Protocol identifier.
+  <Address>  - Request handling application address.
+
+DESCRIPTION
+
+  Register a p2p connection handler and forward the connections to a specified
+  address.
+  
+  Note that the connections originate from the ipfs daemon process.
+```
+
+## ipfs p2p stream
+
+```
+USAGE
+  ipfs p2p stream - P2P stream management.
+
+SYNOPSIS
+  ipfs p2p stream
+
+DESCRIPTION
+
+  Create and manage p2p streams
+
+SUBCOMMANDS
+  ipfs p2p stream close [<HandlerID>]                    - Close active p2p stream.
+  ipfs p2p stream dial <Peer> <Protocol> [<BindAddress>] - Dial to a p2p listener.
+  ipfs p2p stream ls                                     - List active p2p streams.
+
+  Use 'ipfs p2p stream <subcmd> --help' for more information about each command.
+```
+
+## ipfs p2p stream close
+
+```
+USAGE
+  ipfs p2p stream close [<HandlerID>] - Close active p2p stream.
+
+SYNOPSIS
+  ipfs p2p stream close [--all | -a] [--] [<HandlerID>]
+
+ARGUMENTS
+
+  [<HandlerID>] - Stream HandlerID
+
+OPTIONS
+
+  -a, --all bool - Close all streams.
+```
+
+## ipfs p2p stream dial
+
+```
+USAGE
+  ipfs p2p stream dial <Peer> <Protocol> [<BindAddress>] - Dial to a p2p listener.
+
+SYNOPSIS
+  ipfs p2p stream dial [--] <Peer> <Protocol> [<BindAddress>]
+
+ARGUMENTS
+
+  <Peer>          - Remote peer to connect to
+  <Protocol>      - Protocol identifier.
+  [<BindAddress>] - Address to listen for connection/s (default: /ip4/127.0.0.1/tcp/0).
+
+DESCRIPTION
+
+  Establish a new connection to a peer service.
+  
+  When a connection is made to a peer service the ipfs daemon will setup one
+  time TCP listener and return it's bind port, this way a dialing application
+  can transparently connect to a p2p service.
+```
+
+## ipfs p2p stream ls
+
+```
+USAGE
+  ipfs p2p stream ls - List active p2p streams.
+
+SYNOPSIS
+  ipfs p2p stream ls [--headers | -v]
+
+OPTIONS
+
+  -v, --headers bool - Print table headers (HagndlerID, Protocol, Local, Remote).
 ```
 
 ## ipfs pin
@@ -2457,9 +2924,11 @@ SYNOPSIS
   ipfs pin
 
 SUBCOMMANDS
-  ipfs pin add <ipfs-path>...  - Pin objects to local storage.
-  ipfs pin ls [<ipfs-path>]... - List objects pinned to local storage.
-  ipfs pin rm <ipfs-path>...   - Remove pinned objects from local storage.
+  ipfs pin add <ipfs-path>...           - Pin objects to local storage.
+  ipfs pin ls [<ipfs-path>]...          - List objects pinned to local storage.
+  ipfs pin rm <ipfs-path>...            - Remove pinned objects from local storage.
+  ipfs pin update <from-path> <to-path> - Update a recursive pin
+  ipfs pin verify                       - Verify that recursive pins are complete.
 
   Use 'ipfs pin <subcmd> --help' for more information about each command.
 ```
@@ -2503,7 +2972,7 @@ ARGUMENTS
 OPTIONS
 
   -t, --type  string - The type of pinned keys to list. Can be "direct", "indirect", "recursive", or "all". Default: all.
-  -q, --quiet bool   - Write just hashes of objects. Default: false.
+  -q, --quiet bool   - Write just hashes of objects.
 
 DESCRIPTION
 
@@ -2511,7 +2980,7 @@ DESCRIPTION
   By default, all pinned objects are returned, but the '--type' flag or
   arguments can restrict that to a specific pin type or to some specific objects
   respectively.
-
+  
   Use --type=<type> to specify the type of pinned keys to list.
   Valid values are:
       * "direct": pin that specific object.
@@ -2519,11 +2988,11 @@ DESCRIPTION
       	descendants
       * "indirect": pinned indirectly by an ancestor (like a refcount)
       * "all"
-
+  
   With arguments, the command fails if any of the arguments is not a pinned
   object. And if --type=<type> is additionally used, the command will also fail
   if any of the arguments is not of the specified type.
-
+  
   Example:
   	$ echo "hello" | ipfs add -q
   	QmZULkCELmmk5XNfCgTnCyFgAVxBRBXyDHGGMVoLFLiXEN
@@ -2563,6 +3032,46 @@ DESCRIPTION
   collected if needed. (By default, recursively. Use -r=false for direct pins.)
 ```
 
+## ipfs pin update
+
+```
+USAGE
+  ipfs pin update <from-path> <to-path> - Update a recursive pin
+
+SYNOPSIS
+  ipfs pin update [--unpin=false] [--] <from-path> <to-path>
+
+ARGUMENTS
+
+  <from-path> - Path to old object.
+  <to-path>   - Path to new object to be pinned.
+
+OPTIONS
+
+  --unpin bool - Remove the old pin. Default: true.
+
+DESCRIPTION
+
+  Updates one pin to another, making sure that all objects in the new pin are
+  local.  Then removes the old pin. This is an optimized version of adding the
+  new pin and removing the old one.
+```
+
+## ipfs pin verify
+
+```
+USAGE
+  ipfs pin verify - Verify that recursive pins are complete.
+
+SYNOPSIS
+  ipfs pin verify [--verbose] [--quiet | -q]
+
+OPTIONS
+
+  --verbose        bool - Also write the hashes of non-broken pins.
+  -q,      --quiet bool - Write just hashes of broken pins.
+```
+
 ## ipfs ping
 
 ```
@@ -2600,10 +3109,10 @@ DESCRIPTION
 
   ipfs pubsub allows you to publish messages to a given topic, and also to
   subscribe to new messages on a given topic.
-
+  
   This is an experimental feature. It is not intended in its current state
   to be used in a production environment.
-
+  
   To use, the daemon must be run with '--enable-pubsub-experiment'.
 
 SUBCOMMANDS
@@ -2627,10 +3136,10 @@ SYNOPSIS
 DESCRIPTION
 
   ipfs pubsub ls lists out the names of topics you are currently subscribed to.
-
+  
   This is an experimental feature. It is not intended in its current state
   to be used in a production environment.
-
+  
   To use, the daemon must be run with '--enable-pubsub-experiment'.
 ```
 
@@ -2652,10 +3161,10 @@ DESCRIPTION
   ipfs pubsub peers with no arguments lists out the pubsub peers you are
   currently connected to. If given a topic, it will list connected
   peers who are subscribed to the named topic.
-
+  
   This is an experimental feature. It is not intended in its current state
   to be used in a production environment.
-
+  
   To use, the daemon must be run with '--enable-pubsub-experiment'.
 ```
 
@@ -2676,10 +3185,10 @@ ARGUMENTS
 DESCRIPTION
 
   ipfs pubsub pub publishes a message to a specified topic.
-
+  
   This is an experimental feature. It is not intended in its current state
   to be used in a production environment.
-
+  
   To use, the daemon must be run with '--enable-pubsub-experiment'.
 ```
 
@@ -2703,11 +3212,15 @@ OPTIONS
 DESCRIPTION
 
   ipfs pubsub sub subscribes to messages on a given topic.
-
+  
   This is an experimental feature. It is not intended in its current state
   to be used in a production environment.
-
+  
   To use, the daemon must be run with '--enable-pubsub-experiment'.
+  
+  This command outputs data in the following encodings:
+    * "json"
+  (Specified by the "--encoding" or "--enc" flag)
 ```
 
 ## ipfs refs
@@ -2726,17 +3239,17 @@ ARGUMENTS
 OPTIONS
 
   --format            string - Emit edges with given format. Available tokens: <src> <dst> <linkname>. Default: <dst>.
-  -e,     --edges     bool   - Emit edge format: `<from> -> <to>`. Default: false.
-  -u,     --unique    bool   - Omit duplicate refs from output. Default: false.
-  -r,     --recursive bool   - Recursively list links of child nodes. Default: false.
+  -e,     --edges     bool   - Emit edge format: `<from> -> <to>`.
+  -u,     --unique    bool   - Omit duplicate refs from output.
+  -r,     --recursive bool   - Recursively list links of child nodes.
 
 DESCRIPTION
 
   Lists the hashes of all the links an IPFS or IPNS object(s) contains,
   with the following format:
-
+  
     <link base58 hash>
-
+  
   NOTE: List all references recursively by using the flag '-r'.
 
 SUBCOMMANDS
@@ -2805,12 +3318,12 @@ USAGE
   ipfs repo gc - Perform a garbage collection sweep on the repo.
 
 SYNOPSIS
-  ipfs repo gc [--quiet | -q] [--stream-errors]
+  ipfs repo gc [--stream-errors] [--quiet | -q]
 
 OPTIONS
 
-  -q,            --quiet bool - Write minimal output. Default: false.
-  --stream-errors        bool - Stream errors. Default: false.
+  --stream-errors        bool - Stream errors.
+  -q,            --quiet bool - Write minimal output.
 
 DESCRIPTION
 
@@ -2830,7 +3343,7 @@ SYNOPSIS
 
 OPTIONS
 
-  --human bool - Output RepoSize in MiB. Default: false.
+  --human bool - Output RepoSize in MiB.
 
 DESCRIPTION
 
@@ -2885,7 +3398,7 @@ ARGUMENTS
 
 OPTIONS
 
-  -r, --recursive bool - Resolve until the result is an IPFS name. Default: false.
+  -r, --recursive bool - Resolve until the result is an IPFS name.
 
 DESCRIPTION
 
@@ -2894,28 +3407,38 @@ DESCRIPTION
   point at an IPFS object, and DNS links can point at other DNS links, IPNS
   entries, or IPFS objects. This command accepts any of these
   identifiers and resolves them to the referenced item.
-
+  
   EXAMPLES
-
+  
   Resolve the value of your identity:
-
+  
     $ ipfs resolve /ipns/QmatmE9msSfkKxoffpHwNLNKgwZG8eT9Bud6YoPab52vpy
     /ipfs/Qmcqtw8FfrVSBaRmbWwHxt3AuySBhJLcvmFYi3Lbc4xnwj
-
+  
   Resolve the value of another name:
-
+  
     $ ipfs resolve /ipns/QmbCMUZw6JFeZ7Wp9jkzbye3Fzp2GGcPgC3nmeUjfVF87n
     /ipns/QmatmE9msSfkKxoffpHwNLNKgwZG8eT9Bud6YoPab52vpy
-
+  
   Resolve the value of another name recursively:
-
+  
     $ ipfs resolve -r /ipns/QmbCMUZw6JFeZ7Wp9jkzbye3Fzp2GGcPgC3nmeUjfVF87n
     /ipfs/Qmcqtw8FfrVSBaRmbWwHxt3AuySBhJLcvmFYi3Lbc4xnwj
-
+  
   Resolve the value of an IPFS DAG path:
-
+  
     $ ipfs resolve /ipfs/QmeZy1fGbwgVSrqbfh9fKQrAWgeyRnj7h8fsHS1oy3k99x/beep/boop
     /ipfs/QmYRMjyvAiHKN9UTi8Bzt1HUspmSRD8T8DwxfSMzLgBon1
+```
+
+## ipfs shutdown
+
+```
+USAGE
+  ipfs shutdown - Shut down the ipfs daemon
+
+SYNOPSIS
+  ipfs shutdown
 ```
 
 ## ipfs stats
@@ -2963,9 +3486,9 @@ OPTIONS
 
   -p,   --peer     string - Specify a peer to print bandwidth for.
   -t,   --proto    string - Specify a protocol to print bandwidth for.
-  --poll           bool   - Print bandwidth at an interval. Default: false.
+  --poll           bool   - Print bandwidth at an interval.
   -i,   --interval string - Time interval to wait between updating output, if 'poll' is true.
-
+  
       This accepts durations such as "300s", "1.5h" or "2h45m". Valid time units are:
       "ns", "us" (or "µs"), "ms", "s", "m", "h". Default: 1s.
 
@@ -2973,21 +3496,21 @@ DESCRIPTION
 
   'ipfs stats bw' prints bandwidth information for the ipfs daemon.
   It displays: TotalIn, TotalOut, RateIn, RateOut.
-
+  
   By default, overall bandwidth and all protocols are shown. To limit bandwidth
   to a particular peer, use the 'peer' option along with that peer's multihash
   id. To specify a specific protocol, use the 'proto' option. The 'peer' and
   'proto' options cannot be specified simultaneously. The protocols that are
   queried using this method are outlined in the specification:
   https://github.com/libp2p/specs/blob/master/7-properties.md#757-protocol-multicodecs
-
+  
   Example protocol options:
     - /ipfs/id/1.0.0
     - /ipfs/bitswap
     - /ipfs/dht
-
+  
   Example:
-
+  
       > ipfs stats bw -t /ipfs/bitswap
       Bandwidth
       TotalIn: 5.0MB
@@ -3013,7 +3536,7 @@ SYNOPSIS
 
 OPTIONS
 
-  --human bool - Output RepoSize in MiB. Default: false.
+  --human bool - Output RepoSize in MiB.
 
 DESCRIPTION
 
@@ -3064,9 +3587,24 @@ DESCRIPTION
   'ipfs swarm addrs' lists all addresses this node is aware of.
 
 SUBCOMMANDS
-  ipfs swarm addrs local - List local addresses.
+  ipfs swarm addrs listen - List interface listening addresses.
+  ipfs swarm addrs local  - List local addresses.
 
   Use 'ipfs swarm addrs <subcmd> --help' for more information about each command.
+```
+
+## ipfs swarm addrs listen
+
+```
+USAGE
+  ipfs swarm addrs listen - List interface listening addresses.
+
+SYNOPSIS
+  ipfs swarm addrs listen
+
+DESCRIPTION
+
+  'ipfs swarm addrs listen' lists all interface addresses the node is listening on.
 ```
 
 ## ipfs swarm addrs local
@@ -3080,11 +3618,11 @@ SYNOPSIS
 
 OPTIONS
 
-  --id bool - Show peer ID in addresses. Default: false.
+  --id bool - Show peer ID in addresses.
 
 DESCRIPTION
 
-  'ipfs swarm addrs local' lists all local addresses the node is listening on.
+  'ipfs swarm addrs local' lists all local listening addresses announced to the network.
 ```
 
 ## ipfs swarm connect
@@ -3103,9 +3641,9 @@ ARGUMENTS
 DESCRIPTION
 
   'ipfs swarm connect' opens a new direct connection to a peer address.
-
+  
   The address format is an IPFS multiaddr:
-
+  
   ipfs swarm connect /ip4/104.131.131.82/tcp/4001/ipfs/QmaCpDMGvV2BGHeYERUEnRQAwe3N8SzbUtfsmvsqQLuvuJ
 ```
 
@@ -3126,9 +3664,9 @@ DESCRIPTION
 
   'ipfs swarm disconnect' closes a connection to a peer address. The address
   format is an IPFS multiaddr:
-
+  
   ipfs swarm disconnect /ip4/104.131.131.82/tcp/4001/ipfs/QmaCpDMGvV2BGHeYERUEnRQAwe3N8SzbUtfsmvsqQLuvuJ
-
+  
   The disconnect is not permanent; if ipfs needs to talk to that address later,
   it will reconnect.
 ```
@@ -3147,15 +3685,15 @@ DESCRIPTION
   'ipfs swarm filters' will list out currently applied filters. Its subcommands
   can be used to add or remove said filters. Filters are specified using the
   multiaddr-filter format:
-
+  
   Example:
-
+  
       /ip4/192.168.0.0/ipcidr/16
-
+  
   Where the above is equivalent to the standard CIDR:
-
+  
       192.168.0.0/16
-
+  
   Filters default to those specified under the "Swarm.AddrFilters" config key.
 
 SUBCOMMANDS
@@ -3278,71 +3816,32 @@ DESCRIPTION
   'ipfs tar cat' will export a tar file from a previously imported one in IPFS.
 ```
 
-## ipfs tour
-
-```
-USAGE
-  ipfs tour [<id>] - Provide an introduction to IPFS.
-
-SYNOPSIS
-  ipfs tour [--] [<id>]
-
-ARGUMENTS
-
-  [<id>] - The id of the topic you would like to tour.
-
-DESCRIPTION
-
-  This is a tour that takes you through various IPFS concepts,
-  features, and tools to make sure you get up to speed with
-  IPFS very quickly. To start, run:
-
-      ipfs tour
-
-SUBCOMMANDS
-  ipfs tour list    - Show a list of IPFS Tour topics.
-  ipfs tour next    - Show the next IPFS Tour topic.
-  ipfs tour restart - Restart the IPFS Tour.
-
-  Use 'ipfs tour <subcmd> --help' for more information about each command.
-```
-
-## ipfs tour list
-
-```
-USAGE
-  ipfs tour list - Show a list of IPFS Tour topics.
-
-SYNOPSIS
-  ipfs tour list
-```
-
-## ipfs tour next
-
-```
-USAGE
-  ipfs tour next - Show the next IPFS Tour topic.
-
-SYNOPSIS
-  ipfs tour next
-```
-
-## ipfs tour restart
-
-```
-USAGE
-  ipfs tour restart - Restart the IPFS Tour.
-
-SYNOPSIS
-  ipfs tour restart
-```
-
 ## ipfs update
 
 ```
-ipfs-update is an 'external' command.
-It does not currently appear to be installed.
-Please refer to the ipfs documentation for instructions.
+NAME:
+   ipfs-update - Update ipfs.
+
+USAGE:
+   ipfs-update [global options] command [command options] [arguments...]
+
+VERSION:
+   1.5.1
+
+COMMANDS:
+     versions  Print out all available versions.
+     version   Print out currently installed version.
+     install   Install a version of ipfs.
+     stash     stashes copy of currently installed ipfs binary
+     revert    Revert to previously installed version of ipfs.
+     fetch     Fetch a given version of ipfs. Default: latest.
+     help, h   Shows a list of commands or help for one command
+
+GLOBAL OPTIONS:
+   --verbose         Print verbose output.
+   --distpath value  specify the distributions build to use
+   --help, -h        show help
+   --version, -v     print the version
 ```
 
 ## ipfs version
@@ -3356,10 +3855,10 @@ SYNOPSIS
 
 OPTIONS
 
-  -n,     --number bool - Only show the version number. Default: false.
-  --commit         bool - Show the commit hash. Default: false.
-  --repo           bool - Show repo version. Default: false.
-  --all            bool - Show all version information. Default: false.
+  -n,     --number bool - Only show the version number.
+  --commit         bool - Show the commit hash.
+  --repo           bool - Show repo version.
+  --all            bool - Show all version information.
 
 DESCRIPTION
 
