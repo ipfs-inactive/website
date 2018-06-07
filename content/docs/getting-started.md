@@ -25,7 +25,7 @@ generating 2048-bit RSA keypair...done
 peer identity: Qmcpo2iLBikrdf1d6QU6vXuNb6P7hwrbNPW9kLAH8eG67z
 to get started, enter:
 
-  ipfs cat /ipfs/QmYwAPJzv5CZsnA625s3Xf2nemtYgPpHdWEz79ojWnPbdG/readme
+  ipfs cat /ipfs/QmS4ustL54uo8FzR9455qaxZwuMiUhyvMcX9Ba8nUH4uVv/readme
 
 ```
 
@@ -36,7 +36,7 @@ Note the hash there may differ. If it does, use the one you got.
 Now, try running:
 
 ```sh
-ipfs cat /ipfs/QmYwAPJzv5CZsnA625s3Xf2nemtYgPpHdWEz79ojWnPbdG/readme
+ipfs cat /ipfs/QmS4ustL54uo8FzR9455qaxZwuMiUhyvMcX9Ba8nUH4uVv/readme
 ```
 
 You should see something like this:
@@ -75,7 +75,7 @@ You can explore other objects in there. In particular, check out `quick-start`:
 
 
 ```sh
-ipfs cat /ipfs/QmYwAPJzv5CZsnA625s3Xf2nemtYgPpHdWEz79ojWnPbdG/quick-start
+ipfs cat /ipfs/QmS4ustL54uo8FzR9455qaxZwuMiUhyvMcX9Ba8nUH4uVv/quick-start
 ```
 
 Which will walk you through several interesting examples.
