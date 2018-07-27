@@ -14,9 +14,9 @@
         {{ else }}
           <li><a href="/">About</a></li>
         {{ end }}
-        <li><a href="/docs/install" {{ if eq .page.Params.pagename "install" }}class="current-item"{{ end }}>Install</a></li>
+        <li><a href="https://docs.ipfs.io/introduction/install/" {{ if eq .page.Params.pagename "install" }}class="current-item"{{ end }}>Install</a></li>
         <li><a href="/media" {{ if eq .page.Type "media" }}class="current-item"{{ end }}>Media</a></li>
-        <li><a href="/docs" {{ if and (eq .page.Type "docs") (not (eq .page.Params.pagename "install")) }}class="current-item"{{ end }}>Docs</a></li>
+        <li><a href="https://docs.ipfs.io/" {{ if and (eq .page.Type "docs") (not (eq .page.Params.pagename "install")) }}class="current-item"{{ end }}>Docs</a></li>
         <li><a href="/blog" {{ if or (eq .page.Type "blog") (eq .page.Data.Singular "author") }}class="current-item"{{ end }}>Blog</a></li>
       </ul>
     </nav>
@@ -27,7 +27,7 @@
           <span class="divider"></span>
           <h3 class="subhead-main">A peer-to-peer hypermedia protocol<br /> to make the web faster, safer, and more open.</h3>
           <div class="cta">
-            <a class="button button-outlined" href="docs/getting-started">Try it</a>
+            <a class="button button-outlined" href="https://docs.ipfs.io/introduction/usage/">Try it</a>
             <a class="button button-outlined popup-youtube" href="https://www.youtube.com/watch?v=8CMxDNuuAiQ">Watch demo</a>
           </div>
         </div>
