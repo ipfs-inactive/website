@@ -10,23 +10,21 @@ save_as: docs/index.html
 
 These are links to some of the IPFS repositories.
 
-- <a class='link-github' href='https://github.com/ipfs/ipfs'>ipfs/ipfs</a> - The original IPFS paper, with the main spec.
-- <a class='link-github' href='https://github.com/ipfs/go-ipfs'>ipfs/go-ipfs</a> - The main, reference implementation.
-- <a class='link-github' href='https://github.com/ipfs/specs'>ipfs/specs</a> - Technical specs for IPFS.
-- <a class='link-github' href='https://github.com/ipfs/ipfs#project-directory'>ipfs/ipfs#project-directory</a> - A directory of all IPFS repositories. _WIP_
-- [Project directory status board](http://project-repos.ipfs.io/) - This board checks shows CI and Readme status for all IPFS repos.
-- [Search <span class='link-github'>GitHub</span> for "ipfs"](https://github.com/search?q=ipfs&ref=searchresults&type=Repositories&utf8=%E2%9C%93).
+- <a class='link-github' href='https://github.com/ipfs/go-ipfs'>ipfs/go-ipfs</a> - IPFS for raw performance and large datasets
+- <a class='link-github' href='https://github.com/ipfs/js-ipfs'>ipfs/js-ipfs</a> - IPFS for decentralized web applications
+- <a class='link-github' href='https://github.com/ipfs-shipyard/ipfs-companion'>ipfs-shipyard/ipfs-companion</a> - IPFS browser extension
+- <a class='link-github' href='https://github.com/ipfs-shipyard/ipfs-desktop'>ipfs-shipyard/ipfs-desktop</a> - IPFS desktop app
+- <a class='link-github' href='https://github.com/ipfs/specs'>ipfs/specs</a> - Technical specs for IPFS
+- <a class='link-github' href='https://github.com/ipfs/ipfs'>ipfs/ipfs</a> - Project overview
 
 ## Community
 
-- <a class='link-github' href='https://github.com/ipfs/ipfs'>ipfs/ipfs</a> as a landing repository, with links to various other repositories.
-- <a class='link-github' href='https://discuss.ipfs.io/'>Discourse</a> for issues with getting ipfs up and running.
-- <a class='link-github' href='https://github.com/ipfs/go-ipfs'>ipfs/go-ipfs</a> for the go-ipfs implementation.
-- <a class='link-github' href='https://github.com/ipfs/faq'>ipfs/faq</a> for questions you might have about IPFS.
-- <a class='link-github' href='https://github.com/ipfs/reading-list'>ipfs/reading-list</a> for papers to read to understand IPFS.
-- <a class='link-github' href='https://github.com/ipfs/awesome-ipfs'>ipfs/awesome-ipfs</a> an [awesome-*](https://github.com/sindresorhus/awesome) list of IPFS resources, tools, and applications built on IPFS.
-- IRC: [#ipfs on chat.freenode.net](irc://chat.freenode.net/ipfs) for live help + some dev discussions ([Logs](https://botbot.me/freenode/ipfs/))
-- Google Group: [ipfs-users@groups.google.com](https://groups.google.com/forum/#!forum/ipfs-users)
-- Twitter: [@IPFSbot](https://twitter.com/ipfsbot) for some news.
-- <a class='link-github' href='https://github.com/ipfs/community'>ipfs/community</a> for meta-questions on how we manage our community in general.
-- Discourse: [discuss.ipfs.io](https://discuss.ipfs.io) for the main place to ask questions, share information and find like-minded people who are using IPFS, libp2p, multiformats, orbit, orbit-db, IPLD, or any of the other libraries, tools and protocols created by the IPFS community.
+- [discuss.ipfs.io](https://discuss.ipfs.io) - Forum for IPFS discussions and support (recommended)
+- [#ipfs on freenode IRC](https://riot.im/app/#/room/#ipfs:matrix.org) - Chat room focused on IPFS ([publicly logged](https://botbot.me/freenode/ipfs/))
+- [ipfs-users@groups.google.com](https://groups.google.com/forum/#!forum/ipfs-users) - Mailing list focused on IPFS
+- <a class='link-github' href='https://github.com/ipfs/awesome-ipfs'>ipfs/awesome-ipfs</a> - Tools and applications built on IPFS
+- <a class='link-github' href='https://github.com/ipfs/archives'>ipfs/archives</a> - Dataset archival with IPFS
+- <a class='link-github' href='https://github.com/ipfs/community'>ipfs/community</a> - Community management and how we work together
+- <a class='link-github' href='https://github.com/ipfs/pm'>ipfs/pm</a> - IPFS weekly meetings, planning, and project management
+- <a class='link-github' href='https://github.com/ipfs/in-web-browsers'>ipfs/in-web-browsers</a> - IPFS in web browsers working group
+- <a class='link-github' href='https://github.com/ipfs/ipfs'>ipfs/ipfs</a> - Project overview
