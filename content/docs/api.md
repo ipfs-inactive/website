@@ -6,6 +6,13 @@ url: docs/api
 save_as: docs/api/index.html
 ---
 
+## Documentation Moved!
+
+For the up-to-date instructions see [docs.ipfs.io/reference/api/http/](https://docs.ipfs.io/reference/api/http/) :-)
+
+
+<!--
+
 # API Reference
 
 <sup>Generated on 2017-08-23, from go-ipfs v0.4.11-dev.</sup>
@@ -3521,3 +3528,4 @@ On success, the call to this endpoint will return with 200 and the following bod
 
 ***
 
+-->

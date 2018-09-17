@@ -7,6 +7,11 @@ url: docs/install
 save_as: docs/install/index.html
 ---
 
+## Documentation Moved!
+
+For the up-to-date instructions see [docs.ipfs.io/introduction/install](https://docs.ipfs.io/introduction/install/) :-)
+
+<!--
 # Install Go IPFS
 
 We recommend installing IPFS from a prebuilt package:
@@ -210,3 +215,5 @@ Package managers often contain out-of-date Go packages.
 ### Install FUSE
 
 For more details on setting up FUSE (so that you can mount the filesystem), see [github.com/ipfs/go-ipfs/blob/master/docs/fuse.md](https://github.com/ipfs/go-ipfs/blob/master/docs/fuse.md)
+
+-->

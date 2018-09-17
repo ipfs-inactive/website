@@ -2,37 +2,23 @@
 <html>
 
 <head>
-  {{ partial "head.html" . }}
+ {{ if eq .RelPermalink "/docs/install/" }}
+  <meta http-equiv="refresh" content="0; URL=https://docs.ipfs.io/introduction/install/" />
+ {{ else if eq .RelPermalink "/docs/getting-started/" }}
+  <meta http-equiv="refresh" content="0; URL=https://docs.ipfs.io/introduction/usage/" />
+ {{ else if eq .RelPermalink "/docs/commands/" }}
+  <meta http-equiv="refresh" content="0; URL=https://docs.ipfs.io/reference/api/cli/" />
+ {{ else if eq .RelPermalink "/docs/api/" }}
+  <meta http-equiv="refresh" content="0; URL=https://docs.ipfs.io/reference/api/http/" />
+ {{ else if eq .RelPermalink "/docs/examples/" }}
+  <meta http-equiv="refresh" content="0; URL=https://docs.ipfs.io/guides/examples/" />
+ {{ else }}
+  <meta http-equiv="refresh" content="0; URL=https://docs.ipfs.io/" />
+ {{ end }}
 </head>
 
 <body>
-  {{ partial "header.html" (dict "hero" "" "baseUrl" ($.Param " baseURL ") "page" .) }}
-
-  <div class="container">  
-    <section id="content" class="body blog">
-      <ul class="docs-menu">
-        <li><a href="/docs" {{ if eq .Params.pagetype "major" }}class="current-item"{{ end }}>Documentation</a></li>
-        <li><a href="/docs/install" {{ if eq .Params.URL "docs/install" }}class="current-item"{{ end }}>Install</a></li>
-        <li><a href="/docs/getting-started" {{ if eq .Params.URL "docs/getting-started" }}class="current-item"{{ end }}>Getting Started</a></li>
-        <li><a href="/docs/api" {{ if eq .Params.URL "docs/api" }}class="current-item"{{ end }}>API</a></li>
-        <li><a href="/docs/commands" {{ if eq .Params.URL "docs/commands" }}class="current-item"{{ end }}>Commands</a></li>
-        <li><a href="/docs/examples" {{ if eq .Params.URL "docs/examples" }}class="current-item"{{ end }}>Examples</a></li>
-      </ul>
-      <div class="content-wrapper">
-        {{ .Content }}
-      </div>
-      <!-- /.entry-content -->
-    </section>
-
-    <div class="content-wrapper">
-        {{ partial "latest.html" . }}
-    </div>
-      
-  </div>
-
-  {{ partial "footer.html" . }}
-  <script src="/js/common.js"></script>  
-  <script src="/js/header-and-latest.js"></script>  
+  Moved to <a href="https://docs.ipfs.io/">docs.ipfs.io</a>
 </body>
 
 </html>
