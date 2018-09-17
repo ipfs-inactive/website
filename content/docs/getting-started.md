@@ -5,6 +5,11 @@ pagetype: subdoc
 url: docs/getting-started
 save_as: docs/getting-started/index.html
 ---
+## Documentation Moved!
+
+For the up-to-date instructions see [docs.ipfs.io/introduction/usage](https://docs.ipfs.io/introduction/usage/) :-)
+
+<!--
 
 # Getting Started
 
@@ -160,3 +165,4 @@ Now, you're ready:
 <a class="button button-primary" href="../examples" role="button">
   Onward to more Examples &nbsp;&nbsp;<i class="fa fa-arrow-right"></i>
 </a>
+-->
