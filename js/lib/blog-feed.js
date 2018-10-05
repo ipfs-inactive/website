@@ -13,7 +13,10 @@ module.exports = function () {
   var rssLink = $('link[type="application/rss+xml"]')
   if (!rssLink) throw new Error('No RSS link in page')
 
-  var url = rssLink.attr('href').replace('xml', 'json')
+  // load posts from same-origin ipns gateway to avoid CORS errors
+  var url = rssLink.attr('href')
+    .replace('//blog.ipfs.io/', '/ipns/blog.ipfs.io/')
+    .replace('.xml', '.json')
   $.getJSON(url)
     .done(renderPosts)
 }
