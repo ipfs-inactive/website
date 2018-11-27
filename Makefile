@@ -16,7 +16,7 @@ else
 endif
 
 build: clean install lint js css minify
-	$(PREPEND)hugo && \
+	$(PREPEND)$(NPMBIN)/hugo && \
 	echo "" && \
 	echo "Site built out to ./public dir"
 
@@ -38,7 +38,7 @@ help:
 	@echo '   DEBUG=true make [command] for increased verbosity                                                      '
 
 serve: install lint js css minify
-	$(PREPEND)hugo server
+	$(PREPEND)$(NPMBIN)/hugo server
 
 node_modules:
 	$(PREPEND)$(NPM) i $(APPEND)
