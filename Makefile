@@ -70,7 +70,7 @@ dev: install js css
 	$(PREPEND)( \
 		$(NPMBIN)/nodemon --watch less --exec "$(NPMBIN)/lessc --clean-css --autoprefix less/main.less static/css/main.css" & \
 		$(NPMBIN)/watchify --noparse=jquery js/{header-and-latest,header}.js -p [ factor-bundle -o static/js/header-and-latest.js -o static/js/header.js ] -o static/js/common.js & \
-		hugo server -w \
+		$(NPMBIN)/hugo server -w \
 	)
 
 deploy:
