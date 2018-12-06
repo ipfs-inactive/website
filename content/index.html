@@ -8,7 +8,7 @@
 <body class="home">
     {{ partial "header.html" (dict "hero" "homepage" "baseUrl" ($.Param " baseURL ") "page" .) }}
 
-    <div class="container">    
+    <div class="container">
         <section id="why">
             <h2 class="content-center">The web of tomorrow needs IPFS <strong>today</strong></h2>
             <div class="grid-flex-container">
@@ -53,6 +53,9 @@
                 <h3>IPFS aims to replace HTTP and<br/>build a better web for all of us.</h3>
             </div>
         </section>
+
+        {{ partial "implementations.html" . }}
+
         <section id="how">
             <div class="content-center mb2">
                 <h2>Here's how IPFS works</h2>
@@ -150,7 +153,6 @@
                     </div>
                     <h5>Content creators</h5>
                     <p>IPFS brings the freedom and independent spirit of the web at full force—and at low cost. IPFS can help deliver content in a way which can save you considerable money.</p>
-                
                 </div>
             </div>
         </section>
@@ -158,7 +160,6 @@
         <div class="content-wrapper">
             {{ partial "latest.html" . }}
         </div>
-        
     </div>
 
     {{ partial "footer.html" . }}

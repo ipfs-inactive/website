@@ -10,6 +10,7 @@ hr {
 
 section {
   padding-top: 80px;
+
   &:after {
     content: "";
     display: block;
@@ -20,7 +21,10 @@ section {
     display: block;
     margin: 80px auto 0 auto;
   }
-  &:last-child:after {
+
+  &#implementations:after,
+  &#why:after,
+  &#latest:after {
     display: none;
   }
 }
