@@ -6,6 +6,7 @@
 </head>
 
 <body class="home">
+    {{ partial "alert-bar.html" }}
     {{ partial "header.html" (dict "hero" "homepage" "baseUrl" ($.Param " baseURL ") "page" .) }}
 
     <div class="container">    
