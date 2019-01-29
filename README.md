@@ -48,7 +48,7 @@ Preview the production ready site at http://localhost:1313 _(requires `hugo` on 
 
 Start a hot-reloading dev server on http://localhost:1313 _(requires `hugo` on your `PATH`)_
 
-### `make minfy`
+### `make minify`
 
 Optimise all the things!
 
