@@ -7,7 +7,7 @@ function callTime () {
   var dayOfWeek = new Date().getDay()
   var reminder = $('.alert-bar')
   var announcement = $('.lh-title').append('<span>The IPFS community call will start in ' + callData.time + '. Join us <a href=' + callData.zoomLink + '>here</a></span>')
-  if ((now - startTime <= 2 && now - startTime >= 0) && (dayOfWeek === 1)) {
+  if ((startTime - now <= 2 && startTime - now >= 0) && (dayOfWeek === 1)) {
     announcement()
   } else {
     reminder.hide()
