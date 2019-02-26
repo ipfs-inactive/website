@@ -16,7 +16,7 @@ else
 endif
 
 build: clean install lint js css minify
-	$(PREPEND)hugo && \
+	$(PREPEND)$(NPMBIN)/hugo && \
 	echo "" && \
 	echo "Site built out to ./public dir"
 
@@ -38,7 +38,7 @@ help:
 	@echo '   DEBUG=true make [command] for increased verbosity                                                      '
 
 serve: install lint js css minify
-	$(PREPEND)hugo server
+	$(PREPEND)$(NPMBIN)/hugo server
 
 node_modules:
 	$(PREPEND)$(NPM) i $(APPEND)
@@ -63,14 +63,14 @@ minify-js: install
 
 minify-img: install
 	$(PREPEND)find static/images -type d -exec $(NPMBIN)/imagemin {}/* --out-dir={} $(APPEND) \; & \
-	find content/blog/static -type d -exec $(NPMBIN)/imagemin {}/* --out-dir={} $(APPEND) \; & \
+	test -d content/blog/static && find content/blog/static -type d -exec $(NPMBIN)/imagemin {}/* --out-dir={} $(APPEND) \; & \
 	wait
 
 dev: install js css
 	$(PREPEND)( \
 		$(NPMBIN)/nodemon --watch less --exec "$(NPMBIN)/lessc --clean-css --autoprefix less/main.less static/css/main.css" & \
 		$(NPMBIN)/watchify --noparse=jquery js/{header-and-latest,header}.js -p [ factor-bundle -o static/js/header-and-latest.js -o static/js/header.js ] -o static/js/common.js & \
-		hugo server -w \
+		$(NPMBIN)/hugo server -w \
 	)
 
 deploy:

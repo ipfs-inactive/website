@@ -5,12 +5,11 @@
     </h1>
     <nav role="navigation" class="pull-right top-nav top-nav-dark cf">
       <input id="menu-toggle" type="checkbox" class="menu-toggle">
-      <label for="menu-toggle">Menu</label>
+      <label for="menu-toggle"></label>
       <ul class="list-unstyled list-inline cf">
         {{ if eq .page.URL "/" }}
-          <li><a href="/#why">Why</a></li>
-          <li><a href="/#how">How</a></li>
-          <li><a href="/#uses">Uses</a></li>
+          <li><a href="/#why">About</a></li>
+          <li><a href="/#implementations">Implementations</a></li>
         {{ else }}
           <li><a href="/">About</a></li>
         {{ end }}

@@ -48,7 +48,7 @@ Preview the production ready site at http://localhost:1313 _(requires `hugo` on 
 
 Start a hot-reloading dev server on http://localhost:1313 _(requires `hugo` on your `PATH`)_
 
-### `make minfy`
+### `make minify`
 
 Optimise all the things!
 
@@ -72,10 +72,20 @@ See the `Makefile` for the full list or run `make help` in the project root. You
 
 ## Latest Blog Posts
 
-The *IPFS Starlog* list in the *Latest* section is populated from the [IPFS blog](https://github.com/ipfs/blog), which has a separate build and deploy process.  That process includes building an `index.json` file containing the latest post data in the blog's root directory.  Latest posts can be rendered by this project via two mechanisms:
+The *IPFS Starlog* list in the *Latest* section is populated from the [IPFS
+blog](https://github.com/ipfs/blog), which has a separate build and deploy
+process.  That process includes building an `index.json` file containing the
+latest post data in the blog's root directory.  Latest posts can be rendered by
+this project via two mechanisms:
 
-1. Statically, at build time.  The `/layouts/partials/latest.html` partial contains code (currently commented-out) which GETs `index.json` from its [expected absolute URL](https://ipfs.io/blog/index.json) and uses the returned data to populate the *IPFS Starlog*.  **Note** that if this `index.json` request fails for any reason the entire Hugo build proces will fail, so this code should only be uncommented once that resource is available.
-2. Dynamically, via the `/js/lib/blog-feed.js` script. This script requests the resource at `/blog/index.json` once the page has loaded, locally to avoid any CORS concerns.  If successful, the response will be used to overwrite any static content.  For development purposes, a placeholder file is provided in `/static/blog/index.json`, which will be loaded by the script when running a local dev server.  **This file should not be deployed** - to that end, `make deploy` will remove it from the `public` folder prior it being added to IPFS and then put it back once that's been done.
+1. Statically, at build time.  The `/layouts/partials/latest.html` partial
+   contains code (currently commented-out) which GETs `index.json` from its
+   [expected absolute URL](https://blog.ipfs.io/index.json) and uses the
+   returned data to populate the *IPFS Starlog*.
+2. Dynamically, via the `/js/lib/blog-feed.js` script. This script requests the
+   resource at `/ipns/blog.ipfs.io/index.json` once the page has loaded to
+   avoid any CORS concerns.  If successful, the response will be used to
+   overwrite any static content.
 
 ## Dependencies
 
