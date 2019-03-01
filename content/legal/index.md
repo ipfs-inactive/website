@@ -16,7 +16,7 @@ The email address (preferred) and physical address (less preferred) of our Desig
 Your DMCA Notice must include all of the following information:
 
 1. A physical or electronic signature of the copyright owner, or a person authorized to act on behalf of the copyright owner;
-2. Identification ( URL) of the copyrighted work or material being infringed upon;
+2. Identification (URL) of the copyrighted work or material being infringed upon;
 3. Description of the work or material that you claim to be infringing and would like to be removed, including information regarding its location (URL) with enough detail so that we can and verify it;
 4. Your full legal name, mailing address, telephone number, and email address where we can contact you;
 5. A statement that you have a good faith belief that use of the material in the manner complained of is not authorized by the copyright owner, its agent, or the law; and
