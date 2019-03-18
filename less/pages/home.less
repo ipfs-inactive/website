@@ -4,7 +4,8 @@
 *
 --------------------------------------------------------------------*/
 
-#implementations {
+#implementations,
+&#install {
   @color-white: #fff;
   @color-grey: rgba( 255, 255, 255, 0.6);
   @color-teal: #6acad1;
@@ -13,7 +14,7 @@
   width: 100vw;
   left: 50%;
   margin-left: -50vw;
-  margin-top: 80px;
+  // margin-top: 80px;
   padding-bottom: 40px;
   background: fade(@blue-space, 100%);
   background-image: url('../images/stars.png'), linear-gradient(to bottom, fade(@blue-space, 100%) 0%,#062b3f 100%);
@@ -65,6 +66,11 @@
       border: 1px solid @color-grey;
     }
   }
+}
+
+#install .code-box {
+  background-color: black;
+  font-family: monospace;
 }
 
 .latest-list {
