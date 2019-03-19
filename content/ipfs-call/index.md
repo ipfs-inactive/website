@@ -10,12 +10,13 @@ constellation: constellation-02.svg
 
 ## Welcome to the IPFS Weekly Call
 
-Join us every week for the IPFS Weekly Call where we hear from the IPFS Community. We use zoom to host our calls and [this link](https://protocol.zoom.us/j/443621844) will directly bring you into the live video chat.
+Join us every week for the IPFS Weekly Call where we hear from the IPFS Community. Our calls start 17 UTC every Monday. We use zoom to host our calls and [this link](https://protocol.zoom.us/j/443621844) will directly bring you into the live video chat.
 
 Before you join there are several points we would like to go over:
 
 1. The IPFS calls are recorded and are put on [Youtube](https://www.youtube.com/playlist?list=PLuhRWgmPaHtSGRSHdU9dbsukHKlihZZAe)
-2. Please sign into the [IPFS Weekly Call sheet](https://docs.google.com/document/d/1WHyIZhBo2eEgYXlZ5HLHg6a6ZWTH3tV848sWkYBJjJA/edit#heading=h.hz5t61tdc5r6)
+2. Have a read of the agenda for the call, and add your name as an attendee on the [IPFS Weekly Call document](https://docs.google.com/document/d/1WHyIZhBo2eEgYXlZ5HLHg6a6ZWTH3tV848sWkYBJjJA/edit#heading=h.hz5t61tdc5r6)
+3. We expect all participants to abide by the [Code of Conduct](https://github.com/ipfs/community/blob/master/code-of-conduct.md).
 
 
 ### Call Format
