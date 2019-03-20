@@ -3,6 +3,7 @@
 [![](https://img.shields.io/badge/made%20by-Protocol%20Labs-blue.svg?style=flat-square)](http://ipn.io)
 [![](https://img.shields.io/badge/project-ipfs-blue.svg?style=flat-square)](http://github.com/ipfs/ipfs)
 [![](https://img.shields.io/badge/standard--readme-OK-green.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
+[![build status](https://img.shields.io/circleci/project/github/ipfs/website/master.svg?style=flat-square)](https://circleci.com/gh/ipfs/website)
 
 > Official website for IPFS http://ipfs.io
 
