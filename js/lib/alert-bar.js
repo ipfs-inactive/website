@@ -21,7 +21,7 @@ function callTime () {
   var dayOfWeek = new Date().getUTCDay()
   var reminder = $('.alert-bar')
   if ((startTime - now <= 2 && startTime - now >= parseFloat(-0.5) && (dayOfWeek === callData.day))) {
-    $('.alert-bar-message').append('<span>The IPFS community call will start at ' + callData.time + '. Join us <a href=' + callData.callPage + '>here</a></span>')
+    $('.alert-bar-message').append('<span>The IPFS community call will start at ' + callData.time + '. Join us <a href=' + callData.callPage + ' style="color: #0073b5; text-decoration: underline">here</a></span>')
     reminder.show()
   } else {
     reminder.hide()
