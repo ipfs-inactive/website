@@ -8,15 +8,15 @@
 <body>
   {{ partial "header.html" (dict "hero" "" "baseUrl" ($.Param " baseURL ") "page" .) }}
 
-  <div class="container">  
-    <div class="content-wrapper">
+  <div class="container">
+    <div class="document">
       {{ .Content }}
-    </div>      
+    </div>
   </div>
   {{ partial "footer.html" . }}
 
   <script src="/js/common.js"></script>
-  <script src="/js/header.js"></script>  
+  <script src="/js/header.js"></script>
 </body>
 
 </html>

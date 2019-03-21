@@ -72,7 +72,6 @@
   src: url('../fonts/314625_4_0.eot?#iefix') format('embedded-opentype'),url('../fonts/314625_4_0.woff2') format('woff2'),url('../fonts/314625_4_0.woff') format('woff'),url('../fonts/314625_4_0.ttf') format('truetype');
 }
 
-
 body {
   font-family: 'BrandonTextWeb-Regular', @font-aktiv, Helvetica, Arial;
   font-style: normal;
@@ -101,7 +100,7 @@ h5 {
   color: @brand-blue;
 
   strong {
-    font-weight: 600;
+    font-weight: 500;
   }
 }
 
@@ -122,9 +121,18 @@ footer a, header a {
 }
 
 p {
-  font-size: 15px;
+  font-size: 16px;
 }
 
-h4,h5,h6,p {
-  margin-bottom: 20px;
+h4, h5, h6, p {
+  margin-bottom: 16px;
+}
+
+.lead {
+  font-size: 20px;
+}
+
+ul + h2, ol + h2, p + h2,
+ul + h3, ol + h3, p + h3 {
+  margin-top: 48px;
 }
