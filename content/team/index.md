@@ -57,12 +57,10 @@ Community outreach working group. Coordinates events, blog posts, documentation,
 **Responsibilities include**:
 
 - Help community members organize meetups for their own communities.
-- Respond to requests for IPFS presence in conferences.
-- Facilitate community content for social media channels.
 - Publish regular updates to the community (blog posts and newsletters).
-- Create Tutorials and Workshops to teach concepts about IPFS and the Distributed Web in ProtoSchool.
+- Create Tutorials and Workshops to teach concepts about IPFS and the Distributed Web in [ProtoSchool](https://proto.school).
 - Ensure that public forums ([discuss.ipfs.io](https://discuss.ipfs.io), irc, github, etc) have adequate moderation and responsive support.
-- Ensure that the code of conduct is followed and provide appropriate support or response when violations occur.
+- Ensure that the code of conduct is followed and provide appropriate support when violations occur.
 - Author and improve documentation.
 
 Where to learn more:
@@ -75,7 +73,7 @@ Where to learn more:
 
 ### JS Core
 
-Develop the JavaScript implementation of the IPFS Protocol, js-ipfs.
+Develop the JavaScript implementation of the IPFS Protocol, [js-ipfs](https://js.ipfs.io/).
 
 **Responsibilities include**:
 
@@ -95,13 +93,13 @@ Where to learn more:
 
 ### Go Core
 
-Develop the Go implementation of the IPFS Protocol, go-ipfs.
+Develop the Go implementation of the IPFS Protocol, [go-ipfs](https://github.com/ipfs/go-ipfs).
 
 **Responsibilities include**:
 
 - Create the server and reference implementation of the IPFS Protocol.
 - Create a great onboarding experience for new contributors.
-- Upgrade and build dev tools (i.e gx).
+- Upgrade and build dev tools.
 - Set the guidelines for writing, maintaining and managing the Go codebases, test suites, and contributions.
 
 Where to learn more:
@@ -121,8 +119,8 @@ Making IPFS GUIs simple, accessible, reusable, and beautiful.
 
 - Make IPFS must be usable and comprehensible for everyone.
 - Demonstrate the nature of the system with effortless, coherent, and compelling interfaces.
-- Develop the IPFS Web UI
-- Develop the IPFS Desktop app
+- Develop the [IPFS Desktop app](https://github.com/ipfs-shipyard/ipfs-desktop)
+- Develop the [IPFS Web UI](https://github.com/ipfs-shipyard/ipfs-webui)
 
 Where to learn more:
 
@@ -134,7 +132,7 @@ Where to learn more:
 
 ### IPFS Cluster
 
-The IPFS Cluster Working Group is the team implementing IPFS Cluster.
+The IPFS Cluster Working Group is the team implementing [IPFS Cluster](https://cluster.ipfs.io).
 
 **Responsibilities include**:
 
@@ -172,14 +170,13 @@ Where to learn more:
 
 ### Integration with Web Browsers
 
-The Integration with Web Browsers Working Group designs and implements browser integrations, web extensions, service workers and any other strategy that contributes to IPFS being integrated with the web today.
+The Integration with Web Browsers Working Group designs and implements browser integrations, service workers and any other strategy that contributes to IPFS being integrated with the web today.
 
 **Responsibilities include**:
 
 - Browser integrations (Firefox, Chrome, Brave and others).
-- IPFS Web Extension.
-- IPFS Service Worker.
-- IPFS Web Worker.
+- Develop the [IPFS Companion](https://github.com/ipfs-shipyard/ipfs-companion) browser extension.
+- Develop the [IPFS Service Worker](https://github.com/ipfs-shipyard/service-worker-gateway).
 - Collaborate with with browser vendors.
 - Identify blockers and design constraints of each integration, figuring out new ways to go around those limitations.
 - Increase the adoption of the distributed web by making it easy for users to access it.
@@ -199,7 +196,7 @@ Research and development of building blocks that enable collaborative applicatio
 
 **Responsibilities include**:
 
-- Research and implement CRDTs on top of IPFS, creating building blocks that can be used by other applications.
+- Research and implement CRDTs on top of IPFS, creating [building blocks](https://github.com/peer-base/peer-base) that can be used by other [applications](https://peerpad.net).
 - Research Cryptographic ACLs (Capabilities Systems) and create building blocks to implement them.
 - Apply this research and implementation to products like PeerPad, validating the solutions and defining new problems to be solved.
 
