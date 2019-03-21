@@ -6,7 +6,6 @@ function shouldShowBanner (date, startTimeString, startDay) {
   var startTime = parseInt(startTimeString, 10)
   var dayOfWeek = date.getUTCDay()
 
-  console.log(now, startTime, dayOfWeek)
   if ((startTime - now <= 2 && startTime - now >= parseFloat(-0.5) && (dayOfWeek === startDay))) {
     return true
   }
@@ -16,11 +15,8 @@ function shouldShowBanner (date, startTimeString, startDay) {
 module.exports.shouldShowBanner = shouldShowBanner
 
 function callTime () {
-  var now = new Date().getUTCHours()
-  var startTime = parseInt(callData.time, 10)
-  var dayOfWeek = new Date().getUTCDay()
   var reminder = $('.alert-bar')
-  if ((startTime - now <= 2 && startTime - now >= parseFloat(-0.5) && (dayOfWeek === callData.day))) {
+  if (shouldShowBanner(new Date(), callData.time, callData.day)) {
     $('.alert-bar-message').append('<span>The IPFS community call will start at ' + callData.time + '. Join us <a href=' + callData.callPage + ' style="color: #0073b5; text-decoration: underline">here</a></span>')
     reminder.show()
   } else {
