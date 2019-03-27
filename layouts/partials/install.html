@@ -1,30 +1,75 @@
 <section id="install">
-    <div class="container content-center">
-  
-      <h2 class="install-title">Install</h2>
-      <hr class="install-underline">
-      <div class="grid-flex-container">
-        <div class="grid-flex-cell">
-            <ol class="list install-link-heading tc">
-                <li><h5><a class="link white" href="https://docs.ipfs.io/introduction/install/">1. Install IPFS on your machine</a></h5></li>
-                <li><h5>2. After installation, get started adding and working with files on IPFS.</h5></li>
-            </ol>
-            <article class="center mw5 mw6-ns hidden ba mv4 code-box">
-                <div class="pa3 bt tj code-box">
-                    <p class="code-comment"># create ipfs local config file</p>
-                    <p>ipfs init</p>
-                    <p class="code-comment"># start the ipfs deamon process</p>
-                    <p>ipfs daemon</p>
-                    <p class="code-comment"># show ipfs object data</p>
-                    <p>ipfs cat</p>
-                    <p class="code-comment"># download ipfs objects</p>
-                    <p>ipfs get</p>
-                </div>
-            </article>
-            <h5>Is the command line not your jam? Download <a href="https://github.com/ipfs-shipyard/ipfs-desktop">ipfs-desktop</a>!</h5>
-            </div>  
+    <div class="container">
+        <h2 class="install-title tc">Install</h2>
+        <hr class="install-underline">
+        <div class="grid-flex-container">
+            <div class="grid-flex-cell">
+                <ol class="list install-link-heading tc">
+                    <li><h5><a class="link white" href="https://docs.ipfs.io/introduction/install/">1. Install IPFS on your machine</a></h5></li>
+                    <li><h5>2. After installation, get started adding and working with files on IPFS.</h5></li>
+                </ol>
+                <article class="center mw5 mw6-ns hidden ba mv4 code-box">
+                    <div class="pa3 bt tj code-box">
+                        <p class="code-comment"># create ipfs local config file</p>
+                        <p>ipfs init</p>
+                        <p class="code-comment"># start the ipfs deamon process</p>
+                        <p>ipfs daemon</p>
+                        <p class="code-comment"># show ipfs object data</p>
+                        <p>ipfs cat</p>
+                        <p class="code-comment"># download ipfs objects</p>
+                        <p>ipfs get</p>
+                    </div>
+                </article>
+                <h5 class="tc">Is the command line not your jam? Download <a href="https://github.com/ipfs-shipyard/ipfs-desktop">ipfs-desktop</a>!</h5>
+                </div>  
         </div>    
+        <h2 class="content-center">Implementations</h2>
+        <div class="grid-flex-container">
+        <div class="grid-flex-cell-1of2">
+            <a href="https://github.com/ipfs/go-ipfs" target="_blank">
+            <div id="go-ipfs-logo" class="implementation-logo content-center avatar-rounded">
+                <img src="/images/go-ipfs-logo.png" />
+            </div>
+            <h5 class="content-center">Go</h5>
+            <p>go-ipfs is the main implementation of IPFS. It includes a core implementation, a daemon server, command line
+                tooling and more.</p>
+            </a>
+        </div>
+    
+        <div class="grid-flex-cell-1of2">
+            <a href="https://js.ipfs.io" target="_blank">
+            <div class="implementation-logo content-center avatar-rounded">
+                <img src="/images/js-ipfs-logo.svg" />
+            </div>
+            <h5 class="content-center">JavaScript</h5>
+            <p>js-ipfs paves the way for the browser implementation of IPFS. Written entirely in JavaScript, it
+                opens the door to a world of possibilities.</p>
+            </a>
+        </div>
+        </div>
+    
+        <h2 id="integrations-title" class="content-center">Integrations</h2>
+        <div class="grid-flex-container">
+        <!-- <div class="grid-flex-cell-1of2">
+            <a href="https://github.com/ipfs-shipyard/ipfs-desktop" target="_blank">
+            <div class="app-ss content-center">
+                <img src="/images/ipfs-desktop-ss.png" />
+            </div>
+            <h5 class="content-center">Desktop App</h5>
+            <p>IPFS Desktop allows you to run your IPFS node on your machine without having to bother with command line tools.
+                Powered by the Web UI.</p>
+            </a>
+        </div> -->      
+        <div class="grid-flex-cell grid-flex-cell-1of2 content-center">
+            <a href="https://github.com/ipfs-shipyard/ipfs-companion" target="_blank">
+            <div class="app-ss content-center">
+                <img src="/images/ipfs-companion-ss.png" />
+            </div>
+            <h5 class="content-center">Browser Companion</h5>
+            <p align="left">Upgrade your browser with IPFS super powers. This add-on enables everyone to access IPFS resources the way they
+                were meant to.</p>
+            </a>
+        </div>
+        </div>      
     </div>
-    </section>
-
-
+</section>
