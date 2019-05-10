@@ -17,13 +17,16 @@ We organize ourselves into focused teams called Working Groups. Each group defin
 The IPFS Working Groups are:
 
 - [**Project**](#project)
-- [**Community**](#community)
 - [**JS Core**](#js-core)
 - [**Go Core**](#go-core)
 - [**IPFS GUI**](#ipfs-gui)
 - [**IPFS Cluster**](#ipfs-cluster)
 - [**IPFS Infrastructure**](#ipfs-infrastructure)
 - [**Integration with Web Browsers**](#integration-with-web-browsers)
+
+There are also Special Interest Groups; pushing forward research and development on:
+
+- [**Package Managers**](#package-managers)
 - [**Dynamic Data and Capabilities**](#dynamic-data-and-capabilities)
 - [**Decentralized Data Stewardship**](#decentralized-data-stewardship)
 - [**Local Offline Collaboration**](#local-offline-collaboration-locol)
@@ -48,27 +51,6 @@ Where to learn more:
 - **Working Group Mailing List**: project-wg@ipfs.io
 - **Captain**: **[David Dias](https://github.com/daviddias)** (IPFS Project Lead)
 - **TPM**: **[Molly Mackinlay](https://github.com/daviddias)** (IPFS Project Coordinator)
-
-
-### Community
-
-Community outreach working group. Coordinates events, blog posts, documentation, automation and education.
-
-**Responsibilities include**:
-
-- Help community members organize meetups for their own communities.
-- Publish regular updates to the community (blog posts and newsletters).
-- Create Tutorials and Workshops to teach concepts about IPFS and the Distributed Web in [ProtoSchool](https://proto.school).
-- Ensure that public forums ([discuss.ipfs.io](https://discuss.ipfs.io), irc, github, etc) have adequate moderation and responsive support.
-- Ensure that the code of conduct is followed and provide appropriate support when violations occur.
-- Author and improve documentation.
-
-Where to learn more:
-
-- **Coordination**: https://github.com/ipfs/community
-- **Roadmap**: https://github.com/ipfs/roadmap/blob/master/WG_COMMUNITY.md
-- **Working Group Mailing List**: community-wg@ipfs.io
-- **Captain**: **[Mikeal Rogers](https://github.com/mikeal)**
 
 
 ### JS Core
@@ -128,6 +110,9 @@ Where to learn more:
 - **Roadmap**: https://github.com/ipfs/roadmap/blob/master/WG_GUI.md
 - **Working Group Mailing List**: gui-wg@ipfs.io
 - **Captain**: **[Oli Evans](https://github.com/olizilla)**
+- **Weekly call**
+  - 🕒 Wednesdays at 4pm UTC
+  - 📞 Zoom: https://protocol.zoom.us/j/833247793
 
 
 ### IPFS Cluster
@@ -188,11 +173,31 @@ Where to learn more:
 - **Roadmap**: https://github.com/ipfs/roadmap/blob/master/WG_INTEGRATION_IN_WEB_BROWSERS.md
 - **Working Group Mailing List**: wb-wg@ipfs.io
 - **Captain**: **[Marcin Rataj](https://github.com/lidel)**
+- **Weekly call**
+  - 🕒 Wednesdays at 4pm UTC
+  - 📞 Zoom: https://protocol.zoom.us/j/833247793
+
+
+## Special Interest Groups
+
+_Cross-cutting research and development teams_
+
+
+### Package managers
+
+Adding end-to-end support for package managers will provide a verifiable and co-hostable foundation for a vital use-case that we rely on. It will focus us on delivering performance and stability improvements while introducing IPFS to a huge community who have the skills to contribute back.
+
+Where to learn more:
+
+- **Coordination**: https://github.com/ipfs/package-managers
+- **Weekly call**
+  - 🕒 Tuesdays at 3:30pm UTC
+  - 📞 Zoom: https://protocol.zoom.us/j/5011724290
 
 
 ### Dynamic Data and Capabilities
 
-Research and development of building blocks that enable collaborative applications, providing solutions for security, identity, access control, concurrency, synchronization, offline, and near-real-time collaboration. This WG was born out of the results created by the [CRDT Research Group](http://github.com/ipfs/research-crdt).
+Research and development of building blocks that enable collaborative applications, providing solutions for security, identity, access control, concurrency, synchronization, offline and near-real-time collaboration on top of IPFS.
 
 **Responsibilities include**:
 
@@ -203,9 +208,7 @@ Research and development of building blocks that enable collaborative applicatio
 Where to learn more:
 
 - **Coordination**: http://github.com/ipfs/dynamic-data-and-capabilities
-- **Roadmap**: https://github.com/ipfs/roadmap/blob/master/WG_DYNAMIC_DATA_AND_CAPABILITIES.md
-- **Working Group Mailing List**: ddc-wg@ipfs.io
-- **Captain**: **[Pedro Teixeira](https://github.com/pgte)**
+- **Mailing List**: ddc-wg@ipfs.io
 
 
 ### Decentralized Data Stewardship
@@ -222,9 +225,7 @@ User research, collaborations, and products that support holding data together o
 Where to learn more:
 
 - **Coordination**: https://github.com/ipfs/decentralized-data-stewardship
-- **Roadmap**: https://github.com/ipfs/roadmap/blob/master/WG_DECENTRALIZED_DATA_STEWARDSHIP.md
-- **Working Group Mailing List**: dds-wg@ipfs.io
-- **Captain**: **[Michelle Hertzfeld](https://github.com/meiqimichelle)**
+- **Mailing List**: dds-wg@ipfs.io
 
 
 ### Local Offline Collaboration (Locol)
@@ -241,6 +242,4 @@ User research, collaborations, and features to make the knowledge and tools on t
 Where to learn more:
 
 - **Coordination**: https://github.com/ipfs/local-offline-collab
-- **Roadmap**: TBD
-- **Working Group Mailing List**: locol-wg@ipfs.io
-- **Captain**: **[Molly Mackinlay](https://github.com/momack2)**
+- **Mailing List**: locol-wg@ipfs.io
