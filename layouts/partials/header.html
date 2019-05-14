@@ -12,8 +12,8 @@
         <li><a href="//docs.ipfs.io/introduction/install/" {{ if eq .page.Params.pagename "install" }}class="current-item"{{ end }}>Install</a></li>
         <li><a href="//docs.ipfs.io/" {{ if and (eq .page.Type "docs") (not (eq .page.Params.pagename "install")) }}class="current-item"{{ end }}>Docs</a></li>
         <li><a href="/team" {{ if eq .page.Type "team" }}class="current-item"{{ end }}>Team</a></li>
-        <li><a href="/media" {{ if eq .page.Type "media" }}class="current-item"{{ end }}>Media</a></li>
         <li><a href="//blog.ipfs.io/" {{ if or (eq .page.Type "blog") (eq .page.Data.Singular "author") }}class="current-item"{{ end }}>Blog</a></li>
+        <li><a href="//discuss.ipfs.io">Discuss</a></li>
       </ul>
     </nav>
     {{ if eq .hero "homepage" }}
