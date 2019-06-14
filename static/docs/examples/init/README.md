@@ -3,7 +3,8 @@
 go-ipfs can be started by your operating system's native init system.
 
 - [systemd](#systemd)
-- [initd](#initd)
+- [LSB init script](#initd)
+- [Upstart/startup job](#upstart)
 - [launchd](#launchd)
 
 ### systemd
@@ -41,30 +42,36 @@ Read more about `--user` services here: [wiki.archlinux.org:Systemd ](https://wi
 ### initd
 
 - Here is a full-featured sample service file: https://github.com/dylanPowers/ipfs-linux-service/blob/master/init.d/ipfs
-- And below is a very basic sample service file. **Note the username jbenet**.
+- Use `service` or your distribution's equivalent to control the service.
+
+##  upstart
+
+- And below is a very basic sample upstart job. **Note the username jbenet**.
 
 ```
 cat /etc/init/ipfs.conf
 ```
-```initd
-description "ipfs daemon"
+```
+description "ipfs: interplanetary filesystem"
 
 start on (local-filesystems and net-device-up IFACE!=lo)
 stop on runlevel [!2345]
+
 limit nofile 524288 1048576
 limit nproc 524288 1048576
+setuid jbenet
 chdir /home/jbenet
-exec start-stop-daemon --start --chuid jbenet --exec /home/jbenet/go/bin/ipfs daemon
 respawn
+exec ipfs daemon
 ```
 
-Install this file
+Another version is available here:
 
 ```sh
 ipfs cat /ipfs/QmbYCwVeA23vz6mzAiVQhJNa2JSiRH4ebef1v2e5EkDEZS/ipfs.conf >/etc/init/ipfs.conf
 ```
 
-And edit it to replace all occurrences of `jbenet` with whatever user you want it to run as:
+For both, edit to replace occurrences of `jbenet` with whatever user you want it to run as:
 
 ```sh
 sed -i s/jbenet/<chosen-username>/ /etc/init/ipfs.conf
