@@ -49,8 +49,7 @@ Where to learn more:
 - **Coordination**: https://github.com/ipfs/project
 - **Roadmap**: https://github.com/ipfs/roadmap/blob/master/WG_PROJECT.md
 - **Working Group Mailing List**: project-wg@ipfs.io
-- **Captain**: **[David Dias](https://github.com/daviddias)** (IPFS Project Lead)
-- **TPM**: **[Molly Mackinlay](https://github.com/daviddias)** (IPFS Project Coordinator)
+- **Captain**: **[Molly Mackinlay](https://github.com/momack2)**
 
 
 ### JS Core
