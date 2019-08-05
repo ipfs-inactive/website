@@ -1,7 +1,7 @@
 baseURL = "https://ipfs.io"
 relativeURLs = true
 preserveTaxonomyNames = true
-googleAnalytics = "UA-52930282-2"
+googleAnalytics = "UA-96910779-14"
 disableKinds = ["RSS"]
 
 [taxonomies]
