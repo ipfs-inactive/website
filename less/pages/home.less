@@ -4,18 +4,23 @@
 *
 --------------------------------------------------------------------*/
 
-#implementations {
-  @color-white: #fff;
-  @color-grey: rgba( 255, 255, 255, 0.6);
-  @color-teal: #6acad1;
+#getting-started {
+  .options {
+    margin-top: 4em;
+  }
+}
 
+#implementations {
   margin-top: 80px;
   padding-bottom: 40px;
   background: fade(@blue-space, 100%);
-  background-image: url('../images/stars.png'), linear-gradient(to bottom, fade(@blue-space, 100%) 0%,#062b3f 100%);
+  background-image: url("../images/stars.png"),
+    linear-gradient(to bottom, fade(@blue-space, 100%) 0%, #062b3f 100%);
   background-repeat: repeat;
 
-  h2, h3, h5 {
+  h2,
+  h3,
+  h5 {
     color: @color-white;
   }
 
@@ -70,7 +75,8 @@
     margin-bottom: 10px;
   }
 
-  .date, .publication {
+  .date,
+  .publication {
     display: block;
     font-size: 13px;
     color: @gray-light;
@@ -97,7 +103,7 @@
     &:after {
       width: 44px;
       height: 44px;
-      content: '';
+      content: "";
       background: url(../images/video-play.svg) no-repeat 0 0;
       background-size: contain;
       position: absolute;
