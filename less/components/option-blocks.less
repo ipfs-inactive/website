@@ -1,0 +1,65 @@
+.option-blocks {
+  border-radius: 8px;
+  overflow: hidden;
+  input {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+  }
+  input:checked + .option-label {
+  }
+  input:checked + .option-label::after {
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    color: @color-teal;
+  }
+  input:checked ~ .option-content {
+    max-height: 100vh;
+  }
+  .option-block {
+    width: 100%;
+    overflow: hidden;
+    border: 1px solid @color-teal-light;
+    width: 100%;
+    padding: 1rem;
+    margin: 1rem 0;
+  }
+  .option-block:hover,
+  .option-block:focus {
+    border-color: @color-teal;
+  }
+  .option-label {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .option-label:hover {
+  }
+  /* Icon */
+  .option-label::after {
+    content: "\276F";
+    color: @color-teal-light;
+    width: 1em;
+    height: 1em;
+    font-size: 2em;
+    text-align: center;
+    transition: all 0.35s;
+  }
+  .option-content {
+    max-height: 0;
+    padding: 0 1em;
+    transition: all 0.5s;
+    overflow: hidden;
+  }
+  .option-close {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1em;
+    font-size: 0.75em;
+    cursor: pointer;
+  }
+  .option-close:hover {
+  }
+}
