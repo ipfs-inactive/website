@@ -6,6 +6,7 @@
 
   <body class="home">
     {{ partial "header.html" (dict "hero" "homepage" "baseUrl" ($.Param " baseURL ") "page" .) }}
+    {{ partial "get-started.html" . }}
     <div class="container">
       <section id="why">
         <h2 class="content-center">
