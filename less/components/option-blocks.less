@@ -1,10 +1,24 @@
 .option-blocks {
   border-radius: 8px;
   overflow: hidden;
+  label {
+    // padding: 0;
+    margin: 0;
+  }
+  ul {
+    margin: 0;
+    padding-left: 30px;
+  }
+  li {
+    padding: 0 0 16px 0;
+  }
   input {
     position: absolute;
     opacity: 0;
     z-index: -1;
+  }
+  .grid-flex-container {
+    margin: -30px 0 0px -30px;
   }
   input:checked + .option-label {
   }
@@ -15,13 +29,12 @@
   }
   input:checked ~ .option-content {
     max-height: 100vh;
+    margin: 0 1rem 1rem 1rem;
   }
   .option-block {
-    width: 100%;
     overflow: hidden;
     border: 1px solid @color-teal-light;
     width: 100%;
-    padding: 1rem;
     margin: 1rem 0;
   }
   .option-block--other {
@@ -34,9 +47,9 @@
   .option-label {
     display: flex;
     justify-content: space-between;
-    padding: 1em;
     font-weight: bold;
     cursor: pointer;
+    padding: 2rem;
   }
   .option-label:hover {
   }
@@ -52,7 +65,7 @@
   }
   .option-content {
     max-height: 0;
-    padding: 0 1em;
+    margin: 0 1rem;
     transition: all 0.5s;
     overflow: hidden;
   }
