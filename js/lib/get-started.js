@@ -6,7 +6,7 @@ module.exports = function () {
 
   function trackLinkClick (event) {
     if (!window.ga) return
-    ga('send', 'event', {
+    window.ga('send', 'event', {
       eventCategory: 'link',
       eventAction: 'click',
       eventLabel: event.target.href
@@ -15,7 +15,7 @@ module.exports = function () {
   function trackOptionClick (el) {
     if (!window.ga) return
     var title = $(el).closest('.option-block').find('h4').text().toLowerCase()
-    ga('send', 'event', {
+    window.ga('send', 'event', {
       eventCategory: el.checked ? 'open option' : 'close option',
       eventAction: 'click',
       eventLabel: title
