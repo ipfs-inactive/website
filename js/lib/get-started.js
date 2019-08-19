@@ -4,10 +4,10 @@ module.exports = function () {
   var ctx = '.option-blocks'
   var lastOption = null
 
-  function trackOutboundLinkClick (event) {
+  function trackLinkClick (event) {
     if (!window.ga) return
     ga('send', 'event', {
-      eventCategory: 'outbound link',
+      eventCategory: 'link',
       eventAction: 'click',
       eventLabel: event.target.href
     })
@@ -23,9 +23,9 @@ module.exports = function () {
   }
 
   $(document).ready(function () {
-    // setup outbound link tracking for all of the homepage
+    // setup link tracking for all of the homepage
     $('a').on('click', function (event) {
-      trackOutboundLinkClick(event)
+      trackLinkClick(event)
     })
     // setup click action on option section
     $('input[type=checkbox]', ctx).on('click', function () {
