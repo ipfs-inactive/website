@@ -6,7 +6,7 @@
     "browserify": "^14.4.0",
     "dnslink-deploy": "^1.0.7",
     "factor-bundle": "^2.5.0",
-    "hugo-bin": "0.18.1",
+    "hugo-bin": "0.45.2",
     "imagemin-cli": "^3.0.0",
     "imagemin-jpegtran": "^5.0.2",
     "imagemin-optipng": "^5.2.1",
