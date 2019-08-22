@@ -6,32 +6,26 @@
 
   <body class="home">
     {{ partial "header.html" (dict "hero" "homepage" "baseUrl" ($.Param " baseURL ") "page" .) }}
-    {{ partial "get-started.html" . }}
     <div class="container">
       <section id="why">
-        <h2 class="content-center">
-          The web of tomorrow needs IPFS <strong>today</strong>
-        </h2>
+        <div class="content-center mb2">
+          <h2>The web of tomorrow needs IPFS today</h2>
+          <h5>IPFS aims to replace HTTP in order to build a better web for all of us.</h5>
+        </div>
         <div class="grid-flex-container">
           <div class="grid-flex-cell-1of2">
             <div class="illustration">
               <img src="/images/ipfs-illustration-http.svg" />
             </div>
             <h5 class="content-center">
-              <strong>HTTP is inefficient and expensive</strong>
+              <strong>Today's web is inefficient and expensive</strong>
             </h5>
             <p>
-              HTTP downloads a file from a single computer at a time, instead of
-              getting pieces from multiple computers simultaneously.
+              HTTP downloads files from one computer at a time instead of
+              getting pieces from multiple computers simultaneously. Peer-to-peer IPFS saves big on bandwidth &mdash;
               <a
                 href="http://math.oregonstate.edu/~kovchegy/web/papers/p2p-vdn.pdf"
-                >With video delivery, a P2P approach could save 60% in bandwidth
-                costs.</a
-              >
-            </p>
-            <p>
-              IPFS makes it possible to distribute high volumes of data with
-              high efficiency. And zero duplication means savings in storage.
+                >up to 60% for video</a> &mdash; making it possible to efficiently distribute high volumes of data without duplication.
             </p>
           </div>
           <div class="grid-flex-cell-1of2">
@@ -39,19 +33,15 @@
               <img src="/images/ipfs-illustration-history.svg" />
             </div>
             <h5 class="content-center">
-              <strong>Humanity's history is deleted daily</strong>
+              <strong>Today's web can't preserve humanity's history</strong>
             </h5>
             <p>
               <a
                 href="https://blogs.loc.gov/thesignal/2011/11/the-average-lifespan-of-a-webpage/"
-                >The average lifespan of a web page is 100 days.</a
-              >
-              Remember GeoCities? The web doesn't anymore. It's not good enough
-              for the primary medium of our era to be so fragile.
-            </p>
-            <p>
-              IPFS keeps every version of your files and makes it simple to set
-              up resilient networks for mirroring of data.
+                >The average lifespan of a web page is 100 days</a> before it's
+                gone forever. It's not good enough for the primary medium of our
+                era to be this fragile. IPFS keeps every version of your files
+                and makes it simple to set up resilient networks for mirroring data.
             </p>
           </div>
           <div class="grid-flex-cell-1of2">
@@ -59,16 +49,14 @@
               <img src="/images/ipfs-illustration-centralized.svg" />
             </div>
             <h5 class="content-center">
-              <strong>The web's centralization limits opportunity</strong>
+              <strong>Today's web is centralized, limiting opportunity</strong>
             </h5>
             <p>
-              The Internet has been one of the great equalizers in human history
-              and a real accelerator of innovation. But the increasing
-              consolidation of control is a threat to that.
-            </p>
-            <p>
-              IPFS remains true to the original vision of the open and flat web,
-              but delivers the technology which makes that vision a reality.
+              The Internet has turbocharged innovation by being one of the great
+              equalizers in human history &mdash; but increasing consolidation
+              of control threatens that progress. IPFS stays true to the
+              original vision of an open, flat web by delivering technology to
+              make that vision a reality.
             </p>
           </div>
           <div class="grid-flex-cell-1of2">
@@ -76,34 +64,28 @@
               <img src="/images/ipfs-illustration-network.svg" />
             </div>
             <h5 class="content-center">
-              <strong>Our apps are addicted to the backbone</strong>
+              <strong>Today's web is addicted to the backbone</strong>
             </h5>
             <p>
-              Developing world. Offline. Natural disasters. Intermittent
-              connections. All trivial compared to interplanetary networking.
-              The networks we're using are so 20th Century. We can do better.
-            </p>
-            <p>
-              IPFS powers the creation of diversely resilient networks which
-              enable persistent availability with or without Internet backbone
-              connectivity.
+              IPFS powers the creation of diversely resilient networks that
+              enable persistent availability &mdash; with or without Internet
+              backbone connectivity. This means better connectivity for the
+              developing world, during natural disasters, or just when you're on
+               flaky coffee shop wi-fi.
             </p>
           </div>
-        </div>
-        <div class="content-center our-aim">
-          <div class="illustration">
-            <img src="/images/ipfs-illustration-uses-network.svg" />
-          </div>
-          <h3>
-            IPFS aims to replace HTTP and<br />build a better web for all of us.
-          </h3>
         </div>
       </section>
+    </div>
 
+      {{ partial "get-started.html" . }}
+
+
+    <div class="container">
       <section id="how">
         <div class="content-center mb2">
           <h2>Here's how IPFS works</h2>
-          <h5>Let's take a look at what happens when you add files to IPFS:</h5>
+          <h5>Take a look at what happens when you add a file to IPFS.</h5>
         </div>
         <div class="how-item">
           <div class="illustration">
@@ -111,7 +93,7 @@
           </div>
           <div class="how-description">
             <h5>
-              Each file and all of the <strong>blocks within it</strong> are
+              Your file, and all of the <strong>blocks within it</strong>, is
               given a <strong>unique fingerprint</strong> called a
               <strong>cryptographic hash</strong>.
             </h5>
@@ -134,8 +116,8 @@
           <div class="how-description">
             <h5>
               Each <strong>network node</strong> stores only content it is
-              interested in, and some indexing information that helps figure out
-              who is storing what.
+              interested in, plus some indexing information that helps figure out
+              which node is storing what.
             </h5>
           </div>
         </div>
@@ -145,8 +127,8 @@
           </div>
           <div class="how-description">
             <h5>
-              When <strong>looking up files</strong>, you're asking the network
-              to find nodes storing the content behind a unique hash.
+              When you <strong>look up a file</strong> to view or download, you're asking the network
+              to find the nodes that are storing the content behind that file's hash.
             </h5>
           </div>
         </div>
@@ -156,13 +138,13 @@
           </div>
           <div class="how-description">
             <h5>
-              Every file can be found by
+              You don't need to remember the hash, though &mdash; every file can be found by
               <strong>human-readable names</strong> using a decentralized naming
               system called <strong>IPNS</strong>.
             </h5>
           </div>
         </div>
-        <div class="content-center mb2">
+        <div class="content-center mb2" style="padding-top: 30px;">
           <h3>Take a closer look</h3>
         </div>
 
@@ -197,7 +179,10 @@
 
     <div class="container">
       <section id="uses" class="content-center">
-        <h2>IPFS is useful here and now</h2>
+        <div class="content-center mb2">
+          <h2>IPFS can help here and now</h2>
+          <h5>No matter what you do with the web, IPFS is useful today.</h5>
+        </div>
         <div class="grid-flex-container">
           <div class="grid-flex-cell">
             <div class="illustration">
@@ -205,9 +190,9 @@
             </div>
             <h5>Archivists</h5>
             <p>
-              It's not enough to organize the world's information—we need to
-              store it in a way the world can remember it. IPFS provides
-              deduplication, high performance, and clustered persistence.
+              IPFS provides deduplication, high performance, and clustered
+              persistence &mdash; enabling you to store the world's information
+              in a way future generations can rely on.
             </p>
           </div>
           <div class="grid-flex-cell service-providers">
@@ -216,9 +201,9 @@
             </div>
             <h5>Service providers</h5>
             <p>
-              If your company delivers large amounts of data to users, a
-              peer-to-peer approach could save you millions in bandwidth. IPFS
-              can provide secure P2P content delivery.
+             Does your company deliver large amounts of data to users? IPFS
+             provides secure content delivery using a
+              peer-to-peer approach that could save you millions in bandwidth.
             </p>
           </div>
           <div class="grid-flex-cell">
@@ -227,8 +212,8 @@
             </div>
             <h5>Researchers</h5>
             <p>
-              If you're working with, distributing, and analyzing huge datasets,
-              IPFS offers fast performance and decentralized archiving.
+              If you're working with, distributing, or analyzing large data sets,
+              IPFS can help provide fast performance and decentralized archiving.
             </p>
           </div>
         </div>
@@ -239,7 +224,7 @@
             </div>
             <h5>Developing world</h5>
             <p>
-              High latency networks are a real barrier of entry to developing
+              High-latency networks are a major barrier of entry to the developing
               world. IPFS provides resilient access to data, independent of low
               latency or connectivity to the backbone.
             </p>
@@ -250,10 +235,9 @@
             </div>
             <h5>Blockchains</h5>
             <p>
-              IPFS and the Blockchain are a perfect match! You can address large
-              amounts of data with IPFS, and place the immutable, permanent IPFS
-              links into a blockchain transaction. This timestamps and secures
-              your content, without having to put the data itself on the chain.
+              IPFS lets you address large amounts of data and place the immutable,
+              permanent links into blockchain transactions. This timestamps
+              and secures content without having to put the data itself on the chain.
             </p>
           </div>
           <div class="grid-flex-cell">
@@ -263,8 +247,8 @@
             <h5>Content creators</h5>
             <p>
               IPFS brings the freedom and independent spirit of the web at full
-              force—and at low cost. IPFS can help deliver content in a way
-              which can save you considerable money.
+              force &mdash; and it can help you deliver content while saving
+              considerable cost.
             </p>
           </div>
         </div>
