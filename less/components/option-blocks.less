@@ -18,11 +18,13 @@
   }
   h4 {
     margin-bottom: 0;
+    margin-left: 10px;
+    line-height: 1.5em;
   }
   .grid-flex-container {
     margin: -30px 0 0px -30px;
   }
-  input:checked + .option-label::after {
+  input:checked + .option-label::before {
     -webkit-transform: rotate(90deg);
     transform: rotate(90deg);
     color: @color-teal;
@@ -34,7 +36,7 @@
   .option-block {
     overflow: hidden;
     background: @color-white;
-    border: 2px solid @color-teal;
+    border: 1px solid @color-teal;
     width: 100%;
     margin: 1rem 0;
   }
@@ -47,7 +49,7 @@
   }
   .option-label {
     display: flex;
-    justify-content: space-between;
+    // justify-content: space-between;
     font-weight: bold;
     cursor: pointer;
     padding: 2rem;
@@ -57,7 +59,7 @@
   }
 
   /* Icon */
-  .option-label::after {
+  .option-label::before {
     content: "\276F";
     color: @color-teal;
     width: 1em;

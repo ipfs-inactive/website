@@ -1,4 +1,4 @@
-<header class="header-has-logo"{{ if eq .page.Params.pagetype "subdoc"}}{{ else }} id="stars"{{ end }}>
+<header class="header-has-logo" {{ if eq .page.Params.pagetype "subdoc"}}{{ else }} id="stars" {{ end }}>
   <div class="container cf">
     <h1 class="pull-left">
       <a href="/" class="logo ipfs-logo transition transition-fadeout">IPFS</a>
@@ -9,43 +9,50 @@
       <ul class="list-unstyled list-inline cf">
         <li><a href="/#why">About</a></li>
         <li><a href="/#implementations">Implementations</a></li>
-        <li><a href="//docs.ipfs.io/guides/guides/install/" {{ if eq .page.Params.pagename "install" }}class="current-item"{{ end }}>Install</a></li>
-        <li><a href="//docs.ipfs.io/" {{ if and (eq .page.Type "docs") (not (eq .page.Params.pagename "install")) }}class="current-item"{{ end }}>Docs</a></li>
-        <li><a href="/team" {{ if eq .page.Type "team" }}class="current-item"{{ end }}>Team</a></li>
-        <li><a href="//blog.ipfs.io/" {{ if or (eq .page.Type "blog") (eq .page.Data.Singular "author") }}class="current-item"{{ end }}>Blog</a></li>
+        <li><a href="//docs.ipfs.io/guides/guides/install/"
+            {{ if eq .page.Params.pagename "install" }}class="current-item" {{ end }}>Install</a></li>
+        <li><a href="//docs.ipfs.io/"
+            {{ if and (eq .page.Type "docs") (not (eq .page.Params.pagename "install")) }}class="current-item"
+            {{ end }}>Docs</a></li>
+        <li><a href="/team" {{ if eq .page.Type "team" }}class="current-item" {{ end }}>Team</a></li>
+        <li><a href="//blog.ipfs.io/"
+            {{ if or (eq .page.Type "blog") (eq .page.Data.Singular "author") }}class="current-item" {{ end }}>Blog</a>
+        </li>
         <li><a href="//discuss.ipfs.io">Forum</a></li>
       </ul>
     </nav>
     {{ if eq .hero "homepage" }}
-      <div class="hero hero-home">
-        <div class="hero-text">
-          <h2 class="headline-main">IPFS is the Distributed Web</h2>
-          <span class="divider"></span>
-          <h3 class="subhead-main">The InterPlanetary File System is a peer-to-peer <br />hypermedia protocol to help make the web<br />faster, safer, and more open.</h3>
-          <div class="cta">
-            <a class="button button-outlined" href="#why">Why IPFS?</a>
-            <a class="button button-primary" href="#get-started">Get started</a>
-          </div>
+    <div class="hero hero-home">
+      <div class="hero-text">
+        <h2 class="headline-main">IPFS is the Distributed Web</h2>
+        <span class="divider"></span>
+        <h3 class="subhead-main">A peer-to-peer hypermedia protocol<br /> to help make
+          the web faster, safer, and more open.</h3>
+        <div class="cta">
+          <a class="button button-primary" href="#get-started">Get started</a>
+          <a class="button button-outlined" href="#how">How it works</a>
         </div>
       </div>
+    </div>
     {{ else if eq .hero "starlog" }}
-      <div class="hero hero-major">
-          <h2 class="headline-main">IPFS Starlog</h2>
-          <img src="/images/constellation-01.svg" class="constellation"/>
-      </div>
+    <div class="hero hero-major">
+      <h2 class="headline-main">IPFS Starlog</h2>
+      <img src="/images/constellation-01.svg" class="constellation" />
+    </div>
     {{ else }}
-      <div class="hero{{ if isset .page.Params "pagetype" }} hero-{{ .page.Params.pagetype }}{{ end }}">
-        {{ if isset .page.Params "constellation" }}
-          {{ if isset .page.Params "title" }}
-            <h2 class="headline-main">{{ .page.Params.title }}</h2>
-          {{ end }}
-          <img src="/images/{{ .page.Params.constellation }}" class="constellation"/>
-        {{ end }}
-      </div>
+    <div class="hero{{ if isset .page.Params "pagetype" }} hero-{{ .page.Params.pagetype }}{{ end }}">
+      {{ if isset .page.Params "constellation" }}
+      {{ if isset .page.Params "title" }}
+      <h2 class="headline-main">{{ .page.Params.title }}</h2>
+      {{ end }}
+      <img src="/images/{{ .page.Params.constellation }}" class="constellation" />
+      {{ end }}
+    </div>
     {{ end }}
   </div>
   <div class="view-more">
     <label>View more</label><a href="#"></a>
   </div>
-  {{ if eq .page.Params.pagetype "subdoc"}}{{ else }}<a class="button" id="toggle-animation">Disable animation</a>{{ end }}
+  {{ if eq .page.Params.pagetype "subdoc"}}{{ else }}<a class="button" id="toggle-animation">Disable
+    animation</a>{{ end }}
 </header>
