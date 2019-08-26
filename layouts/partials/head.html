@@ -32,4 +32,6 @@
 <link rel="alternate feed" href="//blog.ipfs.io/index.xml" type="application/rss+xml" title="IPFS Blog" />
 <!-- ipfs camp -->
 <script src="https://camp.ipfs.io/ribbon.min.js" async></script>
+{{- if not .Site.IsServer -}}
 {{ template "_internal/google_analytics_async.html" . }}
+{{- end -}}

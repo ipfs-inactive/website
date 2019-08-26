@@ -1,0 +1,97 @@
+.option-blocks {
+  border-radius: 8px;
+  overflow: hidden;
+  label {
+    margin: 0;
+  }
+  ul {
+    margin: 0;
+    padding-left: 30px;
+  }
+  li {
+    padding: 0 0 16px 0;
+  }
+  input {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+  }
+  h4 {
+    margin-bottom: 0;
+    margin-left: 10px;
+    line-height: 1.5em;
+  }
+  .grid-flex-container {
+    margin: 0px;
+    .grid-flex-cell-1of2 {
+      padding: 0 !important;
+    }
+  }
+  input:checked + .option-label::before {
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    color: @color-teal;
+  }
+  input:checked ~ .option-content {
+    max-height: 100vh;
+    margin: 0 1rem 1rem 1rem;
+  }
+  .option-block {
+    overflow: hidden;
+    background: @color-white;
+    border: 1px solid @color-teal;
+    width: 100%;
+    margin: 1rem 0;
+  }
+  .option-block--other {
+    border: 0;
+  }
+  .option-block:hover,
+  .option-block:focus {
+    border-color: @color-teal;
+  }
+  .option-label {
+    display: flex;
+    // justify-content: space-between;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 2rem;
+    p {
+      margin-bottom: 0;
+    }
+  }
+
+  /* Icon */
+  .option-label::before {
+    content: "\276F";
+    color: @color-teal;
+    width: 1em;
+    height: 1em;
+    font-size: 2em;
+    text-align: center;
+    transition: all 0.35s;
+  }
+  .option-content {
+    max-height: 0;
+    margin: 0 1rem;
+    transition: all 0.5s;
+    overflow: hidden;
+    .with-padding {
+      padding: 0 16px;
+    }
+  }
+  .option-close {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1em;
+    font-size: 0.75em;
+    cursor: pointer;
+  }
+}
+
+@media screen and (max-width: @breakpoint-mid-mobile) {
+  .option-blocks h4 {
+    line-height: 1.65em;
+  }
+
+}
