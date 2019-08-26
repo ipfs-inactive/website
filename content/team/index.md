@@ -185,3 +185,6 @@ Where to learn more:
 
 - **Coordination**: https://github.com/ipfs/local-offline-collab
 - **Mailing List**: locol-wg@ipfs.io
+- **Monthly call**
+  - 🕒 Every third Wednesday at 17:00 UTC
+  - 📞 Zoom: https://protocol.zoom.us/j/884541689
