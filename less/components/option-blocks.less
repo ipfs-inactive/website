@@ -22,7 +22,10 @@
     line-height: 1.5em;
   }
   .grid-flex-container {
-    margin: -30px 0 0px -30px;
+    margin: 0px;
+    .grid-flex-cell-1of2 {
+      padding: 0 !important;
+    }
   }
   input:checked + .option-label::before {
     -webkit-transform: rotate(90deg);
@@ -84,4 +87,11 @@
     font-size: 0.75em;
     cursor: pointer;
   }
+}
+
+@media screen and (max-width: @breakpoint-mid-mobile) {
+  .option-blocks h4 {
+    line-height: 1.65em;
+  }
+
 }
