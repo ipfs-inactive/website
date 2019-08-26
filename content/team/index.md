@@ -16,215 +16,158 @@ We organize ourselves into focused teams called Working Groups. Each group defin
 
 The IPFS Working Groups are:
 
-- [**Project**](#project)
-- [**JS Core**](#js-core)
-- [**Go Core**](#go-core)
-- [**IPFS GUI**](#ipfs-gui)
-- [**IPFS Cluster**](#ipfs-cluster)
-- [**IPFS Infrastructure**](#ipfs-infrastructure)
-- [**Integration with Web Browsers**](#integration-with-web-browsers)
-
-There are also Special Interest Groups; pushing forward research and development on:
-
+- [**Project Operations**](#project-operations)
+- [**Testing Infra**](#testing-infra)
+- [**IPFS as a Service**](#ipfs-as-a-service)
 - [**Package Managers**](#package-managers)
-- [**Dynamic Data and Capabilities**](#dynamic-data-and-capabilities)
-- [**Decentralized Data Stewardship**](#decentralized-data-stewardship)
+- [**Docs and Developer UX**](#docs-and-developer-ux)
+
+
+There are also Special Interest Groups, pushing forward research and development on:
+
+- [**Integration with Web Browsers**](#integration-with-web-browsers)
+- [**IPFS GUI**](#ipfs-gui)
+<!-- - [**IPFS Cluster**](#ipfs-cluster) -->
 - [**Local Offline Collaboration**](#local-offline-collaboration-locol)
 
-
-### Project
-
-The IPFS Project Working Group serves as the point of coordination for the IPFS Organization.
-
-**Responsibilities include**:
-
-- Maintain the IPFS Project Roadmap and Vision.
-- Provide coaching to Working Groups to develop their own planning and goal-setting.
-- Facilitate communication and alignment across the organization.
-- Research, develop and build new ways to help async teams coordinate at scale.
-- Recognize needs of the project and develop solutions to meet them.
-
-Where to learn more:
-
-- **Coordination**: https://github.com/ipfs/project
-- **Roadmap**: https://github.com/ipfs/roadmap/blob/master/WG_PROJECT.md
-- **Working Group Mailing List**: project-wg@ipfs.io
-- **Captain**: **[Molly Mackinlay](https://github.com/momack2)**
+<!-- - [**Dynamic Data and Capabilities**](#dynamic-data-and-capabilities)
+- [**Decentralized Data Stewardship**](#decentralized-data-stewardship) -->
 
 
-### JS Core
+### Project Operations
 
-Develop the JavaScript implementation of the IPFS Protocol, [js-ipfs](https://js.ipfs.io/).
+Ship core go and js implementations with reliable rigor, systematize community communications and collaborations, and spin up IPFS research to meet future project needs.
 
 **Responsibilities include**:
 
-- Create the browser implementation of the IPFS Protocol.
-- Create a great onboarding experience for new contributors.
-- Upgrade and build dev tools (i.e AEgir).
-- Define process and help achieve high quality sustainable open source modules.
-- Set the guidelines for writing, maintaining and managing the JS codebases, test suites, and contributions.
+- Core Implementations (including [js-ipfs](https://github.com/ipfs/js-ipfs) and [go-ipfs](https://github.com/ipfs/js-ipfs))
+- Project communications and community support
+- Collaborations (including [with web browsers](https://github.com/ipfs/in-web-browsers))
+- Maintenance of lower-priority systems/tools
+- Research
 
 Where to learn more:
 
-- **Coordination**: https://github.com/ipfs/pm/blob/master/JS_CORE_DEV_MGMT.md
-- **Roadmap**: https://github.com/ipfs/roadmap/blob/master/WG_JS_CORE.md
-- **Working Group Mailing List**: js-ipfs-wg@ipfs.io
-- **Captain**: **[Alan Shaw](https://github.com/alanshaw/)**
+- **Coordination**: https://github.com/ipfs/project-operations
+- **Technical Project Manager/IPFS Project Lead**: [Molly Mackinlay](https://github.com/momack2)
 
+### Testing Infra
 
-### Go Core
-
-Develop the Go implementation of the IPFS Protocol, [go-ipfs](https://github.com/ipfs/go-ipfs).
+The IPFS Testing Infra team builds testing tooling to validate scalability and reliability of the core IPFS implementations, with easy onboarding for core developers to use in CI and one-off testing.
 
 **Responsibilities include**:
 
-- Create the server and reference implementation of the IPFS Protocol.
-- Create a great onboarding experience for new contributors.
-- Upgrade and build dev tools.
-- Set the guidelines for writing, maintaining and managing the Go codebases, test suites, and contributions.
+- Build large-scale testing infrastructure
+- Create dashboards and CI hooks to make testing infra more useful/usable
+- Support core implementation developers in creating/running real world test scenarios
 
 Where to learn more:
 
-- **Coordination**: https://github.com/ipfs/pm/blob/master/GOLANG_CORE_DEV_MGMT.md
-- **Roadmap**: https://github.com/ipfs/roadmap/blob/master/WG_GO_CORE.md
-- **Working Group Mailing List**: go-ipfs-wg@ipfs.io
-- **Captain**: **[Steven Allen](https://github.com/stebalien)**
-- **TPM**: **[Erik Ingenito](https://github.com/eingenito)**
+- **Coordination**: TBD
+- **Captain**: [Raul Kripalani](https://github.com/raulk)
 
+### IPFS as a Service
 
-### IPFS GUI
-
-Making IPFS GUIs simple, accessible, reusable, and beautiful.
+Improve performance and stability of gateways and pinning, and provide public observability of services.
 
 **Responsibilities include**:
 
-- Make IPFS must be usable and comprehensible for everyone.
-- Demonstrate the nature of the system with effortless, coherent, and compelling interfaces.
-- Develop the [IPFS Desktop app](https://github.com/ipfs-shipyard/ipfs-desktop)
-- Develop the [IPFS Web UI](https://github.com/ipfs-shipyard/ipfs-webui)
+- Manage and maintain the IPFS HTTP Gateway
+- Manage and maintain the IPFS Bootstrapper nodes
+- Manage and maintain the IPFS pinning service, [pinbot](https://twitter.com/ipfspin)
+- Monitor services and hosts used by the IPFS dev teams
+- Provide wisdom to other users that want to host IPFS nodes
 
 Where to learn more:
 
-- **Coordination**: https://github.com/ipfs/ipfs-gui
-- **Roadmap**: https://github.com/ipfs/roadmap/blob/master/WG_GUI.md
-- **Working Group Mailing List**: gui-wg@ipfs.io
-- **Captain**: **[Oli Evans](https://github.com/olizilla)**
+- **Coordination**: TBD
+- **Captain**: [Héctor Sanjuan](https://github.com/hsanjuan)
+
+### Package Managers
+
+User research, collaborations, and performance improvements of import and update of large filesystems to support file-system-based package managers.
+
+**Responsibilities include**:
+
+- Participate in communities like [package.community](http://package.community/)
+- Conduct user research around package manager use cases, communities, and best practices
+- Support collaborations between IPFS and community members who are building, maintaining and using package managers
+- Research and prototype adding IPFS support to package manager clients and mirroring registries onto IPFS
+- Improve the core IPFS implementations to support package manager usage needs
+
+Where to learn more:
+
+- **Coordination**: https://github.com/ipfs/package-managers
+- **Captains**: [Steven Allen](https://github.com/stebalien) and [Michelle Hertzfeld](https://github.com/meiqimichelle)
 - **Weekly call**
-  - 🕒 Wednesdays at 4pm UTC
-  - 📞 Zoom: https://protocol.zoom.us/j/833247793
+  - 🕒 Tuesdays at 15:30 UTC
+  - 📞 Zoom: https://protocol.zoom.us/j/5011724290
 
+### Docs and Developer UX
 
-### IPFS Cluster
-
-The IPFS Cluster Working Group is the team implementing [IPFS Cluster](https://cluster.ipfs.io).
-
-**Responsibilities include**:
-
-- Design and implement IPFS Cluster.
-- Provide knowledge and APIs that organizations with large data sets can use.
-- Manage and maintain the IPFS pinning service, [@ipfspin](https://twitter.com/ipfspin).
-
-Where to learn more:
-
-- **Coordination**: https://github.com/ipfs/ipfs-cluster
-- **Roadmap**: https://github.com/ipfs/roadmap/blob/master/WG_CLUSTER.md
-- **Working Group Mailing List**: cluster-wg@ipfs.io
-- **Captain**: **[Hector Sanjuan](https://github.com/hsanjuan)**
-
-
-### IPFS Infrastructure
-
-Tools and systems for the IPFS community.
+Overhaul our documentation platform and content based on audits, research and community needs assessment to make IPFS more accessible to developer users.
 
 **Responsibilities include**:
 
-- Manage and maintain the IPFS HTTP Gateway.
-- Monitor services and hosts used by the IPFS dev teams.
-- Provide wisdom to other users that want to host IPFS nodes.
-- Enable dev teams to run reliable, efficient tests and manage continuous deployment.
-- Configure automation for defined development policies like release cycles and code quality reporting.
+- Support [ProtoSchool](http://proto.school) to improve broader understanding of the dweb
+- Understand and support IPFS developer usability needs
+- valuate and improve IPFS documentation accuracy, usability, and accessibility
 
 Where to learn more:
 
-- **Coordination**: http://github.com/ipfs/infra
-- **Roadmap**: https://github.com/ipfs/roadmap/blob/master/WG_INFRASTRUCTURE.md
-- **Working Group Mailing List**: infra-wg@ipfs.io
-- **Captain**: **[Erin Fahy](https://github.com/eefahy)**
-
-
-### Integration with Web Browsers
-
-The Integration with Web Browsers Working Group designs and implements browser integrations, service workers and any other strategy that contributes to IPFS being integrated with the web today.
-
-**Responsibilities include**:
-
-- Browser integrations (Firefox, Chrome, Brave and others).
-- Develop the [IPFS Companion](https://github.com/ipfs-shipyard/ipfs-companion) browser extension.
-- Develop the [IPFS Service Worker](https://github.com/ipfs-shipyard/service-worker-gateway).
-- Collaborate with with browser vendors.
-- Identify blockers and design constraints of each integration, figuring out new ways to go around those limitations.
-- Increase the adoption of the distributed web by making it easy for users to access it.
-- Define specifications for address schemes and advocate for those schemes to be adopted.
-
-Where to learn more:
-
-- **Coordination**: https://github.com/ipfs/in-web-browsers
-- **Roadmap**: https://github.com/ipfs/roadmap/blob/master/WG_INTEGRATION_IN_WEB_BROWSERS.md
-- **Working Group Mailing List**: wb-wg@ipfs.io
-- **Captain**: **[Marcin Rataj](https://github.com/lidel)**
+- **Coordination**: https://github.com/ipfs/docs
+- **Captain**: [Jessica Schilling](https://github.com/jessicaschilling)
 - **Weekly call**
-  - 🕒 Wednesdays at 4pm UTC
-  - 📞 Zoom: https://protocol.zoom.us/j/833247793
-
+  - 🕒 Mondays at 15:00 UTC
+  - 📞 Zoom: https://protocol.zoom.us/j/614386160
 
 ## Special Interest Groups
 
 _Cross-cutting research and development teams_
 
 
-### Package managers
+### Integration with Web Browsers
 
-Adding end-to-end support for package managers will provide a verifiable and co-hostable foundation for a vital use-case that we rely on. It will focus us on delivering performance and stability improvements while introducing IPFS to a huge community who have the skills to contribute back.
+The Integration with Web Browsers Special Interest Group designs and implements browser integrations, service workers and any other strategy that contributes to IPFS being integrated with the web today.
+
+**Responsibilities include**:
+
+- Browser integrations (Firefox, Chrome, Brave and others)
+- Develop the [IPFS Companion](https://github.com/ipfs-shipyard/ipfs-companion) browser extension
+- Develop the [IPFS Service Worker](https://github.com/ipfs-shipyard/service-worker-gateway)
+- Collaborate with with browser vendors
+- Identify blockers and design constraints of each integration, figuring out new ways to go around those limitations
+- Increase the adoption of the distributed web by making it easy for users to access it
+- Define specifications for address schemes and advocate for those schemes to be adopted
 
 Where to learn more:
 
-- **Coordination**: https://github.com/ipfs/package-managers
+- **Coordination**: https://github.com/ipfs/in-web-browsers
+- **Mailing List**: wb-wg@ipfs.io
+- **Captain & Technical Project Manager**: [Marcin Rataj](https://github.com/lidel)
 - **Weekly call**
-  - 🕒 Tuesdays at 3:30pm UTC
-  - 📞 Zoom: https://protocol.zoom.us/j/5011724290
+  - 🕒 Wednesdays at 16:00 UTC
+  - 📞 Zoom: https://protocol.zoom.us/j/833247793
 
+### IPFS GUI
 
-### Dynamic Data and Capabilities
+  Making IPFS GUIs simple, accessible, reusable, and beautiful.
 
-Research and development of building blocks that enable collaborative applications, providing solutions for security, identity, access control, concurrency, synchronization, offline and near-real-time collaboration on top of IPFS.
+  **Responsibilities include**:
 
-**Responsibilities include**:
+  - Fight complexity at every step
+  - IPFS must be usable and comprehensible for everyone
+  - Publish and promote this work; make doing the right thing the easiest thing
+  - Demonstrate the nature of the system with effortless, coherent, and compelling interfaces
 
-- Research and implement CRDTs on top of IPFS, creating [building blocks](https://github.com/peer-base/peer-base) that can be used by other [applications](https://peerpad.net).
-- Research Cryptographic ACLs (Capabilities Systems) and create building blocks to implement them.
-- Apply this research and implementation to products like PeerPad, validating the solutions and defining new problems to be solved.
+  Where to learn more:
 
-Where to learn more:
-
-- **Coordination**: http://github.com/ipfs/dynamic-data-and-capabilities
-- **Mailing List**: ddc-wg@ipfs.io
-
-
-### Decentralized Data Stewardship
-
-User research, collaborations, and products that support holding data together on decentralized networks.
-
-**Responsibilities include**:
-
-- Participate in groups such as [Data Together](https://datatogether.org/)
-- Conduct [user research around managing large volumes of data](https://github.com/ipfs/user-research/tree/master/large-volumes) on IPFS
-- Support collaborations between IPFS and community members who need to manage large volumes of data
-- Research and prototype policy layers for just and inclusive data stewardship on decentralized networks
-
-Where to learn more:
-
-- **Coordination**: https://github.com/ipfs/decentralized-data-stewardship
-- **Mailing List**: dds-wg@ipfs.io
+  - **Coordination**: https://github.com/ipfs/ipfs-gui
+  - **Mailing List**: gui-wg@ipfs.io
+  - **Captain**: [Oli Evans](https://github.com/olizilla)
+  - **Weekly call**
+    - 🕒 Wednesdays at 16:00 UTC
+    - 📞 Zoom: https://protocol.zoom.us/j/833247793
 
 
 ### Local Offline Collaboration (Locol)
