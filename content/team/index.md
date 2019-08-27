@@ -36,11 +36,11 @@ There are also Special Interest Groups, pushing forward research and development
 
 ### Project Operations
 
-Ship core go and js implementations with reliable rigor, systematize community communications and collaborations, and spin up IPFS research to meet future project needs.
+Ensure core Go and JavaScript implementations ship with reliable rigor, systematize community communications and collaborations, and spin up IPFS research to meet future project needs.
 
 **Responsibilities include**:
 
-- Core Implementations (including [js-ipfs](https://github.com/ipfs/js-ipfs) and [go-ipfs](https://github.com/ipfs/js-ipfs))
+- Track progression of objectives and key results (OKRs) for core implementations (including [js-ipfs](https://github.com/ipfs/js-ipfs) and [go-ipfs](https://github.com/ipfs/js-ipfs))
 - Project communications and community support
 - Collaborations (including [with web browsers](https://github.com/ipfs/in-web-browsers))
 - Maintenance of lower-priority systems/tools
