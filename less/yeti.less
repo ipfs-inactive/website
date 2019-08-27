@@ -43,6 +43,7 @@ a:active,
 a:hover {
   outline: 0;
 }
+
 abbr[title] {
   border-bottom: 1px dotted;
 }
@@ -214,6 +215,10 @@ a {
 }
 a:focus {
   outline: none;
+  outline: -webkit-focus-ring-color auto 5px;
+  outline-color: -webkit-focus-ring-color;
+  outline-style: auto;
+  outline-width: 5px;
 }
 a:hover {
   color: #008dba;
