@@ -1,0 +1,5 @@
+# Rationale for excluding gateway paths: https://github.com/ipfs/website/issues/328
+User-Agent: *
+Disallow: /ipfs/
+Disallow: /ipns/
+Disallow: /api/
