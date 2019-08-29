@@ -1,9 +1,11 @@
 var stars = require('./lib/stars')
 var popup = require('./lib/popup')
 var blogFeed = require('./lib/blog-feed')
+var menu = require('./lib/menu')
 var getStarted = require('./lib/get-started')
 
 stars()
 popup()
 blogFeed()
+menu()
 getStarted()
