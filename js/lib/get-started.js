@@ -23,6 +23,11 @@ module.exports = function () {
   }
 
   $(document).ready(function () {
+    // enable tab selection on quiz elements by auto-expanding options on tab focus
+    $('a', ctx).on('focus', function (event) {
+      $(this).closest('.option-blocks').find('input[type=checkbox]:checked').prop('checked', false)
+      $(this).closest('.option-block').find('input[type=checkbox]:not(:checked)').prop('checked', true)
+    })
     // setup link tracking for all of the homepage
     $('a').on('click', function (event) {
       trackLinkClick(event)
