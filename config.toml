@@ -4,6 +4,11 @@ preserveTaxonomyNames = true
 googleAnalytics = "UA-96910779-14"
 disableKinds = ["RSS"]
 
+[privacy]
+  [privacy.googleAnalytics]
+    anonymizeIP = true
+    respectDoNotTrack = true
+
 [taxonomies]
   author = "author"
 
