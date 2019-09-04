@@ -5,10 +5,10 @@
 # ku.wikipedia.org @ 2017-05-10
 # tr.wikipedia.org @ 2017-04-30
 User-agent: *
-Disallow: /ipfs/QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco/
-Disallow: /ipfs/QmU2TE8ym8rBAMwzaanZ3SbVtBJY4R7oX2uN1fca4JAnrD/
-Disallow: /ipfs/QmWY4KZXKTuspGSwYVDNbNLLZcmSiQ63Mdmz7eRd4KzBbb/
-Disallow: /ipfs/QmT5NvUtoM5nWFfrQdVrFtvGfKFmG7AHE8P34isapyhCxX/
+Disallow: /ipfs/QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco
+Disallow: /ipfs/QmU2TE8ym8rBAMwzaanZ3SbVtBJY4R7oX2uN1fca4JAnrD
+Disallow: /ipfs/QmWY4KZXKTuspGSwYVDNbNLLZcmSiQ63Mdmz7eRd4KzBbb
+Disallow: /ipfs/QmT5NvUtoM5nWFfrQdVrFtvGfKFmG7AHE8P34isapyhCxX
 
 # better safe than sorry
 User-agent: *
