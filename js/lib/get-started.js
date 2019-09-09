@@ -14,7 +14,7 @@ module.exports = function () {
   }
   function trackOptionClick (el) {
     if (!window.ga) return
-    var title = $(el).closest('.option-block').find('h4').text().toLowerCase()
+    var title = ((el.dataset && el.dataset.title) || $(el).closest('.option-block').find('h4').text()).toLowerCase()
     window.ga('send', 'event', {
       eventCategory: el.checked ? 'open option' : 'close option',
       eventAction: 'click',
