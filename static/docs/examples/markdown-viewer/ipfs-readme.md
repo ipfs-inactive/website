@@ -28,7 +28,7 @@ all dependencies.
   Compilation from source is recommended.
 * If you are interested in development, please install the development
 dependencies as well.
-* *WARNING: older versions of OSX FUSE (for Mac OS X) can cause kernel panics when mounting!*
+* *WARNING: older versions of OSX FUSE (for macOS) can cause kernel panics when mounting!*
   We strongly recommend you use the [latest version of OSX FUSE](http://osxfuse.github.io/).
   (See https://github.com/jbenet/go-ipfs/issues/177)
 

@@ -88,7 +88,7 @@ sudo service ipfs restart
 
 ## launchd
 
-Similar to `systemd`, on OS X you can run `go-ipfs` via a user LaunchAgent.
+Similar to `systemd`, on macOS you can run `go-ipfs` via a user LaunchAgent.
 
 - Create `~/Library/LaunchAgents/io.ipfs.go-ipfs.plist`:
 
