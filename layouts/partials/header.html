@@ -8,9 +8,7 @@
       <label for="menu-toggle" tabindex="0" class="menu-toggle-acc"></label>
       <ul class="list-unstyled list-inline cf">
         <li><a href="/#why">About</a></li>
-        <li><a href="/#implementations">Implementations</a></li>
-        <li><a href="//docs.ipfs.io/guides/guides/install/"
-            {{ if eq .page.Params.pagename "install" }}class="current-item" {{ end }}>Install</a></li>
+        <li><a href="/#install">Install</a></li>
         <li><a href="//docs.ipfs.io/"
             {{ if and (eq .page.Type "docs") (not (eq .page.Params.pagename "install")) }}class="current-item"
             {{ end }}>Docs</a></li>

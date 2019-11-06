@@ -4,7 +4,7 @@
 *
 --------------------------------------------------------------------*/
 
-#implementations {
+#install {
   margin-top: 80px;
   padding-bottom: 40px;
   background: fade(@blue-space, 100%);
@@ -14,6 +14,7 @@
 
   h2,
   h3,
+  h4,
   h5 {
     color: @color-white;
   }
@@ -23,6 +24,7 @@
   }
 
   & a:hover {
+    h4,
     h5 {
       color: @color-teal;
     }
@@ -52,12 +54,9 @@
   }
 
   .app-ss {
-    margin-bottom: 20px;
 
     & img {
-      width: 250px;
-      height: 160px;
-      border: 1px solid @color-grey;
+      max-height: 100px;
     }
   }
 }
