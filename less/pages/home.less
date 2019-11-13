@@ -8,14 +8,14 @@
   margin-top: 80px;
   padding-bottom: 40px;
   background: fade(@blue-space, 100%);
-  background-image: url("../images/stars.png"),
-    linear-gradient(to bottom, fade(@blue-space, 100%) 0%, #062b3f 100%);
-  background-repeat: repeat;
 
   h2,
-  h3,
-  h5 {
+  h3, {
     color: @color-white;
+  }
+
+  h5 {
+    color: @color-grey;
   }
 
   p {
@@ -29,7 +29,7 @@
   & a:hover {
     h4,
     h5 {
-      color: @color-teal;
+      text-decoration: underline;
     }
   }
 
