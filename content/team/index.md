@@ -2,7 +2,7 @@
 pagetype: major
 pagename: team
 section: Team
-title: Team | IPFS
+title: The IPFS Team
 url: team
 save_as: team/index.html
 constellation: constellation-02.svg
