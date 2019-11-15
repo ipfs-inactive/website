@@ -118,7 +118,7 @@ Where to learn more:
 - **Coordination**: https://github.com/ipfs/docs
 - **Captain**: [Jessica Schilling](https://github.com/jessicaschilling)
 - **Weekly call**
-  - 🕒 Mondays at 15:00 UTC
+  - 🕒 Mondays at 16:00 UTC
   - 📞 Zoom: https://protocol.zoom.us/j/614386160
 
 ## Special Interest Groups

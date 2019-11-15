@@ -4,27 +4,32 @@
 *
 --------------------------------------------------------------------*/
 
-#implementations {
+#install {
   margin-top: 80px;
   padding-bottom: 40px;
   background: fade(@blue-space, 100%);
-  background-image: url("../images/stars.png"),
-    linear-gradient(to bottom, fade(@blue-space, 100%) 0%, #062b3f 100%);
-  background-repeat: repeat;
 
   h2,
-  h3,
-  h5 {
+  h3, {
     color: @color-white;
+  }
+
+  h5 {
+    color: @color-grey;
   }
 
   p {
     color: @color-grey;
   }
 
+  a {
+    color: @color-teal;
+  }
+
   & a:hover {
+    h4,
     h5 {
-      color: @color-teal;
+      text-decoration: underline;
     }
   }
 
@@ -52,12 +57,9 @@
   }
 
   .app-ss {
-    margin-bottom: 20px;
 
     & img {
-      width: 250px;
-      height: 160px;
-      border: 1px solid @color-grey;
+      max-height: 100px;
     }
   }
 }
