@@ -87,29 +87,29 @@ section {
   color: @color-teal;
 }
 
-@media screen and (max-width: @breakpoint-mid-mobile) {
-  .install-item {
-    margin-bottom: 1rem;
-    padding: 1rem;
-    text-align: center;
-  }
-  .install-item img {
-    max-height:100px;
-  }
-  .install-description {
-  }
+.install-item {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  text-align: center;
+}
+.install-item img {
+  max-height: 100px;
 }
 
-@media screen and (min-width: (@breakpoint-mid-mobile + 1)) {
+
+@media screen and (min-width: (@breakpoint-mid-mobile)) {
   .install-item {
     width: 100%;
     margin: 1rem 0;
-    padding: 1rem;
     display: flex;
     align-items: center;
+    text-align: left;
   }
   .install-item-image {
     width: 400px;
+    img {
+      max-height: inherit;
+    }
   }
   .install-description {
     margin-left: 1rem;
