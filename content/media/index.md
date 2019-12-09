@@ -42,12 +42,14 @@ Looking for a good introduction to IPFS, the latest open meetings from IPFS work
 A chronological archive of IPFS news, articles, media coverage, presence in conferences and talks, and more.
 
 ### 2019
+- [4 December: IPFS, Libp2p & Filecoin with Juan Benet - Zero Knowledge podcast](https://www.zeroknowledge.fm/106?t=0)
 - [17 October: Juan Benet Presents Building Web3 at Web3 Summit 2019](https://www.youtube.com/watch?v=pJOG5Ql7ZD0)
 - [16 October: IPFS Basics Night with ProtoSchool Denver](https://www.youtube.com/watch?v=D3MjB45YZsM)
 - [8 August: Vasco Santos on A Decentralized World, OPO.js](https://www.youtube.com/watch?v=5pHl67qomec)
 - [8 August: Alex Potsides on NPM on IPFS, OPO.js](https://www.youtube.com/watch?v=umNL2VkIHe8)
 - [6 September: Enterprise IPFS for True Supply Chain Provenance — RTrade](https://medium.com/rtrade-technologies/enterprise-ipfs-for-true-supply-chain-provenance-part-1-89524337f27)
 - [8 June: MacVoices #19152: WWDC/AltConf - Andrew Hall of Textile.io Explains IPFS](https://www.youtube.com/watch?v=a1qVSs-poLY)
+- [1 June: Jim Pick on "Visualizing the Decentralized Web" at NodeFest Tokyo](https://www.youtube.com/watch?v=3Y76XWFhoco)
 - [22 May: IPFS – Technology That's Out of This World — Sprint](https://business.sprint.com/blog/ipfs-technology/)
 
 ### 2018
