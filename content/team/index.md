@@ -143,7 +143,6 @@ Where to learn more:
 
   - **Coordination**: https://github.com/ipfs/ipfs-gui
   - **Mailing List**: gui-wg@ipfs.io
-  - **Captain**: [Oli Evans](https://github.com/olizilla)
   - **Weekly call**
     - 🕒 Wednesdays at 16:00 UTC
     - 📞 Zoom: https://protocol.zoom.us/j/833247793
