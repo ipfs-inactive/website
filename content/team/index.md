@@ -19,7 +19,6 @@ The IPFS Working Groups are:
 - [**Project Operations**](#project-operations)
 - [**Testing Infra**](#testing-infra)
 - [**IPFS as a Service**](#ipfs-as-a-service)
-- [**Package Managers**](#package-managers)
 - [**Docs and Developer UX**](#docs-and-developer-ux)
 
 
@@ -82,26 +81,6 @@ Where to learn more:
 
 - **Coordination**: TBD
 - **Captain**: [Héctor Sanjuan](https://github.com/hsanjuan)
-
-### Package Managers
-
-User research, collaborations, and performance improvements of import and update of large filesystems to support file-system-based package managers.
-
-**Responsibilities include**:
-
-- Participate in communities like [package.community](http://package.community/)
-- Conduct user research around package manager use cases, communities, and best practices
-- Support collaborations between IPFS and community members who are building, maintaining and using package managers
-- Research and prototype adding IPFS support to package manager clients and mirroring registries onto IPFS
-- Improve the core IPFS implementations to support package manager usage needs
-
-Where to learn more:
-
-- **Coordination**: https://github.com/ipfs/package-managers
-- **Captains**: [Steven Allen](https://github.com/stebalien) and [Michelle Hertzfeld](https://github.com/meiqimichelle)
-- **Weekly call**
-  - 🕒 Tuesdays at 15:30 UTC
-  - 📞 Zoom: https://protocol.zoom.us/j/5011724290
 
 ### Docs and Developer UX
 
