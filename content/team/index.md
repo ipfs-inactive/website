@@ -95,7 +95,7 @@ Overhaul our documentation platform and content based on audits, research and co
 Where to learn more:
 
 - **Coordination**: https://github.com/ipfs/docs
-- **Captain**: [Jessica Schilling](https://github.com/jessicaschilling)
+- **Captain**: [Johnny Matthews](https://github.com/johnnymatthews)
 - **Weekly call**
   - 🕒 Mondays at 16:00 UTC
   - 📞 Zoom: https://protocol.zoom.us/j/614386160
