@@ -41,6 +41,9 @@ Looking for a good introduction to IPFS, the latest open meetings from IPFS work
 
 A chronological archive of IPFS news, articles, media coverage, presence in conferences and talks, and more.
 
+### 2020
+- [20 January: JavaScript Apps go Inter-Planetary at Node+JS Interactive](https://medium.com/@italypaleale/watch-javascript-apps-going-inter-planetary-e33dba615a48)
+
 ### 2019
 - [4 December: IPFS, Libp2p & Filecoin with Juan Benet - Zero Knowledge podcast](https://www.zeroknowledge.fm/106?t=0)
 - [17 October: Juan Benet Presents Building Web3 at Web3 Summit 2019](https://www.youtube.com/watch?v=pJOG5Ql7ZD0)
