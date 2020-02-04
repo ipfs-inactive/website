@@ -39,6 +39,7 @@ There are also Special Interest Groups, pushing forward research and development
 The Project working group helps support team functioning, prioritization, and day-to-day operations.
 
 **Responsibilities include:**
+
 - Manage cross-coordination and problem-solving between working groups
 - Track progression of objectives and key results (OKRs) for the project
 - Organize team meet-ups and summits
@@ -52,6 +53,7 @@ The Project working group helps support team functioning, prioritization, and da
 The Content Routing working group focuses on making improvements to the core implementations in both IPFS and libp2p such that all IPFS users can find and access content they care about in a distributed network of nodes.
 
 **Responsibilities include:**
+
 - Design and implement improvements to the go-libp2p DHT
 - Add new features to providers or connection management subsystems
 - Test and benchmark existing performance on finding and connecting to nodes with the desired content
@@ -65,6 +67,7 @@ The Content Routing working group focuses on making improvements to the core imp
 The IPFS Testground working group builds testing tooling to validate scalability and reliability of the core IPFS implementations, with easy onboarding for core developers to use in continuous integration and one-off testing.
 
 **Responsibilities include:**
+
 - Build large-scale testing infrastructure to simulate and benchmark IPFS
 - Create dashboards and CI hooks to make testing infra more useful/usable
 - Support core implementation developers in creating and running real-world test scenarios
@@ -77,6 +80,7 @@ The IPFS Testground working group builds testing tooling to validate scalability
 Improve performance and stability of IPFS gateways and pinning, and provide public observability of services.
 
 **Responsibilities include:**
+
 - Manage and maintain the IPFS HTTP gateway
 - Manage and maintain the IPFS bootstrapper nodes
 - Manage and maintain pinbot, the IPFS pinning service
@@ -91,6 +95,7 @@ Improve performance and stability of IPFS gateways and pinning, and provide publ
 Ensure community health and growth through collaborations, developer experience, and platform availability. This group is the parent group for the [**Integration with Web Browsers**](#integration-with-web-browsers), [**Developer Experience**](#developer-experience), and [**Collabs & Community**](#collabs--community) SIGs.
 
 **Responsibilities include:**
+
 - Steward and improve community and contributor enablement/support
 - Manage collaborations (including [with web browsers](https://github.com/ipfs/in-web-browsers))
 - Maintain lower-priority systems and tools
@@ -107,6 +112,7 @@ _Cross-cutting research, analysis, and development teams_
 The Collabs and Community SIG supports IPFS users and nurtures new opportunities through research, collaborations, and community engagement.
 
 **Responsibilities include**:
+
 - Manage community communications channels
 - Own collaborations with IPFS users and ecosystem
 - Identify areas of opportunity for future IPFS development
@@ -119,11 +125,13 @@ The Collabs and Community SIG supports IPFS users and nurtures new opportunities
 The Developer Experience SIG supports the IPFS technical community through documentation, contributor experience, API ergonomics, and tooling.
 
 **Responsibilities include:**
+
 - Steward [IPFS documentation](https://docs-beta.ipfs.io) accuracy, usability, and accessibility
 - Audit, research, and assess community needs to make IPFS more accessible to developer users
 - Make improvements to IPFS user-facing subsystems, including the HTTP and client APIs
 
 **Public call info:**
+
 - Documentation group weekly call:
   - 🕒 Mondays at 16:00 UTC
   - 📞 Zoom: https://protocol.zoom.us/j/614386160
@@ -138,6 +146,7 @@ The Developer Experience SIG supports the IPFS technical community through docum
 The Integration with Web Browsers SIG designs and implements browser integrations, web extensions, service workers, and any other strategy that contributes to IPFS being integrated with today's web.
 
 **Responsibilities include**:
+
 - Browser integrations (Firefox, Chrome, Brave and others)
 - IPFS web extension
 - IPFS service worker
@@ -148,6 +157,7 @@ The Integration with Web Browsers SIG designs and implements browser integration
 - Define specifications for address schemes, and advocate for those schemes to be adopted
 
 **Public call info:**
+
 - SIG-wide weekly call:
   - 🕒 Wednesdays at 16:00 UTC
   - 📞 Zoom: https://protocol.zoom.us/j/833247793
@@ -161,17 +171,20 @@ The Integration with Web Browsers SIG designs and implements browser integration
 Making IPFS GUIs simple, accessible, reusable, and beautiful.
 
 **Responsibilities include**:
+
 - Fight complexity at every step
 - Make IPFS usable and comprehensible for everyone
 - Publish and promote this work; make doing the right thing the easiest thing
 - Demonstrate the nature of the system with effortless, coherent, and compelling interfaces
 
 **Public call info:**
+
 - SIG-wide weekly call:
     - 🕒 Wednesdays at 16:00 UTC
     - 📞 Zoom: https://protocol.zoom.us/j/833247793
 
 ### Local Offline Collaboration (Locol)
+
  - **Coordination**: https://github.com/ipfs/local-offline-collab
  - **[Teri Chadbourne](https://github.com/terichadbourne): Captain, TPM**
 
@@ -185,6 +198,7 @@ User research, collaborations, and features to make the knowledge and tools on t
 - Research and prototype applications that utilize IPFS for local-first collaboration and resilient offline usage
 
 **Public call info:**
+
 - SIG-wide monthly call:
   - 🕒 Every third Wednesday at 17:00 UTC
   - 📞 Zoom: https://protocol.zoom.us/j/884541689
