@@ -45,6 +45,7 @@ A chronological archive of IPFS news, articles, media coverage, presence in conf
 - [20 January: JavaScript Apps go Inter-Planetary at Node+JS Interactive](https://medium.com/@italypaleale/watch-javascript-apps-going-inter-planetary-e33dba615a48)
 
 ### 2019
+- [19 December: A Technical Introduction to IPFS with Héctor Sanjuán - Our Networks 2019](https://www.youtube.com/watch?v=hnigvVuoaIA)
 - [4 December: IPFS, Libp2p & Filecoin with Juan Benet - Zero Knowledge podcast](https://www.zeroknowledge.fm/106?t=0)
 - [17 October: Juan Benet Presents Building Web3 at Web3 Summit 2019](https://www.youtube.com/watch?v=pJOG5Ql7ZD0)
 - [16 October: IPFS Basics Night with ProtoSchool Denver](https://www.youtube.com/watch?v=D3MjB45YZsM)
