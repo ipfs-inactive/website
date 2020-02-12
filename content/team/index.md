@@ -186,7 +186,7 @@ Making IPFS GUIs simple, accessible, reusable, and beautiful.
 ### Local Offline Collaboration (Locol)
 
  - **Coordination**: https://github.com/ipfs/local-offline-collab
- - **[Teri Chadbourne](https://github.com/terichadbourne): Captain, TPM**
+ - **[Teri Chadbourne](https://github.com/terichadbourne): Captain**
 
 User research, collaborations, and features to make the knowledge and tools on the internet accessible and useful on partitioned, low-bandwidth, or intermittant networks.
 
@@ -200,5 +200,5 @@ User research, collaborations, and features to make the knowledge and tools on t
 **Public call info:**
 
 - SIG-wide monthly call:
-  - 🕒 Every third Wednesday at 17:00 UTC
+  - 🕒 Third Wednesday of the month at 18:00 UTC
   - 📞 Zoom: https://protocol.zoom.us/j/884541689
