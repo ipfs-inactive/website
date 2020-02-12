@@ -27,7 +27,7 @@ There are also Special Interest Groups, pushing forward research and development
 - [**Developer Experience**](#developer-experience)
 - [**Integration with Web Browsers**](#integration-with-web-browsers)
 - [**IPFS GUI**](#ipfs-gui)
-- [**Local Offline Collaboration**](#ipfs-gui)
+- [**Local Offline Collaboration**](#local-offline-collaboration-locol)
 
 <img src="https://docs.google.com/drawings/d/e/2PACX-1vQ0IEMEJpCM6wawOPDRCCOTqDNSvlKf-3WQE6ZEYqCipDdiaep41htmGfXsLH0tJwRWYNRvzEAdA5EV/pub?w=737&amp;h=419" alt="Working Group leads org chart">
 
@@ -188,7 +188,7 @@ Making IPFS GUIs simple, accessible, reusable, and beautiful.
  - **Coordination**: https://github.com/ipfs/local-offline-collab
  - **[Teri Chadbourne](https://github.com/terichadbourne): Captain**
 
-User research, collaborations, and features to make the knowledge and tools on the internet accessible and useful on partitioned, low-bandwidth, or intermittant networks.
+User research, collaborations, and features to make the knowledge and tools on the internet accessible and useful on partitioned, low-bandwidth, or intermittent networks.
 
 **Responsibilities include**:
 
