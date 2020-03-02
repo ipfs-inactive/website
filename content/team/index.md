@@ -129,12 +129,6 @@ The Developer Experience SIG supports the IPFS technical community through docum
 - Steward [IPFS documentation](https://docs-beta.ipfs.io) accuracy, usability, and accessibility
 - Audit, research, and assess community needs to make IPFS more accessible to developer users
 - Make improvements to IPFS user-facing subsystems, including the HTTP and client APIs
-
-**Public call info:**
-
-- Documentation group weekly call:
-  - 🕒 Mondays at 16:00 UTC
-  - 📞 Zoom: https://protocol.zoom.us/j/614386160
   
 ### Integration with Web Browsers
 
@@ -156,12 +150,6 @@ The Integration with Web Browsers SIG designs and implements browser integration
 - Increase the adoption of the distributed web by making it easy for users to access it
 - Define specifications for address schemes, and advocate for those schemes to be adopted
 
-**Public call info:**
-
-- SIG-wide weekly call:
-  - 🕒 Wednesdays at 16:00 UTC
-  - 📞 Zoom: https://protocol.zoom.us/j/833247793
-
 ### IPFS GUI/UX
 
 - **Coordination**: https://github.com/ipfs/ipfs-gui
@@ -177,12 +165,6 @@ Making IPFS GUIs simple, accessible, reusable, and beautiful.
 - Publish and promote this work; make doing the right thing the easiest thing
 - Demonstrate the nature of the system with effortless, coherent, and compelling interfaces
 
-**Public call info:**
-
-- SIG-wide weekly call:
-    - 🕒 Wednesdays at 16:00 UTC
-    - 📞 Zoom: https://protocol.zoom.us/j/833247793
-
 ### Local Offline Collaboration (Locol)
 
  - **Coordination**: https://github.com/ipfs/local-offline-collab
@@ -196,9 +178,3 @@ User research, collaborations, and features to make the knowledge and tools on t
 - Conduct user research around offline and local-first use cases, communities, and best practices
 - Support collaborations between IPFS and community members who are building tools for peer-to-peer sharing and collaboration in local/offline networks
 - Research and prototype applications that utilize IPFS for local-first collaboration and resilient offline usage
-
-**Public call info:**
-
-- SIG-wide monthly call:
-  - 🕒 Third Wednesday of the month at 18:00 UTC
-  - 📞 Zoom: https://protocol.zoom.us/j/884541689
