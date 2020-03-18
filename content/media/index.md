@@ -42,6 +42,7 @@ Looking for a good introduction to IPFS, the latest open meetings from IPFS work
 A chronological archive of IPFS news, articles, media coverage, presence in conferences and talks, and more.
 
 ### 2020
+- [18 March: InterPlanetary File System Is Uncensorable During Coronavirus News Fog - Coindesk](https://www.coindesk.com/interplanetary-file-system-is-uncensorable-during-coronavirus-news-fog)
 - [2 March: IPFS Emerges as Tool to Distribute Container Images - Container Journal](https://containerjournal.com/topics/container-management/ipfs-emerges-as-tool-to-distribute-container-images/)
 - [20 January: JavaScript Apps go Inter-Planetary at Node+JS Interactive](https://medium.com/@italypaleale/watch-javascript-apps-going-inter-planetary-e33dba615a48)
 
