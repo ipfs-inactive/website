@@ -20,8 +20,9 @@ header {
 body.home {
   header {
     height: 100vh;
-    min-height: 550px;
-    max-height: 1300px;
+    min-height: 740px;
+    // min-height: 550px; put this back once 0.5 callout is removed
+    // max-height: 1300px; put this back once 0.5 callout is removed
   }
 }
 
@@ -124,6 +125,40 @@ header .button {
 .cta .button {
   min-width: 150px;
   position: relative;
+}
+
+.hero-callout {
+  background-color: #c7e4e8;
+  border-radius: 3px;
+  display: flex;
+  color: @brand-blue;
+  max-width: 700px;
+  margin: 1.9em auto;
+  padding: 1.25em 1.25em 0.75em 1.25em;
+  a, a:hover, a:active, a:visited {
+    color: #138dc8;
+  }
+}
+
+.hero-callout-image {
+  width: 200px;
+  margin-right: 1.2em;
+}
+.hero-callout-text {
+  width: 80%;
+  text-align: left;
+  margin-bottom: 0;
+  h3 {
+    color: @brand-blue;
+    font-weight: 200;
+    margin: 0 0 0.3em 0;
+    font-size: 24px;
+    line-height: 1.3;
+  }
+  p {
+    font-size: 20px;
+    margin-bottom: 0;
+  }
 }
 
 .constellation {
@@ -244,6 +279,27 @@ body.subdoc {
     min-height: 170px;
     padding-top: 15px;
   }
+
+  .hero-callout {
+    margin: 0.5em auto;
+  }
+
+  .hero-callout-image {
+    display:none;
+  }
+
+  .hero-callout-text {
+    text-align: center;
+    width: 100%;
+  }
+
+  .hero-callout-text h3 {
+      font-size: 20px;
+    }
+
+  .hero-callout-text p {
+      font-size: 16px;
+    }
 }
 
 @media screen and (max-width: @breakpoint-smartphone) {
