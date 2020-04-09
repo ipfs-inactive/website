@@ -10,8 +10,7 @@ constellation: constellation-02.svg
 
 # Getting Help
 
-<p class="lead"> IPFS is formed by a extense ecosystem and is easy to get
-lost. Here is a list of primary places to get help:</p>
+<p class="lead"> IPFS is made-up of an extensive ecosystem and is easy to get lost. Here is a list of primary places to get help:</p>
 
 * **IPFS Documentation**: We have a dedicated site at [docs.ipfs.io](https://docs.ipfs.io).
 * **IPFS Technical support**: use our [Discussion Forum](https://discuss.ipfs.io).
@@ -29,35 +28,22 @@ For additional information, here is a list of all the venues and how each of the
 
 ### [IPFS Discussion forums](https://discuss.ipfs.io)
 
-We aim to direct most discussions and support questions towards the Forums. IPFS developers keep an eye on posts on the discussion forums and are happy to jump in to help. This helps keeping code repositories focused and incresing the ratio of actionable, clearly defined and scoped issues that anyone can contribute to.
+We aim to direct most discussions and support questions towards the Forums. IPFS developers keep an eye on posts on the discussion forums and are happy to jump in to help. This helps keeping code repositories focused and increasing the ratio of actionable, clearly defined, and scoped issues that anyone can contribute to.
 
 ### [Github repositories](https://github.com/ipfs)
 
-We have all our code-bases and supporting/additional repositories in Github. For this, we maintain several Github organizations:
+We have all our codebases and supporting/additional repositories in Github. For this, we maintain several Github organizations:
 
-* [IPFS](https://github.com/ipfs) contains the core codebases and related
-  libraries. We aim to keep this organization tidy, with all projects in it
-  being actively maitained by the IPFS Core teams.
-* [IPFS Shipyard](https://github.com/ipfs/ipfs-shipyard) contains many
-  side-projects, tooling and endaevors that are not part of the core codebase
-  and have different levels of maturity and activity. We encourage the
-  community to step up and drive shipyard projects forward.
-* [IPFS Archive](https://github.com/ipfs/ipfs-archive) conaints archived
-  repositories that are obsolete and not-used anymore (usually because they
-  have been replaced by something else).
+* [IPFS](https://github.com/ipfs) contains the core codebases and related libraries. We aim to keep this organization tidy, with all projects in it being actively maintained by the IPFS Core teams.
+* [IPFS Shipyard](https://github.com/ipfs/ipfs-shipyard) contains many side-projects, tooling, and endeavors that are not part of the core codebase and have different levels of maturity and activity. We encourage the community to step up and drive shipyard projects forward.
+* [IPFS Archive](https://github.com/ipfs/ipfs-archive) contains archived repositories that are obsolete and not used anymore (usually because they have been replaced by something else).
 
-We aim to keep the issue trackers in most repositories for specific, scoped
-discussions and implementation approaches. Reducing the noise in the
-repositories with high-quality, on-point issues, helps our teams perform more
-efficiently and service the developer community faster.
+We aim to keep the issue trackers in most repositories for specific, scoped discussions and implementation approaches. Reducing the noise in the repositories with high-quality, on-point issues, helps our teams perform more efficiently and serve the developer community faster.
 
 ### [Matrix](https://riot.im/app/#/room/#ipfs:matrix.org), [IRC](http://webchat.freenode.net/?channels=#ipfs)
 
 Our official chat rooms in Matrix and IRC are bridged so you can join
-whichever you prefer. They can be used to ask any questions and discuss with
-the community. However, while IPFS core developers are usually in these rooms,
-it is hard to keep up with the history so questions may be missed, and answers
-will not be re-usable for other users since they are mostly non indexed.
+whichever you prefer. They can be used to ask any questions and discuss them with the community. However, while IPFS core developers are usually in these rooms, it is hard to keep up with the conversation. Questions may be missed, and answers will not be re-usable for other users since they are mostly non-indexed.
 
 Therefore, we prefer the [Discussion Forums](https://discuss.ipfs.io) for
 support things, though you can still try the chats!
@@ -65,8 +51,7 @@ support things, though you can still try the chats!
 
 ### Other venues
 
-Core IPFS developers do not monitor the following venues, but many of our
-community members do and are happy to help and discuss:
+Core IPFS developers do not monitor the following venues, but many of our community members do and are happy to help and discuss:
 
 * [Discord](https://discord.gg/24fmuwR) (bridged to Matrix and IRC).
 * [Stack Overflow](https://stackoverflow.com/questions/tagged/ipfs)
