@@ -1,14 +1,14 @@
 ---
 pagetype: major
-pagename: support
-section: support
-title: Support & help
-url: support
-save_as: support/index.html
+pagename: help
+section: Help
+title: Getting Help
+url: help
+save_as: help/index.html
 constellation: constellation-02.svg
 ---
 
-# IPFS support
+# Getting help
 
 <p class="lead"> The IPFS ecosystem is extensive and diverse — if you're looking for help or support, here's a list to help you get started.</p>
 
@@ -18,7 +18,7 @@ constellation: constellation-02.svg
 * **IPFS-related community announcements**: If you'd like to announce something to the IPFS community at large, use the [official IPFS discussion forums](https://discuss.ipfs.io); we monitor the forums for things to include in the weekly IPFS newsletter! You can also inform people via [IRC](https://docs-beta.ipfs.io/community/irc/) and the [other venues](#other-venues) listed below.
 * **Bugs and feature proposals**: IPFS-codebase-related bugs and feature proposals can be reported directly in their repositories (most are in the [IPFS](https://github.com/ipfs) and [IPFS Shipyard](https://github.com/ipfs-shipyard) GitHub orgs), for example [go-ipfs](https://github.com/ipfs/go-ipfs) or [js-ipfs](https://github.com/ipfs/js-ipfs). If you're not sure where the best place to report a bug or request a feature is, ask in the [forums](https://discuss.ipfs.io) and someone will point you in the right direction.
 * **Support for libp2p**: Questions specific to libp2p should use the [libp2p forums](https://discuss.libp2p.io) for faster results.
-* **Reporting**: To report a [security issue](https://github.com/ipfs/community/blob/master/CONTRIBUTING.md#security-issues), please email <a href="mailto:security@ipfs.io">security@ipfs.io</a>.
+* **Reporting security issues**: To report [security issues](https://github.com/ipfs/community/blob/master/CONTRIBUTING.md#security-issues), please email <a href="mailto:security@ipfs.io">security@ipfs.io</a>.
 * **Reporting abuse**: To report [abuse](https://github.com/ipfs/community/blob/master/code-of-conduct.md), please email <a href="mailto:abuse@ipfs.io">abuse@ipfs.io</a>.
 * **Something else not listed here?** Ask in the [official IPFS discussion forums](https://discuss.ipfs.io).
 
