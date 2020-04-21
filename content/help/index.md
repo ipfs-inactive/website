@@ -33,7 +33,7 @@ We keep all our codebases and supporting/additional repositories in GitHub. For 
 
 * [IPFS](https://github.com/ipfs) contains the core codebases and related libraries. We aim to keep this organization tidy, with all projects in it being actively maintained by the IPFS core teams.
 * [IPFS Shipyard](https://github.com/ipfs-shipyard) contains many side projects, tooling, and endeavors that are not part of the core codebase and therefore may have different levels of maturity and activity. We encourage the community to step up and drive Shipyard projects forward!
-* [IPFS Archive](https://github.com/ipfs-archive) contains archived repositories that are obsolete and no longer under active development (usually because they have been replaced by something else).
+* [IPFS Archive](https://github.com/ipfs-inactive) contains archived repositories that are obsolete and no longer under active development (usually because they have been replaced by something else).
 
 We aim to keep the issue trackers in most repositories for specific, scoped discussions and implementation approaches. Reducing the noise in the repositories via high-quality, on-point issues helps our teams perform more efficiently and serve the developer community faster.
 
