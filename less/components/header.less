@@ -19,10 +19,11 @@ header {
 
 body.home {
   header {
-    height: 100vh;
-    min-height: 740px;
-    // min-height: 550px; put this back once 0.5 callout is removed
-    // max-height: 1300px; put this back once 0.5 callout is removed
+    min-height: 100vh;
+    @media screen and (min-width: @breakpoint-tablet) {
+      min-height: auto;
+      max-height: 1300px;
+    }
   }
 }
 
