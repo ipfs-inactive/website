@@ -42,6 +42,9 @@ Looking for a good introduction to IPFS, the latest open meetings from IPFS work
 A chronological archive of IPFS news, articles, media coverage, presence in conferences and talks, and more.
 
 ### 2020
+- [5 May: The Decentralized Web Could Help Preserve The Internet's Data For 1,000 Years. Here's Why We Need IPFS To Build It - TechDirt](https://www.techdirt.com/articles/20200504/16050844431/decentralized-web-could-help-preserve-internets-data-1000-years-heres-why-we-need-ipfs-to-build-it.shtml#comments)
+- [30 April: Latest Version of Open Source IPFS Improves Performance - DevOps.com](https://devops.com/latest-version-of-open-source-ipfs-improves-performance/)
+- [28 April: Decentralized Web Protocol IPFS Has Its Biggest Update So Far - Cointelegraph](https://cointelegraph.com/news/decentralized-web-protocol-ipfs-has-its-biggest-update-so-far)
 - [18 March: InterPlanetary File System Is Uncensorable During Coronavirus News Fog - Coindesk](https://www.coindesk.com/interplanetary-file-system-is-uncensorable-during-coronavirus-news-fog)
 - [2 March: IPFS Emerges as Tool to Distribute Container Images - Container Journal](https://containerjournal.com/topics/container-management/ipfs-emerges-as-tool-to-distribute-container-images/)
 - [20 January: JavaScript Apps go Inter-Planetary at Node+JS Interactive](https://medium.com/@italypaleale/watch-javascript-apps-going-inter-planetary-e33dba615a48)
