@@ -80,12 +80,21 @@ section {
 
 // install options
 
-.install-item a {
-  cursor: pointer;
-}
-
 .install-description h4 {
   color: @color-teal;
+  margin-bottom: 0.25em;
+}
+
+.install-description h4:hover {
+  text-decoration: underline;
+}
+
+.install-description a {
+  color: @color-teal;
+}
+
+.install-description a:hover {
+  color: @color-white;
 }
 
 .install-item {
@@ -93,6 +102,7 @@ section {
   padding: 1rem;
   text-align: center;
 }
+
 .install-item img {
   max-height: 100px;
 }
@@ -107,25 +117,21 @@ section {
     text-align: left;
   }
   .install-item-image {
-    width: 400px;
+    width: 350px;
     img {
-      max-height: inherit;
+      max-height: 150px;
     }
   }
   .install-description {
-    margin-left: 1rem;
+    margin-left: 0.35rem;
   }
 }
 
 @media screen and (max-width: @breakpoint-tablet) {
+  h2 {
+    padding-top: 80px;
+  }
   section:first-of-type {
     padding-top: 20px;
   }
 }
-
-//- TODO: Fully remove once Blockchains content gets added in
-// @media screen and (min-width: @breakpoint-tablet + 1)
-
-//   .service-providers
-//     position: relative
-//     top: 100px
