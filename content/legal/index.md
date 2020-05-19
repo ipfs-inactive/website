@@ -8,7 +8,9 @@ constellation: constellation-01.svg
 ### Report Copyright Infringement on the IPFS Gateway Service
 Protocol Labs Inc. and the core IPFS team have adopted this copyright infringement policy in accordance with the [Digital Millennium Copyright Act](http://http://lcweb.loc.gov/copyright/legislation/dmca.pdf).
 
-If you are a copyright owner, or agent of the owner, and you believe that content available on the IPFS Gateway Service infringes one or more of your copyrights please notify us by sending a DMCA Notice of the infringement containing the information below.    After we receive a valid and complete notice, we will investigate and block or otherwise make the material unavailable through the IPFS Gateway Service. Learn more about our process below.
+If you are a copyright owner, or agent of the owner, and you believe that content available on the IPFS Gateway Service hosted at `ipfs.io` or `dweb.link` infringes one or more of your copyrights please notify us by sending a DMCA Notice of the infringement containing the information below.    After we receive a valid and complete notice, we will investigate and block or otherwise make the material unavailable through the IPFS Gateway Service. Learn more about our process below.
+
+**Please note - this policy is only applicable to the IPFS Gateway Service operated by the IPFS team (including `ipfs.io` & `dweb.link`). See [the public gateway checker](https://ipfs.github.io/public-gateway-checker/) for owners of other gateways to contact directly.**
 
 The email address (preferred) and physical address (less preferred) of our Designated Agent to receive notification of claimed infringement is listed at the end of this policy.  Please read it carefully and make sure you are aware of the legal implications of the DMCA. You can be held liable for damages, including costs and attorney fees, if you materially misrepresent that material or activity infringes on your copyright.  We may highlight such abuses, too. Consult an attorney before filing a DMCA Notice if you are unsure whether copyrights have been infringed, or if you are unsure whether your materials have been removed in error.
 
