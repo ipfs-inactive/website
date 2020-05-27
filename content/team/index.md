@@ -126,7 +126,7 @@ The Developer Experience SIG supports the IPFS technical community through docum
 
 **Responsibilities include:**
 
-- Steward [IPFS documentation](https://docs-beta.ipfs.io) accuracy, usability, and accessibility
+- Steward [IPFS documentation](https://docs.ipfs.io) accuracy, usability, and accessibility
 - Audit, research, and assess community needs to make IPFS more accessible to developer users
 - Make improvements to IPFS user-facing subsystems, including the HTTP and client APIs
   
