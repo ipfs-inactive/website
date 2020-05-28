@@ -20,6 +20,6 @@ disableKinds = ["RSS"]
   author = "Protocol Labs"
   github = "https://github.com/ipfs/ipfs"
   specifications = "https://github.com/ipfs/specs"
-  social = [ { title = "Twitter", link = "https://twitter.com/ipfsbot" },
+  social = [ { title = "Twitter", link = "https://twitter.com/ipfs" },
     { title = "Facebook", link = "https://www.facebook.com/sharer/sharer.php?u=https://ipfs.io" },
     { title = "YouTube", link = "https://www.youtube.com/channel/UCdjsUXJ3QawK4O5L1kqqsew" } ]
