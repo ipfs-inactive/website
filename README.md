@@ -9,7 +9,7 @@
 
 This project builds out a static site to explain IPFS, ready for deployment on ipfs itself. It uses `hugo` to glue the html together. It provides an informative, public-facing website. The most important things are the words, concepts and links it presents.
 
-Much of the site content is data-driven; take a look at the `data` dir where find the data behind the implementations and bundles information as json.
+The site content is in `content/` directory.
 
 ## Install
 
