@@ -1,4 +1,4 @@
-# [IPFS Website](https://ipfs.io)
+## [IPFS Website](https://ipfs.io)
 
 [![](https://img.shields.io/badge/made%20by-Protocol%20Labs-blue.svg?style=flat-square)](http://ipn.io)
 [![](https://img.shields.io/badge/project-ipfs-blue.svg?style=flat-square)](http://github.com/ipfs/ipfs)
@@ -37,27 +37,27 @@ To deploy the site ipfs.io, run:
 
 The following commands are available:
 
-### `make`
+## `make`
 
 Build the optimised site to the `./public` dir
 
-### `make serve`
+## `make serve`
 
 Preview the production ready site at http://localhost:1313 _(requires `hugo` on your `PATH`)_
 
-### `make dev`
+## `make dev`
 
 Start a hot-reloading dev server on http://localhost:1313 _(requires `hugo` on your `PATH`)_
 
-### `make minify`
+## `make minify`
 
 Optimise all the things!
 
-### `make deploy`
+## `make deploy`
 
 Build the site in the `public` dir and add to `ipfs` _(requires `hugo` & `ipfs` on your `PATH`)_
 
-### `make publish-to-domain` :rocket:
+## `make publish-to-domain` :rocket:
 
 Update the DNS record for `ipfs.io`.  _(requires an `auto.token` file to be saved in the project root.)_
 
