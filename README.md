@@ -1,11 +1,11 @@
-# [IPFS Website](https://ipfs.io)
+# [Awesome IPFS Website](https://ipfs.io)
 
 [![](https://img.shields.io/badge/made%20by-Protocol%20Labs-blue.svg?style=flat-square)](http://ipn.io)
 [![](https://img.shields.io/badge/project-ipfs-blue.svg?style=flat-square)](http://github.com/ipfs/ipfs)
 [![](https://img.shields.io/badge/standard--readme-OK-green.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
 [![build status](https://img.shields.io/circleci/project/github/ipfs/website/master.svg?style=flat-square)](https://circleci.com/gh/ipfs/website)
 
-> Official website for IPFS http://ipfs.io
+> Official website for IPFS is http://ipfs.io
 
 This project builds out a static site to explain IPFS, ready for deployment on ipfs itself. It uses `hugo` to glue the html together. It provides an informative, public-facing website. The most important things are the words, concepts and links it presents.
 
