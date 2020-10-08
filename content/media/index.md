@@ -42,6 +42,7 @@ Looking for a good introduction to IPFS, the latest open meetings from IPFS work
 A chronological archive of IPFS news, articles, media coverage, presence in conferences and talks, and more.
 
 ### 2020
+- [8 October: IPFS is paving the way for a new digital economy - Modern Consensus](https://modernconsensus.com/commentary/opinion/ipfs-is-paving-the-way-for-a-new-digital-economy/)
 - [5 May: The Decentralized Web Could Help Preserve The Internet's Data For 1,000 Years. Here's Why We Need IPFS To Build It - TechDirt](https://www.techdirt.com/articles/20200504/16050844431/decentralized-web-could-help-preserve-internets-data-1000-years-heres-why-we-need-ipfs-to-build-it.shtml#comments)
 - [30 April: Latest Version of Open Source IPFS Improves Performance - DevOps.com](https://devops.com/latest-version-of-open-source-ipfs-improves-performance/)
 - [28 April: Decentralized Web Protocol IPFS Has Its Biggest Update So Far - Cointelegraph](https://cointelegraph.com/news/decentralized-web-protocol-ipfs-has-its-biggest-update-so-far)
