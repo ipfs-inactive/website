@@ -14,10 +14,12 @@ jobs:
 
   deploy:
     docker:
-      - image: olizilla/ipfs-dns-deploy:latest
+      - image: olizilla/ipfs-dns-deploy:1.7
         environment:
           DOMAIN: website.ipfs.io
           BUILD_DIR: public
+          # Publish the /.well-known directory too
+          EXTRA_IPFS_CLUSTER_ARGS: "--hidden"
     steps:
       - attach_workspace:
           at: /tmp/workspace
