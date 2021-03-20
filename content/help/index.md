@@ -39,7 +39,7 @@ We aim to keep the issue trackers in most repositories for specific, scoped disc
 
 ### Matrix and IRC
 
-Our official chat rooms in [Matrix](https://riot.im/app/#/room/#ipfs:matrix.org) and [IRC](http://webchat.freenode.net/?channels=#ipfs) are bridged, so you can join
+Our official chat rooms in [Matrix](https://app.element.io/#/room/#ipfs:matrix.org) and [IRC](http://webchat.freenode.net/?channels=#ipfs) are bridged, so you can join
 whichever you prefer. They can be used to ask questions and discuss with the community — however, while IPFS core developers are usually in these rooms, it can be hard to keep up with the running conversation and questions can be missed or disappear due to a lack of indexing. Therefore, we prefer the [forums](https://discuss.ipfs.io) for support questions, though you can still try the chats!
 
 ### Other venues
