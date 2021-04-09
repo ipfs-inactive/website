@@ -34,4 +34,10 @@
 <script src="https://camp.ipfs.io/ribbon.min.js" async></script>
 {{- if not .Site.IsServer -}}
 {{ template "_internal/google_analytics_async.html" . }}
+<!--
+    countly analytics
+    added to compare stats with new website version
+    see: https://github.com/ipfs/website/issues/422
+-->
+{{ partial "countly.html" . }}
 {{- end -}}
