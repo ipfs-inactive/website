@@ -14,8 +14,8 @@ constellation: constellation-02.svg
 
 * **IPFS documentation**: We have a [dedicated docs site](https://docs.ipfs.io) that's the best first place to look.
 * **Technical support**: For specific questions, including technical support, please use the [official IPFS discussion forums](https://discuss.ipfs.io).
-* **General questions and discussions**: Use the [official IPFS discussion forums](https://discuss.ipfs.io) or [chat on IRC](https://docs.ipfs.io/community/#irc).
-* **IPFS-related community announcements**: If you'd like to announce something to the IPFS community at large, use the [official IPFS discussion forums](https://discuss.ipfs.io); we monitor the forums for things to include in the weekly IPFS newsletter! You can also inform people via [IRC](https://docs.ipfs.io/community/#irc) and the [other venues](#other-venues) listed below.
+* **General questions and discussions**: Use the [official IPFS discussion forums](https://discuss.ipfs.io) or [chat on Matrix](https://docs.ipfs.io/community/#chat).
+* **IPFS-related community announcements**: If you'd like to announce something to the IPFS community at large, use the [official IPFS discussion forums](https://discuss.ipfs.io); we monitor the forums for things to include in the weekly IPFS newsletter! You can also inform people via [Matrix](https://docs.ipfs.io/community/#chat) and the [other venues](#other-venues) listed below.
 * **Bugs and feature proposals**: IPFS-codebase-related bugs and feature proposals can be reported directly in their repositories (most are in the [IPFS](https://github.com/ipfs) and [IPFS Shipyard](https://github.com/ipfs-shipyard) GitHub orgs), for example [go-ipfs](https://github.com/ipfs/go-ipfs) or [js-ipfs](https://github.com/ipfs/js-ipfs). If you're not sure where the best place to report a bug or request a feature is, ask in the [forums](https://discuss.ipfs.io) and someone will point you in the right direction.
 * **Support for libp2p**: Questions specific to libp2p should use the [libp2p forums](https://discuss.libp2p.io) for faster results.
 * **Reporting security issues**: To report [security issues](https://github.com/ipfs/community/blob/master/CONTRIBUTING.md#security-issues), please email <a href="mailto:security@ipfs.io">security@ipfs.io</a>.
@@ -37,15 +37,13 @@ We keep all our codebases and supporting/additional repositories in GitHub. For 
 
 We aim to keep the issue trackers in most repositories for specific, scoped discussions and implementation approaches. Reducing the noise in the repositories via high-quality, on-point issues helps our teams perform more efficiently and serve the developer community faster.
 
-### Matrix and IRC
+### Matrix and Discord
 
-Our official chat rooms in [Matrix](https://app.element.io/#/room/#ipfs:matrix.org) and [IRC](http://webchat.freenode.net/?channels=#ipfs) are bridged, so you can join
-whichever you prefer. They can be used to ask questions and discuss with the community — however, while IPFS core developers are usually in these rooms, it can be hard to keep up with the running conversation and questions can be missed or disappear due to a lack of indexing. Therefore, we prefer the [forums](https://discuss.ipfs.io) for support questions, though you can still try the chats!
+Our official chat rooms in [Matrix](https://app.element.io/#/room/#lobby:ipfs.io) and [Discord](https://discord.gg/Z4H6tdECb9) are bridged, so you can join whichever you prefer. They can be used to ask questions and discuss with the community — however, while IPFS core developers are usually in these rooms, it can be hard to keep up with the running conversation and questions can be missed or disappear due to a lack of indexing. Therefore, we prefer the [forums](https://discuss.ipfs.io) for support questions, though you can still try the chats!
 
 ### Other venues
 
 Core IPFS developers do not monitor the following venues, but many of our community members do and are happy to help and discuss:
 
-* [Discord](https://discord.gg/24fmuwR) (bridged to Matrix and IRC).
 * [Stack Overflow](https://stackoverflow.com/questions/tagged/ipfs)
 * [Reddit](https://www.reddit.com/r/ipfs/)
