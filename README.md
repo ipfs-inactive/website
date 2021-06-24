@@ -1,4 +1,10 @@
-# [IPFS Website](https://ipfs.io)
+# THIS REPOSITORY IS BEING DEPRECATED
+
+**Heads up! On 24 June 2021, this repository will be deprecated and replaced with [`ipfs/ipfs-website`](https://github.com/ipfs/ipfs-website). This repository will not be receiving any updates. It is here for historical purposes.**
+
+---
+
+# IPFS Website
 
 [![](https://img.shields.io/badge/made%20by-Protocol%20Labs-blue.svg?style=flat-square)](http://ipn.io)
 [![](https://img.shields.io/badge/project-ipfs-blue.svg?style=flat-square)](http://github.com/ipfs/ipfs)
